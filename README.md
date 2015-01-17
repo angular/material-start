@@ -4,10 +4,12 @@ This Material **start*** project is a *seed* for AngularJS Materal applications.
 
 This sample application is skeleton for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
 projects.
+<br/>
 
 ![muppetApp](https://cloud.githubusercontent.com/assets/210413/5789949/6c4c5f8a-9e47-11e4-8a15-55f3a3d6ea5d.png)
 
-> The start app doesn't do much... it just shows how to override a theme and use the side navigation component.
+<br/>
+> The start app doesn't do much... it just demonstrates how to override a theme and how to use the side navigation component. Try shrinking the window size and watch the sideNav auto-hide. You can temporarily show the sideNav by clicking on the upper left menu button.
 
 ## Getting Started
 
