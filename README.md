@@ -1,15 +1,14 @@
 # Material-start — the seed for AngularJS Materal applications
 
-This project provides application skeleton for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
-projects.
-
-The seed contains a sample AngularJS application and is preconfigured to install the Angular
+This Material **start*** project contains a sample AngularJS application and is preconfigured to install the Angular
 framework and a bunch of development and testing tools for instant web development gratification.
 
-The seed app doesn't do much, just shows how to override a theme and use the side navigation component.
+This sample application is skeleton for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
+projects.
 
 ![muppetApp](https://cloud.githubusercontent.com/assets/210413/5789949/6c4c5f8a-9e47-11e4-8a15-55f3a3d6ea5d.png)
 
+> The start app doesn't do much... it just shows how to override a theme and use the side navigation component.
 
 ## Getting Started
 
