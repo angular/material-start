@@ -1,7 +1,6 @@
-# Material-start — the seed for AngularJS Materal applications
+# AngularJS Material-Start 
 
-This Material **start*** project contains a sample AngularJS application and is preconfigured to install the Angular
-framework and a bunch of development and testing tools for instant web development gratification.
+This Material **start*** project is a *seed* for AngularJS Materal applications. The project contains a sample AngularJS application and is preconfigured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
 
 This sample application is skeleton for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
 projects.
