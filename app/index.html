@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <title>My AngularJS Material App</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="/app.css" >
+  </head>
+
+  <body ng-app="starterApp">
+
+    <body layout="column" ng-controller="AppCtrl">
+    <md-toolbar layout="row">
+      <button ng-click="toggleSidenav('left')" hide-gt-sm class="menuBtn">
+        <span class="visuallyhidden">Menu</span>
+      </button>
+      <h1>My Favorite Muppets</h1>
+    </md-toolbar>
+
+    <!--
+         Use `flex` [below] to have the side bar and content area
+         fill the available vertical display area
+     -->
+
+    <div layout="row" flex>
+
+      <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-sm')">
+        <md-list>
+          <md-item ng-repeat="it in muppets">
+            <md-item-content>
+              <md-button ng-click="selectMuppet(it)">
+                <img ng-src="{{it.iconurl}}" class="face" alt="">
+                {{it.name}}
+              </md-button>
+            </md-item-content>
+          </md-item>
+        </md-list>
+      </md-sidenav>
+
+      <!--
+          Use `flex` [below] to have the content area
+          fill the available horizontal display area on the right side
+          Override with `green` theme
+      -->
+
+      <div layout="column" flex md-theme="green" id="content">
+        <md-content layout="column" flex class="md-padding">
+          <div>
+            <h2>
+              <img ng-src="{{selected.iconurl}}" class="face" alt="">
+              {{selected.name}}
+            </h2>
+            <p>{{selected.content}}</p>
+          </div>
+          <md-button></md-button>
+        </md-content>
+      </div>
+    </div>
+
+    <script src="/bower_components/hammerjs/hammer.js"></script>
+
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+
+    <script src="/bower_components/angular-material/angular-material.js"></script>
+
+    <script src="app.js"></script>
+    <script src="src/muppets/muppetService.js"></script>
+
+  </body>
+</html>

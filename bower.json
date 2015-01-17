@@ -1,0 +1,17 @@
+{
+  "name": "angular-seed",
+  "description": "A starter project for AngularJS Material",
+  "version": "0.0.0",
+  "homepage": "https://github.com/angular/material-start",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.3.x",
+    "angular-route": "^1.3.x",
+    "angular-mocks": "^1.3.x",
+    "angular-animate": "v1.3.x",
+    "angular-aria": "^1.3.x",
+    "angular-material": "^0.7.0",
+    "hammerjs": "~2.0.2"
+  }
+}
