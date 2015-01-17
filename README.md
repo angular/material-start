@@ -1,4 +1,4 @@
-# Material-Starter — the seed for AngularJS Materal applications
+# Material-start — the seed for AngularJS Materal applications
 
 This project provides application skeleton for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
 projects.
@@ -8,32 +8,34 @@ framework and a bunch of development and testing tools for instant web developme
 
 The seed app doesn't do much, just shows how to override a theme and use the side navigation component.
 
+![muppetApp](https://cloud.githubusercontent.com/assets/210413/5789949/6c4c5f8a-9e47-11e4-8a15-55f3a3d6ea5d.png)
+
 
 ## Getting Started
 
-To get you started you can simply clone the material-starter repository and install the dependencies:
+To get you started you can simply clone the material-start repository and install the dependencies:
 
 ### Prerequisites
 
-You need git to clone the material-starter repository. You can get git from
+You need git to clone the material-start repository. You can get git from
 [http://git-scm.com/](http://git-scm.com/).
 
 We also use a number of node.js tools to initialize and test angular-seed. You must have node.js and
 its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
 
-### Clone material-starter
+### Clone material-start
 
 Clone the angular-seed repository using [git][git]:
 
 ```
-git clone https://github.com/angular/material-starter.git
-cd material-starter
+git clone https://github.com/angular/material-start.git
+cd material-start
 ```
 
-If you just want to start a new project without the material-starter commit history then you can do:
+If you just want to start a new project without the material-start commit history then you can do:
 
 ```bash
-git clone --depth=1 https://github.com/angular/material-starter.git <your-project-name>
+git clone --depth=1 https://github.com/angular/material-start.git <your-project-name>
 ```
 
 The `depth=1` tells git to only pull down one commit worth of historical data.
@@ -93,11 +95,11 @@ e2e-tests/            --> end-to-end tests
 
 ## Testing
 
-There are two kinds of tests in the material-starter application: Unit tests and End to End tests.
+There are two kinds of tests in the material-start application: Unit tests and End to End tests.
 
 ### Running Unit Tests
 
-The material-starter app comes preconfigured with unit tests. These are written in
+The material-start app comes preconfigured with unit tests. These are written in
 [Jasmine][jasmine], which we run with the [Karma Test Runner][karma]. We provide a Karma
 configuration file to run them.
 
