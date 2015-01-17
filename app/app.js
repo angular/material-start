@@ -5,9 +5,13 @@
       .module('starterApp', ['ngMaterial', 'muppets'])
       .controller('AppCtrl', ['$scope', '$mdSidenav', 'muppetsService', MuppetAppController ])
       .config(function($mdThemingProvider) {
+
+        // Use the 'brown' theme - override default 'blue' theme
+
         $mdThemingProvider.theme('default')
           .primaryColor('brown')
           .accentColor('brown');
+
       });
 
   /**
@@ -20,8 +24,8 @@
   function MuppetAppController($scope, $mdSidenav, muppetsService) {
     var allMuppets = [ ];
 
-    $scope.muppets       = allMuppets;
     $scope.selected      = null;
+    $scope.muppets       = allMuppets;
     $scope.selectMuppet  = selectMuppet;
     $scope.toggleSidenav = toggleSideNav;
 
@@ -51,15 +55,15 @@
      * Hide or Show the sideNav area
      * @param menuId
      */
-    function toggleSideNav( menuId ) {
-      $mdSidenav(menuId).toggle();
+    function toggleSideNav( name ) {
+      $mdSidenav(name).toggle();
     }
 
     /**
      * Select the current muppet
      * @param menuId
      */
-    function selectMuppet (muppet) {
+    function selectMuppet ( muppet ) {
         $scope.selected = angular.isNumber(muppet) ? $scope.muppets[muppet] : muppet;
         $scope.toggleSidenav('left');
     }
