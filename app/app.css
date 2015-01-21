@@ -53,7 +53,7 @@ md-list .md-button {
 
 .action {
   position: absolute;
-  top:40px;
+  top:10px;
   right:25px;
   background-color: transparent;
    border: none;
@@ -74,6 +74,7 @@ https://github.com/google/material-design-icons
 }
 
 #content md-content  {
-  padding: 40px;
-  margin-top:-20px;
+  padding-left:40px;
+  padding-right:40px;
+  padding-top:5px;
 }
