@@ -48,16 +48,14 @@
           Override with `green` theme
       -->
 
-      <div layout="column" flex md-theme="green" id="content">
+      <div layout="column" flex class="content-wrapper" id="content" >
         <md-content layout="column" flex class="md-padding">
-          <div>
-            <h2>
-              <img ng-src="{{selected.iconurl}}" class="face" alt="">
-              {{selected.name}}
-            </h2>
-            <p>{{selected.content}}</p>
-          </div>
-          <md-button></md-button>
+            <h2>{{selected.name}}</h2>
+            <img ng-src="{{selected.imgurl}}" alt="{{selected.imgalt}}">
+              <p>{{selected.content}}</p>
+            <md-button class="action actionBtn" ng-click="showActions($event)">
+              <span class="visuallyhidden">Actions</span>
+            </md-button>
         </md-content>
       </div>
     </div>
