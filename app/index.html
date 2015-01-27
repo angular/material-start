@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
-    <title>My AngularJS Material App</title>
+    <title>AngularJS Material App</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css">
     <link rel="stylesheet" href="./app.css" >
   </head>
 
@@ -19,7 +19,7 @@
       <button ng-click="toggleSidenav('left')" hide-gt-sm class="menuBtn">
         <span class="visuallyhidden">Menu</span>
       </button>
-      <h1>My Favorite Muppets</h1>
+      <h1>AngularJS Material App</h1>
     </md-toolbar>
 
     <!--
@@ -31,10 +31,10 @@
 
       <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-sm')">
         <md-list>
-          <md-item ng-repeat="it in muppets">
+          <md-item ng-repeat="it in avatars">
             <md-item-content>
-              <md-button ng-click="selectMuppet(it)">
-                <img ng-src="{{it.iconurl}}" class="face" alt="">
+              <md-button ng-click="selectAvatar(it)" ng-class="{'selected' : it === selected }">
+                <span class="{{it.classname}} avatar"></span>
                 {{it.name}}
               </md-button>
             </md-item-content>
@@ -50,9 +50,9 @@
 
       <div layout="column" flex class="content-wrapper" id="content" >
         <md-content layout="column" flex class="md-padding">
+            <span class="{{selected.classname}} avatar" role="img" aria-label="{{selected.name}}"></span>
             <h2>{{selected.name}}</h2>
-            <img ng-src="{{selected.imgurl}}" alt="{{selected.imgalt}}">
-              <p>{{selected.content}}</p>
+            <p>{{selected.content}}</p>
             <md-button class="action actionBtn" ng-click="showActions($event)">
               <span class="visuallyhidden">Actions</span>
             </md-button>
@@ -60,17 +60,16 @@
       </div>
     </div>
 
-    <script src="/bower_components/hammerjs/hammer.js"></script>
+    <script src="./bower_components/hammerjs/hammer.js"></script>
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-route/angular-route.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js"></script>
 
-    <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/angular-route/angular-route.js"></script>
-    <script src="/bower_components/angular-aria/angular-aria.js"></script>
-    <script src="/bower_components/angular-animate/angular-animate.js"></script>
-
-    <script src="/bower_components/angular-material/angular-material.js"></script>
+    <script src="./bower_components/angular-material/angular-material.js"></script>
 
     <script src="./app.js"></script>
-    <script src="./src/muppets/muppetService.js"></script>
+    <script src="./src/avatars/avatarService.js"></script>
 
   </body>
 </html>

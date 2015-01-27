@@ -1,3 +1,5 @@
+@import 'assets/css/avatars.css';
+
 .menuBtn {
   background-color: transparent;
   border: none;
@@ -16,13 +18,14 @@ md-list .md-button {
   text-align: left;
   width: 100%;
 }
-.face {
-  border-radius: 30px;
+.md-button.selected {
+  color: #03a9f4;
+}
+.avatar {
   border: 1px solid #ddd;
   display: inline-block;
-  margin: 4px 16px;
+  margin: 0px 16px;
   vertical-align: middle;
-  width: 48px;
 }
 
 .content-wrapper {
@@ -33,7 +36,7 @@ md-list .md-button {
     margin: 8px auto 16px 0;
 }
 
-#content   img {
+#content img {
     display: block;
     height: auto;
     max-width: 500px;

@@ -2,8 +2,8 @@
 'use strict';
 
   angular
-      .module('starterApp', ['ngMaterial', 'muppets'])
-      .controller('AppCtrl', ['$scope', 'muppetsService', '$mdSidenav', '$mdBottomSheet', '$log', MuppetAppController ])
+      .module('starterApp', ['ngMaterial', 'avatars'])
+      .controller('AppCtrl', ['$scope', 'avatarsService', '$mdSidenav', '$mdBottomSheet', '$log', AvatarAppController ])
       .config(function($mdThemingProvider) {
 
         // Use the 'brown' theme - override default 'blue' theme
@@ -18,37 +18,37 @@
    * Main Controller for the Angular Material Starter App
    * @param $scope
    * @param $mdSidenav
-   * @param muppetService
+   * @param avatarsService
    * @constructor
    */
-  function MuppetAppController($scope, muppetsService, $mdSidenav, $mdBottomSheet, $log ) {
-    var allMuppets = [ ];
+  function AvatarAppController($scope, avatarsService, $mdSidenav, $mdBottomSheet, $log ) {
+    var allAvatars = [ ];
 
     $scope.selected      = null;
-    $scope.muppets       = allMuppets;
-    $scope.selectMuppet  = selectMuppet;
+    $scope.avatars       = allAvatars;
+    $scope.selectAvatar  = selectAvatar;
     $scope.toggleSidenav = toggleSideNav;
     $scope.showActions   = showActions;
 
-    loadMuppets();
+    loadAvatars();
 
     // *********************************
     // Internal methods
     // *********************************
 
     /**
-     * Load all available muppets
+     * Load all available avatars
      * @param menuId
      *
      */
-    function loadMuppets() {
-      muppetsService
+    function loadAvatars() {
+      avatarsService
         .loadAll()
-        .then( function( muppets ) {
-          allMuppets = muppets;
+        .then( function( avatars ) {
+          allAvatars = avatars;
 
-          $scope.muppets = [].concat(muppets);
-          $scope.selected = muppets[0];
+          $scope.avatars = [].concat(avatars);
+          $scope.selected = avatars[0];
         });
     }
 
@@ -61,11 +61,11 @@
     }
 
     /**
-     * Select the current muppet
+     * Select the current avatars
      * @param menuId
      */
-    function selectMuppet ( muppet ) {
-        $scope.selected = angular.isNumber(muppet) ? $scope.muppets[muppet] : muppet;
+    function selectAvatar ( avatar ) {
+        $scope.selected = angular.isNumber(avatar) ? $scope.avatars[avatar] : avatar;
         $scope.toggleSidenav('left');
     }
 
@@ -77,7 +77,7 @@
         $mdBottomSheet.show({
           parent: angular.element(document.getElementById('content')),
           template: '<md-bottom-sheet class="md-list md-has-header">' +
-                      '<md-subheader>Muppet Actions</md-subheader>' +
+                      '<md-subheader>Avatar Actions</md-subheader>' +
                         '<md-list>' +
                           '<md-item ng-repeat="item in vm.items">' +
                             '<md-button ng-click="vm.performAction(item)">{{item.name}}</md-button>' +
@@ -86,16 +86,16 @@
                       '</md-bottom-sheet>',
           bindToController : true,
           controllerAs: "vm",
-          controller: [ '$mdBottomSheet', MuppetSheetController],
+          controller: [ '$mdBottomSheet', AvatarSheetController],
           targetEvent: $event
         }).then(function(clickedItem) {
           $log.debug( clickedItem.name + ' clicked!');
         });
 
         /**
-         * Bottom Sheet controller for the Muppet Actions
+         * Bottom Sheet controller for the Avatar Actions
          */
-        function MuppetSheetController( $mdBottomSheet ) {
+        function AvatarSheetController( $mdBottomSheet ) {
           this.items = [
             { name: 'Share', icon: 'share' },
             { name: 'Copy', icon: 'copy' },

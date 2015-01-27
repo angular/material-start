@@ -6,7 +6,7 @@ This sample application is skeleton for a typical [AngularJS Material](http://an
 projects.
 <br/>
 
-![muppetApp](https://cloud.githubusercontent.com/assets/210413/5789949/6c4c5f8a-9e47-11e4-8a15-55f3a3d6ea5d.png)
+![Starter App](https://cloud.githubusercontent.com/assets/210413/5789949/6c4c5f8a-9e47-11e4-8a15-55f3a3d6ea5d.png)
 
 <br/>
 > The start app doesn't do much... it just demonstrates how to override a theme and how to use the side navigation component. Try shrinking the window size and watch the sideNav auto-hide. You can temporarily show the sideNav by clicking on the upper left menu button.
@@ -83,8 +83,8 @@ Now browse to the app at `http://localhost:8000/app/index.html`.
 app/                    --> all of the source files for the application
   app.css               --> default stylesheet
   src/           --> all app specific modules
-     muppets/              --> package for muppet features
-      muppetService.js           --> angular service used to simulate remote dataservices for muppets.
+     avatars/              --> package for avatar features
+      avatarService.js           --> angular service used to simulate remote dataservices for avatars.
   app.js                --> main application module
   index.html            --> app layout file (the main html template file of the app)
 karma.conf.js         --> config file for running unit tests with Karma
