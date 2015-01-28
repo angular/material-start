@@ -6,7 +6,7 @@ This sample application is skeleton for a typical [AngularJS Material](http://an
 projects.
 <br/>
 
-![Starter App](https://cloud.githubusercontent.com/assets/210413/5789949/6c4c5f8a-9e47-11e4-8a15-55f3a3d6ea5d.png)
+![Starter app](https://cloud.githubusercontent.com/assets/1045233/5948446/a6c3594c-a6f9-11e4-9d68-4d7d9a3196a2.png)
 
 <br/>
 > The start app doesn't do much... it just demonstrates how to override a theme and how to use the side navigation component. Try shrinking the window size and watch the sideNav auto-hide. You can temporarily show the sideNav by clicking on the upper left menu button.
@@ -120,10 +120,10 @@ tool called [http-server][http-server].  You can install http-server globally:
 sudo npm install -g http-server
 ```
 
-Then you can start your own development web server to serve static files from a folder by
-running:
+Then you can start your own development web server to serve static files from a folder by running:
 
 ```
+cd app
 http-server -a localhost -p 8000
 ```
 
