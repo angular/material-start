@@ -35,6 +35,8 @@ md-list .md-button {
 
 /* Primary content area */
 
+#content {
+  overflow: hidden;
 }
   #content md-content {
     padding-left: 40px;
