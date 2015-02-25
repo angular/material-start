@@ -3,14 +3,14 @@
 
   angular
       .module('starterApp', ['ngMaterial', 'avatars'])
-      .controller('AppCtrl', ['$scope', 'avatarsService', '$mdSidenav', '$mdBottomSheet', '$log', AvatarAppController ])
+      .controller('AppCtrl', ['$scope', 'avatarsService', '$mdSidenav', '$mdBottomSheet', '$log', StarterAppController ])
       .config(function($mdThemingProvider) {
 
         // Use the 'brown' theme - override default 'blue' theme
 
         $mdThemingProvider.theme('default')
           .primaryPalette('brown')
-          .accentPalette('brown');
+          .accentPalette('red');
 
       });
 
@@ -21,7 +21,7 @@
    * @param avatarsService
    * @constructor
    */
-  function AvatarAppController($scope, avatarsService, $mdSidenav, $mdBottomSheet, $log ) {
+  function StarterAppController($scope, avatarsService, $mdSidenav, $mdBottomSheet, $log ) {
     var allAvatars = [ ];
 
     $scope.selected      = null;

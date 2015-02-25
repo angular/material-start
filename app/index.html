@@ -46,9 +46,8 @@
           fill the available horizontal display area on the right side
       -->
 
-      <div layout="column" flex class="content-wrapper" id="content">
-        <md-content layout="column" flex class="md-padding">
-            <span class="{{selected.classname}} avatar" role="img" aria-label="{{selected.name}}"></span>
+        <md-content layout="column" flex class="content-wrapper md-padding" id="content">
+            <span class="{{selected.classname}} " ng-class="{avatar:selected}" role="img" aria-label="{{selected.name}}"></span>
             <h2>{{selected.name}}</h2>
             <p>{{selected.content}}</p>
             <md-button class="action actionBtn" ng-click="showActions($event)">
@@ -56,7 +55,6 @@
             </md-button>
         </md-content>
       </div>
-    </div>
 
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-route/angular-route.js"></script>
