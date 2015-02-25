@@ -8,9 +8,8 @@
   "dependencies": {
     "angular": "^1.3.x",
     "angular-route": "^1.3.x",
-    "angular-mocks": "^1.3.x",
     "angular-animate": "v1.3.x",
     "angular-aria": "^1.3.x",
-    "angular-material": "^0.7.1"
+    "angular-material": "^0.8.0"
   }
 }
