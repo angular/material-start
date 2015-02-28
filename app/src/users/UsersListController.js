@@ -3,7 +3,7 @@
   angular
        .module('users')
        .controller('UsersListController', [
-          '$scope', 'usersService', '$mdSidenav', '$mdBottomSheet', '$log',
+          'usersService', '$mdSidenav', '$mdBottomSheet', '$log',
           UsersListController
        ]);
 
@@ -14,21 +14,22 @@
    * @param avatarsService
    * @constructor
    */
-  function UsersListController($scope, usersService, $mdSidenav, $mdBottomSheet, $log ) {
+  function UsersListController( usersService, $mdSidenav, $mdBottomSheet, $log ) {
+    var self = this;
 
-    $scope.selected        = null;
-    $scope.users           = [ ];
-    $scope.selectUser      = selectUser;
-    $scope.toggleUsersList = toggleUsersList;
-    $scope.showActions     = showActions;
+    self.selected     = null;
+    self.users        = [ ];
+    self.selectUser   = selectUser;
+    self.toggleList   = toggleUsersList;
+    self.share        = share;
 
     // Load all registered users
 
     usersService
           .loadAll()
           .then( function( users ) {
-            $scope.users    = [].concat(users);
-            $scope.selected = users[0];
+            self.users    = [].concat(users);
+            self.selected = users[0];
           });
 
     // *********************************
@@ -47,28 +48,22 @@
      * @param menuId
      */
     function selectUser ( user ) {
-        $scope.selected = angular.isNumber(user) ? $scope.users[user] : user;
-        $scope.toggleUsersList();
+      self.selected = angular.isNumber(user) ? $scope.users[user] : user;
+      self.toggleList();
     }
 
     /**
      * Show the bottom sheet
      */
-    function showActions($event) {
+    function share($event) {
+        var user = self.selected;
 
         $mdBottomSheet.show({
           parent: angular.element(document.getElementById('content')),
-          template: '<md-bottom-sheet class="md-list md-has-header">' +
-                      '<md-subheader>Contact User</md-subheader>' +
-                        '<md-list>' +
-                          '<md-item ng-repeat="item in vm.items">' +
-                            '<md-button ng-click="vm.performAction(item)">{{item.name}}</md-button>' +
-                          '</md-item>' +
-                        '</md-list>' +
-                      '</md-bottom-sheet>',
-          bindToController : true,
+          templateUrl: '/src/users/view/contactSheet.html',
+          controller: [ '$mdBottomSheet', UserSheetController],
           controllerAs: "vm",
-          controller: [ '$mdBottomSheet', AvatarSheetController],
+          bindToController : true,
           targetEvent: $event
         }).then(function(clickedItem) {
           $log.debug( clickedItem.name + ' clicked!');
@@ -77,12 +72,13 @@
         /**
          * Bottom Sheet controller for the Avatar Actions
          */
-        function AvatarSheetController( $mdBottomSheet ) {
+        function UserSheetController( $mdBottomSheet ) {
+          this.user = user;
           this.items = [
-            { name: 'Share'       , icon: 'share' },
-            { name: 'Copy'        , icon: 'copy' },
-            { name: 'Impersonate' , icon: 'impersonate' },
-            { name: 'Singalong'   , icon: 'singalong' },
+            { name: 'Phone'       , icon: 'phone'       },
+            { name: 'Twitter'     , icon: 'twitter'     },
+            { name: 'Google+'     , icon: 'google_plus' },
+            { name: 'Hangout'     , icon: 'hangouts'    }
           ];
           this.performAction = function(action) {
             $mdBottomSheet.hide(action);

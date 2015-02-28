@@ -5,7 +5,7 @@
          .service('usersService', ['$q', UsersDataservice]);
 
   /**
-   * Avatar DataService
+   * Users DataService
    * Uses embedded, hard-coded data model; acts asynchronously to simulate
    * remote data service call(s).
    *

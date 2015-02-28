@@ -2,7 +2,6 @@
 <html lang="en" >
   <head>
     <title>Angular Material - Starter App</title>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
@@ -11,12 +10,38 @@
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
     <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
     <link rel="stylesheet" href="assets/app.css"/>
+
   </head>
 
+  <!--
+    ✓ Create Angular shell app
+    ✓ Use `bower install angular-material`
+    ✓ Load the CSS (before our app.css),
+    ✓ Load the angular-material.js library and its dependent angular-aria.js and angular-animate.js libraries.
+    ✓ Then set the module dependency on 'ngMaterial'
+    ✓ Use wirefames to determine containers
+    ✓ Configure layouts
+    ✓ Lock open the sideNav, add shadow
+    ✓ Add content
+    ✓ Register Icons
+    ✓ Integrate with App logic
+      ✓ use ng-repeat
+      ✓ load app logic
+      ✓ add controller
+
+    -> Add Responsiveness
+
+    Fix Aria Warnings
+    Add Button clicks
+    Fix Contact Icons
+    Add Theming support
+  -->
+
+  <!-- Add UsersList controller -->
   <body ng-app="starterApp" layout="column" ng-controller="UsersListController as ul">
 
     <md-toolbar layout="row">
-      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+      <md-button class="menu">
         <md-icon md-svg-icon="menu" ></md-icon>
       </md-button>
       <h1>Angular Material - Starter App</h1>
@@ -24,7 +49,7 @@
 
     <div flex layout="row">
 
-        <md-sidenav md-is-locked-open="$media('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
+        <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
           <md-list>
             <md-item ng-repeat="it in ul.users">
                 <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
@@ -40,8 +65,8 @@
           <h2>{{ul.selected.name}}</h2>
           <p>{{ul.selected.content}}</p>
 
-          <md-button class="share" md-no-ink ng-click="ul.share($event)" aria-label="Share">
-            <md-icon md-svg-icon="share"></md-icon>
+          <md-button class="action" md-no-ink>
+            <md-icon md-svg-icon="share" ></md-icon>
           </md-button>
         </md-content>
 
@@ -52,31 +77,21 @@
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
     <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
 
+    <!-- Load App Logic -->
     <script src="./src/users/Users.js"></script>
     <script src="./src/users/UsersListController.js"></script>
     <script src="./src/users/UsersDataservice.js"></script>
 
     <script type="text/javascript">
 
-          angular
-              .module('starterApp', ['ngMaterial', 'users'])
-              .config(function($mdThemingProvider, $mdIconProvider){
+      angular
+          .module('starterApp', ['ngMaterial', 'users'])
+          .config(function($mdThemingProvider, $mdIconProvider){
 
-                  $mdIconProvider
-                      .defaultIconSet("./assets/svg/avatars.svg", 128)
-                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
-                      .icon("share"      , "./assets/svg/share.svg"       , 24)
-                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
-                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
-                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
-                      .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+              // Register the user `avatar` icons
+              $mdIconProvider.defaultIconSet("./assets/svg/avatars.svg", 128);
 
-                      $mdThemingProvider.theme('default')
-                          .primaryPalette('brown')
-                          .accentPalette('red');
-
-              });
-
+          });
     </script>
 
   </body>

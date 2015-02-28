@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Angular Material - Starter App</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <link rel="stylesheet" href="assets/app.css"/>
+  </head>
+
+  <body ng-app="starterApp">
+
+    <!--
+      ✓ Create Angular shell app
+      ✓ Use `bower install angular-material`
+      ✓ Load the CSS (before our app.css),
+      ✓ Load the angular-material.js library and its dependent angular-aria.js and angular-animate.js libraries.
+      ✓ Then set the module dependency on 'ngMaterial'
+    -->
+
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+
+    <script type="text/javascript">
+
+      angular
+          .module('starterApp', ['ngMaterial'])
+          .run(function($log){
+            $log.debug("starterApp + ngMaterial running...");
+          });
+
+    </script>
+
+  </body>
+</html>

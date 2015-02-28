@@ -6,7 +6,8 @@ This sample application is skeleton for a typical [AngularJS Material](http://an
 projects.
 <br/>
 
-![Starter app](https://cloud.githubusercontent.com/assets/1045233/5948446/a6c3594c-a6f9-11e4-9d68-4d7d9a3196a2.png)
+![Material Starter](https://cloud.githubusercontent.com/assets/210413/6428195/7a0c5386-bf5e-11e4-9989-ab68843b6852.png)
+
 
 <br/>
 > The start app doesn't do much... it just demonstrates how to override a theme and how to use the side navigation component. Try shrinking the window size and watch the sideNav auto-hide. You can temporarily show the sideNav by clicking on the upper left menu button.

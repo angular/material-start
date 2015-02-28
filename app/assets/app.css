@@ -1,6 +1,14 @@
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size:14px;
+  height:100%;
+  margin: 0px;
+  padding: 0px;
+}
+
 /* Toolbar area */
 
-.menuBtn {
+.menu {
   background-color: transparent;
   border: none;
   height: 38px;
@@ -24,6 +32,10 @@ md-list .md-button {
     color: #03a9f4;
   }
 
+  md-sidenav  md-list {
+    padding: 0px 0px 8px 0px;
+  }
+
 
 /* Primary content area */
 
@@ -37,7 +49,7 @@ md-list .md-button {
   padding-top: 5px;
 }
 
-#content .md-button.action {
+#content .md-button.share {
   background-color: transparent;
   border: none;
   width: 48px;
@@ -48,7 +60,11 @@ md-list .md-button {
   right: 25px;
 }
 
-#content .md-button.action > md-icon {
+#content md-icon.avatar {
+  margin-top: 10px;
+}
+
+#content .md-button.share > md-icon {
   fill:black;
   width:36px;
   height:36px;
@@ -60,7 +76,7 @@ md-button.menuBtn > md-icon {
   height:24px;
 }
 
-#content .md-button.action:active > md-icon {
+#content .md-button.share:active > md-icon {
   background-color: #dadada;
   border-radius: 75%;
   padding:4px;
@@ -100,4 +116,15 @@ md-toolbar h1 {
   transform: translateZ(0);
   -webkit-transform: scale(0.70);
   -moz-transform:scale(0.70);
+}
+
+
+md-bottom-sheet  md-icon {
+  margin-right:20px;
+}
+
+span.name {
+  font-weight: bold;
+  font-size:1.1em;
+  padding-left:5px;
 }

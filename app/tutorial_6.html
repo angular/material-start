@@ -13,10 +13,34 @@
     <link rel="stylesheet" href="assets/app.css"/>
   </head>
 
+  <!--
+    ✓ Create Angular shell app
+    ✓ Use `bower install angular-material`
+    ✓ Load the CSS (before our app.css),
+    ✓ Load the angular-material.js library and its dependent angular-aria.js and angular-animate.js libraries.
+    ✓ Then set the module dependency on 'ngMaterial'
+    ✓ Use wirefames to determine containers
+    ✓ Configure layouts
+    ✓ Lock open the sideNav, add shadow
+    ✓ Add content
+    ✓ Register Icons
+    ✓ Integrate with App logic
+      ✓ use ng-repeat
+      ✓ load app logic
+      ✓ add controller
+
+    -> Add Responsiveness
+
+    Fix Aria
+    Add Button clicks
+    Fix Contact Icons
+    Add Theming support
+  -->
+
   <body ng-app="starterApp" layout="column" ng-controller="UsersListController as ul">
 
     <md-toolbar layout="row">
-      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()">
         <md-icon md-svg-icon="menu" ></md-icon>
       </md-button>
       <h1>Angular Material - Starter App</h1>
@@ -40,7 +64,7 @@
           <h2>{{ul.selected.name}}</h2>
           <p>{{ul.selected.content}}</p>
 
-          <md-button class="share" md-no-ink ng-click="ul.share($event)" aria-label="Share">
+          <md-button class="share" md-no-ink ng-click="ul.share($event)">
             <md-icon md-svg-icon="share"></md-icon>
           </md-button>
         </md-content>
@@ -58,24 +82,16 @@
 
     <script type="text/javascript">
 
-          angular
-              .module('starterApp', ['ngMaterial', 'users'])
-              .config(function($mdThemingProvider, $mdIconProvider){
+      angular
+          .module('starterApp', ['ngMaterial', 'users'])
+          .config(function($mdIconProvider){
 
-                  $mdIconProvider
-                      .defaultIconSet("./assets/svg/avatars.svg", 128)
-                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
-                      .icon("share"      , "./assets/svg/share.svg"       , 24)
-                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
-                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
-                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
-                      .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+              $mdIconProvider
+                  .defaultIconSet("./assets/svg/avatars.svg", 128)
+                  .icon("menu", "./assets/svg/menu.svg", 24)
+                  .icon("share", "./assets/svg/share.svg", 24);
 
-                      $mdThemingProvider.theme('default')
-                          .primaryPalette('brown')
-                          .accentPalette('red');
-
-              });
+          });
 
     </script>
 
