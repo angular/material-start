@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
-    <title>AngularJS Material App</title>
+    <title>AngularJS Material - Starter App</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,26 +9,26 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
     <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css">
-    <link rel="stylesheet" href="./app.css" >
+    <link rel="stylesheet" href="./assets/app.css" >
   </head>
 
-  <body ng-app="starterApp" layout="column" ng-controller="AppCtrl">
+  <body ng-app="starterApp" layout="column" ng-controller="UsersListController">
 
     <md-toolbar layout="row">
-      <button ng-click="toggleSidenav('left')" hide-gt-sm class="menuBtn">
-        <span class="visuallyhidden">Menu</span>
-      </button>
-      <h1>AngularJS Material App</h1>
+      <md-button ng-click="toggleUsersList()" hide-gt-sm class="menuBtn">
+        <md-icon md-svg-icon="menu" ></md-icon>
+      </md-button>
+      <h1>AngularJS Material - Starter App</h1>
     </md-toolbar>
 
     <div layout="row" flex>
 
       <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-sm')">
         <md-list>
-          <md-item ng-repeat="it in avatars">
+          <md-item ng-repeat="it in users">
             <md-item-content>
-              <md-button ng-click="selectAvatar(it)" ng-class="{'selected' : it === selected }">
-                <span class="{{it.classname}} avatar"></span>
+              <md-button ng-click="selectUser(it)" ng-class="{'selected' : it === selected }">
+                <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
                 {{it.name}}
               </md-button>
             </md-item-content>
@@ -36,18 +36,17 @@
         </md-list>
       </md-sidenav>
 
-        <!--
-            Use `flex` [below] to have the content area
-            fill the available horizontal display area on the right side
-        -->
-        <md-content layout="column" flex class="content-wrapper md-padding" id="content">
-            <span class="{{selected.classname}} " ng-class="{avatar:selected}" role="img" aria-label="{{selected.name}}"></span>
-            <h2>{{selected.name}}</h2>
-            <p>{{selected.content}}</p>
-            <md-button class="action actionBtn" ng-click="showActions($event)">
-              <span class="visuallyhidden">Actions</span>
-            </md-button>
-        </md-content>
+      <md-content layout="column" flex class="content-wrapper md-padding" id="content">
+
+          <md-icon md-svg-icon="{{selected.avatar}}" ng-class="{avatar:selected}" aria-label="{{selected.name}}"></md-icon>
+          <h2>{{selected.name}}</h2>
+          <p>{{selected.content}}</p>
+
+          <md-button class="action" md-no-ink>
+            <md-icon md-svg-icon="menu" ng-click="showActions($event)"></md-icon>
+          </md-button>
+
+      </md-content>
 
       </div>
 
@@ -58,8 +57,11 @@
 
     <script src="./bower_components/angular-material/angular-material.js"></script>
 
-    <script src="./app.js"></script>
-    <script src="./src/avatars/avatarService.js"></script>
+    <script src="./src/boot.js"></script>
+
+    <script src="./src/users/Users.js"></script>
+    <script src="./src/users/UsersListController.js"></script>
+    <script src="./src/users/UsersDelegate.js"></script>
 
   </body>
 </html>
