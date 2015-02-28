@@ -3,7 +3,7 @@
   angular
        .module('users')
        .controller('UsersListController', [
-          '$scope', 'usersDelegate', '$mdSidenav', '$mdBottomSheet', '$log',
+          '$scope', 'usersService', '$mdSidenav', '$mdBottomSheet', '$log',
           UsersListController
        ]);
 
@@ -14,7 +14,7 @@
    * @param avatarsService
    * @constructor
    */
-  function UsersListController($scope, usersDelegate, $mdSidenav, $mdBottomSheet, $log ) {
+  function UsersListController($scope, usersService, $mdSidenav, $mdBottomSheet, $log ) {
 
     $scope.selected        = null;
     $scope.users           = [ ];
@@ -22,23 +22,18 @@
     $scope.toggleUsersList = toggleUsersList;
     $scope.showActions     = showActions;
 
-    loadAllUsers();
+    // Load all registered users
+
+    usersService
+          .loadAll()
+          .then( function( users ) {
+            $scope.users    = [].concat(users);
+            $scope.selected = users[0];
+          });
 
     // *********************************
     // Internal methods
     // *********************************
-
-    /**
-     * Load all registered users
-     */
-    function loadAllUsers() {
-      usersDelegate
-        .loadAll()
-        .then( function( users ) {
-          $scope.users    = [].concat(users);
-          $scope.selected = users[0];
-        });
-    }
 
     /**
      * Hide or Show the 'left' sideNav area

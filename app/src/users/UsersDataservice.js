@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('users')
-         .service('usersDelegate', ['$q', UsersDelegate]);
+         .service('usersService', ['$q', UsersDataservice]);
 
   /**
    * Avatar DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function UsersDelegate($q){
+  function UsersDataservice($q){
     var users = [
       {
         name: 'Lia Lugo',
