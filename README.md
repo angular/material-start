@@ -1,32 +1,62 @@
-# AngularJS Material-Start 
+# Angular Material-Start 
 
 This Material **start*** project is a *seed* for AngularJS Materal applications. The project contains a sample AngularJS application and is preconfigured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
 
-This sample application is skeleton for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
+This sample application is intended to be useful as both a learning tool and a skeleton application for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
 projects.
+
+### What is the UX?
+
+Below is a snaphot of the Starter-App with the Users' *master-detail* view. Also shown is the user experience that will is displayed for smaller device sizes. The responsive layout changes to hide the user list and the **share** button can be used to show the Share bottom sheet view.
+
 <br/>
 
-![Material Starter](https://cloud.githubusercontent.com/assets/210413/6428195/7a0c5386-bf5e-11e4-9989-ab68843b6852.png)
+![material-starter-ux](https://cloud.githubusercontent.com/assets/210413/6443252/4fa82756-c0bb-11e4-9a35-b213b26f49f3.png)
+
 
 
 <br/>
-> The start app doesn't do much... it just demonstrates how to override a theme and how to use the side navigation component. Try shrinking the window size and watch the sideNav auto-hide. You can temporarily show the sideNav by clicking on the upper left menu button.
+
+This Starter app demonstrates how:
+
+*  Angular Material `layout` and `flex` options can easily configure HTML containers
+*  Angular Material components `<md-toolbar>`, `<md-sidenav>`, `<md-icon>` can be quickly used
+*  Custom controllers can use and show `<md-bottomsheet>` with HTML templates
+*  Custom controller can easily, programmatically open & close the SideNav component.
+*  Responsive breakpoints and `$mdMedia` are used
+*  Theming can be altered/configured using `$mdThemingProvider`
+
+### Tutorials
+
+The repository contains both ES5 and ES6 versions of the application. Traditional development with ES5 standards and solutions are presented here by default. Tutorials are included: step-by-step instructions that clearly demonstrate how the Starter application can be created in minutes. 
+
+> These tutorials will be presented live, on-stage at **ng-conf 2015, Utah**.
+
+Developers should checkout the following repository branches for:
+
+* Branch [**Starter - ES5 Tutorials**](https://github.com/angular/material-start/tree/es5-tutorial): for developers interested in the Tutorial steps & development process.
+* Branch [**Starter - ES6 Tutorials**](https://github.com/angular/material-start/tree/es6-tutorial): for developers interested in the ES6 Tutorial steps & development process.
+* Branch [**Starter - ES6**](https://github.com/angular/material-start/tree/es6): for developers interested in using Angular Material 1.x (and Angular 1.x) within ES6 applications.
+
+> The **README** for the ES6 branches will provide all details showing how easy, <u>more simplifed</u>, and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x.<br/><br/>
 
 ## Getting Started
 
-To get you started you can simply clone the material-start repository and install the dependencies:
+#### Prerequisites
 
-### Prerequisites
-
-You need git to clone the material-start repository. You can get git from
+You will need **git** to clone the material-start repository. You can get git from
 [http://git-scm.com/](http://git-scm.com/).
 
-We also use a number of node.js tools to initialize and test angular-seed. You must have node.js and
+We also use a number of node.js tools to initialize and test material-start. You must have node.js and
 its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
 
-### Clone material-start
+#### Clone material-start
 
-Clone the angular-seed repository using [git][git]:
+To get you started you can simply clone `master` branch from the [Material-Start](https://github.com/angular/material-start) repository and install the dependencies:
+
+> NOTE: The `master` branch contains the traditional, ES5 implementation familiar to Angular developers.
+
+Clone the material-start repository using [git][git]:
 
 ```
 git clone https://github.com/angular/material-start.git
@@ -41,7 +71,7 @@ git clone --depth=1 https://github.com/angular/material-start.git <your-project-
 
 The `depth=1` tells git to only pull down one commit worth of historical data.
 
-### Install Dependencies
+#### Install Dependencies
 
 We have two kinds of dependencies in this project: tools and angular framework code.  The tools help
 us manage and test the application.
@@ -62,18 +92,16 @@ folders in your project.
 * `app/bower_components` - contains the angular framework files
 
 *Note that the `bower_components` folder would normally be installed in the root folder but
-angular-seed changes this location through the `.bowerrc` file.  Putting it in the app folder makes
+material-start changes this location through the `.bowerrc` file.  Putting it in the app folder makes
 it easier to serve the files by a webserver.*
 
 ## Directory Layout
 
 ```
 app/                    --> all of the source files for the application
-  app.css               --> default stylesheet
+  assets/app.css        --> default stylesheet
   src/           --> all app specific modules
-     avatars/              --> package for avatar features
-      avatarService.js           --> angular service used to simulate remote dataservices for avatars.
-  app.js                --> main application module
+     users/              --> package for user features
   index.html            --> app layout file (the main html template file of the app)
 karma.conf.js         --> config file for running unit tests with Karma
 e2e-tests/            --> end-to-end tests
