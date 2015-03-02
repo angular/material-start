@@ -7,7 +7,7 @@ projects.
 
 ### What is the UX?
 
-Below is a snaphot of the Starter-App with the Users' *master-detail* view. Also shown is the user experience that will is displayed for smaller device sizes. The responsive layout changes to hide the user list and the **share** button can be used to show the Share bottom sheet view.
+Below is a snaphot of the Starter-App with the Users' *master-detail* view. Also shown is the user experience that will is displayed for smaller device sizes. The responsive layout changes to hide the user list, reveal the **menu** button. In the User Details view, you may also click the **share** button  to show the Contact &lt;User&gt; bottom sheet view.
 
 <br/>
 
@@ -24,6 +24,7 @@ This Starter app demonstrates how:
 *  Custom controller can easily, programmatically open & close the SideNav component.
 *  Responsive breakpoints and `$mdMedia` are used
 *  Theming can be altered/configured using `$mdThemingProvider`
+*  ARIA features are supported by Angular Material and warnings can be used to improve accessibility.
 
 ### Tutorials
 
