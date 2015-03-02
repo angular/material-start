@@ -16,7 +16,7 @@
   <body ng-app="starterApp" layout="column" ng-controller="UsersListController as ul">
 
     <md-toolbar layout="row">
-      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" >
+      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
         <md-icon md-svg-icon="menu" ></md-icon>
       </md-button>
       <h1>Angular Material - Starter App</h1>
@@ -40,7 +40,7 @@
           <h2>{{ul.selected.name}}</h2>
           <p>{{ul.selected.content}}</p>
 
-          <md-button class="share" md-no-ink ng-click="ul.share($event)" >
+          <md-button class="share" md-no-ink ng-click="ul.share($event)" aria-label="Share">
             <md-icon md-svg-icon="share"></md-icon>
           </md-button>
         </md-content>
@@ -62,10 +62,6 @@
               .module('starterApp', ['ngMaterial', 'users'])
               .config(function($mdThemingProvider, $mdIconProvider){
 
-                  $mdThemingProvider.theme('default')
-                      .primaryPalette('brown')
-                      .accentPalette('red');
-
                   $mdIconProvider
                       .defaultIconSet("./assets/svg/avatars.svg", 128)
                       .icon("menu"       , "./assets/svg/menu.svg"        , 24)
@@ -74,6 +70,10 @@
                       .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
                       .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
                       .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+
+                      $mdThemingProvider.theme('default')
+                          .primaryPalette('brown')
+                          .accentPalette('red');
 
               });
 

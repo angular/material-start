@@ -2,12 +2,12 @@
 
 This branch contains the tutorial steps and processes used to implement the start-app shown below:
 
-![material-starter-ux](https://cloud.githubusercontent.com/assets/210413/6443252/4fa82756-c0bb-11e4-9a35-b213b26f49f3.png)
+![material-starter-ux2](https://cloud.githubusercontent.com/assets/210413/6448551/70864488-c0e0-11e4-8767-c4e1e4c2f343.png)
 
 Above is a snaphot of the Starter-App with the Users' *master-detail* view. Also shown is the user experience that will be displayed for smaller device sizes. The responsive layout changes to hide the user list and the **share** button can be used to show the Share bottom sheet view.
 
 This Starter app demonstrates how:
-
+a
 *  Angular Material `layout` and `flex` options can easily configure HTML containers
 *  Angular Material components `<md-toolbar>`, `<md-sidenav>`, `<md-icon>` can be quickly used
 *  Custom controllers can use and show `<md-bottomsheet>` with HTML templates
@@ -61,9 +61,11 @@ Each tutorial presents the resulting changes for that stage. It is recommended, 
 <br/>
 - - -
 
-### Tutorial_1.html:
+### Step #1:
 
-Here you modified the shell application in `tutorial_0.html` to use Angular-Material.
+<span style="font-size:10px;">@see [tutorial_1.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_1.html#L26-L34)<span>
+
+Here you modified the shell application [available in `tutorial_0.html`] to use Angular-Material.
 
 * Use Bower to install angular-material:  `bower install angular-material -D`
 * In the HTML, load the CSS and JS modules:
@@ -86,11 +88,14 @@ Here you modified the shell application in `tutorial_0.html` to use Angular-Mate
   </body>
 ```
 
-### Tutorial_1.html:
+### Step #2: 
 
-Here you used the planning and layout wireframe to identify the components and attributes needed.
+<span style="font-size:10px;">@see [tutorial_2.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_2.html#L30-L39)<span>
+
+Here you used the wireframe planning and layout to identify the components and attributes needed.
 
 * Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers
+> Note: that the md-sidenav is the container the Users **master** list view, and the md-content is the container for the User **detail** view.
 * Add the **layout** and **flex** attributes to configure the container layouts and sizing aspects.
 * Use `md-locked-open` to lock the sidenav open on the left
 * Use the `md-whiteframe-z2` to add a shadow the the sidenav
@@ -98,16 +103,301 @@ Here you used the planning and layout wireframe to identify the components and a
 ```html
   <body ng-app="starterApp" layout="column">
 
+	<!-- Container #1 (see wireframe) -->
     <md-toolbar layout="row" >
       <h1>Angular Material - Starter App</h1>
     </md-toolbar>
 
+	<!-- Container #2 -->
     <div flex layout="row">
 
+		<!-- Container #3 -->
         <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2"></md-sidenav>
+
+		<!-- Container #4 -->
         <md-content flex id="content"></md-content>
 
     </div>
 	
   </body>
 ```
+
+### Step #3:
+
+<span style="font-size:10px;">@see [tutorial_3.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_3.html#L43-L72)<span>
+
+
+Here you will use hard-coded elements to confirm rendering and layout of the container child elements and Angular Material components.
+
+* Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers
+> Note: that the md-sidenav is the container the Users **master** list view, and the md-content is the container for the User **detail** view.
+* Add the **layout** and **flex** attributes to configure the container layouts and sizing aspects.
+* Use `md-locked-open` to lock the sidenav open on the left
+* Use the `md-whiteframe-z2` to add a shadow the the sidenav
+
+```html
+  <body ng-app="starterApp" layout="column">
+
+	<md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
+	  <md-list>
+
+		<!-- List item #1 -->
+		<md-item >
+			<md-button>
+			  <md-icon md-svg-icon="svg-1" class="avatar"></md-icon>
+			  Lia Luogo
+			</md-button>
+		</md-item>
+
+		<!-- List item #2 -->
+		<md-item >
+			<md-button>
+			  <md-icon md-svg-icon="svg-4" class="avatar"></md-icon>
+			  Lawrence Ray
+			</md-button>
+		</md-item>
+
+	  </md-list>
+	</md-sidenav>
+
+	<md-content flex id="content">
+	  <!-- User details sample -->
+	  
+	  <md-icon md-svg-icon="svg-1" class="avatar"></md-icon>
+	  <h2>Lia Luogo</h2>
+	  <p>
+		I love cheese...
+	  </p>
+	</md-content>
+
+  </body>
+```
+
+If you open this HTML in a browser, you will see that the icons are **NOT** displaying.
+
+> At this point, Angular Material `<md-icon>` does not know anything about the SVGs datasources.
+
+### Step #4:
+
+<span style="font-size:10px;">@see [tutorial_4.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_4.html#L80-L81)<span>
+
+Here you register the icon SVG datasources within Angular Material; SVGS that will be used within your application.
+
+* Use `$mdIconProvider` to register your SVG datasource.
+
+```html
+<script>
+	angular
+	  .module('starterApp', ['ngMaterial'])
+	  .config(function( $mdIconProvider ){
+
+		  // Register the user `avatar` icons
+		  $mdIconProvider.defaultIconSet("./assets/svg/avatars.svg", 128);
+
+	  });
+</script>
+```
+
+The `avatars.svg` contains 16 avatar SVGs; each SVG has a unique ID and is 128x128 in size. Your HTML used `md-svg-icon="<ID>">`; where the ID(s) are used as lookups within the icon set.
+
+### Step #5:
+
+<span style="font-size:10px;">@see [tutorial_5.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_5.html#L52-L71)<span>
+
+Here you will replace the hardcoded HTML with dynamic markup using ng-repeat and `{{ }}` interpolation markup.
+
+* Change your hardcoded HTML to dynamic HTML that will be compiled by Angular
+* Load you custom application JS modules, and
+* Configure your application DI to require the `users` Angular module
+
+```html
+ <!-- Wireframe Container #2 -->
+ <div flex layout="row">
+ 	<!-- Wireframe Container #3 -->
+	<md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
+	  <md-list>
+		<md-item ng-repeat="it in ul.users">
+			<md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
+			  <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
+			  {{it.name}}
+			</md-button>
+		</md-item>
+	  </md-list>
+	</md-sidenav>
+
+	<!-- Wireframe Container #4 -->
+	<md-content flex id="content">
+	  <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
+	  <h2>{{ul.selected.name}}</h2>
+	  <p>{{ul.selected.content}}</p>
+
+	  <md-button class="action" md-no-ink>
+		<md-icon md-svg-icon="share" ></md-icon>
+	  </md-button>
+	</md-content>
+ </div>
+```
+
+Load the custom app logic and configure the `UsersListController`:
+
+```html
+<body ng-app="starterApp" layout="column" ng-controller="UsersListController as ul">
+
+	<script src="./src/users/Users.js"></script>
+	<script src="./src/users/UsersListController.js"></script>
+	<script src="./src/users/UsersDataservice.js"></script>
+
+	<script type="text/javascript">
+
+	  angular .module('starterApp', ['ngMaterial', 'users']);
+
+	</script>
+</body>
+```
+
+### Step #6:
+
+<span style="font-size:10px;">@see [tutorial_6.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_6.html#L51)<span>
+
+Here you will add responsive breakpoints so the application layout will adapt to different device display sizes.
+
+* Lock the Users list open if device display is wider than > 600px; hide otherwise.
+* Hide the Toolbar menu icon button if the Users list is open.
+* Add `click` support for the **menu** and **share** buttons
+
+```html
+<body>
+	<!-- Wireframe Container #1 -->
+    <md-toolbar layout="row">
+      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()"></md-button>
+    </md-toolbar>
+
+	<!-- Wireframe Container #2 -->
+	<div flex layout="row">
+
+	 <!-- Wireframe Container #3 -->
+	 <md-sidenav md-is-locked-open="$media('gt-sm')"
+				 md-component-id="left">
+	 </md-sidenav>
+
+	 <!-- Wireframe Container #4 -->
+	 <md-content flex id="content">
+	  <md-button class="share" md-no-ink ng-click="ul.share($event)"></md-button>
+	 </md-content>
+
+	</div>
+</body>
+```
+
+### Step #6:
+
+<span style="font-size:10px;">@see [tutorial_6.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_6.html#L51)<span>
+
+Here you will add responsive breakpoints so the application layout will adapt to different device display sizes.
+
+* Lock the Users list open if device display is wider than > 600px; hide otherwise.
+* Hide the Toolbar menu icon button if the Users list is open.
+* Add `click` support for the **menu** and **share** buttons.
+* Register icons for bottomsheet
+
+```html
+<body>
+	<!-- Wireframe Container #1 -->
+    <md-toolbar layout="row">
+      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()"></md-button>
+    </md-toolbar>
+
+	<!-- Wireframe Container #2 -->
+	<div flex layout="row">
+
+	 <!-- Wireframe Container #3 -->
+	 <md-sidenav md-is-locked-open="$media('gt-sm')"
+				 md-component-id="left">
+	 </md-sidenav>
+
+	 <!-- Wireframe Container #4 -->
+	 <md-content flex id="content">
+	  <md-button class="share" md-no-ink ng-click="ul.share($event)"></md-button>
+	 </md-content>
+
+	</div>
+</body>
+```
+
+Register the **share** icons displayed in the User Detail view bottomsheet:
+
+```html
+<script type="text/javascript">
+
+  angular
+	  .module('starterApp', ['ngMaterial', 'users'])
+	  .config(function($mdIconProvider){
+
+		  $mdIconProvider
+			  .defaultIconSet("./assets/svg/avatars.svg", 128)
+			  .icon("menu", "./assets/svg/menu.svg", 24)
+			  .icon("share", "./assets/svg/share.svg", 24)
+			  .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+			  .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+			  .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+			  .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+	  });
+
+</script>
+```
+
+
+### Step #7:
+
+<span style="font-size:10px;">@see [tutorial_7.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_7.html#L63-L68)<span>
+
+Here you will configure a different, darker theme to be used.
+
+* Use `$mdThemingProvider` to configure a different theme using primary colors from the **brown** color palette and accent colors from the **red** color palette.
+
+```html
+<script type="text/javascript">
+
+  angular
+	  .module('starterApp', ['ngMaterial', 'users'])
+	  .config(function($mdThemingProvider){
+
+		  $mdThemingProvider.theme('default')
+			  .primaryPalette('brown')
+			  .accentPalette('red');
+	  });
+
+</script>
+```
+
+### Step #8:
+
+<span style="font-size:10px;">@see [tutorial_8.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_8.html#L19)<span>
+
+Here you will fix any ARIA warnings that Angular Material may display in the Dev console.
+
+* Insert `aria-label` attributes for mdButton components that do not have labels.
+
+```html
+<body>
+	<!-- Wireframe Container #1 -->
+    <md-toolbar layout="row">
+      <md-button class="menu" aria-label="Show User List"></md-button>
+    </md-toolbar>
+
+	<!-- Wireframe Container #2 -->
+	<div flex layout="row">
+
+	 <!-- Wireframe Container #3 -->
+	 <md-sidenav>...</md-sidenav>
+
+	 <!-- Wireframe Container #4 -->
+	 <md-content flex id="content">
+	  <md-button class="share" aria-label="Share"></md-button>
+	 </md-content>
+
+	</div>
+</body>
+```
+
+
