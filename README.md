@@ -7,7 +7,7 @@ This branch contains the tutorial steps and processes used to implement the star
 Above is a snaphot of the Starter-App with the Users' *master-detail* view. Also shown is the user experience that will be displayed for smaller device sizes. The responsive layout changes to hide the user list and the **share** button can be used to show the Share bottom sheet view.
 
 This Starter app demonstrates how:
-a
+
 *  Angular Material `layout` and `flex` options can easily configure HTML containers
 *  Angular Material components `<md-toolbar>`, `<md-sidenav>`, `<md-icon>` can be quickly used
 *  Custom controllers can use and show `<md-bottomsheet>` with HTML templates
@@ -24,33 +24,35 @@ projects.
 
 #### "How to build an App"
 
-Here are some generalized steps that may be used to conceptualize the app implementation process:
+Here are some generalized steps that may be used to conceptualize the application implementation process:
 
 1. Plan your layout and the components you want to use
-2. Use hard-coded data to make sure the components appear as desired
+2. Use hard-coded HTML and mock content to make sure the components appear as desired
 3. Wire components to your application logic
-> Use the seamless integration with Angular directives<br/>
-> Assumes you have unit tested your app logic
+> Use the seamless integration possible with Angular directives and controllers<br/>
+> This integration assumes that you have unit tested your app logic
 4. Add Responsive breakpoints
 5. Add Theming support
 6. Confirm ARIA compliance
 7. Write e2e Tests 
-> to validate your app logic with Angular Material UI components.
+> It is important to validate your app logic with Angular Material UI components.
 
 <br/>
 ###### Wirefame 
 
-The illustration below shows how we planned the layout and the primary components that will be used in the Starter ap:
+The illustration below shows how we planned the layout and identified the primary components that will be used in the Starter ap:
 
 <br/>
 ![plancomponents2](https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png)
+
+> Note: that container #2 (above) is a simple `<div>` container and not an Angular Material component.
 
 <br/>
 - - -
 
 ##### ES5 Tutorials
 
-These tutorials assume that you have already cloned the repository and executed the `npm update` process.
+These tutorials assume that you have already cloned the repository and executed the `npm update` command.
 
 You will notice html Tutorials #0 thru #8: these will be used to guide you through the development process. By following these tutorials stages, you will be very quickly introduced to the powerful features of Angular Material.
 
@@ -67,7 +69,7 @@ Each tutorial presents the resulting changes for that stage. It is recommended, 
 
 Here you modified the shell application [available in `tutorial_0.html`] to use Angular-Material.
 
-* Use Bower to install angular-material:  `bower install angular-material -D`
+* Use Bower to install angular-material with `bower install angular-material -D`
 * In the HTML, load the CSS and JS modules:
 * Configure the app dependency on 'ngMaterial'
 
@@ -400,7 +402,8 @@ Here you will fix any ARIA warnings that Angular Material may display in the Dev
 </body>
 ```
 
-## Summary 
+## Summary
 
-With 8 Stages and only a few minutes of work, we have quickly created a functional Angular Material application that is easily maintained, beautiful, responsive, theme'ed, and accessible.
+With only eight (8) Tutorial Steps and a few minutes of work, we have quickly created a functional Angular Material application that is beautiful, responsive, theme'ed, accessible, and easily maintained.
+
 
