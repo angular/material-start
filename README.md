@@ -11,8 +11,7 @@ Below is a snaphot of the Starter-App with the Users' *master-detail* view. Also
 
 <br/>
 
-![material-starter-ux](https://cloud.githubusercontent.com/assets/210413/6443252/4fa82756-c0bb-11e4-9a35-b213b26f49f3.png)
-
+![material-starter-ux2](https://cloud.githubusercontent.com/assets/210413/6448551/70864488-c0e0-11e4-8767-c4e1e4c2f343.png)
 
 
 <br/>
