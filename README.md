@@ -400,4 +400,7 @@ Here you will fix any ARIA warnings that Angular Material may display in the Dev
 </body>
 ```
 
+## Summary 
+
+With 8 Stages and only a few minutes of work, we have quickly created a functional Angular Material application that is easily maintained, beautiful, responsive, theme'ed, and accessible.
 
