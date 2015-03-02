@@ -34,9 +34,9 @@ The repository contains both ES5 and ES6 versions of the application. Traditiona
 
 Developers should checkout the following repository branches for:
 
-* Branch [**Starter - ES5 Tutorials**](https://github.com/angular/material-start/tree/es5-tutorial): for developers interested in the Tutorial steps & development process.
-* Branch [**Starter - ES6 Tutorials**](https://github.com/angular/material-start/tree/es6-tutorial): for developers interested in the ES6 Tutorial steps & development process.
-* Branch [**Starter - ES6**](https://github.com/angular/material-start/tree/es6): for developers interested in using Angular Material 1.x (and Angular 1.x) within ES6 applications.
+* Branch [**Starter - ES5 Tutorials**](https://github.com/angular/material-start/tree/es5-tutorial): for  ES5 Tutorial steps & development process.
+* Branch [**Starter - ES6 Tutorials**](https://github.com/angular/material-start/tree/es6-tutorial): for  ES6 Tutorial steps & development process.
+* Branch [**Starter - ES6**](https://github.com/angular/material-start/tree/es6): for example implementation of Angular Material 1.x (and Angular 1.x) within an ES6 application.
 
 > The **README** for the ES6 branches will provide all details showing how easy, <u>more simplifed</u>, and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x.<br/><br/>
 
