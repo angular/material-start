@@ -50,11 +50,13 @@ The illustration below shows how we planned the layout and the primary component
 
 ##### ES5 Tutorials
 
-These tutorials assume that you have already cloned the repository and performed the `npm update` process.
+These tutorials assume that you have already cloned the repository and executed the `npm update` process.
 
-You will notice Tutorials 0..8 that will be used to guide you through the development process. Following these stages, you will be very quickly introduced to the powerful features of Angular Material. Each tutorial presents the starting point for that stage... and you will need to make the changes requested. The effort you invest to implement these changes will highlight specific concepts at each Tutorial stage.
+You will notice html Tutorials #0 thru #8: these will be used to guide you through the development process. By following these tutorials stages, you will be very quickly introduced to the powerful features of Angular Material.
 
-> You can peak at the **next** tutorial stge to see **resulting** changes for the current changes requested. 
+Each tutorial presents the resulting changes for that stage. It is recommended, however, that you start with the preceding tutorial and manually make the changes requested. The effort you invest to implement these changes will highlight specific concepts at each Tutorial stage.
+
+> At each tutorial stage, you should use a web-server to view the that tutorial page. Open the dev console to see any warnings and browser the elements.
 
 <br/>
 - - -
@@ -86,20 +88,26 @@ Here you modified the shell application in `tutorial_0.html` to use Angular-Mate
 
 ### Tutorial_1.html:
 
-Here you will modified a shell Angular application to use Angular-Material. 
+Here you used the planning and layout wireframe to identify the components and attributes needed.
 
-* Use Bower to install angular-material:  `bower install angular-material -D`
-* In the HTML, load the CSS and JS modules:
+* Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers
+* Add the **layout** and **flex** attributes to configure the container layouts and sizing aspects.
+* Use `md-locked-open` to lock the sidenav open on the left
+* Use the `md-whiteframe-z2` to add a shadow the the sidenav
 
 ```html
-  <head>
-    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
-  </head>
+  <body ng-app="starterApp" layout="column">
 
-  <body>
+    <md-toolbar layout="row" >
+      <h1>Angular Material - Starter App</h1>
+    </md-toolbar>
 
-    <script src="./bower_components/angular-animate/angular-animate.js"></script>
-    <script src="./bower_components/angular-aria/angular-aria.js"></script>
-    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>	
+    <div flex layout="row">
+
+        <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2"></md-sidenav>
+        <md-content flex id="content"></md-content>
+
+    </div>
+	
   </body>
 ```
