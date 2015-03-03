@@ -5,6 +5,12 @@
   "description": "A starter project for AngularJS Material",
   "repository": "https://github.com/angular/material-start",
   "license": "MIT",
+  "jspm": {
+    "directories": {
+      "baseURL": "app",
+      "lib": "app/src"
+    }
+  },
   "devDependencies": {
     "karma": "~0.10",
     "protractor": "^1.1.1",
@@ -14,7 +20,6 @@
     "karma-junit-reporter": "^0.2.2"
   },
   "scripts": {
-    "postinstall": "bower update",
     "prestart": "npm update"
   }
 }

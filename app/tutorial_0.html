@@ -11,9 +11,19 @@
 
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
     <link rel="stylesheet" href="assets/app.css"/>
+
+    <style type="text/css">
+            /**
+             * Hide when Angular is not yet loaded and initialized
+             */
+            [ng-cloak] {
+                display: none;
+            }
+        </style>
+
   </head>
 
-  <body ng-app="starterApp">
+  <body ng-cloak>
 
   <!--
     ✓ Create Angular shell app
@@ -24,18 +34,12 @@
     Then set the module dependency on 'ngMaterial'
   -->
 
+  <script src="./jspm_packages/system.js" type="text/javascript"></script>
+  <script src="./config.js" type="text/javascript"></script>
 
-    <script src="./bower_components/angular/angular.js"></script>
+  <script type="text/javascript">
 
-    <script type="text/javascript">
-
-      angular
-          .module('starterApp', [])
-          .run(function($log){
-            $log.debug("starterApp running...");
-          });
-
-    </script>
+  </script>
 
   </body>
 </html>

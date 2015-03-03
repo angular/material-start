@@ -1,4 +1,4 @@
-# Angular Material-Start (Tutorials)
+# Angular Material-Start (ES6 Tutorials)
 
 This branch contains the tutorial steps and processes used to implement the start-app shown below:
 
@@ -52,9 +52,14 @@ The illustration below shows how we planned the layout and identified the primar
 <br/>
 - - -
 
-##### ES5 Tutorials
+##### ES6 Tutorials
 
-These tutorials assume that you have already cloned the repository and executed the `npm update` command.
+These tutorial use jspm.io: package manager for SystemJS which is built on top of the dynamic ES6 module loader. This allows developers to load any module format (ES6, CommonJS, AMD, and globals).
+
+These tutorials assume that you have already cloned the repository and executed the following commands:
+
+* `npm install jspm -g`
+* `jspm update`
 
 You will notice html Tutorials #0 thru #8: these will be used to guide you through the development process. By following these tutorials stages, you will be very quickly introduced to the powerful features of Angular Material.
 
