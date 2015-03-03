@@ -9,6 +9,12 @@
     "directories": {
       "baseURL": "app",
       "lib": "app/src"
+    },
+    "dependencies": {
+      "angular-material": "^0.8.2",
+      "css": "^0.1.6",
+      "json": "^0.1.0",
+      "text": "^0.0.2"
     }
   },
   "devDependencies": {
