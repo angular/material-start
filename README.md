@@ -92,7 +92,7 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
   </body>
 ```
 
-### Step #2: 
+### Step #2:
 
 <span style="font-size:10px;">@see [tutorial_2.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_2.html#L30-L39)<span>
 
@@ -250,40 +250,6 @@ Here you will replace the hardcoded HTML with dynamic markup using Angular direc
 				  .icon("share", "./assets/svg/share.svg", 24);
 	  });
  </script>
-```
-
-### Step #6:
-
-<span style="font-size:10px;">@see [tutorial_6.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_6.html#L51)<span>
-
-Here you will add responsive breakpoints so the application layout will adapt to different device display sizes.
-
-* Lock the Users list open if device display is wider than > 600px; hide otherwise.
-* Hide the Toolbar menu icon button if the Users list is open.
-* Add `click` support for the **menu** and **share** buttons
-
-```html
-<body>
-	<!-- Wireframe Container #1 -->
-    <md-toolbar layout="row">
-      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()"></md-button>
-    </md-toolbar>
-
-	<!-- Wireframe Container #2 -->
-	<div flex layout="row">
-
-	 <!-- Wireframe Container #3 -->
-	 <md-sidenav md-is-locked-open="$media('gt-sm')"
-				 md-component-id="left">
-	 </md-sidenav>
-
-	 <!-- Wireframe Container #4 -->
-	 <md-content flex id="content">
-	  <md-button class="share" md-no-ink ng-click="ul.share($event)"></md-button>
-	 </md-content>
-
-	</div>
-</body>
 ```
 
 ### Step #6:
