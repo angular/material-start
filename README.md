@@ -323,7 +323,7 @@ Here you will configure a different, darker theme to be used.
 
   angular
 	  .module('starterApp', ['ngMaterial', 'users'])
-	  .config(function($mdThemingProvider){
+	  .config(function($mdThemingProvider, $mdIconProvider){
 
 		  $mdThemingProvider.theme('default')
 			  .primaryPalette('brown')
