@@ -4,7 +4,7 @@ This branch contains the tutorial steps and processes used to implement the star
 
 ![material-starter-ux2](https://cloud.githubusercontent.com/assets/210413/6448551/70864488-c0e0-11e4-8767-c4e1e4c2f343.png)
 
-Above is a snaphot of the Starter-App with the Users' *master-detail* view. Also shown is the user experience that will be displayed for smaller device sizes. The responsive layout changes to hide the user list and the **share** button can be used to show the Share bottom sheet view.
+Above is a snaphot of the Starter-App with a **Master-Detail** layout showing a list of users (left) and a user detail view (right). Also shown is the user experience that will be displayed for smaller device sizes. The responsive layout changes to hide the user list and the **share** button can be used to show the Share bottom sheet view.
 
 This Starter app demonstrates how:
 
@@ -132,7 +132,7 @@ Here you used the wireframe planning and layout to identify the components and a
 Here you will use hard-coded elements to confirm rendering and layout of the container child elements and Angular Material components.
 
 * Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers
-> Note: that the md-sidenav is the container the Users **master** list view, and the md-content is the container for the User **detail** view.
+> Note: that the md-sidenav is the container for the **master** Users List view, and the md-content is the container for the **detail** User Detail view.
 * Add the **layout** and **flex** attributes to configure the container layouts and sizing aspects.
 * Use `md-locked-open` to lock the sidenav open on the left
 * Use the `md-whiteframe-z2` to add a shadow the the sidenav
@@ -146,7 +146,7 @@ Here you will use hard-coded elements to confirm rendering and layout of the con
 		<!-- List item #1 -->
 		<md-item >
 			<md-button>
-			  <md-icon md-svg-icon="svg-1" class="avatar"></md-icon>
+			  <md-icon md-svg-src="./assets/svg/avatar-1.svg" class="avatar"></md-icon>
 			  Lia Luogo
 			</md-button>
 		</md-item>
@@ -154,7 +154,7 @@ Here you will use hard-coded elements to confirm rendering and layout of the con
 		<!-- List item #2 -->
 		<md-item >
 			<md-button>
-			  <md-icon md-svg-icon="svg-4" class="avatar"></md-icon>
+			 <md-icon md-svg-src="./assets/svg/avatar-4.svg" class="avatar"></md-icon>
 			  Lawrence Ray
 			</md-button>
 		</md-item>
@@ -164,8 +164,8 @@ Here you will use hard-coded elements to confirm rendering and layout of the con
 
 	<md-content flex id="content">
 	  <!-- User details sample -->
-	  
-	  <md-icon md-svg-icon="svg-1" class="avatar"></md-icon>
+
+	  <md-icon md-svg-src="./assets/svg/avatar-1.svg" class="avatar"></md-icon>
 	  <h2>Lia Luogo</h2>
 	  <p>
 		I love cheese...
@@ -175,42 +175,38 @@ Here you will use hard-coded elements to confirm rendering and layout of the con
   </body>
 ```
 
-If you open this HTML in a browser, you will see that the icons are **NOT** displaying.
-
-> At this point, Angular Material `<md-icon>` does not know anything about the SVGs datasources.
-
 ### Step #4:
 
-<span style="font-size:10px;">@see [tutorial_4.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_4.html#L80-L81)<span>
+<span style="font-size:10px;">@see [tutorial_4.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_4.html#L85-L91)<span>
 
-Here you register the icon SVG datasources within Angular Material; SVGS that will be used within your application.
+Here you integrate your custom, application logic.
 
-* Use `$mdIconProvider` to register your SVG datasource.
+* Define a Angular module for your custom code
+* Define your data services, models, and controllers
+* Load your custom code
+* Register your Angular module for runtime DI
 
 ```html
-<script>
-	angular
-	  .module('starterApp', ['ngMaterial'])
-	  .config(function( $mdIconProvider ){
+<script src="./src/users/Users.js"></script>
+<script src="./src/users/UsersListController.js"></script>
+<script src="./src/users/UsersDataservice.js"></script>
 
-		  // Register the user `avatar` icons
-		  $mdIconProvider.defaultIconSet("./assets/svg/avatars.svg", 128);
+<script type="text/javascript">
 
-	  });
+  angular.module('starterApp', ['ngMaterial', 'users']);
+
 </script>
 ```
-
-The `avatars.svg` contains 16 avatar SVGs; each SVG has a unique ID and is 128x128 in size. Your HTML used `md-svg-icon="<ID>">`; where the ID(s) are used as lookups within the icon set.
 
 ### Step #5:
 
 <span style="font-size:10px;">@see [tutorial_5.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_5.html#L52-L71)<span>
 
-Here you will replace the hardcoded HTML with dynamic markup using ng-repeat and `{{ }}` interpolation markup.
+Here you will replace the hardcoded HTML with dynamic markup using Angular directives (eg ng-repeat) and `{{ }}` interpolation markup.
 
-* Change your hardcoded HTML to dynamic HTML that will be compiled by Angular
-* Load you custom application JS modules, and
-* Configure your application DI to require the `users` Angular module
+* Use dynamic HTML that will be compiled and rendered by Angular
+* Register a custom icon set of 'user' avatars for the user list
+* Register **menu** and **share** icon urls for the md-buttons
 
 ```html
  <!-- Wireframe Container #2 -->
@@ -238,23 +234,20 @@ Here you will replace the hardcoded HTML with dynamic markup using ng-repeat and
 	  </md-button>
 	</md-content>
  </div>
-```
 
-Load the custom app logic and configure the `UsersListController`:
 
-```html
-<body ng-app="starterApp" layout="column" ng-controller="UsersListController as ul">
+ <script type="text/javascript">
+  angular
+	  .module('starterApp', ['ngMaterial', 'users'])
+	  .config(function( $mdIconProvider ){
 
-	<script src="./src/users/Users.js"></script>
-	<script src="./src/users/UsersListController.js"></script>
-	<script src="./src/users/UsersDataservice.js"></script>
-
-	<script type="text/javascript">
-
-	  angular .module('starterApp', ['ngMaterial', 'users']);
-
-	</script>
-</body>
+		  // Register the user `avatar` icons
+		  $mdIconProvider
+				  .defaultIconSet("./assets/svg/avatars.svg", 128)
+				  .icon("menu", "./assets/svg/menu.svg", 24)
+				  .icon("share", "./assets/svg/share.svg", 24);
+	  });
+ </script>
 ```
 
 ### Step #6:
