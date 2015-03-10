@@ -15,7 +15,7 @@
    * @constructor
    */
   function UserController( userService, $mdSidenav, $mdBottomSheet, $log, $q) {
-    var self = this, sheet;
+    var self = this;
 
     self.selected     = null;
     self.users        = [ ];
@@ -63,7 +63,7 @@
     function share($event) {
         var user = self.selected;
 
-        sheet = $mdBottomSheet.show({
+        $mdBottomSheet.show({
           parent: angular.element(document.getElementById('content')),
           templateUrl: '/src/users/view/contactSheet.html',
           controller: [ '$mdBottomSheet', UserSheetController],
