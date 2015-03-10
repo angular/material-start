@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('users')
-         .service('usersService', ['$q', UsersDataservice]);
+         .service('userService', ['$q', UserService]);
 
   /**
    * Users DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function UsersDataservice($q){
+  function UserService($q){
     var users = [
       {
         name: 'Lia Lugo',
@@ -48,7 +48,7 @@
 
     // Promise-based API
     return {
-      loadAll : function() {
+      loadAllUsers : function() {
         // Simulate async nature of real remote calls
         return $q.when(users);
       }
