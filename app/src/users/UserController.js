@@ -3,7 +3,7 @@
   angular
        .module('users')
        .controller('UserController', [
-          'userService', '$mdSidenav', '$mdBottomSheet', '$log',
+          'userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q',
           UserController
        ]);
 
@@ -14,8 +14,8 @@
    * @param avatarsService
    * @constructor
    */
-  function UserController( userService, $mdSidenav, $mdBottomSheet, $log ) {
-    var self = this;
+  function UserController( userService, $mdSidenav, $mdBottomSheet, $log, $q) {
+    var self = this, sheet;
 
     self.selected     = null;
     self.users        = [ ];
@@ -37,10 +37,15 @@
     // *********************************
 
     /**
-     * Hide or Show the 'left' sideNav area
+     * First hide the bottomsheet IF visible, then
+     * hide or Show the 'left' sideNav area
      */
     function toggleUsersList() {
-      $mdSidenav('left').toggle();
+      var pending = $mdBottomSheet.hide() || $q.when(true);
+
+      pending.then(function(){
+        $mdSidenav('left').toggle();
+      });
     }
 
     /**
@@ -58,7 +63,7 @@
     function share($event) {
         var user = self.selected;
 
-        $mdBottomSheet.show({
+        sheet = $mdBottomSheet.show({
           parent: angular.element(document.getElementById('content')),
           templateUrl: '/src/users/view/contactSheet.html',
           controller: [ '$mdBottomSheet', UserSheetController],
@@ -66,7 +71,7 @@
           bindToController : true,
           targetEvent: $event
         }).then(function(clickedItem) {
-          $log.debug( clickedItem.name + ' clicked!');
+          clickedItem && $log.debug( clickedItem.name + ' clicked!');
         });
 
         /**
