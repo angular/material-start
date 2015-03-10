@@ -8,12 +8,12 @@
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
     <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
     <link rel="stylesheet" href="assets/app.css"/>
   </head>
 
-  <body ng-app="starterApp" layout="column" ng-controller="UsersListController as ul">
+  <body ng-app="starterApp" layout="column" ng-controller="UserController as ul">
 
     <md-toolbar layout="row">
       <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
@@ -24,7 +24,7 @@
 
     <div flex layout="row">
 
-        <md-sidenav md-is-locked-open="$media('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
+        <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
           <md-list>
             <md-item ng-repeat="it in ul.users">
                 <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
@@ -53,8 +53,8 @@
     <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
 
     <script src="./src/users/Users.js"></script>
-    <script src="./src/users/UsersListController.js"></script>
-    <script src="./src/users/UsersDataservice.js"></script>
+    <script src="./src/users/UserController.js"></script>
+    <script src="./src/users/UserService.js"></script>
 
     <script type="text/javascript">
 
