@@ -2,9 +2,9 @@
 
   angular
        .module('users')
-       .controller('UsersListController', [
-          'usersService', '$mdSidenav', '$mdBottomSheet', '$log',
-          UsersListController
+       .controller('UserController', [
+          'userService', '$mdSidenav', '$mdBottomSheet', '$log',
+          UserController
        ]);
 
   /**
@@ -14,7 +14,7 @@
    * @param avatarsService
    * @constructor
    */
-  function UsersListController( usersService, $mdSidenav, $mdBottomSheet, $log ) {
+  function UserController( userService, $mdSidenav, $mdBottomSheet, $log ) {
     var self = this;
 
     self.selected     = null;
@@ -25,8 +25,8 @@
 
     // Load all registered users
 
-    usersService
-          .loadAll()
+    userService
+          .loadAllUsers()
           .then( function( users ) {
             self.users    = [].concat(users);
             self.selected = users[0];
@@ -75,10 +75,10 @@
         function UserSheetController( $mdBottomSheet ) {
           this.user = user;
           this.items = [
-            { name: 'Phone'       , icon: 'phone'       },
-            { name: 'Twitter'     , icon: 'twitter'     },
-            { name: 'Google+'     , icon: 'google_plus' },
-            { name: 'Hangout'     , icon: 'hangouts'    }
+            { name: 'Phone'       , icon: 'phone'       , icon_url: 'assets/svg/phone.svg'},
+            { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'assets/svg/twitter.svg'},
+            { name: 'Google+'     , icon: 'google_plus' , icon_url: 'assets/svg/google_plus.svg'},
+            { name: 'Hangout'     , icon: 'hangouts'    , icon_url: 'assets/svg/hangouts.svg'}
           ];
           this.performAction = function(action) {
             $mdBottomSheet.hide(action);
