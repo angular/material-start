@@ -42,7 +42,7 @@ Here are some generalized steps that may be used to conceptualize the applicatio
 <br/>
 ###### Wirefame 
 
-The illustration below shows how we planned the layout and identified the primary components that will be used in the Starter ap:
+The illustration below shows how we planned the layout and identified the primary components that will be used in the Starter app:
 
 <br/>
 ![plancomponents2](https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png)
@@ -54,7 +54,7 @@ The illustration below shows how we planned the layout and identified the primar
 
 ##### ES5 Tutorials
 
-These tutorials assume that you have already cloned the repository and executed the `npm update` command.
+These tutorials assume that you have already cloned the repository and executed the `npm install` command.
 
 You will notice html Tutorials #0 thru #8: these will be used to guide you through the development process. By following these tutorials stages, you will be very quickly introduced to the powerful features of Angular Material.
 
