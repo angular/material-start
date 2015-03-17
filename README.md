@@ -1,6 +1,6 @@
 # Angular Material-Start 
 
-This Material **start*** project is a *seed* for AngularJS Materal applications. The project contains a sample AngularJS application and is preconfigured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
+This Material **start*** project is a *seed* for AngularJS Material applications. The project contains a sample AngularJS application and is preconfigured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
 
 This sample application is intended to be useful as both a learning tool and a skeleton application for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
 projects.
@@ -38,7 +38,7 @@ Developers should checkout the following repository branches for:
 * Branch [**Starter - ES6 Tutorials**](https://github.com/angular/material-start/tree/es6-tutorial): for  ES6 Tutorial steps & development process.
 * Branch [**Starter - ES6**](https://github.com/angular/material-start/tree/es6): for example implementation of Angular Material 1.x (and Angular 1.x) within an ES6 application.
 
-> The **README** for the ES6 branches will provide all details showing how easy, <u>more simplifed</u>, and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x.<br/><br/>
+> The **README** for the ES6 branches will provide all details showing how easy, <u>more simplified</u>, and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x.<br/><br/>
 
 ## Getting Started
 
