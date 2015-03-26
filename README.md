@@ -6,7 +6,7 @@ This branch contains the tutorial steps and processes used to implement the star
 
 Above is a snaphot of the Starter-App with a **Master-Detail** layout: showing a list of users (left) and a user detail view (right). 
 
-Also shown is the user experience that will be displayed for smaller device sizes. The responsive layout reveals the **menu** button that can be used to hide the user list. And the **share** button can be used to show the Share bottom sheet view.
+Also shown is the user experience that will be displayed for smaller device sizes. The responsive layout reveals the **menu** button that can be used to hide the user list and the **share** button that can be used to show the Share bottom sheet view.
 
 This Starter app demonstrates how:
 
