@@ -7,7 +7,7 @@
   "private": true,
   "dependencies": {
     "angular": "^1.3.x",
-    "angular-animate": "v1.3.x",
+    "angular-animate": "v1.4.x",
     "angular-aria": "^1.3.x",
     "angular-material": "^0.8.0"
   },
