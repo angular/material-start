@@ -1,6 +1,6 @@
 # Angular Material-Start 
 
-This Material **start*** project is a *seed* for AngularJS Material applications. The project contains a sample AngularJS application and is preconfigured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
+This Material **start*** project is a *seed* for AngularJS Material applications. The project contains a sample AngularJS application and is pre-configured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
 
 This sample application is intended to be useful as both a learning tool and a skeleton application for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your AngularJS webapp projects and dev environment for these
 projects.
@@ -93,7 +93,7 @@ folders in your project.
 
 *Note that the `bower_components` folder would normally be installed in the root folder but
 material-start changes this location through the `.bowerrc` file.  Putting it in the app folder makes
-it easier to serve the files by a webserver.*
+it easier to serve the files by a web server.*
 
 ## Directory Layout
 
@@ -136,13 +136,13 @@ This will find the latest versions that match the version ranges specified in th
 
 While AngularJS is client-side-only technology and it's possible to create AngularJS webapps that
 don't require a backend server at all, we recommend serving the project files using a local
-webserver during development to avoid issues with security restrictions (sandbox) in browsers. The
+web server during development to avoid issues with security restrictions (sandbox) in browsers. The
 sandbox implementation varies between browsers, but quite often prevents things like cookies, xhr,
 etc to function properly when an html page is opened via `file://` scheme instead of `http://`.
 
 ### Running the App during Development
 
-The angular-seed project comes preconfigured with a local development webserver.  It is a node.js
+The angular-seed project comes pre-configured with a local development web server.  It is a node.js
 tool called [http-server][http-server].  You can install http-server globally:
 
 ```
@@ -156,7 +156,7 @@ cd app
 http-server -a localhost -p 8000
 ```
 
-Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
+Alternatively, you can choose to configure your own web server, such as apache or nginx. Just
 configure your server to serve the files under the `app/` directory.
 
 
