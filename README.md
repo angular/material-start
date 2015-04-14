@@ -65,7 +65,7 @@ You will notice html Tutorials #0 thru #8: these will be used to guide you throu
 
 Each tutorial presents the resulting changes for that stage. It is recommended, however, that you start with the preceding tutorial and manually make the changes requested. The effort you invest to implement these changes will highlight specific concepts at each Tutorial stage.
 
-> At each tutorial stage, you should use a web-server to view the that tutorial page. Open the dev console to see any warnings and browser the elements.
+> At each tutorial stage, you should use a web server to view that tutorial page. Open the dev console to see any warnings and browse the elements.
 
 <br/>
 - - -
