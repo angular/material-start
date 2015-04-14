@@ -1,13 +1,13 @@
 # Angular Material-Start 
 
-This Material **start*** project is a *seed* for AngularJS Materal applications. The project contains a sample AngularJS application and is preconfigured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
+This Material **start*** project is a *seed* for AngularJS Material applications. The project contains a sample AngularJS application and is pre-configured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
 
-This sample application is intended to be useful as both a learning tool and a skeleton application for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
+This sample application is intended to be useful as both a learning tool and a skeleton application for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your AngularJS webapp projects and dev environment for these
 projects.
 
 ### What is the UX?
 
-Below is a snaphot of the Starter-App with the Users' *master-detail* view. Also shown is the user experience that will is displayed for smaller device sizes. The responsive layout changes to hide the user list, reveal the **menu** button. In the User Details view, you may also click the **share** button  to show the Contact &lt;User&gt; bottom sheet view.
+Below is a snapshot of the Starter-App with the Users' *master-detail* view. Also shown is the user experience that will is displayed for smaller device sizes. The responsive layout changes to hide the user list, reveal the **menu** button. In the User Details view, you may also click the **share** button  to show the Contact &lt;User&gt; bottom sheet view.
 
 <br/>
 
@@ -73,13 +73,13 @@ The `depth=1` tells git to only pull down one commit worth of historical data.
 
 #### Install Dependencies
 
-We have two kinds of dependencies in this project: tools and angular framework code.  The tools help
+We have two kinds of dependencies in this project: tools and AngularJS framework code.  The tools help
 us manage and test the application.
 
 * We get the tools we depend upon via `npm`, the [node package manager][npm].
-* We get the angular code via `bower`, a [client-side code package manager][bower].
+* We get the AngularJS code via `bower`, a [client-side code package manager][bower].
 
-We have preconfigured `npm` to automatically run `bower` so we can simply do:
+We have pre-configured `npm` to automatically run `bower` so we can simply do:
 
 ```
 npm install
@@ -89,11 +89,11 @@ Behind the scenes this will also call `bower install`.  You should find that you
 folders in your project.
 
 * `node_modules` - contains the npm packages for the tools we need
-* `app/bower_components` - contains the angular framework files
+* `app/bower_components` - contains the AngularJS framework files
 
 *Note that the `bower_components` folder would normally be installed in the root folder but
 material-start changes this location through the `.bowerrc` file.  Putting it in the app folder makes
-it easier to serve the files by a webserver.*
+it easier to serve the files by a web server.*
 
 ## Directory Layout
 
@@ -112,7 +112,7 @@ e2e-tests/            --> end-to-end tests
 ## Updating Angular
 
 Previously we recommended that you merge in changes to angular-seed into your own fork of the project.
-Now that the angular framework library code and tools are acquired through package managers (npm and
+Now that the AngularJS framework library code and tools are acquired through package managers (npm and
 bower) you can use these tools instead to update the dependencies.
 
 You can update the tool dependencies by running:
@@ -134,15 +134,15 @@ This will find the latest versions that match the version ranges specified in th
 
 ## Serving the Application Files
 
-While angular is client-side-only technology and it's possible to create angular webapps that
+While AngularJS is client-side-only technology and it's possible to create AngularJS webapps that
 don't require a backend server at all, we recommend serving the project files using a local
-webserver during development to avoid issues with security restrictions (sandbox) in browsers. The
+web server during development to avoid issues with security restrictions (sandbox) in browsers. The
 sandbox implementation varies between browsers, but quite often prevents things like cookies, xhr,
 etc to function properly when an html page is opened via `file://` scheme instead of `http://`.
 
 ### Running the App during Development
 
-The angular-seed project comes preconfigured with a local development webserver.  It is a node.js
+The angular-seed project comes pre-configured with a local development web server.  It is a node.js
 tool called [http-server][http-server].  You can install http-server globally:
 
 ```
@@ -156,7 +156,7 @@ cd app
 http-server -a localhost -p 8000
 ```
 
-Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
+Alternatively, you can choose to configure your own web server, such as apache or nginx. Just
 configure your server to serve the files under the `app/` directory.
 
 
