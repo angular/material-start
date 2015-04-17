@@ -9,20 +9,23 @@ import UsersService    from 'users/UsersDataservice'
 
 // Define the Angular 'users' module
 
-export default angular
-    .module( "users", ['ngMaterial'] )
-    .service("usersService"       , UsersService )
-    .controller("UsersController" , UsersController )
-    .config( ($mdIconProvider) => {
+let moduleName = angular
+      .module( "users", [ ] )
+      .service("usersService"       , UsersService )
+      .controller("UsersController" , UsersController )
+      .config( ($mdIconProvider) => {
 
-      // Register `dashboard` iconset & icons for $mdIcon service lookups
+        // Register `dashboard` iconset & icons for $mdIcon service lookups
 
-      $mdIconProvider
-        .defaultIconSet( URL_AVATAR_ICONS, 128 )
-        .icon('menu' ,URL_ICON_MENU, 24)
-        .icon('share',URL_ICON_SHARE, 24);
+        $mdIconProvider
+          .defaultIconSet( URL_AVATAR_ICONS, 128 )
+          .icon('menu' ,URL_ICON_MENU, 24)
+          .icon('share',URL_ICON_SHARE, 24);
 
-    });
+      })
+      .name;
+
+export default moduleName;
 
 
 

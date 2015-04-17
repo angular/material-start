@@ -8,12 +8,10 @@ import 'assets/app.css!'
 
 import angular from 'angular'
 import material from 'angular-material'
-import 'angular-animate'
-import 'angular-aria'
 
 // Load custom application modules
 
-import users from 'users/Users'
+import main from 'app/main'
 
 /**
  * Manually bootstrap the application when AngularJS and
@@ -24,7 +22,7 @@ angular
   .ready( function() {
 
     let body = document.getElementsByTagName("body")[0];
-    let app  = angular.module( 'starter-app', [ 'ngMaterial', `${users.name}` ] );
+    let app  = angular.module( 'starter-app', [ material, main ] );
 
     angular.bootstrap( body, [ app.name ], { strictDi: false });
 
