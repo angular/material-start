@@ -1,4 +1,6 @@
 exports.config = {
+  directConnect: true,
+  
   allScriptsTimeout: 11000,
 
   specs: [
@@ -11,9 +13,10 @@ exports.config = {
 
   baseUrl: 'http://localhost:8000/app/',
 
-  framework: 'jasmine',
+  framework: 'jasmine2',
 
   jasmineNodeOpts: {
+    showColors: true,
     defaultTimeoutInterval: 30000
   }
 };
