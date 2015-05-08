@@ -156,6 +156,14 @@ cd app
 http-server -a localhost -p 8000
 ```
 
+Or if you have python installed on your machine, use it's built-in SimpleHTTPServer
+
+```
+cd app
+python -m SimpleHTTPServer 8000
+```
+and visit `http://localhost:8000`
+
 Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
 configure your server to serve the files under the `app/` directory.
 
