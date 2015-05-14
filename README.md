@@ -13,7 +13,6 @@ Below is a snaphot of the Starter-App with the Users' *master-detail* view. Also
 
 ![material-starter-ux2](https://cloud.githubusercontent.com/assets/210413/6448551/70864488-c0e0-11e4-8767-c4e1e4c2f343.png)
 
-
 <br/>
 
 This Starter app demonstrates how:
@@ -94,6 +93,24 @@ folders in your project.
 *Note that the `bower_components` folder would normally be installed in the root folder but
 material-start changes this location through the `.bowerrc` file.  Putting it in the app folder makes
 it easier to serve the files by a webserver.*
+
+#####Download and Setup Selenium Webdriver
+```
+webdriver-manager update --standalone
+```
+
+###Run End-to-End Tests
+1. Start webserver using http-server as noted above
+1. Start Selenium Webdriver
+```
+webdriver-manager start
+```
+If you see errors, verify path in `e2e-tests/protractor.conf.js` for `chromeDriver` and `seleniumServerJar` to your local file system.
+
+1. Run tests
+```
+npm test
+```
 
 ## Directory Layout
 
