@@ -1,13 +1,20 @@
 # Angular Material-Start 
 
-This Material **start*** project is a *seed* for AngularJS Materal applications. The project contains a sample AngularJS application and is preconfigured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
+This Material **start*** project is a *seed* for AngularJS Materal applications. The project
+contains a sample AngularJS application and is preconfigured to install the Angular framework and
+a bunch of development and testing tools for instant web development gratification.
 
-This sample application is intended to be useful as both a learning tool and a skeleton application for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
-projects.
+This sample application is intended to be useful as both a learning tool and a skeleton application
+for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation
+area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev
+environment for these projects.
 
 ### What is the UX?
 
-Below is a snaphot of the Starter-App with the Users' *master-detail* view. Also shown is the user experience that will is displayed for smaller device sizes. The responsive layout changes to hide the user list, reveal the **menu** button. In the User Details view, you may also click the **share** button  to show the Contact &lt;User&gt; bottom sheet view.
+Below is a snaphot of the Starter-App with the Users' *master-detail* view. Also shown is the user
+experience that will is displayed for smaller device sizes. The responsive layout changes to hide
+the user list, reveal the **menu** button. In the User Details view, you may also click the
+**share** button  to show the Contact &lt;User&gt; bottom sheet view.
 
 <br/>
 
@@ -27,17 +34,23 @@ This Starter app demonstrates how:
 
 ### Tutorials
 
-The repository contains both ES5 and ES6 versions of the application. Traditional development with ES5 standards and solutions are presented here by default. Tutorials are included: step-by-step instructions that clearly demonstrate how the Starter application can be created in minutes. 
+The repository contains both ES5 and ES6 versions of the application. Traditional development with
+ES5 standards and solutions are presented here by default. Tutorials are included: step-by-step
+instructions that clearly demonstrate how the Starter application can be created in minutes.
 
 > These tutorials will be presented live, on-stage at **ng-conf 2015, Utah**.
 
 Developers should checkout the following repository branches for:
 
-* Branch [**Starter - ES5 Tutorials**](https://github.com/angular/material-start/tree/es5-tutorial): for  ES5 Tutorial steps & development process.
-* Branch [**Starter - ES6 Tutorials**](https://github.com/angular/material-start/tree/es6-tutorial): for  ES6 Tutorial steps & development process.
-* Branch [**Starter - ES6**](https://github.com/angular/material-start/tree/es6): for example implementation of Angular Material 1.x (and Angular 1.x) within an ES6 application.
+* Branch [**Starter - ES5 Tutorials**](https://github.com/angular/material-start/tree/es5-tutorial):
+for  ES5 Tutorial steps & development process.
+* Branch [**Starter - ES6 Tutorials**](https://github.com/angular/material-start/tree/es6-tutorial):
+for  ES6 Tutorial steps & development process.
+* Branch [**Starter - ES6**](https://github.com/angular/material-start/tree/es6): for example
+implementation of Angular Material 1.x (and Angular 1.x) within an ES6 application.
 
-> The **README** for the ES6 branches will provide all details showing how easy, <u>more simplifed</u>, and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x.<br/><br/>
+> The **README** for the ES6 branches will provide all details showing how easy, <u>more simplifed</u>,
+and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x.<br/><br/>
 
 ## Getting Started
 
@@ -51,7 +64,8 @@ its package manager (npm) installed.  You can get them from [http://nodejs.org/]
 
 #### Clone material-start
 
-To get you started you can simply clone `master` branch from the [Material-Start](https://github.com/angular/material-start) repository and install the dependencies:
+To get you started you can simply clone `master` branch from the
+[Material-Start](https://github.com/angular/material-start) repository and install the dependencies:
 
 > NOTE: The `master` branch contains the traditional, ES5 implementation familiar to Angular developers.
 
@@ -96,25 +110,33 @@ it easier to serve the files by a webserver.*
 
 ### Run End-to-End Tests
 
-To run your e2e tests your should install and configure Protractor and the Selenium WebServer. These are already specified as npm dependencies within `package.json`. Simply run these terminal commands:
+To run your e2e tests your should install and configure Protractor and the Selenium WebServer.
+These are already specified as npm dependencies within `package.json`. Simply run these
+terminal commands:
 
 ```console
 npm update
 webdriver-manager update
 ```
 
-Your can read more details about Protractor and e2e here: http://angular.github.io/protractor/#/ for more details on Protractor.
+Your can read more details about Protractor and e2e here: http://angular.github.io/protractor/#/
+for more details on Protractor.
 
 1. Start your local HTTP Webserver: `live-server` or `http-server`.
 ```console
 cd ./app; live-server;
 ```
-> Note: since `live-server` is working on port 8080, we configure the `protractor.conf.js` to use `baseUrl: 'http://localhost:8080'`
+> Note: since `live-server` is working on port 8080, we configure the `protractor.conf.js` to use
+`baseUrl: 'http://localhost:8080'`
+
 1. In another tab, start a Webdriver instance:
 ```console
 webdriver-manager start
 ```
-> This will start up a Selenium Server and will output a bunch of info logs. Your Protractor test will send requests to this server to control a local browser. You can see information about the status of the server at http://localhost:4444/wd/hub. If you see errors, verify path in `e2e-tests/protractor.conf.js` for `chromeDriver` and `seleniumServerJar` to your local file system.
+> This will start up a Selenium Server and will output a bunch of info logs. Your Protractor test
+will send requests to this server to control a local browser. You can see information about the
+status of the server at `http://localhost:4444/wd/hub`. If you see errors, verify path in
+`e2e-tests/protractor.conf.js` for `chromeDriver` and `seleniumServerJar` to your local file system.
 
 1. Run your e2e tests using the `test` script defined in `package.json`:
 ```console
@@ -138,9 +160,9 @@ e2e-tests/            --> end-to-end tests
 
 ## Updating Angular
 
-Previously we recommended that you merge in changes to angular-seed into your own fork of the project.
-Now that the angular framework library code and tools are acquired through package managers (npm and
-bower) you can use these tools instead to update the dependencies.
+Previously we recommended that you merge in changes to angular-seed into your own fork of the
+project. Now that the Angular framework library code and tools are acquired through package managers
+(npm and bower) you can use these tools instead to update the dependencies.
 
 You can update the tool dependencies by running:
 
