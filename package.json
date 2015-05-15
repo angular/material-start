@@ -1,7 +1,7 @@
 {
   "name": "material-start",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A starter project for AngularJS Material",
   "repository": "https://github.com/angular/material-start",
   "license": "MIT",
