@@ -122,24 +122,32 @@ webdriver-manager update
 Your can read more details about Protractor and e2e here: http://angular.github.io/protractor/#/
 for more details on Protractor.
 
-1. Start your local HTTP Webserver: `live-server` or `http-server`.
+ 1. Start your local HTTP Webserver: `live-server` or `http-server`.
+
 ```console
 cd ./app; live-server;
 ```
+
 > Note: since `live-server` is working on port 8080, we configure the `protractor.conf.js` to use
 `baseUrl: 'http://localhost:8080'`
-2. In another tab, start a Webdriver instance:
+
+ 2. In another tab, start a Webdriver instance:
+ 
 ```console
 webdriver-manager start
 ```
+
 >This will start up a Selenium Server and will output a bunch of info logs. Your Protractor test
 will send requests to this server to control a local browser. You can see information about the
 status of the server at `http://localhost:4444/wd/hub`. If you see errors, verify path in
 `e2e-tests/protractor.conf.js` for `chromeDriver` and `seleniumServerJar` to your local file system.
-3. Run your e2e tests using the `test` script defined in `package.json`:
+
+ 3. Run your e2e tests using the `test` script defined in `package.json`:
+ 
 ```console
 npm test
 ```
+
 > This uses the local **Protractor** installed at `./node_modules/protractor`
 
 ## Directory Layout
