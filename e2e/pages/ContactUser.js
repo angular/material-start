@@ -5,12 +5,14 @@ var ContactUser = function() {
   };
 
   this.buttons = function() {
-    return element.all(by.css('[ng-click="cp.contactWith(item)"]'));
+    browser.driver.sleep(500);
+    return element.all(by.css('[ng-click="cp.submitContact(item)"]'));
   };
 
-  this.focusedAction = function() {
-    return browser.driver.switchTo().activeElement().getText();
-  }
+  this.focusedButton = function() {
+    return browser.driver.switchTo().activeElement();
+  };
+
 };
 
 module.exports = ContactUser;

@@ -63,7 +63,7 @@
     function showContactOptions($event) {
         var user = self.selected;
 
-        $mdBottomSheet.show({
+        return $mdBottomSheet.show({
           parent: angular.element(document.getElementById('content')),
           templateUrl: '/src/users/view/contactSheet.html',
           controller: [ '$mdBottomSheet', ContactPanelController],
@@ -85,7 +85,7 @@
             { name: 'Google+'     , icon: 'google_plus' , icon_url: 'assets/svg/google_plus.svg'},
             { name: 'Hangout'     , icon: 'hangouts'    , icon_url: 'assets/svg/hangouts.svg'}
           ];
-          this.contactUser = function(action) {
+          this.submitContact = function(action) {
             $mdBottomSheet.hide(action);
           };
         }
