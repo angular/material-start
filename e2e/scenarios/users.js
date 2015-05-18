@@ -13,7 +13,6 @@ describe('my app', function() {
   beforeEach(function() {
 
     users.loadAll();
-    element(by.css('body')).allowAnimations(false);
 
   });
 

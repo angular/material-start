@@ -12,6 +12,7 @@ var ContactUser = function() {
     return browser.driver.switchTo().activeElement();
   };
 
+
 };
 
 module.exports = ContactUser;
