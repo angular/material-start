@@ -15,7 +15,6 @@ describe('my app', function() {
     users.loadAll();
     element(by.css('body')).allowAnimations(false);
 
-
   });
 
   it('should load a list of users', function() {
