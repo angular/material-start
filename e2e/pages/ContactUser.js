@@ -5,7 +5,6 @@ var ContactUser = function() {
   };
 
   this.buttons = function() {
-    browser.driver.sleep(500);
     return element.all(by.css('[ng-click="cp.submitContact(item)"]'));
   };
 
