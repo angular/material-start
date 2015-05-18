@@ -13,7 +13,8 @@ describe('my app', function() {
   beforeEach(function() {
 
     users.loadAll();
-    details.load();
+    //details.load();
+    //contact.load();
 
   });
 
@@ -24,17 +25,13 @@ describe('my app', function() {
   describe('selecting a user', function() {
 
     beforeEach(function() {
-      return details.contactUser().then(function() {
-        return contact.load();
-      });
+      return details.contactUser();
     });
 
     it('should set focus on first button in the bottomsheet view', function() {
-      contact.buttons().then(function(items) {
-        expect( items.length ).toEqual( 4 );
-
-        expect( contact.focusedAction() ).toEqual( 'PHONE' );
-      });
+      expect( contact.buttons().count() ).toBe(4);
+      expect( contact.buttons().first().getText() ).toEqual( 'PHONE' );
+      expect( contact.focusedButton().getText() ).toEqual( 'PHONE' );
     });
 
   });
