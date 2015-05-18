@@ -21,7 +21,7 @@
     self.users        = [ ];
     self.selectUser   = selectUser;
     self.toggleList   = toggleUsersList;
-    self.share        = share;
+    self.showContactOptions  = showContactOptions;
 
     // Load all registered users
 
@@ -60,14 +60,14 @@
     /**
      * Show the bottom sheet
      */
-    function share($event) {
+    function showContactOptions($event) {
         var user = self.selected;
 
         $mdBottomSheet.show({
           parent: angular.element(document.getElementById('content')),
           templateUrl: '/src/users/view/contactSheet.html',
-          controller: [ '$mdBottomSheet', UserSheetController],
-          controllerAs: "vm",
+          controller: [ '$mdBottomSheet', ContactPanelController],
+          controllerAs: "cp",
           bindToController : true,
           targetEvent: $event
         }).then(function(clickedItem) {
@@ -77,15 +77,15 @@
         /**
          * Bottom Sheet controller for the Avatar Actions
          */
-        function UserSheetController( $mdBottomSheet ) {
+        function ContactPanelController( $mdBottomSheet ) {
           this.user = user;
-          this.items = [
+          this.actions = [
             { name: 'Phone'       , icon: 'phone'       , icon_url: 'assets/svg/phone.svg'},
             { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'assets/svg/twitter.svg'},
             { name: 'Google+'     , icon: 'google_plus' , icon_url: 'assets/svg/google_plus.svg'},
             { name: 'Hangout'     , icon: 'hangouts'    , icon_url: 'assets/svg/hangouts.svg'}
           ];
-          this.performAction = function(action) {
+          this.contactUser = function(action) {
             $mdBottomSheet.hide(action);
           };
         }

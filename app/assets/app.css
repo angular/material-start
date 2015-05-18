@@ -49,7 +49,7 @@ md-list .md-button {
   padding-top: 5px;
 }
 
-#content .md-button.share {
+#content .md-button.contact {
   background-color: transparent;
   border: none;
   width: 48px;
@@ -64,7 +64,7 @@ md-list .md-button {
   margin-top: 10px;
 }
 
-#content .md-button.share > md-icon {
+#content .md-button.contact > md-icon {
   fill:black;
   width:36px;
   height:36px;
@@ -76,7 +76,7 @@ md-button.menuBtn > md-icon {
   height:24px;
 }
 
-#content .md-button.share:active > md-icon {
+#content .md-button.contact:active > md-icon {
   background-color: #dadada;
   border-radius: 75%;
   padding:4px;

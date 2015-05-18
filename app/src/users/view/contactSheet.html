@@ -1,12 +1,12 @@
 <md-bottom-sheet class="md-list md-has-header">
 
     <md-subheader>
-        Contact <span class="name">{{ vm.user.name }}</span>:
+        Contact <span class="name">{{ cp.user.name }}</span>:
     </md-subheader>
 
     <md-list>
-      <md-item ng-repeat="item in vm.items">
-        <md-button ng-click="vm.performAction(item)" id="item_{{$index}}">
+      <md-item ng-repeat="item in cp.actions">
+        <md-button ng-click="cp.contactUser(item)" id="item_{{$index}}">
             <md-icon md-svg-icon="{{ item.icon_url }}"></md-icon>
             {{item.name}}
         </md-button>
