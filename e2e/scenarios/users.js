@@ -13,8 +13,8 @@ describe('my app', function() {
   beforeEach(function() {
 
     users.loadAll();
-    //details.load();
-    //contact.load();
+    element(by.css('body')).allowAnimations(false);
+
 
   });
 
