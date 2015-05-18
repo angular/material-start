@@ -40,7 +40,8 @@
           <h2>{{ul.selected.name}}</h2>
           <p>{{ul.selected.content}}</p>
 
-          <md-button class="share" md-no-ink ng-click="ul.share($event)" aria-label="Share">
+          <md-button class="contact" md-no-ink ng-click="ul.showContactOptions($event)" aria-label="Contact User">
+            <md-tooltip>Contact {{ ul.selected.name }}</md-tooltip>
             <md-icon md-svg-icon="share"></md-icon>
           </md-button>
         </md-content>

@@ -2,19 +2,18 @@
 
 var UserList    = require('../pages/UserList.js');
 var UserDetails = require('../pages/UserDetails.js');
-var Share       = require('../pages/Share.js');
+var ContactUser = require('../pages/ContactUser.js');
 
 describe('my app', function() {
 
   var users   = new UserList();
   var details = new UserDetails();
-  var share   = new Share();
+  var contact = new ContactUser();
 
   beforeEach(function() {
 
     users.loadAll();
     details.load();
-    share.load();
 
   });
 
@@ -25,12 +24,16 @@ describe('my app', function() {
   describe('selecting a user', function() {
 
     beforeEach(function() {
-      details.contactUser();
+      return details.contactUser().then(function() {
+        return contact.load();
+      });
     });
 
-    it('should set focus on first Share option in Contact Share view', function() {
-      share.actions().then(function(items) {
-        expect(items[0].getAttribute('id')).toEqual(share.focusedItem().getAttribute('id'));
+    it('should set focus on first button in the bottomsheet view', function() {
+      contact.buttons().then(function(items) {
+        expect( items.length ).toEqual( 4 );
+
+        expect( contact.focusedAction() ).toEqual( 'PHONE' );
       });
     });
 
