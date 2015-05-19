@@ -11,9 +11,7 @@ describe('my app', function() {
   var contact = new ContactUser();
 
   beforeEach(function() {
-
     users.loadAll();
-
   });
 
   it('should load a list of users', function() {
