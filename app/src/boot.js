@@ -1,3 +1,4 @@
+
 // Load the Angular Material CSS associated with ngMaterial
 // then load the main.css to provide overrides, etc.
 
@@ -13,6 +14,11 @@ import material from 'angular-material'
 
 import main from 'app/main'
 
+// Load loggers for injection and pre-angular debugging
+
+import { LogDecorator, ExternalLogger } from 'utils/LogDecorator';
+
+
 /**
  * Manually bootstrap the application when AngularJS and
  * the application classes have been loaded.
@@ -21,10 +27,18 @@ angular
   .element( document )
   .ready( function() {
 
-    let body = document.getElementsByTagName("body")[0];
-    let app  = angular.module( 'starter-app', [ material, main ] );
+    let appName = 'starter-app';
+    let $log = new ExternalLogger();
 
-    angular.bootstrap( body, [ app.name ], { strictDi: false });
+    $log = $log.getInstance( "BOOTSTRAP" );
+    $log.debug( "Initializing '{0}'", [ appName ] );
+
+    let body = document.getElementsByTagName("body")[0];
+    let app  = angular
+          .module( appName, [ material, main ] )
+          .config( ['$provide', LogDecorator] );
+
+    angular.bootstrap( body, [ app.name ], { strictDi: false })
 
   });
 

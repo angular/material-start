@@ -1,6 +1,7 @@
 System.config({
   "paths": {
     "*": "*.js",
+    "utils/*": "src/utils/*.js",
     "app/*": "src/*.js",
     "users/*": "src/users/*.js",
     "material-start/*": "src/*.js",
@@ -15,7 +16,7 @@ System.config({
     "angular-animate": "github:angular/bower-angular-animate@1.3.15",
     "angular-aria": "github:angular/bower-angular-aria@1.3.15",
     "angular-material": "github:angular/bower-material@0.9.4",
-    "css": "github:systemjs/plugin-css@0.1.10",
+    "css": "github:systemjs/plugin-css@0.1.11",
     "json": "github:systemjs/plugin-json@0.1.0",
     "text": "github:systemjs/plugin-text@0.0.2",
     "traceur": "github:jmcriffey/bower-traceur@0.0.87",
@@ -30,7 +31,7 @@ System.config({
       "angular": "github:angular/bower-angular@1.3.15",
       "angular-animate": "github:angular/bower-angular-animate@1.3.15",
       "angular-aria": "github:angular/bower-angular-aria@1.3.15",
-      "css": "github:systemjs/plugin-css@0.1.10"
+      "css": "github:systemjs/plugin-css@0.1.11"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
@@ -70,7 +71,7 @@ System.config({
     "github:jspm/nodelibs-util@0.1.0": {
       "util": "npm:util@0.10.3"
     },
-    "github:systemjs/plugin-css@0.1.10": {
+    "github:systemjs/plugin-css@0.1.11": {
       "clean-css": "npm:clean-css@3.1.9",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0"

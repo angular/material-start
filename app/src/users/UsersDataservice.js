@@ -6,7 +6,7 @@
  * @returns {{loadAll: Function}}
  * @constructor
  */
-function UsersDataservice($q) {
+function UsersDataservice($q, $log) {
   var users = [
         {
           name: 'Lia Lugo',
@@ -40,14 +40,19 @@ function UsersDataservice($q) {
         }
       ];
 
+    $log = $log.getInstance( "UsersDataservice" );
+    $log.debug( "instanceOf() ");
+
     // Promise-based API
     return {
       loadAll : function() {
+        $log.debug("loadAll()");
+
         // Simulate async nature of real remote calls
         return $q.when(users);
       }
     };
 }
 
-export default [ '$q', UsersDataservice ];
+export default [ '$q', '$log', UsersDataservice ];
 

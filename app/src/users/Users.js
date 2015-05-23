@@ -7,6 +7,12 @@ const URL_ICON_SHARE   = 'assets/svg/share.svg';
 import UsersController from 'users/UsersController'
 import UsersService    from 'users/UsersDataservice'
 
+import { ExternalLogger } from 'utils/LogDecorator';
+
+let $log = new ExternalLogger();
+    $log = $log.getInstance( "BOOTSTRAP" );
+    $log.debug( "Configuring 'users' module" );
+
 // Define the Angular 'users' module
 
 let moduleName = angular
@@ -14,6 +20,9 @@ let moduleName = angular
       .service("usersService"       , UsersService )
       .controller("UsersController" , UsersController )
       .config( ($mdIconProvider) => {
+
+
+        $log.debug( "Configuring $mdIconProvider" );
 
         // Register `dashboard` iconset & icons for $mdIcon service lookups
 
