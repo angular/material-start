@@ -2,8 +2,9 @@
   'use strict';
 
   angular.module('users')
-         .service('userService', ['$q', UserService]);
+         .service('userService', UserService);
 
+  UserService.$inject = ['$q'];
   /**
    * Users DataService
    * Uses embedded, hard-coded data model; acts asynchronously to simulate

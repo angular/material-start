@@ -2,11 +2,9 @@
 
   angular
        .module('users')
-       .controller('UserController', [
-          'userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q',
-          UserController
-       ]);
+       .controller('UserController', UserController);
 
+  UserController.$inject = ['userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q'];
   /**
    * Main Controller for the Angular Material Starter App
    * @param $scope
