@@ -4,7 +4,7 @@ This branch contains the tutorial steps and processes used to implement the star
 
 ![material-starter-ux2](https://cloud.githubusercontent.com/assets/210413/6448551/70864488-c0e0-11e4-8767-c4e1e4c2f343.png)
 
-Above is a snaphot of the Starter-App with a **Master-Detail** layout: showing a list of users (left) and a user detail view (right). 
+Above is a snapshot of the Starter-App with a **Master-Detail** layout: showing a list of users (left) and a user detail view (right). 
 
 Also shown is the user experience that will be displayed for smaller device sizes. The responsive layout reveals the **menu** button that can be used to hide the user list. And the **share** button can be used to show the Share bottom sheet view.
 
@@ -18,7 +18,7 @@ This Starter app demonstrates how:
 *  Theming can be altered/configured using `$mdThemingProvider`
 
 
-This sample application is purposed as both a learning tool and a skeleton application for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
+This sample application is purposed as both a learning tool and a skeleton application for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your AngularJS webapp projects and dev environment for these
 projects.
 
 <br/>
@@ -65,7 +65,7 @@ You will notice html Tutorials #0 thru #8: these will be used to guide you throu
 
 Each tutorial presents the resulting changes for that stage. It is recommended, however, that you start with the preceding tutorial and manually make the changes requested. The effort you invest to implement these changes will highlight specific concepts at each Tutorial stage.
 
-> At each tutorial stage, you should use a web-server to view the that tutorial page. Open the dev console to see any warnings and browser the elements.
+> At each tutorial stage, you should use a web server to view that tutorial page. Open the dev console to see any warnings and browse the elements.
 
 <br/>
 - - -
