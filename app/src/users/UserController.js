@@ -65,7 +65,7 @@
 
         return $mdBottomSheet.show({
           parent: angular.element(document.getElementById('content')),
-          templateUrl: '/src/users/view/contactSheet.html',
+          templateUrl: './src/users/view/contactSheet.html',
           controller: [ '$mdBottomSheet', ContactPanelController],
           controllerAs: "cp",
           bindToController : true,
