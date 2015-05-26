@@ -6,7 +6,7 @@ This branch contains the tutorial steps and processes used to implement the star
 
 Above is a snaphot of the Starter-App with a **Master-Detail** layout: showing a list of users (left) and a user detail view (right). 
 
-Also shown is the user experience that will be displayed for smaller device sizes. The responsive layout reveals the **menu** button that can be used to hide the user list. And the **share** button can be used to show the Share bottom sheet view.
+Also shown is the user experience that will be displayed for smaller device sizes. The responsive layout reveals the **menu** button that can be used to hide the user list and a **share** button that can be used to show the Share bottom sheet view.
 
 This Starter app demonstrates how:
 
@@ -42,7 +42,7 @@ Here are some generalized steps that may be used to conceptualize the applicatio
 <br/>
 ###### Wirefame 
 
-The illustration below shows how we planned the layout and identified the primary components that will be used in the Starter ap:
+The illustration below shows how we planned the layout and identified the primary components that will be used in the Starter application:
 
 <br/>
 ![plancomponents2](https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png)
@@ -54,7 +54,7 @@ The illustration below shows how we planned the layout and identified the primar
 
 ##### ES5 Tutorials
 
-These tutorials assume that you have already cloned the repository and executed the `npm update` command.
+These tutorials assume that you have already cloned the repository and executed the `npm install` command.
 
 You will notice html Tutorials #0 thru #8: these will be used to guide you through the development process. By following these tutorials stages, you will be very quickly introduced to the powerful features of Angular Material.
 
