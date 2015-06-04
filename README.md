@@ -199,7 +199,7 @@ The angular-seed project comes pre-configured with a local development web serve
 tool called [http-server][http-server].  You can install http-server globally:
 
 ```
-sudo npm install -g live-server
+npm install -g live-server
 ```
 
 Then you can start your own development web server to serve static files from a folder by running:
