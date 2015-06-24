@@ -27,6 +27,7 @@ md-list .md-button {
   font-weight: 500;
   text-align: left;
   width: 100%;
+  padding-top:10px;
 }
   md-list .md-button.selected {
     color: #03a9f4;
@@ -61,7 +62,7 @@ md-list .md-button {
 }
 
 #content md-icon.avatar {
-  margin-top: 10px;
+  margin-top: 0;
 }
 
 #content .md-button.share > md-icon {
@@ -104,18 +105,14 @@ md-toolbar h1 {
 
 .avatar {
   position: relative;
-  width: 128px;
-  height: 128px;
+  width: 75px;
+  height: 75px;
   border: 1px solid #ddd;
   border-radius: 50%;
   display: inline-block;
   overflow: hidden;
   margin: 0px;
   vertical-align: middle;
-  zoom:0.70;
-  transform: translateZ(0);
-  -webkit-transform: scale(0.70);
-  -moz-transform:scale(0.70);
 }
 
 
@@ -127,4 +124,29 @@ span.name {
   font-weight: bold;
   font-size:1.1em;
   padding-left:5px;
+}
+
+md-list-item .md-button {
+  margin: 0;
+}
+
+
+md-list .md-button.selected {
+  color: #03A9F7;
+  background-color: #EFF1F2;
+}
+
+md-list md-list-item button.md-button:not(.selected):not([disabled]) {
+  background-color:  white;
+}
+
+
+
+#content {
+  padding:25px;
+}
+#content md-icon.avatar {
+  width:100px;
+  height:100px;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.14), 0 4px 5px 0 rgba(0, 0, 0, 0.098), 0 1px 10px 0 rgba(0, 0, 0, 0.084);
 }

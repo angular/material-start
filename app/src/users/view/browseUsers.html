@@ -12,14 +12,14 @@
   <div flex layout="row">
 
       <!-- Container #3 (in wireframe) -->
-      <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
-        <md-list>
-          <md-item ng-repeat="it in ul.users">
+      <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2" md-component-id="left" layout="column">
+        <md-list layout="column">
+          <md-list-item ng-repeat="it in ul.users">
               <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
                 <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
                 {{it.name}}
               </md-button>
-          </md-item>
+          </md-list-item>
         </md-list>
       </md-sidenav>
 
