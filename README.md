@@ -1,6 +1,6 @@
 # Angular Material-Start
 
-This Material **start*** project is a *seed* for AngularJS Material applications. The project contains a sample AngularJS application and is pre-configured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
+This Material **start** project is a *seed* for AngularJS Material applications. The project contains a sample AngularJS application and is pre-configured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
 
 This sample application is intended to be useful as both a learning tool and a skeleton application
 for a typical [AngularJS Material](http://material.angularjs.org/) web app: comprised of a Side navigation
@@ -10,7 +10,7 @@ environment for these projects.
 ### What is the UX?
 
 Below is a snapshot of the Starter-App with the Users' *master-detail* view. Also shown is the user
-experience that will is displayed for smaller device sizes. The responsive layout changes to hide
+experience that is displayed for smaller device sizes. The responsive layout changes to hide
 the user list, reveal the **menu** button. In the User Details view, you may also click the
 **share** button  to show the Contact &lt;User&gt; bottom sheet view.
 
@@ -47,8 +47,8 @@ for  ES6 Tutorial steps & development process.
 * Branch [**Starter - ES6**](https://github.com/angular/material-start/tree/es6): for example
 implementation of Angular Material 1.x (and Angular 1.x) within an ES6 application.
 
-> The **README** for the ES6 branches will provide all details showing how easy, <u>more simplifed</u>,
-and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x.<br/><br/>
+> The **README** for the ES6 branches will provide all details showing how easy, more simplifed,
+and more manageable it is to develop ES6 applications with Angular Material 1.x.  
 
 ## Getting Started
 
@@ -135,7 +135,7 @@ cd ./app; live-server;
 webdriver-manager start
 ```
 
->This will start up a Selenium Server and will output a bunch of info logs. Your Protractor test
+> This will start up a Selenium Server and will output a bunch of info logs. Your Protractor test
 will send requests to this server to control a local browser. You can see information about the
 status of the server at `http://localhost:4444/wd/hub`. If you see errors, verify path in
 `e2e-tests/protractor.conf.js` for `chromeDriver` and `seleniumServerJar` to your local file system.
@@ -195,7 +195,7 @@ etc to function properly when an html page is opened via `file://` scheme instea
 
 ### Running the App during Development
 
-The angular-seed project comes pre-configured with a local development web server.  It is a node.js
+The angular-seed project comes pre-configured with a local development web server. It is a node.js
 tool called [http-server][http-server].  You can install http-server globally:
 
 ```
