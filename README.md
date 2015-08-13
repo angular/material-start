@@ -231,7 +231,7 @@ Here you will replace the hardcoded HTML with dynamic markup using Angular direc
 	  <h2>{{ul.selected.name}}</h2>
 	  <p>{{ul.selected.content}}</p>
 
-	  <md-button class="action" md-no-ink>
+	  <md-button class="share" md-no-ink>
 		<md-icon md-svg-icon="share" ></md-icon>
 	  </md-button>
 	</md-content>
