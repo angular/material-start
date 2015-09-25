@@ -1,7 +1,7 @@
 {
   "name": "material-start",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A starter project for AngularJS Material",
   "repository": "https://github.com/angular/material-start",
   "license": "MIT",
@@ -11,9 +11,9 @@
       "lib": "app/src"
     },
     "dependencies": {
-      "angular": "github:angular/bower-angular@^1.4.1",
-      "angular-animate": "github:angular/bower-angular-animate@^1.4.1",
-      "angular-aria": "github:angular/bower-angular-aria@^1.4.1",
+      "angular": "github:angular/bower-angular@^1.4.6",
+      "angular-animate": "github:angular/bower-angular-animate@^1.4.6",
+      "angular-aria": "github:angular/bower-angular-aria@^1.4.6",
       "angular-material": "github:angular/bower-material@master",
       "css": "github:systemjs/plugin-css@^0.1.6",
       "json": "github:systemjs/plugin-json@^0.1.0",
