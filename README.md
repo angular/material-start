@@ -125,11 +125,15 @@ for more details on Protractor.
 ```console
 cd ./app; live-server;
 ```
+or 
+
+cd directory with gulfile and `gulp`
+
 
 > Note: since `live-server` is working on port 8080, we configure the `protractor.conf.js` to use
 `baseUrl: 'http://localhost:8080'`
 
- 2. In another tab, start a Webdriver instance:
+ 3. In another tab, start a Webdriver instance:
  
 ```console
 webdriver-manager start
@@ -139,11 +143,6 @@ webdriver-manager start
 will send requests to this server to control a local browser. You can see information about the
 status of the server at `http://localhost:4444/wd/hub`. If you see errors, verify path in
 `e2e-tests/protractor.conf.js` for `chromeDriver` and `seleniumServerJar` to your local file system.
-
- 3. The next:
- 
-```console
-gulp
 
  4. Run your e2e tests using the `test` script defined in `package.json`:
  
