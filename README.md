@@ -209,8 +209,13 @@ Here you will replace the hardcoded HTML with dynamic markup using Angular direc
 * Use dynamic HTML that will be compiled and rendered by Angular
 * Register a custom icon set of 'user' avatars for the user list
 * Register **menu** and **share** icon urls for the md-buttons
+* Register the User controller
 
 ```html
+  <body ng-app="starterApp" layout="column" ng-controller="UserController as ul">
+
+[...]
+
  <!-- Wireframe Container #2 -->
  <div flex layout="row">
  	<!-- Wireframe Container #3 -->
@@ -231,7 +236,7 @@ Here you will replace the hardcoded HTML with dynamic markup using Angular direc
 	  <h2>{{ul.selected.name}}</h2>
 	  <p>{{ul.selected.content}}</p>
 
-	  <md-button class="action" md-no-ink>
+	  <md-button class="share" md-no-ink>
 		<md-icon md-svg-icon="share" ></md-icon>
 	  </md-button>
 	</md-content>
