@@ -190,8 +190,8 @@ Here you integrate your custom, application logic.
 
 ```html
 <script src="./src/users/Users.js"></script>
-<script src="./src/users/UsersListController.js"></script>
-<script src="./src/users/UsersDataservice.js"></script>
+<script src="./src/users/UserController.js"></script>
+<script src="./src/users/UserService.js"></script>
 
 <script type="text/javascript">
 
