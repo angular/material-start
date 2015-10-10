@@ -126,9 +126,9 @@ for more details on Protractor.
 cd ./app; live-server;
 ```
 or 
-
+```
 cd directory with gulfile and `gulp`
-
+```
 
 > Note: since `live-server` is working on port 8080, we configure the `protractor.conf.js` to use
 `baseUrl: 'http://localhost:8080'`
