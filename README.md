@@ -114,6 +114,7 @@ terminal commands:
 
 ```console
 npm update
+npm install -g webdriver-manager
 webdriver-manager update
 ```
 
@@ -123,6 +124,7 @@ for more details on Protractor.
  1. Start your local HTTP Webserver: `live-server` or `http-server`.
 
 ```console
+npm install -g live-server
 cd ./app; live-server;
 ```
 
