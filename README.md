@@ -139,10 +139,12 @@ webdriver-manager start
 will send requests to this server to control a local browser. You can see information about the
 status of the server at `http://localhost:4444/wd/hub`. If you see errors, verify path in
 `e2e-tests/protractor.conf.js` for `chromeDriver` and `seleniumServerJar` to your local file system.
- 3. run
- ```
- $ gulp
- ```
+
+ 3. The next:
+ 
+```console
+gulp
+
  4. Run your e2e tests using the `test` script defined in `package.json`:
  
 ```console
