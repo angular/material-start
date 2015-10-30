@@ -42,13 +42,10 @@ Developers should checkout the following repository branches for:
 
 * Branch [**Starter - ES5 Tutorials**](https://github.com/angular/material-start/tree/es5-tutorial):
 for  ES5 Tutorial steps & development process.
-* Branch [**Starter - ES6 Tutorials**](https://github.com/angular/material-start/tree/es6-tutorial):
-for  ES6 Tutorial steps & development process.
-* Branch [**Starter - ES6**](https://github.com/angular/material-start/tree/es6): for example
-implementation of Angular Material 1.x (and Angular 1.x) within an ES6 application.
+* Branch [**Starter - ES6**](https://github.com/angular/material-start/tree/es6): same application as created in the master, but implemented with ES6 and JSPM.
 
-> The **README** for the ES6 branches will provide all details showing how easy, <u>more simplifed</u>,
-and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x.<br/><br/>
+> The **README** for the ES6 branch will provide some details showing how easy, <u>more simplifed</u>,
+and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x.<br/><br/>. As time permits, we will expand on that information.
 
 ## Getting Started
 
