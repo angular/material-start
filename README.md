@@ -1,6 +1,8 @@
 # Angular Material-Start (ES6 Tutorials)
 
-This branch contains the tutorial steps and processes used to implement the start-app shown below:
+This branch contains the same tutorial application created in master and the es5 branch... but this branch implements the application using JSPM and ES6. 
+
+> There are no tutorial steps in this branch. Instead the finished application is published here for comparison and learning purposes. 
 
 ![material-starter-ux2](https://cloud.githubusercontent.com/assets/210413/6448551/70864488-c0e0-11e4-8767-c4e1e4c2f343.png)
 
@@ -18,28 +20,8 @@ This Starter app demonstrates how:
 *  Theming can be altered/configured using `$mdThemingProvider`
 
 
-This sample application is purposed as both a learning tool and a skeleton application for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
-projects.
+This sample application is purposed as both a learning tool and a skeleton application for a typical [AngularJS Material](http://angularjs.org/) ES6 web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.
 
-<br/>
-- - -
-
-#### "How to build an App"
-
-Here are some generalized steps that may be used to conceptualize the application implementation process:
-
-1. Plan your layout and the components you want to use
-2. Use hard-coded HTML and mock content to make sure the components appear as desired
-3. Wire components to your application logic
-> Use the seamless integration possible with Angular directives and controllers<br/>
-> This integration assumes that you have unit tested your app logic
-4. Add Responsive breakpoints
-5. Add Theming support
-6. Confirm ARIA compliance
-7. Write e2e Tests 
-> It is important to validate your app logic with Angular Material UI components.
-
-<br/>
 ###### Wirefame 
 
 The illustration below shows how we planned the layout and identified the primary components that will be used in the Starter ap:
@@ -52,29 +34,21 @@ The illustration below shows how we planned the layout and identified the primar
 <br/>
 - - -
 
-##### ES6 Tutorials
+##### ES6 with JSPM
 
-These tutorial use jspm.io: package manager for SystemJS which is built on top of the dynamic ES6 module loader. This allows developers to load any module format (ES6, CommonJS, AMD, and globals).
+These application use jspm.io: package manager for SystemJS which is built on top of the dynamic ES6 module loader. This allows developers to load any module format (ES6, CommonJS, AMD, and globals).
 
-These tutorials assume that you have already cloned the repository and executed the following commands:
+After you have cloned the repository, you should execute the following commands:
 
 * `npm install jspm -g`
 * `jspm install`
 
-You will notice html Tutorials #0 thru #8: these will be used to guide you through the development process. By following these tutorials stages, you will be very quickly introduced to the powerful features of Angular Material.
 
-Each tutorial presents the resulting changes for that stage. It is recommended, however, that you start with the preceding tutorial and manually make the changes requested. The effort you invest to implement these changes will highlight specific concepts at each Tutorial stage.
+### index.html:
 
-> At each tutorial stage, you should use a web-server to view the that tutorial page. Open the dev console to see any warnings and browser the elements.
+Notice that the shell application uses **jspm** with Angular-Material.
 
-<br/>
-- - -
-
-### Step #1:
-
-Here you modified the shell application to use **jspm** with Angular-Material.
-
-* In the HTML, only load the **System loader** and the configuration module
+* In the HTML, we only load the **System loader** and the configuration module
 > Notice no stylesheets are loaded here... they are injected later upon demand
 * Configure the system loader to laod the app/boot module.
 
@@ -85,7 +59,7 @@ Here you modified the shell application to use **jspm** with Angular-Material.
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-    <title>Angular Material - Starter App</title>
+    <title>Angular Material - Starter App ES6</title>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
 
     <style type="text/css">
@@ -114,9 +88,3 @@ Here you modified the shell application to use **jspm** with Angular-Material.
 
   </body>
 ```
-
-
-
-## Summary
-
-
