@@ -2,27 +2,15 @@
 
 This branch contains the same tutorial application created in master and the es5 branch... but this branch implements the application using JSPM and ES6. 
 
-> There are no tutorial steps in this branch. Instead the finished application is published here for comparison and learning purposes. 
-
 ![material-starter-ux2](https://cloud.githubusercontent.com/assets/210413/6448551/70864488-c0e0-11e4-8767-c4e1e4c2f343.png)
 
 Above is a snaphot of the Starter-App with a **Master-Detail** layout: showing a list of users (left) and a user detail view (right). 
 
-Also shown is the user experience that will be displayed for smaller device sizes. The responsive layout reveals the **menu** button that can be used to hide the user list. And the **share** button can be used to show the Share bottom sheet view.
-
-This Starter app demonstrates how:
-
-*  Angular Material `layout` and `flex` options can easily configure HTML containers
-*  Angular Material components `<md-toolbar>`, `<md-sidenav>`, `<md-icon>` can be quickly used
-*  Custom controllers can use and show `<md-bottomsheet>` with HTML templates
-*  Custom controller can easily, programmatically open & close the SideNav component.
-*  Responsive breakpoints and `$mdMedia` are used
-*  Theming can be altered/configured using `$mdThemingProvider`
-
+> There are no tutorial steps in this branch. Instead the finished application is published here for comparison and learning purposes. 
 
 This sample application is purposed as both a learning tool and a skeleton application for a typical [AngularJS Material](http://angularjs.org/) ES6 web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.
 
-###### Wirefame 
+### Wirefame 
 
 The illustration below shows how we planned the layout and identified the primary components that will be used in the Starter ap:
 
@@ -34,7 +22,7 @@ The illustration below shows how we planned the layout and identified the primar
 <br/>
 - - -
 
-##### ES6 with JSPM
+### ES6 with JSPM
 
 These application use jspm.io: package manager for SystemJS which is built on top of the dynamic ES6 module loader. This allows developers to load any module format (ES6, CommonJS, AMD, and globals).
 
