@@ -32,9 +32,7 @@ After you have cloned the repository, you should execute the following commands:
 * `jspm install`
 
 
-### index.html:
-
-Notice that the shell application uses **jspm** with Angular-Material.
+Since web application uses **jspm** with Angular-Material:
 
 * In the HTML, we only load the **System loader** and the configuration module
 > Notice no stylesheets are loaded here... they are injected later upon demand
