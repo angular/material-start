@@ -6,7 +6,7 @@ This branch contains the same tutorial application created in master and the es5
 
 Above is a snaphot of the Starter-App with a **Master-Detail** layout: showing a list of users (left) and a user detail view (right). 
 
-> There are no tutorial steps in this branch. <br/><br/> Rather the finished application is published here for comparison and learning purposes. 
+> There are no tutorial steps in this branch. <br/> Rather the finished application is published here for comparison and learning purposes. 
 
 This sample application is purposed as both a learning tool and a skeleton application for a typical [AngularJS Material](http://angularjs.org/) ES6 web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.
 
