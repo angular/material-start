@@ -16,7 +16,7 @@ System.config({
     "angular-aria": "github:angular/bower-angular-aria@1.4.8",
     "angular-messages": "github:angular/bower-angular-messages@1.4.8",
     "angular-material": "github:angular/bower-material@master",
-    "css": "github:systemjs/plugin-css@0.1.18",
+    "css": "github:systemjs/plugin-css@0.1.19",
     "json": "github:systemjs/plugin-json@0.1.0",
     "text": "github:systemjs/plugin-text@0.0.2",
     "traceur": "github:jmcriffey/bower-traceur@0.0.91",
