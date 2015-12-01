@@ -110,6 +110,7 @@ These are already specified as npm dependencies within `package.json`. Simply ru
 terminal commands:
 
 ```console
+npm install -g live-server
 npm update
 webdriver-manager update
 ```
