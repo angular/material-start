@@ -77,16 +77,17 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
 
 ```html
   <head>
-    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+    <link href="./bower_components/angular-material/angular-material.css" rel="stylesheet" />
   </head>
 
   <body>
-
-    <script src="./bower_components/angular-animate/angular-animate.js"></script>
-    <script src="./bower_components/angular-aria/angular-aria.js"></script>
-    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+    <script src="./bower_components/angular/angular.js" type="text/javascript" ></script>
+    <script src="./bower_components/angular-animate/angular-animate.js" type="text/javascript" ></script>
+    <script src="./bower_components/angular-aria/angular-aria.js" type="text/javascript" ></script>
+    <script src="./bower_components/angular-material/angular-material.js" type="text/javascript" ></script>
 
 	<script>
+		// Include the dependency upon ngMaterial - important !!
 		angular.module('starterApp', ['ngMaterial']);
 	</script>
   </body>
