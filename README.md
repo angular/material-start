@@ -10,7 +10,7 @@ environment for these projects.
 ### What is the UX?
 
 Below is a snapshot of the Starter-App with the Users' *master-detail* view. Also shown is the user
-experience that will is displayed for smaller device sizes. The responsive layout changes to hide
+experience that will be displayed for smaller device sizes. The responsive layout changes to hide
 the user list, reveal the **menu** button. In the User Details view, you may also click the
 **share** button  to show the Contact &lt;User&gt; bottom sheet view.
 
