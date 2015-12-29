@@ -50,14 +50,14 @@
     <div flex layout="row">
 
         <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
-          <md-list>
+          <md-list-item>
             <md-item ng-repeat="it in ul.users">
                 <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
                   <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
                   {{it.name}}
                 </md-button>
             </md-item>
-          </md-list>
+          </md-list-item>
         </md-sidenav>
 
         <md-content flex id="content">
