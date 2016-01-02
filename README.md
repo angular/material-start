@@ -275,7 +275,7 @@ Here you will add responsive breakpoints so the application layout will adapt to
 	<div flex layout="row">
 
 	 <!-- Wireframe Container #3 -->
-	 <md-sidenav md-is-locked-open="$media('gt-sm')"
+	 <md-sidenav md-is-locked-open="$mdMedia('gt-sm')"
 				 md-component-id="left">
 	 </md-sidenav>
 
