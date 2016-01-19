@@ -147,20 +147,20 @@ Here you will use hard-coded elements to confirm rendering and layout of the con
 	  <md-list>
 
 		<!-- List item #1 -->
-		<md-item >
+		<md-list-item >
 			<md-button>
 			  <md-icon md-svg-src="./assets/svg/avatar-1.svg" class="avatar"></md-icon>
 			  Lia Luogo
 			</md-button>
-		</md-item>
+		</md-list-item>
 
 		<!-- List item #2 -->
-		<md-item >
+		<md-list-item >
 			<md-button>
 			 <md-icon md-svg-src="./assets/svg/avatar-4.svg" class="avatar"></md-icon>
 			  Lawrence Ray
 			</md-button>
-		</md-item>
+		</md-list-item>
 
 	  </md-list>
 	</md-sidenav>
@@ -217,12 +217,12 @@ Here you will replace the hardcoded HTML with dynamic markup using Angular direc
  	<!-- Wireframe Container #3 -->
 	<md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
 	  <md-list>
-		<md-item ng-repeat="it in ul.users">
+		<md-list-item ng-repeat="it in ul.users">
 			<md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
 			  <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
 			  {{it.name}}
 			</md-button>
-		</md-item>
+		</md-list-item>
 	  </md-list>
 	</md-sidenav>
 
