@@ -134,11 +134,11 @@ Here you used the wireframe planning and layout to identify the components and a
 
 Here you will use hard-coded elements to confirm rendering and layout of the container child elements and Angular Material components.
 
-* Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers
+* Show a list of Users in the `md-sideNav` container
+  *  Use the `md-list`, `md-button`, and `md-icon` components with mock data
+* Show mock user details in the `md-content` container
+
 > Note: that the md-sidenav is the container for the **master** Users List view, and the md-content is the container for the **detail** User Detail view.
-* Add the **layout** and **flex** attributes to configure the container layouts and sizing aspects.
-* Use `md-locked-open` to lock the sidenav open on the left
-* Use the `md-whiteframe-z2` to add a shadow the the sidenav
 
 ```html
   <body ng-app="starterApp" layout="column">
