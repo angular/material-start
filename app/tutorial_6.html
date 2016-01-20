@@ -40,15 +40,12 @@
   <body ng-app="starterApp" layout="column" ng-controller="UserController as ul">
 
     <md-toolbar layout="row">
-      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()">
-        <md-icon md-svg-icon="menu" ></md-icon>
-      </md-button>
-      <h1>Angular Material - Starter App</h1>
+      <h3>Angular Material - Starter App</h3>
     </md-toolbar>
 
     <div flex layout="row">
 
-        <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-4dp" md-component-id="left">
+        <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp" >
           <md-list>
             <md-item ng-repeat="u in ul.users">
                 <md-button ng-click="ul.selectUser(u)" ng-class="{'selected' : u === ul.selected }">
@@ -64,7 +61,7 @@
           <h2>{{ul.selected.name}}</h2>
           <p>{{ul.selected.content}}</p>
 
-          <md-button class="share" md-no-ink ng-click="ul.share($event)">
+          <md-button class="share" md-no-ink="ul.share($event)">
             <md-icon md-svg-icon="share"></md-icon>
           </md-button>
         </md-content>
@@ -88,8 +85,8 @@
 
               $mdIconProvider
                   .defaultIconSet("./assets/svg/avatars.svg", 128)
-                  .icon("menu", "./assets/svg/menu.svg", 24)
-                  .icon("share", "./assets/svg/share.svg", 24)
+                  .icon("menu"       , "./assets/svg/menu.svg"        , 24)
+                  .icon("share"      , "./assets/svg/share.svg"       , 24)
                   .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
                   .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
                   .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
