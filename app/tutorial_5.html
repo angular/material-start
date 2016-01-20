@@ -41,9 +41,6 @@
   <body ng-app="starterApp" layout="column" ng-controller="UserController as ul">
 
     <md-toolbar layout="row">
-      <md-button class="menu">
-        <md-icon md-svg-icon="menu" ></md-icon>
-      </md-button>
       <h1>Angular Material - Starter App</h1>
     </md-toolbar>
 
@@ -51,10 +48,10 @@
 
         <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
           <md-list>
-            <md-list-item ng-repeat="it in ul.users">
-                <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
-                  <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
-                  {{it.name}}
+            <md-list-item ng-repeat="u in ul.users">
+                <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : u === ul.selected }">
+                  <md-icon md-svg-icon="{{u.avatar}}" class="avatar"></md-icon>
+                  {{u.name}}
                 </md-button>
             </md-list-item>
           </md-list>
@@ -64,10 +61,6 @@
           <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
           <h2>{{ul.selected.name}}</h2>
           <p>{{ul.selected.content}}</p>
-
-          <md-button class="share" md-no-ink>
-            <md-icon md-svg-icon="share" ></md-icon>
-          </md-button>
         </md-content>
 
     </div>

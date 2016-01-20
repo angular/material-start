@@ -215,11 +215,11 @@ Here you will replace the hardcoded HTML with dynamic markup using Angular direc
  <!-- Wireframe Container #2 -->
  <div flex layout="row">
  	<!-- Wireframe Container #3 -->
-	<md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
+	<md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
 	  <md-list>
-		<md-list-item ng-repeat="it in ul.users">
-			<md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
-			  <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
+		<md-list-item ng-repeat="u in ul.users">
+			<md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : u === ul.selected }">
+			  <md-icon md-svg-icon="{{u.avatar}}" class="avatar"></md-icon>
 			  {{it.name}}
 			</md-button>
 		</md-list-item>
@@ -231,11 +231,8 @@ Here you will replace the hardcoded HTML with dynamic markup using Angular direc
 	  <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
 	  <h2>{{ul.selected.name}}</h2>
 	  <p>{{ul.selected.content}}</p>
-
-	  <md-button class="action" md-no-ink>
-		<md-icon md-svg-icon="share" ></md-icon>
-	  </md-button>
 	</md-content>
+	
  </div>
 
 
@@ -246,9 +243,7 @@ Here you will replace the hardcoded HTML with dynamic markup using Angular direc
 
 		  // Register the user `avatar` icons
 		  $mdIconProvider
-				  .defaultIconSet("./assets/svg/avatars.svg", 128)
-				  .icon("menu", "./assets/svg/menu.svg", 24)
-				  .icon("share", "./assets/svg/share.svg", 24);
+				  .defaultIconSet("./assets/svg/avatars.svg", 128);
 	  });
  </script>
 ```
@@ -275,7 +270,7 @@ Here you will add responsive breakpoints so the application layout will adapt to
 	<div flex layout="row">
 
 	 <!-- Wireframe Container #3 -->
-	 <md-sidenav md-is-locked-open="$media('gt-sm')"
+	 <md-sidenav md-is-locked-open="$mdMedia('gt-sm')"
 				 md-component-id="left">
 	 </md-sidenav>
 
