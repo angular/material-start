@@ -49,14 +49,14 @@
 
     <div flex layout="row">
 
-        <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
+        <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
           <md-list>
-            <md-item ng-repeat="it in ul.users">
+            <md-list-item ng-repeat="it in ul.users">
                 <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
                   <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
                   {{it.name}}
                 </md-button>
-            </md-item>
+            </md-list-item>
           </md-list>
         </md-sidenav>
 
@@ -91,14 +91,8 @@
               // Register the user `avatar` icons
               $mdIconProvider
                       .defaultIconSet("./assets/svg/avatars.svg", 128)
-                      .icon("menu", "./assets/svg/menu.svg", 24)
-                      .icon("share", "./assets/svg/share.svg", 24);
-
-
           })
-          .run(function($log){
-            $log.debug("starterApp + ngMaterial + 'users' + 'icon sets' running...");
-          });
+
     </script>
 
   </body>
