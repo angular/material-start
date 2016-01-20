@@ -10,7 +10,12 @@ html, body {
 
 md-toolbar h3 {
   margin: auto;
-  font-weight:500;
+  font-weight: 500;
+}
+
+md-list-item > button {
+  width:100%;
+  text-align:left !important;
 }
 
 #content  {
