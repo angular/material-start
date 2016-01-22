@@ -16,18 +16,19 @@ html, body {
   width: 36px;
 }
 
-md-toolbar h1 {
+
+md-toolbar h3 {
   margin: auto;
+  font-weight: 500;
 }
 
 /* Sidenav area */
 
-md-list .md-button {
-  color: inherit;
-  font-weight: 500;
-  text-align: left;
-  width: 100%;
+md-list-item > button {
+  width:100%;
+  text-align:left !important;
 }
+
   md-list .md-button.selected {
     color: #03a9f4;
   }
@@ -36,6 +37,14 @@ md-list .md-button {
     padding: 0px 0px 8px 0px;
   }
 
+
+button#main {
+  margin-bottom: 10px;
+}
+
+md-sidenav > md-toolbar {
+  height:64px;
+}
 
 /* Primary content area */
 
