@@ -131,7 +131,6 @@ Here you used the wireframe planning and layout to identify the components and a
 
 <span style="font-size:10px;">@see [tutorial_3.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_3.html#L43-L72)<span>
 
-
 Here you will use hard-coded elements to confirm rendering and layout of the container child elements and Angular Material components.
 
 * Show a list of Users in the `md-sideNav` container
@@ -139,6 +138,9 @@ Here you will use hard-coded elements to confirm rendering and layout of the con
 * Show mock user details in the `md-content` container
 
 > Note: that the md-sidenav is the container for the **master** Users List view, and the md-content is the container for the **detail** User Detail view.
+
+![tutorial_3](https://cloud.githubusercontent.com/assets/210413/12525866/89321b6c-c12d-11e5-9d0d-483725cc6de7.png)
+
 
 ```html
   <body ng-app="starterApp" layout="column">
@@ -186,6 +188,8 @@ Here you will replace the hard-coded HTML with dynamic, mock user data. Let's do
   *  Build the HTML markup to render the dynamic, mock data
 
 <span style="font-size:10px;">@see [tutorial_4.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_4.html#L85-L91)<span>
+
+![tutorial_4](https://cloud.githubusercontent.com/assets/210413/12525864/87420d8a-c12d-11e5-8cd2-5d6d89c3309a.png)
 
 Here you integrate your custom, application logic.
 
