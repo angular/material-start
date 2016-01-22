@@ -21,7 +21,7 @@
     self.users        = [ ];
     self.selectUser   = selectUser;
     self.toggleList   = toggleUsersList;
-    self.share        = share;
+    self.makeContact  = makeContact;
 
     // Load all registered users
 
@@ -42,10 +42,6 @@
      */
     function selectUser ( user ) {
       self.selected = angular.isNumber(user) ? $scope.users[user] : user;
-
-      $timeout(200,function(){
-        self.toggleList();
-      });
     }
 
     /**
@@ -56,26 +52,24 @@
     }
 
     /**
-     * Show the bottom sheet
+     * Show the bottom sheet with the ContactSheet view
      */
-    function share($event) {
+    function makeContact(selectedUser) {
 
         $mdBottomSheet.show({
-          parent: angular.element(document.getElementById('content')),
-          templateUrl: './src/users/view/contactSheet.html',
-          controller: [ '$mdBottomSheet', UserSheetController],
-          controllerAs: "vm",
-          bindToController : true,
-          targetEvent: $event
+          controllerAs  : "vm",
+          templateUrl   : './src/users/view/contactSheet.html',
+          controller    : [ '$mdBottomSheet', ContactSheetController],
+          parent        : angular.element(document.getElementById('content'))
         }).then(function(clickedItem) {
           $log.debug( clickedItem.name + ' clicked!');
         });
 
         /**
-         * Bottom Sheet controller for the Avatar Actions
+         * User ContactSheet controller
          */
-        function UserSheetController( $mdBottomSheet ) {
-          this.user = self.selected;
+        function ContactSheetController( $mdBottomSheet ) {
+          this.user = selectedUser;
           this.items = [
             { name: 'Phone'       , icon: 'phone'       , icon_url: 'assets/svg/phone.svg'},
             { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'assets/svg/twitter.svg'},

@@ -253,14 +253,14 @@ and the standard Angular `{{ }}` interpolation markup.
 
 <span style="font-size:10px;">@see [tutorial_5.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_5.html#L51)<span>
 
-In this step, you will use a dynamic, mbBottomSheet component at the bottom of the user details area. This sheet will be used to display contact options available for each user.
+In this step, you will use a dynamic, mbBottomSheet component at the bottom of the user details area. This contact sheet will be used to display user contact options available for each user.
 
 ![bottomsheet](https://cloud.githubusercontent.com/assets/210413/12501649/592ee38a-c085-11e5-8a65-8e0155fca4d8.png)
 
 *  create a "Share" button in the upper right of the user details view
 *  create a [User Contact](https://github.com/angular/material-start/blob/es5-tutorial/app/src/users/view/contactSheet.html) view and controller to show in the bottom sheet
 *  programmatically configure and load the bottomsheet using the $mdBottomSheet service
-*  register icons for bottomsheet
+*  register icons that will be used inside the user ContactSheet
 
 Add the `share` button to the UI:
 
@@ -270,7 +270,7 @@ Add the `share` button to the UI:
   <h2>{{ul.selected.name}}</h2>
   <p>{{ul.selected.content}}</p>
 
-  <md-button class="share" md-no-ink ng-click="ul.share(ul.selected)">
+  <md-button class="share" md-no-ink ng-click="ul.makeContact(ul.selected)">
 	<md-icon md-svg-icon="share"></md-icon>
   </md-button>
 </md-content>
@@ -281,14 +281,13 @@ Add the `share` button to the UI:
 	  .module('starterApp', ['ngMaterial', 'users'])
 	  .config(function($mdIconProvider){
 
-		  $mdIconProvider
-			  .icon("share", "./assets/svg/share.svg", 24);
+		  $mdIconProvider.icon("share", "./assets/svg/share.svg", 24);
 	  });
 
 </script>
 ```
 
-Add the `share()` function to the controller:
+Add the `makeContact()` function to the controller:
 
 ```js
 /**
@@ -298,15 +297,12 @@ function share(selectedUser) {
 
 	$mdBottomSheet.show({
 	  controllerAs     : "vm",
-	  controller       : [ '$mdBottomSheet', UserSheetController],
+	  controller       : [ '$mdBottomSheet', ContactSheetController],
 	  templateUrl      : './src/users/view/contactSheet.html',
 	  parent           : angular.element(document.getElementById('content'))
 	});
 
-	 /**
-	  * Bottom Sheet controller for the Avatar Actions
-	  */
-	 function UserSheetController( $mdBottomSheet ) {
+	 function ContactSheetController( $mdBottomSheet ) {
 	   this.user = selectedUser;
 	   this.items = [
 		 { name: 'Phone'       , icon: 'phone'       , icon_url: 'assets/svg/phone.svg'},
@@ -356,7 +352,7 @@ Here you will add responsive breakpoints so the application layout will adapt to
 
 	 <!-- Wireframe Container #4 -->
 	 <md-content flex id="content">
-	  <md-button class="share" md-no-ink ng-click="ul.share($event)"></md-button>
+	  <md-button class="share" md-no-ink ng-click="ul.share(ul.selected)"></md-button>
 	 </md-content>
 
 	</div>
@@ -427,7 +423,7 @@ Here you will fix any ARIA warnings that Angular Material may display in the Dev
 
 	 <!-- Wireframe Container #4 -->
 	 <md-content flex id="content">
-	  <md-button class="share" aria-label="Share"></md-button>
+	  <md-button class="share" aria-label="Share with {{ ul.selected.name }}"></md-button>
 	 </md-content>
 
 	</div>

@@ -20,7 +20,7 @@
     self.selected     = null;
     self.users        = [ ];
     self.selectUser   = selectUser;
-    self.share        = share;
+    self.makeContact  = makeContact;
 
     // Load all registered users
 
@@ -46,11 +46,11 @@
     /**
      * Show the bottom sheet
      */
-    function share(selectedUser) {
+    function makeContact(selectedUser) {
 
         $mdBottomSheet.show({
           controllerAs     : "vm",
-          controller       : [ '$mdBottomSheet', UserSheetController],
+          controller       : [ '$mdBottomSheet', ContactSheetController],
           templateUrl      : './src/users/view/contactSheet.html',
           parent           : angular.element(document.getElementById('content'))
         });
@@ -58,7 +58,7 @@
          /**
           * Bottom Sheet controller for the Avatar Actions
           */
-         function UserSheetController( $mdBottomSheet ) {
+         function ContactSheetController( $mdBottomSheet ) {
            this.user = selectedUser;
            this.items = [
              { name: 'Phone'       , icon: 'phone'       , icon_url: 'assets/svg/phone.svg'},
