@@ -334,6 +334,7 @@ Here you will add responsive breakpoints so the application layout will adapt to
 	* Use the `$mdSideNav` service to toggle the sideNav
 	* Auto-close the sideNav after a user is selected.
 
+![tutorial_6](https://cloud.githubusercontent.com/assets/210413/12525774/8f9014ba-c12c-11e5-8c9c-44d648f98e10.png)
 
 ```html
 <body>
@@ -384,6 +385,9 @@ Register the **share** and **menu** icons displayed in the User Detail and Toolb
 Here you will configure a different, darker theme to be used.
 
 * Use `$mdThemingProvider` to configure a different theme using primary colors from the **brown** color palette and accent colors from the **red** color palette.
+
+![tutorial_7](https://cloud.githubusercontent.com/assets/210413/12525775/91a73512-c12c-11e5-8884-f50fcd0cb5f5.png)
+
 
 ```html
 <script type="text/javascript">

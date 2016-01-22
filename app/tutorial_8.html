@@ -16,7 +16,7 @@
   <body ng-app="starterApp" layout="column" ng-controller="UserController as ul">
 
     <md-toolbar layout="row">
-      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Browse Users">
         <md-icon md-svg-icon="menu" ></md-icon>
       </md-button>
       <h3>Angular Material - Starter App</h3>
@@ -27,7 +27,7 @@
         <md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" ng-click="ul.toggleList()" class="md-whiteframe-4dp" >
           <md-list>
             <md-list-item ng-repeat="u in ul.users">
-                <md-button ng-click="ul.selectUser(u)" ng-class="{'selected' : u === ul.selected }">
+                <md-button ng-click="ul.selectUser(u)" ng-class="{'selected' : u === ul.selected }" >
                   <md-icon md-svg-icon="{{u.avatar}}" class="avatar"></md-icon>
                   {{u.name}}
                 </md-button>
@@ -40,7 +40,7 @@
           <h2>{{ul.selected.name}}</h2>
           <p>{{ul.selected.content}}</p>
 
-          <md-button class="share" md-no-ink ng-click="ul.makeContact(ul.selected)" aria-label="Share">
+          <md-button class="share" md-no-ink ng-click="ul.makeContact(ul.selected)" aria-label="Share with {{ ul.selected.name }}">
             <md-icon md-svg-icon="share"></md-icon>
           </md-button>
         </md-content>
