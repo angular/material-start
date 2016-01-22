@@ -113,6 +113,7 @@ terminal commands:
 
 ```console
 npm install -g live-server
+npm install -g webdriver-manager
 npm update
 webdriver-manager update
 ```
