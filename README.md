@@ -258,7 +258,7 @@ In this step, you will use a dynamic, mbBottomSheet component at the bottom of t
 ![bottomsheet](https://cloud.githubusercontent.com/assets/210413/12501649/592ee38a-c085-11e5-8a65-8e0155fca4d8.png)
 
 *  create a "Share" button in the upper right of the user details view
-*  create a User Contact view and controller to show in the bottom sheet
+*  create a [User Contact](https://github.com/angular/material-start/blob/es5-tutorial/app/src/users/view/contactSheet.html) view and controller to show in the bottom sheet
 *  programmatically configure and load the bottomsheet using the $mdBottomSheet service
 *  register icons for bottomsheet
 
@@ -282,51 +282,46 @@ Add the `share` button to the UI:
 	  .config(function($mdIconProvider){
 
 		  $mdIconProvider
-			  .defaultIconSet("./assets/svg/avatars.svg", 128)
-			  .icon("share"      , "./assets/svg/share.svg"       , 24)
-			  .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
-			  .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
-			  .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
-			  .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+			  .icon("share", "./assets/svg/share.svg", 24);
 	  });
 
 </script>
 ```
 
-Add the `share()` to the controller:
+Add the `share()` function to the controller:
 
 ```js
-    /**
-     * Show the bottom sheet
-     */
-    function share(selectedUser) {
+/**
+ * Show the bottom sheet
+ */
+function share(selectedUser) {
 
-        $mdBottomSheet.show({
-          controllerAs     : "vm",
-          controller       : [ '$mdBottomSheet', UserSheetController],
-          templateUrl      : './src/users/view/contactSheet.html',
-          parent           : angular.element(document.getElementById('content'))
-        });
+	$mdBottomSheet.show({
+	  controllerAs     : "vm",
+	  controller       : [ '$mdBottomSheet', UserSheetController],
+	  templateUrl      : './src/users/view/contactSheet.html',
+	  parent           : angular.element(document.getElementById('content'))
+	});
 
-         /**
-          * Bottom Sheet controller for the Avatar Actions
-          */
-         function UserSheetController( $mdBottomSheet ) {
-           this.user = selectedUser;
-           this.items = [
-             { name: 'Phone'       , icon: 'phone'       , icon_url: 'assets/svg/phone.svg'},
-             { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'assets/svg/twitter.svg'},
-             { name: 'Google+'     , icon: 'google_plus' , icon_url: 'assets/svg/google_plus.svg'},
-             { name: 'Hangout'     , icon: 'hangouts'    , icon_url: 'assets/svg/hangouts.svg'}
-           ];
-           this.contactUser = function(action) {
-			 // The actually contact process has not been implemented...
-			 // so just hide the bottomSheet
+	 /**
+	  * Bottom Sheet controller for the Avatar Actions
+	  */
+	 function UserSheetController( $mdBottomSheet ) {
+	   this.user = selectedUser;
+	   this.items = [
+		 { name: 'Phone'       , icon: 'phone'       , icon_url: 'assets/svg/phone.svg'},
+		 { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'assets/svg/twitter.svg'},
+		 { name: 'Google+'     , icon: 'google_plus' , icon_url: 'assets/svg/google_plus.svg'},
+		 { name: 'Hangout'     , icon: 'hangouts'    , icon_url: 'assets/svg/hangouts.svg'}
+	   ];
+	   this.contactUser = function(action) {
+		 // The actually contact process has not been implemented...
+		 // so just hide the bottomSheet
 
-             $mdBottomSheet.hide(action);
-           };
-         }
-    }
+		 $mdBottomSheet.hide(action);
+	   };
+	 }
+}
 ```
 
 
@@ -341,6 +336,7 @@ Here you will add responsive breakpoints so the application layout will adapt to
 * Hide the Toolbar menu icon button if the Users list is open.
 * Add `click` support for the **menu** and **share** buttons.
 	* Use the `$mdSideNav` service to toggle the sideNav
+	* Auto-close the sideNav after a user is selected.
 
 
 ```html
