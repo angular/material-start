@@ -18,7 +18,7 @@ This Starter app demonstrates how:
 *  Theming can be altered/configured using `$mdThemingProvider`
 
 
-This sample application is purposed as both a learning tool and a skeleton application for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
+This sample application is purposed as both a learning tool and a skeleton application for a typical [Angular Material](https://material.angularjs.org/latest/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
 projects.
 
 <br/>
