@@ -2,6 +2,7 @@
 <html lang="en" >
   <head>
     <title>Angular Material - Starter App</title>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
@@ -10,35 +11,13 @@
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
     <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
     <link rel="stylesheet" href="assets/app.css"/>
-
   </head>
 
   <!--
-    ✓ Create Angular shell app
-    ✓ Use `bower install angular-material`
-    ✓ Load the CSS (before our app.css),
-    ✓ Load the angular-material.js library and its dependent angular-aria.js and angular-animate.js libraries.
-    ✓ Then set the module dependency on 'ngMaterial'
-    ✓ Use wirefames to determine containers
-    ✓ Configure layouts
-    ✓ Lock open the sideNav, add shadow
-    ✓ Add content
-    ✓ Register Icons
-    ✓ Integrate with App logic
-      ✓ use ng-repeat
-      ✓ load app logic
-      ✓ add controller
-
-    -> Add Responsiveness
-
-    Fix Aria Warnings
-    Add Button clicks
-    Fix Contact Icons
-    Add Theming support
+    Add BottomSheet features
   -->
 
-  <!-- Add UsersList controller -->
-  <body ng-app="starterApp" layout="column" ng-controller="UserController as ul">
+  <body ng-app="starterApp" layout="column" ng-controller="UserController as ul" ng-cloak>
 
     <md-toolbar layout="row">
       <h3>Angular Material - Starter App</h3>
@@ -46,10 +25,10 @@
 
     <div flex layout="row">
 
-        <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
+        <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp" >
           <md-list>
             <md-list-item ng-repeat="u in ul.users">
-                <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : u === ul.selected }">
+                <md-button ng-click="ul.selectUser(u)" ng-class="{'selected' : u === ul.selected }">
                   <md-icon md-svg-icon="{{u.avatar}}" class="avatar"></md-icon>
                   {{u.name}}
                 </md-button>
@@ -61,6 +40,10 @@
           <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
           <h2>{{ul.selected.name}}</h2>
           <p>{{ul.selected.content}}</p>
+
+          <md-button class="share" md-no-ink ng-click="ul.share(ul.selected)">
+            <md-icon md-svg-icon="share"></md-icon>
+          </md-button>
         </md-content>
 
     </div>
@@ -68,23 +51,28 @@
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
-    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+    <script src="./bower_components/angular-material/angular-material.js"></script>
 
-    <!-- Load App Logic -->
     <script src="./src/users/Users.js"></script>
-    <script src="./src/users/UserController.js"></script>
     <script src="./src/users/UserService.js"></script>
+    <script src="src/users/UserController_5.js"></script>
 
     <script type="text/javascript">
 
       angular
           .module('starterApp', ['ngMaterial', 'users'])
-          .config(function( $mdIconProvider ){
+          .config(function($mdIconProvider){
 
-              // Register the user `avatar` icons
               $mdIconProvider
-                      .defaultIconSet("./assets/svg/avatars.svg", 128)
-          })
+                  .defaultIconSet("./assets/svg/avatars.svg", 128)
+                  .icon("share"      , "./assets/svg/share.svg"       , 24)
+                  .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+                  .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+                  .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+                  .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+
+
+          });
 
     </script>
 

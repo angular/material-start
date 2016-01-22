@@ -37,13 +37,6 @@
     // *********************************
 
     /**
-     * Hide or Show the 'left' sideNav area
-     */
-    function toggleUsersList() {
-      $mdSidenav('left').toggle();
-    }
-
-    /**
      * Select the current avatars
      * @param menuId
      */
@@ -53,6 +46,13 @@
       $timeout(200,function(){
         self.toggleList();
       });
+    }
+
+    /**
+     * Hide or Show the 'left' sideNav area
+     */
+    function toggleUsersList() {
+        $mdSidenav('left').toggle();
     }
 
     /**

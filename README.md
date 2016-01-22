@@ -65,7 +65,7 @@ Each tutorial presents the resulting changes for that stage. It is recommended, 
 <br/>
 - - -
 
-### Step #1:
+### Step #1: Load Libraries
 
 <span style="font-size:10px;">@see [tutorial_1.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_1.html#L26-L34)<span>
 
@@ -93,7 +93,7 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
   </body>
 ```
 
-### Step #2:
+### Step #2: Container Layouts
 
 <span style="font-size:10px;">@see [tutorial_2.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_2.html#L30-L39)<span>
 
@@ -127,7 +127,7 @@ Here you used the wireframe planning and layout to identify the components and a
   </body>
 ```
 
-### Step #3:
+### Step #3: Hard-Coded HTML
 
 <span style="font-size:10px;">@see [tutorial_3.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_3.html#L43-L72)<span>
 
@@ -178,16 +178,21 @@ Here you will use hard-coded elements to confirm rendering and layout of the con
   </body>
 ```
 
-### Step #4:
+### Step #4: Dynamic, Mock Data
+
+Here you will replace the hard-coded HTML with dynamic, mock user data. Let's do this in 2 stages:
+
+  *  Build custom application logic for load the mock user data
+  *  Build the HTML markup to render the dynamic, mock data
 
 <span style="font-size:10px;">@see [tutorial_4.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_4.html#L85-L91)<span>
 
 Here you integrate your custom, application logic.
 
-* Define a Angular module for your custom code
+* Define a Angular module 'users' for your custom code
 * Define your data services, models, and controllers
-* Load your custom code
-* Register your Angular module for runtime DI
+* Load your custom code using script tags
+* Configure your 'starterApp' to require (have a dependency upon) both 'ngMaterial' and 'users'.
 
 ```html
 <script src="./src/users/Users.js"></script>
@@ -201,15 +206,11 @@ Here you integrate your custom, application logic.
 </script>
 ```
 
-### Step #5:
-
-<span style="font-size:10px;">@see [tutorial_5.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_5.html#L52-L71)<span>
-
-Here you will replace the hardcoded HTML with dynamic markup using Angular directives (eg ng-repeat) and `{{ }}` interpolation markup.
+Now replace the hardcoded HTML with dynamic markup using Angular directives (eg ng-repeat) 
+and the standard Angular `{{ }}` interpolation markup.
 
 * Use dynamic HTML that will be compiled and rendered by Angular
-* Register a custom icon set of 'user' avatars for the user list
-* Register **menu** and **share** icon urls for the md-buttons
+* Register a set of custom avatar icons; since each 'user' references an avatar ID.
 
 ```html
  <!-- Wireframe Container #2 -->
@@ -248,16 +249,99 @@ Here you will replace the hardcoded HTML with dynamic markup using Angular direc
  </script>
 ```
 
-### Step #6:
+### Step #5: Use the BottomSheet 
+
+<span style="font-size:10px;">@see [tutorial_5.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_5.html#L51)<span>
+
+In this step, you will use a dynamic, mbBottomSheet component at the bottom of the user details area. This sheet will be used to display contact options available for each user.
+
+![bottomsheet](https://cloud.githubusercontent.com/assets/210413/12501649/592ee38a-c085-11e5-8a65-8e0155fca4d8.png)
+
+*  create a "Share" button in the upper right of the user details view
+*  create a User Contact view and controller to show in the bottom sheet
+*  programmatically configure and load the bottomsheet using the $mdBottomSheet service
+*  register icons for bottomsheet
+
+Add the `share` button to the UI:
+
+```html
+<md-content flex id="content">
+  <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
+  <h2>{{ul.selected.name}}</h2>
+  <p>{{ul.selected.content}}</p>
+
+  <md-button class="share" md-no-ink ng-click="ul.share(ul.selected)">
+	<md-icon md-svg-icon="share"></md-icon>
+  </md-button>
+</md-content>
+
+<script type="text/javascript">
+
+  angular
+	  .module('starterApp', ['ngMaterial', 'users'])
+	  .config(function($mdIconProvider){
+
+		  $mdIconProvider
+			  .defaultIconSet("./assets/svg/avatars.svg", 128)
+			  .icon("share"      , "./assets/svg/share.svg"       , 24)
+			  .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+			  .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+			  .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+			  .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+	  });
+
+</script>
+```
+
+Add the `share()` to the controller:
+
+```js
+    /**
+     * Show the bottom sheet
+     */
+    function share(selectedUser) {
+
+        $mdBottomSheet.show({
+          controllerAs     : "vm",
+          controller       : [ '$mdBottomSheet', UserSheetController],
+          templateUrl      : './src/users/view/contactSheet.html',
+          parent           : angular.element(document.getElementById('content'))
+        });
+
+         /**
+          * Bottom Sheet controller for the Avatar Actions
+          */
+         function UserSheetController( $mdBottomSheet ) {
+           this.user = selectedUser;
+           this.items = [
+             { name: 'Phone'       , icon: 'phone'       , icon_url: 'assets/svg/phone.svg'},
+             { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'assets/svg/twitter.svg'},
+             { name: 'Google+'     , icon: 'google_plus' , icon_url: 'assets/svg/google_plus.svg'},
+             { name: 'Hangout'     , icon: 'hangouts'    , icon_url: 'assets/svg/hangouts.svg'}
+           ];
+           this.contactUser = function(action) {
+			 // The actually contact process has not been implemented...
+			 // so just hide the bottomSheet
+
+             $mdBottomSheet.hide(action);
+           };
+         }
+    }
+```
+
+
+### Step #6: Responsive Features
 
 <span style="font-size:10px;">@see [tutorial_6.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_6.html#L51)<span>
 
 Here you will add responsive breakpoints so the application layout will adapt to different device display sizes.
 
 * Lock the Users list open if device display is wider than > 600px; hide otherwise.
+	* Use the `$mdMedia` to help with this feature.
 * Hide the Toolbar menu icon button if the Users list is open.
 * Add `click` support for the **menu** and **share** buttons.
-* Register icons for bottomsheet
+	* Use the `$mdSideNav` service to toggle the sideNav
+
 
 ```html
 <body>
@@ -283,7 +367,7 @@ Here you will add responsive breakpoints so the application layout will adapt to
 </body>
 ```
 
-Register the **share** icons displayed in the User Detail view bottomsheet:
+Register the **share** and **menu** icons displayed in the User Detail and Toolbar (respectively):
 
 ```html
 <script type="text/javascript">
@@ -293,13 +377,8 @@ Register the **share** icons displayed in the User Detail view bottomsheet:
 	  .config(function($mdIconProvider){
 
 		  $mdIconProvider
-			  .defaultIconSet("./assets/svg/avatars.svg", 128)
 			  .icon("menu"       , "./assets/svg/menu.svg"        , 24)
-			  .icon("share"      , "./assets/svg/share.svg"       , 24)
-			  .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
-			  .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
-			  .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
-			  .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+			  .icon("share"      , "./assets/svg/share.svg"       , 24);
 	  });
 
 </script>
@@ -361,6 +440,8 @@ Here you will fix any ARIA warnings that Angular Material may display in the Dev
 
 ## Summary
 
-With only eight (8) Tutorial Steps and a few minutes of work, we have quickly created a functional Angular Material application that is beautiful, responsive, theme'ed, accessible, and easily maintained.
+With only eight (8) Tutorial Steps and a few minutes of work, we have quickly created a functional Angular Material application that is beautiful, responsive, theme'ed, accessible, and easily maintained. 
+
+Imagine doing this without Angular Material!
 
 

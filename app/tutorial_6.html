@@ -14,46 +14,41 @@
   </head>
 
   <!--
-    ✓ Create Angular shell app
-    ✓ Use `bower install angular-material`
-    ✓ Load the CSS (before our app.css),
-    ✓ Load the angular-material.js library and its dependent angular-aria.js and angular-animate.js libraries.
-    ✓ Then set the module dependency on 'ngMaterial'
-    ✓ Use wirefames to determine containers
-    ✓ Configure layouts
-    ✓ Lock open the sideNav, add shadow
-    ✓ Add content
-    ✓ Register Icons
-    ✓ Integrate with App logic
-      ✓ use ng-repeat
-      ✓ load app logic
-      ✓ add controller
-
-    -> Add Responsiveness
-
-    Fix Aria
-    Add Button clicks
-    Fix Contact Icons
-    Add Theming support
+    Add Responsive features
+    Add SideNav toggle features
   -->
 
   <body ng-app="starterApp" layout="column" ng-controller="UserController as ul">
 
     <md-toolbar layout="row">
+      <md-button
+        hide-gt-sm
+        class="menu"
+        ng-click="ul.toggleList()" >
+
+          <md-icon md-svg-icon="menu" ></md-icon>
+
+      </md-button>
       <h3>Angular Material - Starter App</h3>
     </md-toolbar>
 
     <div flex layout="row">
 
-        <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp" >
+        <md-sidenav
+          md-component-id="left"
+          md-is-locked-open="$mdMedia('gt-sm')"
+          ng-click="ul.toggleList()"
+          class="md-whiteframe-4dp" >
+
           <md-list>
-            <md-item ng-repeat="u in ul.users">
+            <md-list-item ng-repeat="u in ul.users">
                 <md-button ng-click="ul.selectUser(u)" ng-class="{'selected' : u === ul.selected }">
                   <md-icon md-svg-icon="{{u.avatar}}" class="avatar"></md-icon>
                   {{u.name}}
                 </md-button>
-            </md-item>
+            </md-list-item>
           </md-list>
+
         </md-sidenav>
 
         <md-content flex id="content">
@@ -61,7 +56,7 @@
           <h2>{{ul.selected.name}}</h2>
           <p>{{ul.selected.content}}</p>
 
-          <md-button class="share" md-no-ink="ul.share($event)">
+          <md-button class="share" md-no-ink ng-click="ul.share($event)" >
             <md-icon md-svg-icon="share"></md-icon>
           </md-button>
         </md-content>
@@ -71,29 +66,28 @@
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
-    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+    <script src="./bower_components/angular-material/angular-material.js"></script>
 
     <script src="./src/users/Users.js"></script>
-    <script src="./src/users/UserController.js"></script>
     <script src="./src/users/UserService.js"></script>
+    <script src="./src/users/UserController_6.js"></script>
 
     <script type="text/javascript">
 
-      angular
-          .module('starterApp', ['ngMaterial', 'users'])
-          .config(function($mdIconProvider){
+          angular
+              .module('starterApp', ['ngMaterial', 'users'])
+              .config(function( $mdIconProvider ){
 
-              $mdIconProvider
-                  .defaultIconSet("./assets/svg/avatars.svg", 128)
-                  .icon("menu"       , "./assets/svg/menu.svg"        , 24)
-                  .icon("share"      , "./assets/svg/share.svg"       , 24)
-                  .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
-                  .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
-                  .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
-                  .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+                  $mdIconProvider
+                      .defaultIconSet("./assets/svg/avatars.svg", 128)
+                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
+                      .icon("share"      , "./assets/svg/share.svg"       , 24)
+                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+                      .icon("phone"      , "./assets/svg/phone.svg"       , 512);
 
-
-          });
+              });
 
     </script>
 

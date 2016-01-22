@@ -22,20 +22,16 @@
     ✓ Use wirefames to determine containers
     ✓ Configure layouts
     ✓ Lock open the sideNav, add shadow
-
-    ✓ Add (hard-coded) HTML content
+    ✓ Add content
     ✓ Register Icons
-
-    -> Integrate with App logic
+    ✓ Integrate with App logic
       ✓ use ng-repeat
-      - load 'users' app logic
-      - add controller
-
-    Add Responsiveness
-    Add Theming
+      ✓ load app logic
+      ✓ add controller
   -->
 
-  <body ng-app="starterApp" layout="column">
+  <!-- Add UsersList controller -->
+  <body ng-app="starterApp" layout="column" ng-controller="UserController as ul">
 
     <md-toolbar layout="row">
       <h3>Angular Material - Starter App</h3>
@@ -43,55 +39,45 @@
 
     <div flex layout="row">
 
-       <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
-         <md-list>
+        <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
+          <md-list>
+            <md-list-item ng-repeat="u in ul.users">
+                <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : u === ul.selected }">
+                  <md-icon md-svg-icon="{{u.avatar}}" class="avatar"></md-icon>
+                  {{u.name}}
+                </md-button>
+            </md-list-item>
+          </md-list>
+        </md-sidenav>
 
-           <md-item >
-               <md-button>
-                 <md-icon md-svg-src="./assets/svg/avatar-1.svg" class="avatar"></md-icon>
-                 Lia Luogo
-               </md-button>
-           </md-item>
-
-           <md-item >
-               <md-button>
-                 <md-icon md-svg-src="./assets/svg/avatar-4.svg" class="avatar"></md-icon>
-                 Lawrence Ray
-               </md-button>
-           </md-item>
-
-         </md-list>
-       </md-sidenav>
-
-       <md-content flex id="content">
-         <md-icon md-svg-icon="./assets/svg/avatar-1.svg" class="avatar"></md-icon>
-         <h2>Lia Luogo</h2>
-         <p>
-           I love cheese, especially airedale queso. Cheese and biscuits halloumi cauliflower cheese cottage cheese
-           swiss boursin fondue caerphilly. Cow port-salut camembert de normandie macaroni cheese feta who moved my
-           cheese babybel boursin. Red leicester roquefort boursin squirty cheese jarlsberg blue castello caerphilly
-           chalk and cheese. Lancashire.
-         </p>
-       </md-content>
+        <md-content flex id="content">
+          <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
+          <h2>{{ul.selected.name}}</h2>
+          <p>{{ul.selected.content}}</p>
+        </md-content>
 
     </div>
 
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
-    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+    <script src="./bower_components/angular-material/angular-material.js"></script>
 
     <!-- Load App Logic -->
     <script src="./src/users/Users.js"></script>
-    <script src="./src/users/UserController.js"></script>
     <script src="./src/users/UserService.js"></script>
+    <script src="src/users/UserController_4.js"></script>
 
     <script type="text/javascript">
 
-      angular.module('starterApp', ['ngMaterial', 'users'])
-              .run(function($log){
-                $log.debug("starterApp + ngMaterial + 'users' running...");
-              });
+      angular
+          .module('starterApp', ['ngMaterial', 'users'])
+          .config(function( $mdIconProvider ){
+
+              // Register the user `avatar` icons
+              $mdIconProvider
+                      .defaultIconSet("./assets/svg/avatars.svg", 128)
+          })
 
     </script>
 

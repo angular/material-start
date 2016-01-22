@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Angular Material - Starter App</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="assets/app.css"/>
+  </head>
+
+  <!--
+    Test layout of ContactSheet
+  -->
+
+  <body ng-app="starterApp" layout="column" ng-controller="TestController as vm">
+
+    <md-bottom-sheet class="md-list md-has-header" ng-if="vm.user">
+
+        <md-subheader>
+            Contact <span class="name">{{ vm.user.name }}</span>:
+        </md-subheader>
+
+        <md-list>
+          <md-item ng-repeat="item in vm.items">
+            <md-button ng-click="vm.performAction(item)">
+                <md-icon md-svg-icon="{{ item.icon_url }}"></md-icon>
+                {{item.name}}
+            </md-button>
+          </md-item>
+        </md-list>
+
+    </md-bottom-sheet>
+
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+
+    <script src="./src/users/Users.js"></script>
+    <script src="./src/users/UserService.js"></script>
+
+    <script type="text/javascript">
+
+      angular
+          .module('starterApp', ['ngMaterial', 'users'])
+          .controller('TestController', function (userService) {
+              var self = this;
+
+              // Load all registered users
+
+              userService
+                    .loadAllUsers()
+                    .then( function( users ) {
+                      self.user = users[0];
+                      self.items = [
+                              { name: 'Phone'       , icon: 'phone'       , icon_url: 'assets/svg/phone.svg'},
+                              { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'assets/svg/twitter.svg'},
+                              { name: 'Google+'     , icon: 'google_plus' , icon_url: 'assets/svg/google_plus.svg'},
+                              { name: 'Hangout'     , icon: 'hangouts'    , icon_url: 'assets/svg/hangouts.svg'}
+                            ];
+                    });
+          })
+          .config(function($mdIconProvider){
+
+              $mdIconProvider
+                  .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+                  .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+                  .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+                  .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+
+          });
+
+    </script>
+
+  </body>
+</html>
