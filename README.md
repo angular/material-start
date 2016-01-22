@@ -30,19 +30,21 @@ This Starter app demonstrates how:
 *  Theming can be altered/configured using `$mdThemingProvider`
 *  ARIA features are supported by Angular Material and warnings can be used to improve accessibility.
 
-### Tutorials
+### ES5 & ES6 Tutorials
 
 The repository contains both ES5 and ES6 versions of the application. Traditional development with
 ES5 standards and solutions are presented here by default. Tutorials are included: step-by-step
 instructions that clearly demonstrate how the Starter application can be created in minutes.
 
-> These tutorials will be presented live, on-stage at **ng-conf 2015, Utah**.
+![Wireframe](https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png)
+
+> These tutorials have been presented live, on-stage at **ng-conf 2015, Utah**.
 
 Developers should checkout the following repository branches for:
 
 * Branch [**Starter - ES5 Tutorials**](https://github.com/angular/material-start/tree/es5-tutorial):
-for  ES5 Tutorial steps & development process.
-* Branch [**Starter - ES6**](https://github.com/angular/material-start/tree/es6): same application as created in the **[master](https://github.com/angular/material-start)** branch, but implemented with ES6 and JSPM.
+for  ES5 Tutorial Steps & development process.
+* Branch [**Starter - ES6** ](https://github.com/angular/material-start/tree/es6): same completed application as shown in the **[master](https://github.com/angular/material-start)** branch, but implemented with ES6 and JSPM (instead of the ES5 in master).
 
 > The **README** for the ES6 branch will provide some details showing how easy, <u>more simplifed</u>,
 and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x. As time permits, we will expand on that information.<br/><br/> 
