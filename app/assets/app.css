@@ -19,6 +19,11 @@ md-toolbar h3 {
 md-list-item > button {
   width:100%;
   text-align:left !important;
+  height:70px;;
+}
+
+md-icon.avatar {
+  margin-right: 20px;
 }
 
   md-list .md-button.selected {
@@ -32,6 +37,10 @@ button#main {
 
 md-sidenav > md-toolbar {
   height:64px;
+}
+
+md-list-item {
+  overflow: hidden;
 }
 
 /* Primary content area */
@@ -78,19 +87,16 @@ md-sidenav > md-toolbar {
 /* Typography support coming in 0.8.0 */
 
 .avatar {
-  position: relative;
-  width: 128px;
-  height: 128px;
+  position:relative;
+  width: 54px;
+  height: 54px;
   border: 1px solid #ddd;
   border-radius: 50%;
   display: inline-block;
   overflow: hidden;
   margin: 0px;
   vertical-align: middle;
-  zoom:0.70;
-  transform: translateZ(0);
-  -webkit-transform: scale(0.70);
-  -moz-transform:scale(0.70);
+
 }
 
 
