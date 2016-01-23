@@ -1,11 +1,3 @@
-html, body {
-  font-family: 'Roboto', sans-serif;
-  font-size:14px;
-  height:100%;
-  margin: 0px;
-  padding: 0px;
-}
-
 /* Toolbar area */
 
 .menu {
@@ -33,10 +25,6 @@ md-list-item > button {
     color: #03a9f4;
   }
 
-  md-sidenav  md-list {
-    padding: 0px 0px 8px 0px;
-  }
-
 
 button#main {
   margin-bottom: 10px;
@@ -48,9 +36,6 @@ md-sidenav > md-toolbar {
 
 /* Primary content area */
 
-#content {
-  overflow: hidden;
-}
 
 #content  {
   padding-left: 40px;
@@ -79,11 +64,6 @@ md-sidenav > md-toolbar {
   height:36px;
 }
 
-md-button.menuBtn > md-icon {
-  fill:white;
-  width:24px;
-  height:24px;
-}
 
 #content .md-button.contact:active > md-icon {
   background-color: #dadada;
@@ -92,24 +72,10 @@ md-button.menuBtn > md-icon {
   transition: all 100ms ease-out 30ms;
 }
 
-#content img {
-  display: block;
-  height: auto;
-  max-width: 500px;
-}
 
 /* Utils */
 
-.content-wrapper {
-  position: relative;
-}
-
 /* Typography support coming in 0.8.0 */
-
-md-toolbar h1 {
-  font-size: 1.250em;
-  font-weight: 400;
-}
 
 .avatar {
   position: relative;
