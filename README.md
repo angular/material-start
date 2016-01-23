@@ -259,7 +259,8 @@ and the standard Angular `{{ }}` interpolation markup.
 
 In this step, you will use a dynamic, mbBottomSheet component at the bottom of the user details area. This contact sheet will be used to display user contact options available for each user.
 
-![bottomsheet](https://cloud.githubusercontent.com/assets/210413/12501649/592ee38a-c085-11e5-8a65-8e0155fca4d8.png)
+![tutorial_5](https://cloud.githubusercontent.com/assets/210413/12531590/303a3ee4-c1c4-11e5-954b-6d842ecc34c9.png)
+
 
 *  create a "Share" button in the upper right of the user details view
 *  create a [User Contact](https://github.com/angular/material-start/blob/es5-tutorial/app/src/users/view/contactSheet.html) view and controller to show in the bottom sheet
@@ -338,7 +339,7 @@ Here you will add responsive breakpoints so the application layout will adapt to
 	* Use the `$mdSideNav` service to toggle the sideNav
 	* Auto-close the sideNav after a user is selected.
 
-![tutorial_6](https://cloud.githubusercontent.com/assets/210413/12525774/8f9014ba-c12c-11e5-8c9c-44d648f98e10.png)
+![tutorial_6](https://cloud.githubusercontent.com/assets/210413/12531596/5bae77c0-c1c4-11e5-8308-e6d955dffcb6.png)
 
 ```html
 <body>
@@ -390,7 +391,7 @@ Here you will configure a different, darker theme to be used.
 
 * Use `$mdThemingProvider` to configure a different theme using primary colors from the **brown** color palette and accent colors from the **red** color palette.
 
-![tutorial_7](https://cloud.githubusercontent.com/assets/210413/12525775/91a73512-c12c-11e5-8884-f50fcd0cb5f5.png)
+![tutorial_7](https://cloud.githubusercontent.com/assets/210413/12531597/686a3404-c1c4-11e5-8ca5-f62822ac12ab.png)
 
 
 ```html
