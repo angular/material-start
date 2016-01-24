@@ -345,7 +345,9 @@ Here you will add responsive breakpoints so the application layout will adapt to
 <body>
 	<!-- Wireframe Container #1 -->
     <md-toolbar layout="row">
-      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()"></md-button>
+	<md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" >
+        	<md-icon md-svg-icon="menu" ></md-icon>
+    	</md-button>
     </md-toolbar>
 
 	<!-- Wireframe Container #2 -->
