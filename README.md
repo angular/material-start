@@ -326,7 +326,7 @@ function share(selectedUser) {
 ```
 
 
-### Step #6: Responsive Features
+### Step #6: Adaptive Layouts
 
 <span style="font-size:10px;">@see [tutorial_6.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_6.html#L51)<span>
 
@@ -385,11 +385,9 @@ Register the **share** and **menu** icons displayed in the User Detail and Toolb
 ```
 
 
-### Step #7:
+### Step #7: Theming & ARIA
 
-<span style="font-size:10px;">@see [tutorial_7.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_7.html#L63-L68)<span>
-
-Here you will configure a different, darker theme to be used.
+Here you will configure to use a different, darker theme.
 
 * Use `$mdThemingProvider` to configure a different theme using primary colors from the **brown** color palette and accent colors from the **red** color palette.
 
@@ -411,11 +409,9 @@ Here you will configure a different, darker theme to be used.
 </script>
 ```
 
-### Step #8:
-
 <span style="font-size:10px;">@see [tutorial_8.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_8.html#L19)<span>
 
-Here you will fix any ARIA warnings that Angular Material may display in the Dev console.
+Finally let's will fix any ARIA warnings that Angular Material may display in the Dev console.
 
 * Insert `aria-label` attributes for mdButton components that do not have labels.
 
@@ -443,7 +439,7 @@ Here you will fix any ARIA warnings that Angular Material may display in the Dev
 
 ## Summary
 
-With only eight (8) Tutorial Steps and a few minutes of work, we have quickly created a functional Angular Material application that is beautiful, responsive, theme'ed, accessible, and easily maintained. 
+With only seven (7) Tutorial Steps and a few minutes of work, we have quickly created a functional Angular Material application that is beautiful, responsive, theme'ed, accessible, and easily maintained. 
 
 Imagine doing this without Angular Material!
 
