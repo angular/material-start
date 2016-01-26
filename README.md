@@ -93,7 +93,7 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
   </body>
 ```
 
-##### [Live JSBin Demo for Step #1](http://thomasburleson.jsbin.com/fuyomo/edit?html,output)
+> ##### [Live JSBin Demo for Step #1](http://thomasburleson.jsbin.com/fuyomo/edit?html,output)
 
 <br/>
 - - -
