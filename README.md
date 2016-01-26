@@ -69,7 +69,7 @@ Each tutorial presents the resulting changes for that stage. It is recommended, 
 
 Here you modified the shell application [available in `tutorial_0.html`] to use Angular-Material.
 
-<span style="font-size:10px;">@see [tutorial_1.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_1.html#L26-L34)<span>
+> ##### [Live JSBin Demo for Step #1](http://thomasburleson.jsbin.com/fuyomo/edit?html,output)
 
 * Use Bower to install angular-material with `bower install angular-material -D`
 * In the HTML, load the CSS and JS modules:
@@ -92,8 +92,6 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
 	</script>
   </body>
 ```
-
-> ##### [Live JSBin Demo for Step #1](http://thomasburleson.jsbin.com/fuyomo/edit?html,output)
 
 <br/>
 - - -
