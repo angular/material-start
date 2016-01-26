@@ -93,7 +93,11 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
   </body>
 ```
 
-<a class="jsbin-embed" href="http://jsbin.com/fuyomo/4/embed?html">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.35.9"></script>
+<div class="embed-container">
+  <a class="jsbin-embed" href="http://jsbin.com/fuyomo/4/embed?html">Angular Material: Installing with NPM</a><script src="http://static.jsbin.com/js/embed.min.js?3.35.9"></script>
+</div>
+
+
 
 
 
