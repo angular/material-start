@@ -93,6 +93,9 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
   </body>
 ```
 
+##### [Live CodePen Demo](http://jsbin.com/fuyomo/embed?html,output)
+
+
 ### Step #2: Container Layouts
 
 <span style="font-size:10px;">@see [tutorial_2.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_2.html#L30-L39)<span>
