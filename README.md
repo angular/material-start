@@ -93,8 +93,7 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
   </body>
 ```
 
-##### [Live CodePen Demo](http://jsbin.com/fuyomo/embed?html,output)
-
+##### [Live JSBin Demo for Step #1](http://thomasburleson.jsbin.com/fuyomo/edit?html,output)
 
 ### Step #2: Container Layouts
 
@@ -129,6 +128,8 @@ Here you used the wireframe planning and layout to identify the components and a
 	
   </body>
 ```
+
+##### [Live JSBin Demo for Step #2](http://thomasburleson.jsbin.com/kesaci/edit?html,output)
 
 ### Step #3: Hard-Coded HTML
 
@@ -182,6 +183,9 @@ Here you will use hard-coded elements to confirm rendering and layout of the con
 
   </body>
 ```
+
+##### [Live JSBin Demo for Step #3](http://thomasburleson.jsbin.com/bozasu/edit?html,output)
+
 
 ### Step #4: Dynamic, Mock Data
 
@@ -256,6 +260,8 @@ and the standard Angular `{{ }}` interpolation markup.
  </script>
 ```
 
+##### [Live JSBin Demo for Step #4](http://thomasburleson.jsbin.com/sabited/edit?html,js,output)
+
 ### Step #5: Use the BottomSheet 
 
 <span style="font-size:10px;">@see [tutorial_5.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_5.html#L51)<span>
@@ -328,6 +334,8 @@ function share(selectedUser) {
 }
 ```
 
+##### [Live JSBin Demo for Step #5](http://thomasburleson.jsbin.com/kakezu/edit?html,css,js,output)
+
 
 ### Step #6: Adaptive Layouts
 
@@ -387,6 +395,8 @@ Register the **share** and **menu** icons displayed in the User Detail and Toolb
 </script>
 ```
 
+##### [Live JSBin Demo for Step #6](http://thomasburleson.jsbin.com/zuzana/edit?html,css,js,output)
+
 
 ### Step #7: Theming & ARIA
 
@@ -439,6 +449,8 @@ Finally let's will fix any ARIA warnings that Angular Material may display in th
 	</div>
 </body>
 ```
+
+##### [Live JSBin Demo for Step #7](http://thomasburleson.jsbin.com/lixohom/edit?html,css,js,output)
 
 ## Summary
 
