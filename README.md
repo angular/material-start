@@ -28,12 +28,12 @@ projects.
 
 Here are some generalized steps that may be used to conceptualize the application implementation process:
 
-1. Plan your layout and the components you want to use
-2. Use hard-coded HTML and mock content to make sure the components appear as desired
-3. Wire components to your application logic
+1. Plan your layout and the components you want to use; preferrably with a site UX design document.
+2. Use hard-coded HTML and mock content to make sure the components render as desired
+3. Integrate UI components to your custom application logic
 > Use the seamless integration possible with Angular directives and controllers<br/>
 > This integration assumes that you have unit tested your app logic
-4. Add Responsive breakpoints
+4. Add Adaptive breakpoints
 5. Add Theming support
 6. Confirm ARIA compliance
 7. Write e2e Tests 
