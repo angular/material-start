@@ -95,6 +95,9 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
 
 ##### [Live JSBin Demo for Step #1](http://thomasburleson.jsbin.com/fuyomo/edit?html,output)
 
+<br/>
+- - -
+
 ### Step #2: Container Layouts
 
 ![Step #2: Containers with the Layout API](https://cloud.githubusercontent.com/assets/210413/12570184/079aaf72-c39b-11e5-8403-794f2ff99787.png)
@@ -130,6 +133,9 @@ Here you used the wireframe planning and layout to identify the components and a
 	
   </body>
 ```
+
+<br/>
+- - -
 
 ### Step #3: Hard-Coded HTML
 
@@ -184,6 +190,9 @@ Here you will use hard-coded elements to confirm rendering and layout of the con
 
   </body>
 ```
+
+<br/>
+- - -
 
 ### Step #4: Dynamic, Mock Data
 
@@ -260,6 +269,9 @@ and the standard Angular `{{ }}` interpolation markup.
 ```
 
 
+<br/>
+- - -
+
 ### Step #5: Use the BottomSheet 
 
 ![tutorial_5](https://cloud.githubusercontent.com/assets/210413/12531590/303a3ee4-c1c4-11e5-954b-6d842ecc34c9.png)
@@ -331,8 +343,8 @@ function share(selectedUser) {
 }
 ```
 
-
-
+<br/>
+- - -
 
 ### Step #6: Adaptive Layouts
 
@@ -393,7 +405,8 @@ Register the **share** and **menu** icons displayed in the User Detail and Toolb
 </script>
 ```
 
-
+<br/>
+- - -
 
 ### Step #7: Theming & ARIA
 
@@ -447,6 +460,10 @@ Finally let's will fix any ARIA warnings that Angular Material may display in th
 	</div>
 </body>
 ```
+
+<br/>
+- - -
+
 
 ## Summary
 
