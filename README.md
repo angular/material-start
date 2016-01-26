@@ -93,7 +93,7 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
   </body>
 ```
 
-<iframe width="100%" height="300" src="http://jsbin.com/fuyomo/embed?html,output" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+##### [Live CodePen Demo](http://jsbin.com/fuyomo/embed?html,output)
 
 
 ### Step #2: Container Layouts
