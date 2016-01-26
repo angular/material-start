@@ -67,9 +67,9 @@ Each tutorial presents the resulting changes for that stage. It is recommended, 
 
 ### Step #1: Load Libraries
 
-<span style="font-size:10px;">@see [tutorial_1.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_1.html#L26-L34)<span>
-
 Here you modified the shell application [available in `tutorial_0.html`] to use Angular-Material.
+
+<span style="font-size:10px;">@see [tutorial_1.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_1.html#L26-L34)<span>
 
 * Use Bower to install angular-material with `bower install angular-material -D`
 * In the HTML, load the CSS and JS modules:
@@ -100,11 +100,11 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
 
 ### Step #2: Container Layouts
 
+Here you used the wireframe planning and layout to identify the components and attributes needed.
+
 ![Step #2: Containers with the Layout API](https://cloud.githubusercontent.com/assets/210413/12570184/079aaf72-c39b-11e5-8403-794f2ff99787.png)
 
 > ##### [Live JSBin Demo for Step #2](http://thomasburleson.jsbin.com/kesaci/edit?html,output)
-
-Here you used the wireframe planning and layout to identify the components and attributes needed.
 
 * Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers
 > Note: that the md-sidenav is the container the Users **master** list view, and the md-content is the container for the User **detail** view.
@@ -139,11 +139,11 @@ Here you used the wireframe planning and layout to identify the components and a
 
 ### Step #3: Hard-Coded HTML
 
+Here you will use hard-coded elements to confirm rendering and layout of the container child elements and Angular Material components.
+
 ![tutorial_3](https://cloud.githubusercontent.com/assets/210413/12525866/89321b6c-c12d-11e5-9d0d-483725cc6de7.png)
 
 > ##### [Live JSBin Demo for Step #3](http://thomasburleson.jsbin.com/bozasu/edit?html,output)
-
-Here you will use hard-coded elements to confirm rendering and layout of the container child elements and Angular Material components.
 
 * Show a list of Users in the `md-sideNav` container
   *  Use the `md-list`, `md-button`, and `md-icon` components with mock data
@@ -196,17 +196,16 @@ Here you will use hard-coded elements to confirm rendering and layout of the con
 
 ### Step #4: Dynamic, Mock Data
 
+Here you will replace the hard-coded HTML with dynamic, mock user data. Let's do this in 2 stages:
+
 ![tutorial_4](https://cloud.githubusercontent.com/assets/210413/12525864/87420d8a-c12d-11e5-8cd2-5d6d89c3309a.png)
 
-
 > ##### [Live JSBin Demo for Step #4](http://thomasburleson.jsbin.com/sabited/edit?html,js,output)
-
-Here you will replace the hard-coded HTML with dynamic, mock user data. Let's do this in 2 stages:
 
   *  Build custom application logic for load the mock user data
   *  Build the HTML markup to render the dynamic, mock data
 
-Here you integrate your custom, application logic.
+Then you integrate your custom, application logic.
 
 * Define a Angular module 'users' for your custom code
 * Define your data services, models, and controllers
@@ -274,11 +273,11 @@ and the standard Angular `{{ }}` interpolation markup.
 
 ### Step #5: Use the BottomSheet 
 
+In this step, you will use a dynamic, mbBottomSheet component at the bottom of the user details area. This contact sheet will be used to display user contact options available for each user.
+
 ![tutorial_5](https://cloud.githubusercontent.com/assets/210413/12531590/303a3ee4-c1c4-11e5-954b-6d842ecc34c9.png)
 
 > ##### [Live JSBin Demo for Step #5](http://thomasburleson.jsbin.com/kakezu/edit?html,css,js,output)
-
-In this step, you will use a dynamic, mbBottomSheet component at the bottom of the user details area. This contact sheet will be used to display user contact options available for each user.
 
 *  create a "Share" button in the upper right of the user details view
 *  create a [User Contact](https://github.com/angular/material-start/blob/es5-tutorial/app/src/users/view/contactSheet.html) view and controller to show in the bottom sheet
@@ -348,11 +347,11 @@ function share(selectedUser) {
 
 ### Step #6: Adaptive Layouts
 
+Here you will add adaptive breakpoints so the application layout will adapt to different device display sizes.
+
 ![tutorial_6](https://cloud.githubusercontent.com/assets/210413/12531596/5bae77c0-c1c4-11e5-8308-e6d955dffcb6.png)
 
 > ##### [Live JSBin Demo for Step #6](http://thomasburleson.jsbin.com/zuzana/edit?html,css,js,output)
-
-Here you will add adaptive breakpoints so the application layout will adapt to different device display sizes.
 
 * Lock the Users list open if device display is wider than > 600px; hide otherwise.
 	* Use the `$mdMedia` to help with this feature.
@@ -410,12 +409,12 @@ Register the **share** and **menu** icons displayed in the User Detail and Toolb
 
 ### Step #7: Theming & ARIA
 
+Here you will configure to use a different, darker theme.
+
 ![tutorial_7](https://cloud.githubusercontent.com/assets/210413/12531597/686a3404-c1c4-11e5-8ca5-f62822ac12ab.png)
 
 > ##### [Live JSBin Demo for Step #7](http://thomasburleson.jsbin.com/lixohom/edit?html,css,js,output)
 
-
-Here you will configure to use a different, darker theme.
 
 * Use `$mdThemingProvider` to configure a different theme using primary colors from the **brown** color palette and accent colors from the **red** color palette.
 
