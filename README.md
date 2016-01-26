@@ -95,7 +95,8 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
 
 
 
-<a class="jsbin-embed foo" href="http://jsbin.com/fuyomo/embed?html,output">Angular Material: Installing with NPM</a><script src="http://static.jsbin.com/js/embed.min.js"></script>
+<a class="jsbin-embed" href="http://jsbin.com/fuyomo/embed?html,output">Angular Material: Installing with NPM</a>
+<script src="http://static.jsbin.com/js/embed.js"></script>
 
 
 
