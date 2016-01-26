@@ -69,7 +69,7 @@ Each tutorial presents the resulting changes for that stage. It is recommended, 
 
 Here you modified the shell application [available in `tutorial_0.html`] to use Angular-Material.
 
-> ##### [Live JSBin Demo for Step #1](http://thomasburleson.jsbin.com/fuyomo/edit?html,output)
+> ##### Live JSBin Demo for [Step #1](http://thomasburleson.jsbin.com/fuyomo/edit?html,output)
 
 * Use Bower to install angular-material with `bower install angular-material -D`
 * In the HTML, load the CSS and JS modules:
@@ -100,7 +100,7 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
 
 Here you used the wireframe planning and layout to identify the components and attributes needed. Then use the Angular Material Layout api to layout your containers and responsively adjust their sizes.
 
-> ##### [Live JSBin Demo for Step #2](http://thomasburleson.jsbin.com/kesaci/edit?html,output)
+> ##### Live JSBin Demo for [Step #2](http://thomasburleson.jsbin.com/kesaci/edit?html,output)
 
 ![Step #2: Containers with the Layout API](https://cloud.githubusercontent.com/assets/210413/12570184/079aaf72-c39b-11e5-8403-794f2ff99787.png)
 
@@ -139,7 +139,7 @@ Here you used the wireframe planning and layout to identify the components and a
 
 Here you will use hard-coded elements and Angular Material UI componetns to render and layout each container's children elements.
 
-> ##### [Live JSBin Demo for Step #3](http://thomasburleson.jsbin.com/bozasu/edit?html,output)
+> ##### Live JSBin Demo for [Step #3](http://thomasburleson.jsbin.com/bozasu/edit?html,output)
 
 ![tutorial_3](https://cloud.githubusercontent.com/assets/210413/12525866/89321b6c-c12d-11e5-9d0d-483725cc6de7.png)
 
@@ -196,7 +196,7 @@ Here you will use hard-coded elements and Angular Material UI componetns to rend
 
 Here you will replace the hard-coded HTML with dynamic, mock user data. Let's do this in 2 stages:
 
-> ##### [Live JSBin Demo for Step #4](http://thomasburleson.jsbin.com/sabited/edit?html,js,output)
+> ##### Live JSBin Demo for [Step #4](http://thomasburleson.jsbin.com/sabited/edit?html,js,output)
 
 ![tutorial_4](https://cloud.githubusercontent.com/assets/210413/12525864/87420d8a-c12d-11e5-8cd2-5d6d89c3309a.png)
 
@@ -273,7 +273,7 @@ and the standard Angular `{{ }}` interpolation markup.
 
 In this step, you will use a dynamic, mbBottomSheet component at the bottom of the user details area. This contact sheet will be used to display user contact options available for each user.
 
-> ##### [Live JSBin Demo for Step #5](http://thomasburleson.jsbin.com/kakezu/edit?html,css,js,output)
+> ##### Live JSBin Demo for [Step #5](http://thomasburleson.jsbin.com/kakezu/edit?html,css,js,output)
 
 ![tutorial_5](https://cloud.githubusercontent.com/assets/210413/12531590/303a3ee4-c1c4-11e5-954b-6d842ecc34c9.png)
 
@@ -347,7 +347,7 @@ function share(selectedUser) {
 
 Here you will add adaptive breakpoints so the application layout will adapt to different device display sizes.
 
-> ##### [Live JSBin Demo for Step #6](http://thomasburleson.jsbin.com/zuzana/edit?html,css,js,output)
+> ##### Live JSBin Demo for [Step #6](http://thomasburleson.jsbin.com/zuzana/edit?html,css,js,output)
 
 ![tutorial_6](https://cloud.githubusercontent.com/assets/210413/12531596/5bae77c0-c1c4-11e5-8308-e6d955dffcb6.png)
 
@@ -409,7 +409,7 @@ Register the **share** and **menu** icons displayed in the User Detail and Toolb
 
 Here you will configure to use a different, darker theme.
 
-> ##### [Live JSBin Demo for Step #7](http://thomasburleson.jsbin.com/lixohom/edit?html,css,js,output)
+> ##### Live JSBin Demo for [Step #7](http://thomasburleson.jsbin.com/lixohom/edit?html,css,js,output)
 
 ![tutorial_7](https://cloud.githubusercontent.com/assets/210413/12531597/686a3404-c1c4-11e5-8ca5-f62822ac12ab.png)
 
