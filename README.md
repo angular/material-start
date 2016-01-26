@@ -93,13 +93,7 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
   </body>
 ```
 
-
-
-<a class="jsbin-embed" href="http://jsbin.com/fuyomo/embed?html,output">CodePen Live: Step #1</a>
-<script src="http://static.jsbin.com/js/embed.js"></script>
-
-
-
+<iframe width="100%" height="300" src="http://jsbin.com/fuyomo/embed?html,output" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
 ### Step #2: Container Layouts
