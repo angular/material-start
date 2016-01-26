@@ -100,7 +100,7 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
 
 ### Step #2: Container Layouts
 
-Here you used the wireframe planning and layout to identify the components and attributes needed.
+Here you used the wireframe planning and layout to identify the components and attributes needed. Then use the Angular Material Layout api to layout your containers and responsively adjust their sizes.
 
 ![Step #2: Containers with the Layout API](https://cloud.githubusercontent.com/assets/210413/12570184/079aaf72-c39b-11e5-8403-794f2ff99787.png)
 
@@ -139,7 +139,7 @@ Here you used the wireframe planning and layout to identify the components and a
 
 ### Step #3: Hard-Coded HTML
 
-Here you will use hard-coded elements to confirm rendering and layout of the container child elements and Angular Material components.
+Here you will use hard-coded elements and Angular Material UI componetns to render and layout each container's children elements.
 
 ![tutorial_3](https://cloud.githubusercontent.com/assets/210413/12525866/89321b6c-c12d-11e5-9d0d-483725cc6de7.png)
 
