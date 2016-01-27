@@ -393,10 +393,7 @@ Register the **share** and **menu** icons displayed in the User Detail and Toolb
   angular
 	  .module('starterApp', ['ngMaterial', 'users'])
 	  .config(function($mdIconProvider){
-
-		  $mdIconProvider
-			  .icon("menu"       , "./assets/svg/menu.svg"        , 24)
-			  .icon("share"      , "./assets/svg/share.svg"       , 24);
+		  $mdIconProvider.icon("menu", "./assets/svg/menu.svg", 24);
 	  });
 
 </script>
