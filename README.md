@@ -373,7 +373,8 @@ Here you will add adaptive breakpoints so the application layout will adapt to d
 
 	 <!-- Wireframe Container #3 -->
 	 <md-sidenav md-is-locked-open="$mdMedia('gt-sm')"
-				 md-component-id="left">
+				 md-component-id="left"
+				 ng-click="ul.toggleList()" >
 	 </md-sidenav>
 
 	 <!-- Wireframe Container #4 -->
@@ -385,7 +386,7 @@ Here you will add adaptive breakpoints so the application layout will adapt to d
 </body>
 ```
 
-Register the **share** and **menu** icons displayed in the User Detail and Toolbar (respectively):
+Register the **menu** icons displayed in the Toolbar:
 
 ```html
 <script type="text/javascript">
