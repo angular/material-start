@@ -54,9 +54,7 @@ Each tutorial presents the resulting changes for that stage. It is recommended, 
 
 ### Step #1: Load Libraries
 
-Here you modified the shell application [available in `tutorial_0.html`] to use Angular-Material.
-
-> ##### Live JSBin Demo for [Step #1](http://thomasburleson.jsbin.com/fuyomo/edit?html,output)
+Here will modified the shell application [available in `tutorial_0.html`] to use Angular-Material.
 
 * Use Bower to install angular-material with `bower install angular-material -D`
 * In the HTML, load the CSS and JS modules:
@@ -80,6 +78,9 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
   </body>
 ```
 
+> ##### Live JSBin Demo for [Step #1](http://thomasburleson.jsbin.com/fuyomo/edit?html,output)
+
+
 <br/>
 - - -
 
@@ -98,12 +99,6 @@ The illustration below shows how we planned the layout and identified the primar
 <br/>
 - - -
 
-
-Here you used the wireframe planning and layout to identify the components and attributes needed. Then use the Angular Material Layout api to layout your containers and responsively adjust their sizes.
-
-> ##### Live JSBin Demo for [Step #2](http://thomasburleson.jsbin.com/kesaci/edit?html,output)
-
-![Step #2: Containers with the Layout API](https://cloud.githubusercontent.com/assets/210413/12570184/079aaf72-c39b-11e5-8403-794f2ff99787.png)
 
 * Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers
 > Note: that the md-sidenav is the container the Users **master** list view, and the md-content is the container for the User **detail** view.
@@ -133,16 +128,19 @@ Here you used the wireframe planning and layout to identify the components and a
   </body>
 ```
 
+Here you used the wireframe planning and layout to identify the components and attributes needed. Then use the Angular Material Layout api to layout your containers and responsively adjust their sizes.
+
+> ##### Live JSBin Demo for [Step #2](http://thomasburleson.jsbin.com/kesaci/edit?html,output)
+
+![Step #2: Containers with the Layout API](https://cloud.githubusercontent.com/assets/210413/12570184/079aaf72-c39b-11e5-8403-794f2ff99787.png)
+
+
 <br/>
 - - -
 
 ### Step #3: Hard-Coded HTML
 
 Here you will use hard-coded elements and Angular Material UI componetns to render and layout each container's children elements.
-
-> ##### Live JSBin Demo for [Step #3](http://thomasburleson.jsbin.com/bozasu/edit?html,output)
-
-![tutorial_3](https://cloud.githubusercontent.com/assets/210413/12525866/89321b6c-c12d-11e5-9d0d-483725cc6de7.png)
 
 * Show a list of Users in the `md-sideNav` container
   *  Use the `md-list`, `md-button`, and `md-icon` components with mock data
@@ -190,16 +188,17 @@ Here you will use hard-coded elements and Angular Material UI componetns to rend
   </body>
 ```
 
+> ##### Live JSBin Demo for [Step #3](http://thomasburleson.jsbin.com/bozasu/edit?html,output)
+
+![tutorial_3](https://cloud.githubusercontent.com/assets/210413/12525866/89321b6c-c12d-11e5-9d0d-483725cc6de7.png)
+
+
 <br/>
 - - -
 
 ### Step #4: Dynamic, Mock Data
 
 Here you will replace the hard-coded HTML with dynamic, mock user data. Let's do this in 2 stages:
-
-> ##### Live JSBin Demo for [Step #4](http://thomasburleson.jsbin.com/sabited/edit?html,js,output)
-
-![tutorial_4](https://cloud.githubusercontent.com/assets/210413/12525864/87420d8a-c12d-11e5-8cd2-5d6d89c3309a.png)
 
   *  Build custom application logic for load the mock user data
   *  Build the HTML markup to render the dynamic, mock data
@@ -267,16 +266,17 @@ and the standard Angular `{{ }}` interpolation markup.
 ```
 
 
+> ##### Live JSBin Demo for [Step #4](http://thomasburleson.jsbin.com/sabited/edit?html,js,output)
+
+![tutorial_4](https://cloud.githubusercontent.com/assets/210413/12525864/87420d8a-c12d-11e5-8cd2-5d6d89c3309a.png)
+
+
 <br/>
 - - -
 
 ### Step #5: Use the BottomSheet 
 
 In this step, you will use a dynamic, mbBottomSheet component at the bottom of the user details area. This contact sheet will be used to display user contact options available for each user.
-
-> ##### Live JSBin Demo for [Step #5](http://thomasburleson.jsbin.com/kakezu/edit?html,css,js,output)
-
-![tutorial_5](https://cloud.githubusercontent.com/assets/210413/12531590/303a3ee4-c1c4-11e5-954b-6d842ecc34c9.png)
 
 *  create a "Share" button in the upper right of the user details view
 *  create a [User Contact](https://github.com/angular/material-start/blob/es5-tutorial/app/src/users/view/contactSheet.html) view and controller to show in the bottom sheet
@@ -341,8 +341,14 @@ function share(selectedUser) {
 }
 ```
 
+> ##### Live JSBin Demo for [Step #5](http://thomasburleson.jsbin.com/kakezu/edit?html,css,js,output)
+
+![tutorial_5](https://cloud.githubusercontent.com/assets/210413/12531590/303a3ee4-c1c4-11e5-954b-6d842ecc34c9.png)
+
+
 <br/>
 - - -
+
 
 ### Step #6: Adaptive Layouts
 
@@ -359,10 +365,6 @@ Simply append the alias to the desired Layout API to trigger that directive to w
 ![layout_api_with_aliases](https://cloud.githubusercontent.com/assets/210413/12619004/de4f031a-c4db-11e5-85f5-5c426f4045e3.png)
 
 In this lesson, you will add adaptive breakpoints so the application layout will adapt to different device display sizes.
-
-> ##### Live JSBin Demo for [Step #6](http://thomasburleson.jsbin.com/zuzana/edit?html,css,js,output)
-
-![tutorial_6](https://cloud.githubusercontent.com/assets/210413/12531596/5bae77c0-c1c4-11e5-8308-e6d955dffcb6.png)
 
 * Add a Menu button in the Toolbar
 * Lock the Users list open if device display is wider than > 600px; hide otherwise.
@@ -440,16 +442,17 @@ function UserController( userService, $mdBottomSheet, $mdSidenav ) {
 }
 ```
 
+> ##### Live JSBin Demo for [Step #6](http://thomasburleson.jsbin.com/zuzana/edit?html,css,js,output)
+
+![tutorial_6](https://cloud.githubusercontent.com/assets/210413/12531596/5bae77c0-c1c4-11e5-8308-e6d955dffcb6.png)
+
+
 <br/>
 - - -
 
 ### Step #7: Theming & ARIA
 
 Here you will configure to use a different, darker theme.
-
-> ##### Live JSBin Demo for [Step #7](http://thomasburleson.jsbin.com/lixohom/edit?html,css,js,output)
-
-![tutorial_7](https://cloud.githubusercontent.com/assets/210413/12531597/686a3404-c1c4-11e5-8ca5-f62822ac12ab.png)
 
 * Use `$mdThemingProvider` to configure a different theme using primary colors from the **brown** color palette and accent colors from the **red** color palette.
 
@@ -494,6 +497,12 @@ Finally let's will fix any ARIA warnings that Angular Material may display in th
 	</div>
 </body>
 ```
+
+> ##### Live JSBin Demo for [Step #7](http://thomasburleson.jsbin.com/lixohom/edit?html,css,js,output)
+
+![tutorial_7](https://cloud.githubusercontent.com/assets/210413/12531597/686a3404-c1c4-11e5-8ca5-f62822ac12ab.png)
+
+
 
 <br/>
 - - -
