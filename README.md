@@ -136,9 +136,11 @@ Here you used the wireframe planning and layout to identify the components and a
 <br/>
 - - -
  
-#####  Live JSBin Demo for [Step #2](http://thomasburleson.jsbin.com/kesaci/edit?html,output)
+#####  Live JSBin Demo for Step #2:
 
-![Step #2: Containers with the Layout API](https://cloud.githubusercontent.com/assets/210413/12570184/079aaf72-c39b-11e5-8403-794f2ff99787.png)
+<a href="http://thomasburleson.jsbin.com/kesaci/edit?html,output" target="_blank">
+<img src="https://cloud.githubusercontent.com/assets/210413/12570184/079aaf72-c39b-11e5-8403-794f2ff99787.png" alt="Step #2: Containers with the Layout API">
+</a>
 
 
 <br/>
