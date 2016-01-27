@@ -353,21 +353,19 @@ But using media queries and breakpoints is too low-level for Angular Material de
 
 ![breakpoint-aliases](https://cloud.githubusercontent.com/assets/210413/12618729/cbeb4b9e-c4da-11e5-84a7-8fab43f20d4b.png)
 
-Simply append the alias to the desired Layout API to trigger that directive to work only when the breakpoint range is active.
-
-In these step you will add adaptive breakpoints so the application layout will adapt to different device display sizes.
+Simply append the alias to the desired Layout API to trigger that directive to work only when the breakpoint range is active. In this lesson, you will add adaptive breakpoints so the application layout will adapt to different device display sizes.
 
 > ##### Live JSBin Demo for [Step #6](http://thomasburleson.jsbin.com/zuzana/edit?html,css,js,output)
 
 ![tutorial_6](https://cloud.githubusercontent.com/assets/210413/12531596/5bae77c0-c1c4-11e5-8308-e6d955dffcb6.png)
 
+* Add a Menu button in the Toolbar
 * Lock the Users list open if device display is wider than > 600px; hide otherwise.
 	* Use the `$mdMedia` to help with this feature.
 * Hide the Toolbar menu icon button if the Users list is open.
-* Add `click` support for the **menu** and **share** buttons.
+* Add `click` support for the **menu** buttons.
 	* Use the `$mdSideNav` service to toggle the sideNav
 	* Auto-close the sideNav after a user is selected.
-
 
 ```html
 <body>
