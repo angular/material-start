@@ -81,7 +81,7 @@ Here will modified the shell application [available in `tutorial_0.html`] to use
 <br/>
 - - -
  
-##### Live JSBin Demo for [Step #1](http://thomasburleson.jsbin.com/fuyomo/edit?html,output)
+##### <span style="color:red;font-size:1.1em;">JSBin</span> Demo for [Step #1](http://thomasburleson.jsbin.com/fuyomo/edit?html,output)
 
 
 <br/>
@@ -136,7 +136,7 @@ Here you used the wireframe planning and layout to identify the components and a
 <br/>
 - - -
  
-#####  Live JSBin Demo for: Step #2
+#####  <span style="color:red;font-size:1.1em;">JSBin</span> Demo for: Step #2
 
 <a href="http://thomasburleson.jsbin.com/kesaci/edit?html,output" target="_blank">
 <img src="https://cloud.githubusercontent.com/assets/210413/12570184/079aaf72-c39b-11e5-8403-794f2ff99787.png" alt="Step #2: Containers with the Layout API">
@@ -199,7 +199,7 @@ Here you will use hard-coded elements and Angular Material UI componetns to rend
 <br/>
 - - -
  
-#####  Live JSBin Demo for: Step #3
+#####  <span style="color:red;font-size:1.1em;">JSBin</span> Demo for: Step #3
 
 <a href="http://thomasburleson.jsbin.com/bozasu/edit?html,output" target="_blank">
 <img src="https://cloud.githubusercontent.com/assets/210413/12525866/89321b6c-c12d-11e5-9d0d-483725cc6de7.png" alt="step #3 live demo">
@@ -281,7 +281,7 @@ and the standard Angular `{{ }}` interpolation markup.
 <br/>
 - - -
  
-#####  Live JSBin Demo for: Step #4
+#####  <span style="color:red;font-size:1.1em;">JSBin</span> Demo for: Step #4
 
 <a href="http://thomasburleson.jsbin.com/sabited/edit?html,output" target="_blank">
 <img src="https://cloud.githubusercontent.com/assets/210413/12525864/87420d8a-c12d-11e5-8cd2-5d6d89c3309a.png" alt="step #4 live demo">
@@ -361,7 +361,7 @@ function share(selectedUser) {
 - - -
  
  
-#####  Live JSBin Demo for: Step #5
+#####  <span style="color:red;font-size:1.1em;">JSBin</span> Demo for: Step #5
 
 <a href="http://thomasburleson.jsbin.com/kakezu/edit?html,output" target="_blank">
 <img src="https://cloud.githubusercontent.com/assets/210413/12531590/303a3ee4-c1c4-11e5-954b-6d842ecc34c9.png" alt="step #5 live demo">
@@ -467,7 +467,7 @@ function UserController( userService, $mdBottomSheet, $mdSidenav ) {
 - - -
 
  
-#####  Live JSBin Demo for: Step #6
+#####  <span style="color:red;font-size:1.1em;">JSBin</span> Demo for: Step #6
 
 <a href="http://thomasburleson.jsbin.com/zuzana/edit?html,output" target="_blank">
 <img src="https://cloud.githubusercontent.com/assets/210413/12531596/5bae77c0-c1c4-11e5-8308-e6d955dffcb6.png" alt="step #6 live demo">
@@ -528,7 +528,7 @@ Finally let's will fix any ARIA warnings that Angular Material may display in th
 <br/>
 - - -
  
-#####  Live JSBin Demo for: Step #7
+#####  <span style="color:red;font-size:1.1em;">JSBin</span> Demo for: Step #7
 
 <a href="http://thomasburleson.jsbin.com/lixohom/edit?html,output" target="_blank">
 <img src="https://cloud.githubusercontent.com/assets/210413/12531597/686a3404-c1c4-11e5-8ca5-f62822ac12ab.png" alt="step #7 live demo">
