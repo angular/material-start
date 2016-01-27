@@ -391,6 +391,7 @@ Register the **menu** icons displayed in the Toolbar:
 ```html
 <script type="text/javascript">
 
+
   angular
 	  .module('starterApp', ['ngMaterial', 'users'])
 	  .config(function($mdIconProvider){
@@ -398,6 +399,25 @@ Register the **menu** icons displayed in the Toolbar:
 	  });
 
 </script>
+```
+
+```js
+function UserController( userService, $mdBottomSheet, $mdSidenav ) {
+  var self = this;
+
+  self.toggleList   = toggleUsersList;
+
+  // *********************************
+  // Internal methods
+  // *********************************
+
+  /**
+   * Hide or Show the 'left' sideNav area
+   */
+  function toggleUsersList() {
+    $mdSidenav('left').toggle();
+  }
+}
 ```
 
 <br/>
