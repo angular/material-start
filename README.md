@@ -97,14 +97,13 @@ The illustration below shows how we planned the layout and identified the primar
 <br/>
 ![plancomponents2](https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png)
 
-> Note: that container #2 (above) is a simple `<div>` container and not an Angular Material component.
+> Note that container #2 (above) is a simple `<div>` container and not an Angular Material component.
 
 <br/>
 - - -
 
 
-* Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers
-> Note: that the md-sidenav is the container the Users **master** list view, and the md-content is the container for the User **detail** view.
+* Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers. [The `md-sidenav` is the container for the Users list view and the `md-content` is the container for the selected User **details** view.
 * Add the **layout** and **flex** attributes to configure the container layouts and sizing aspects.
 * Use `md-locked-open` to lock the sidenav open on the left
 * Use the `md-whiteframe-z2` to add a shadow the the sidenav
