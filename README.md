@@ -345,7 +345,7 @@ function share(selectedUser) {
 
 ### Step #6: Adaptive Layouts
 
-The Angular Material Layout API uses **flexbox** to enable your DOM containers and elements to fluidly respond to hieght and width changes in the browser viewport. The Layout API also uses media queries to define specific browser width ranges that can trigger yoru application to **adapt** to the new viewport size. These *ranges* are known as breakpoints and are defined here:  
+The Angular Material Layout API uses **flexbox** to enable your DOM containers and elements to fluidly respond to height and width changes in the browser viewport. The Layout API also uses media queries to define specific browser width ranges that can trigger yoru application to **adapt** to the new viewport size. These *ranges* are known as breakpoints and are defined here:  
 
 ![breakpointranges](https://cloud.githubusercontent.com/assets/210413/12618815/2ea8743c-c4db-11e5-817f-0bdd20a6406c.png)
 
@@ -353,7 +353,11 @@ But using media queries and breakpoints is too low-level for Angular Material de
 
 ![breakpoint-aliases](https://cloud.githubusercontent.com/assets/210413/12618729/cbeb4b9e-c4da-11e5-84a7-8fab43f20d4b.png)
 
-Simply append the alias to the desired Layout API to trigger that directive to work only when the breakpoint range is active. In this lesson, you will add adaptive breakpoints so the application layout will adapt to different device display sizes.
+Simply append the alias to the desired Layout API to trigger that directive to work only when the breakpoint range is active. 
+
+![layout_api_with_aliases](https://cloud.githubusercontent.com/assets/210413/12619004/de4f031a-c4db-11e5-85f5-5c426f4045e3.png)
+
+In this lesson, you will add adaptive breakpoints so the application layout will adapt to different device display sizes.
 
 > ##### Live JSBin Demo for [Step #6](http://thomasburleson.jsbin.com/zuzana/edit?html,css,js,output)
 
