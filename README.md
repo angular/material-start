@@ -345,7 +345,11 @@ function share(selectedUser) {
 
 ### Step #6: Adaptive Layouts
 
-Here you will add adaptive breakpoints so the application layout will adapt to different device display sizes.
+The Angular Material Layout API uses **flexbox** to enable your DOM containers and elements to fluidly respond to hieght and width changes in the browser viewport. The Layout API also uses media queries to define specific browser width ranges that can trigger yoru application to **adapt** to the new viewport size. These *ranges* are known as breakpoints and are defined here:  [Material Design Breakpoint Chart](https://camo.githubusercontent.com/ad81ae92f8b4285747ce4e48007bf3f104dd5630/687474703a2f2f6d6174657269616c2d64657369676e2e73746f726167652e676f6f676c65617069732e636f6d2f7075626c6973682f6d6174657269616c5f765f342f6d6174657269616c5f6578745f7075626c6973682f3042386f6c5631354a3761625053474678656d46695156527462316b2f6c61796f75745f61646170746976655f627265616b706f696e74735f30312e706e67).
+
+But using media queries and breakpoints is too low-level for Angular Material developers. Hence the use of the [BreakPoint Aliases](https://material.angularjs.org/latest/layout/introduction). Simply append the alias to the desired Layout API to trigger that directive to work only when the breakpoint range is active.
+
+In these step you will add adaptive breakpoints so the application layout will adapt to different device display sizes.
 
 > ##### Live JSBin Demo for [Step #6](http://thomasburleson.jsbin.com/zuzana/edit?html,css,js,output)
 
@@ -400,6 +404,13 @@ Register the **menu** icons displayed in the Toolbar:
 
 </script>
 ```
+
+Using the Layout API and out **breakpoint aliases** along with component services
+
+*  `hide-gt-sm` and `$mdMedia('gt-sm')`
+*  `$mdSidenav` and `$mdMedia`
+
+we have quickly created an application that not only responds to size changes but also adapts to breakpoint triggers.
 
 ```js
 function UserController( userService, $mdBottomSheet, $mdSidenav ) {
