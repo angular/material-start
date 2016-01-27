@@ -39,19 +39,6 @@ Here are some generalized steps that may be used to conceptualize the applicatio
 7. Write e2e Tests 
 > It is important to validate your app logic with Angular Material UI components.
 
-<br/>
-###### Wirefame 
-
-The illustration below shows how we planned the layout and identified the primary components that will be used in the Starter application:
-
-<br/>
-![plancomponents2](https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png)
-
-> Note: that container #2 (above) is a simple `<div>` container and not an Angular Material component.
-
-<br/>
-- - -
-
 ##### ES5 Tutorials
 
 These tutorials assume that you have already cloned the repository and executed the `npm install` command.
@@ -97,6 +84,20 @@ Here you modified the shell application [available in `tutorial_0.html`] to use 
 - - -
 
 ### Step #2: Container Layouts
+
+<br/>
+###### Wirefame 
+
+The illustration below shows how we planned the layout and identified the primary components that will be used in the Starter application:
+
+<br/>
+![plancomponents2](https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png)
+
+> Note: that container #2 (above) is a simple `<div>` container and not an Angular Material component.
+
+<br/>
+- - -
+
 
 Here you used the wireframe planning and layout to identify the components and attributes needed. Then use the Angular Material Layout api to layout your containers and responsively adjust their sizes.
 
