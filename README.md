@@ -42,8 +42,9 @@ instructions that clearly demonstrate how the Starter application can be created
 
 Developers should checkout the following repository branches for:
 
+* Branch [**master**](https://github.com/angular/material-start): contains the finished, ES5, material-starter application.
 * Branch [**Starter - ES5 Tutorials**](https://github.com/angular/material-start/tree/es5-tutorial):
-for  ES5 Tutorial Steps & development process.
+contains the ES5 tutorials with development Lession #1 - #7.
 * Branch [**Starter - ES6** ](https://github.com/angular/material-start/tree/es6): same completed application as shown in the **[master](https://github.com/angular/material-start)** branch, but implemented with ES6 and JSPM (instead of the ES5 in master).
 
 > The **README** for the ES6 branch will provide some details showing how easy, <u>more simplifed</u>,
@@ -87,103 +88,31 @@ We have two kinds of dependencies in this project: tools and AngularJS framework
 us manage and test the application.
 
 * We get the tools we depend upon via `npm`, the [node package manager][npm].
-* We get the AngularJS code via `bower`, a [client-side code package manager][bower].
-
-We have preconfigured `npm` to automatically run `bower` so we can simply do:
+* We also get the AngularJS and Angular Material library code via `npm`
 
 ```
 npm install
 ```
 
-Behind the scenes this will also call `bower install`.  You should find that you have two new
-folders in your project.
+You should find that you have one new folder in your project.
 
 * `node_modules` - contains the npm packages for the tools we need
-* `app/bower_components` - contains the AngularJS framework files
 
-*Note that the `bower_components` folder would normally be installed in the root folder but
-material-start changes this location through the `.bowerrc` file.  Putting it in the app folder makes
-it easier to serve the files by a web server.*
-
-### Run End-to-End Tests
-
-To run your e2e tests your should install and configure Protractor and the Selenium WebServer.
-These are already specified as npm dependencies within `package.json`. Simply run these
-terminal commands:
-
-```console
-npm install -g live-server
-npm install -g webdriver-manager
-npm update
-webdriver-manager update
-```
-
-Your can read more details about Protractor and e2e here: http://angular.github.io/protractor/#/
-for more details on Protractor.
-
- 1. Start your local HTTP Webserver: `live-server` or `http-server`.
-
-```console
-cd ./app; live-server;
-```
-
-> Note: since `live-server` is working on port 8080, we configure the `protractor.conf.js` to use
-`baseUrl: 'http://localhost:8080'`
-
- 2. In another tab, start a Webdriver instance:
- 
-```console
-webdriver-manager start
-```
-
-> This will start up a Selenium Server and will output a bunch of info logs. Your Protractor test
-will send requests to this server to control a local browser. You can see information about the
-status of the server at `http://localhost:4444/wd/hub`. If you see errors, verify path in
-`e2e-tests/protractor.conf.js` for `chromeDriver` and `seleniumServerJar` to your local file system.
-
- 3. Run your e2e tests using the `test` script defined in `package.json`:
- 
-```console
-npm test
-```
-
-> This uses the local **Protractor** installed at `./node_modules/protractor`
 
 ## Directory Layout
 
 ```
 app/                    --> all of the source files for the application
   assets/app.css        --> default stylesheet
-  src/           --> all app specific modules
-     users/              --> package for user features
+  src/           		--> all app specific modules
+     users/             --> package for user features
   index.html            --> app layout file (the main html template file of the app)
-karma.conf.js         --> config file for running unit tests with Karma
-e2e-tests/            --> end-to-end tests
-  protractor-conf.js    --> Protractor config file
-  scenarios.js          --> end-to-end scenarios to be run by Protractor
+test/
+  karma.conf.js         --> Karma-Jasmine config file (for unit tests)
+  protractor-conf.js    --> Protractor config file (for e2e tests)
+  unit/					--> Karma-Jasmine unit tests
+  e2e/ 			        --> end-to-end tests
 ```
-
-## Updating Angular
-
-Previously we recommended that you merge in changes to angular-seed into your own fork of the
-project. Now that the AngularJS framework library code and tools are acquired through package managers
-(npm and bower) you can use these tools instead to update the dependencies.
-
-You can update the tool dependencies by running:
-
-```
-npm update
-```
-
-This will find the latest versions that match the version ranges specified in the `package.json` file.
-
-You can update the Angular dependencies by running:
-
-```
-bower update
-```
-
-This will find the latest versions that match the version ranges specified in the `bower.json` file.
 
 
 ## Serving the Application Files
@@ -205,13 +134,31 @@ npm install -g live-server
 
 Then you can start your own development web server to serve static files from a folder by running:
 
-```
-cd app
-live-server
-```
+>Run `live-server` in a Terminal window</br>
+Open browser to url `http://localhost:8080/app/`
+
 
 Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
 configure your server to serve the files under the `app/` directory.
+
+### Run UnitTests
+
+Simply open a Terminal window and run `npm run tests` to start all your Karma unit tests.
+
+
+## Updating Angular
+
+Previously we recommended that you merge in changes to angular-seed into your own fork of the
+project. Now that the AngularJS framework library code and tools are acquired through package managers
+(npm) you can use these tools instead to update the dependencies.
+
+You can update the tool dependencies by running:
+
+```
+npm update
+```
+
+This will find the latest versions that match the version ranges specified in the `package.json` file.
 
 
 ## Contact
