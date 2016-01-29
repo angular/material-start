@@ -1,27 +1,30 @@
 {
   "name": "material-start",
   "private": true,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A starter project for AngularJS Material",
   "repository": "https://github.com/angular/material-start",
   "licenses": [
-       {
-         "type": "MIT",
-         "url": "https://github.com/angular/material/blob/master/LICENSE"
-       }
-     ],  
+    {
+      "type": "MIT",
+      "url": "https://github.com/angular/material/blob/master/LICENSE"
+    }
+  ],
+  "dependencies": {
+    "angular": "^1.4.9",
+    "angular-animate": "^1.4.9",
+    "angular-aria": "^1.4.9",
+    "angular-material": "^1.0.0"
+  },
   "devDependencies": {
-    "karma": "~0.10",
-    "protractor": "^2.0.0",
-    "http-server": "^0.6.1",
-    "bower": "^1.3.1",
-    "shelljs": "^0.2.6",
-    "karma-junit-reporter": "^0.2.2",
-    "selenium-webdriver": "^2.45.1"
+    "angular-mocks": "^1.4.9",
+    "karma": "^0.13.19",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6",
+    "live-server": "^0.9.1"
   },
   "scripts": {
-    "postinstall": "bower update",
     "prestart": "npm update",
-    "test": "protractor ./e2e/protractor.conf.js"
+    "tests": "karma start ./test/karma.conf.js"
   }
 }
