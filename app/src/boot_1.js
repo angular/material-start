@@ -1,5 +1,5 @@
 import angular from 'angular';
-import main from 'src/main';
+import main from 'src/main_1';
 
 /**
  * Manually bootstrap the application when AngularJS and
@@ -10,6 +10,9 @@ angular
   .ready( function() {
 
     var body = document.getElementsByTagName("body")[0];
-    angular.bootstrap( body, [ main.name ], { strictDi: false });
+
+    angular
+      .bootstrap( body, [ main.name ])
+
 
   });

@@ -4,8 +4,6 @@
 // Load libraries
 
 import angular from 'angular'
-import 'angular-animate'
-import 'angular-aria'
 
 let appName = "starter-app";
 export default angular
