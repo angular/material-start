@@ -5,7 +5,7 @@ This branch contains the tutorial steps and processes used to implement the star
 ![material-starter-ux2](https://cloud.githubusercontent.com/assets/210413/6448551/70864488-c0e0-11e4-8767-c4e1e4c2f343.png)
 
 Above is a snaphot of the Starter-App with a **Master-Detail** layout: showing a list of users (left) and a user detail view (right). 
-c
+
 Also shown is the user experience that will be displayed for smaller device sizes. The responsive layout reveals the **menu** button that can be used to hide the user list and a **share** button that can be used to show the Share bottom sheet view.
 
 This Starter app demonstrates how:
