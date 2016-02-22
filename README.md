@@ -147,7 +147,7 @@ Here you used the wireframe planning and layout to identify the components and a
 
 ### Step #3: Hard-Coded HTML
 
-Here you will use hard-coded elements and Angular Material UI componetns to render and layout each container's children elements.
+Here you will use hard-coded elements and Angular Material UI components to render and layout each container's children elements.
 
 * Show a list of Users in the `md-sideNav` container
   *  Use the `md-list`, `md-button`, and `md-icon` components with mock data
