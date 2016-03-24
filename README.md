@@ -246,9 +246,9 @@ and the standard Angular `{{ }}` interpolation markup.
 	<md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
 	  <md-list>
 		<md-list-item ng-repeat="u in ul.users">
-			<md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : u === ul.selected }">
+			<md-button ng-click="ul.selectUser(u)" ng-class="{'selected' : u === ul.selected }">
 			  <md-icon md-svg-icon="{{u.avatar}}" class="avatar"></md-icon>
-			  {{it.name}}
+			  {{u.name}}
 			</md-button>
 		</md-list-item>
 	  </md-list>
