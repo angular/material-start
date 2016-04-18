@@ -106,7 +106,7 @@ Here you used the wireframe planning and layout to identify the components and a
 * Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers
 > Note: that the md-sidenav is the container the Users **master** list view, and the md-content is the container for the User **detail** view.
 * Add the **layout** and **flex** attributes to configure the container layouts and sizing aspects.
-* Use `md-locked-open` to lock the sidenav open on the left
+* Use `md-is-locked-open` to lock the sidenav open on the left
 * Use the `md-whiteframe-z2` to add a shadow the the sidenav
 
 ```html
