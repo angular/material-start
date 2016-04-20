@@ -1,3 +1,11 @@
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size:14px;
+  height:100%;
+  margin: 0px;
+  padding: 0px;
+}
+
 /* Toolbar area */
 
 .menu {
@@ -19,32 +27,22 @@ md-toolbar h3 {
 md-list-item > button {
   width:100%;
   text-align:left !important;
-  height:70px;;
-}
-
-md-icon.avatar {
-  margin-right: 20px;
 }
 
   md-list .md-button.selected {
     color: #03a9f4;
   }
 
+  md-sidenav  md-list {
+    padding: 0px 0px 8px 0px;
+  }
 
-button#main {
-  margin-bottom: 10px;
-}
-
-md-sidenav > md-toolbar {
-  height:64px;
-}
-
-md-list-item {
-  overflow: hidden;
-}
 
 /* Primary content area */
 
+#content {
+  overflow: hidden;
+}
 
 #content  {
   padding-left: 40px;
@@ -52,7 +50,7 @@ md-list-item {
   padding-top: 5px;
 }
 
-#content .md-button.contact {
+#content .md-button.share {
   background-color: transparent;
   border: none;
   width: 48px;
@@ -60,43 +58,65 @@ md-list-item {
   margin: 8px auto 16px 0;
   position: absolute;
   top: 10px;
-  right: 40px;
+  right: 25px;
 }
 
 #content md-icon.avatar {
   margin-top: 10px;
 }
 
-#content .md-button.contact > md-icon {
+#content .md-button.share > md-icon {
   fill:black;
   width:36px;
   height:36px;
 }
 
+md-button.menuBtn > md-icon {
+  fill:white;
+  width:24px;
+  height:24px;
+}
 
-#content .md-button.contact:active > md-icon {
+#content .md-button.share:active > md-icon {
   background-color: #dadada;
   border-radius: 75%;
   padding:4px;
   transition: all 100ms ease-out 30ms;
 }
 
+#content img {
+  display: block;
+  height: auto;
+  max-width: 500px;
+}
 
 /* Utils */
 
+.content-wrapper {
+  position: relative;
+}
+
 /* Typography support coming in 0.8.0 */
 
+md-toolbar h1 {
+  font-size: 1.250em;
+  font-weight: 400;
+}
+
 .avatar {
-  position:relative;
-  width: 54px;
-  height: 54px;
+  position: relative;
+  width: 128px;
+  height: 128px;
   border: 1px solid #ddd;
   border-radius: 50%;
   display: inline-block;
   overflow: hidden;
   margin: 0px;
   vertical-align: middle;
-
+  zoom:0.70;
+  transform: translateZ(0);
+  -webkit-transform: scale(0.70);
+  -moz-transform:scale(0.70);
 }
 
 
