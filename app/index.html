@@ -9,11 +9,21 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
-    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css"/>
     <link rel="stylesheet" href="assets/app.css"/>
+
+    <style type="text/css">
+        /**
+         * Hide when Angular is not yet loaded and initialized
+         */
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+    </style>
+
   </head>
 
-  <body ng-app="starterApp" layout="column" ng-controller="UserController as ul">
+  <body ng-app="starterApp" layout="column" ng-controller="UserController as ul" ng-cloak>
 
     <md-toolbar layout="row">
       <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
@@ -24,14 +34,14 @@
 
     <div flex layout="row">
 
-        <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
+        <md-sidenav  ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z2" >
           <md-list>
-            <md-item ng-repeat="it in ul.users">
+            <md-list-item ng-repeat="it in ul.users">
                 <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
                   <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
                   {{it.name}}
                 </md-button>
-            </md-item>
+            </md-list-item>
           </md-list>
         </md-sidenav>
 
@@ -40,17 +50,17 @@
           <h2>{{ul.selected.name}}</h2>
           <p>{{ul.selected.content}}</p>
 
-          <md-button class="share" md-no-ink ng-click="ul.share($event)" aria-label="Share">
+          <md-button class="share" md-no-ink ng-click="ul.makeContact(ul.selected)" aria-label="Share with {{ ul.selected.name }}">
             <md-icon md-svg-icon="share"></md-icon>
           </md-button>
         </md-content>
 
     </div>
 
-    <script src="./bower_components/angular/angular.js"></script>
-    <script src="./bower_components/angular-animate/angular-animate.js"></script>
-    <script src="./bower_components/angular-aria/angular-aria.js"></script>
-    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-animate/angular-animate.js"></script>
+    <script src="../node_modules/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
 
     <script src="./src/users/Users.js"></script>
     <script src="./src/users/UserController.js"></script>
