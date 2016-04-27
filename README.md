@@ -76,7 +76,7 @@ Each tutorial presents the resulting changes for that stage. It is recommended, 
 
 Here you modified the shell application [available in `tutorial_0.html`] to use Angular-Material.
 
-* Use Bower to install angular-material with `bower install angular-material -D`
+* Use **jspm** to install angular-material with `jspm install angular-material`
 * In the HTML, load the CSS and JS modules:
 * Configure the app dependency on 'ngMaterial'
 
