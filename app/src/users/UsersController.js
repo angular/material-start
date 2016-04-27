@@ -17,7 +17,7 @@ function AppController( usersService, $mdSidenav, $mdBottomSheet, $log ) {
   // Load all registered users
 
   usersService
-        .loadAll()
+        .loadAllUsers()
         .then( function( users ) {
           self.users    = [].concat(users);
           self.selected = users[0];
@@ -51,7 +51,7 @@ function AppController( usersService, $mdSidenav, $mdBottomSheet, $log ) {
 
       $mdBottomSheet.show({
         parent: angular.element(document.getElementById('content')),
-        templateUrl: '/src/users/view/contactSheet.html',
+        templateUrl: 'src/users/view/contactSheet.html',
         controller: [ '$mdBottomSheet', UserSheetController],
         controllerAs: "vm",
         bindToController : true,

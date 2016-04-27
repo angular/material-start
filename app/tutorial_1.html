@@ -8,27 +8,20 @@
 
     <title>Angular Material - Starter App</title>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
-    <link rel="stylesheet" href="/app/jspm_packages/github/angular/bower-material@1.0.5/angular-material.css"/>
-    <link rel="stylesheet" href="assets/app.css"/>
+    <link rel="stylesheet" href="./jspm_packages/github/angular/bower-material@master/angular-material.css"/>
+    <link rel="stylesheet" href="./assets/app.css"/>
 
-    <style type="text/css">
-        /**
-         * Hide when Angular is not yet loaded and initialized
-         */
-        [ng-cloak] {
-            display: none;
-        }
-    </style>
   </head>
 
-  <body ng-cloak layout="column">
-
-
+  <body ng-cloak>
+    <!--
+        No content yet!
+    -->
     <script src="./jspm_packages/system.js" type="text/javascript"></script>
-    <script src="./config.js" type="text/javascript"></script>
+    <script src="config.js" type="text/javascript"></script>
     <script type="text/javascript">
         System
-            .import('app/boot_1')
+            .import('boot')
             .catch( console.error.bind(console) ); // make sure any errors print to console
     </script>
 

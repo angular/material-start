@@ -30,19 +30,19 @@ function UsersDataservice($q) {
         },
         {
           name: 'Ernesto Urbina',
-          avatar: 'svg-5',
+          avatar: 'svg-2',
           content: 'Webtwo ipsum dolor sit amet, eskobo chumby doostang bebo. Bubbli greplin stypi prezi mzinga heroku wakoopa, shopify airbnb dogster dopplr gooru jumo, reddit plickers edmodo stypi zillow etsy.'
         },
         {
           name: 'Gani Ferrer',
-          avatar: 'svg-6',
+          avatar: 'svg-4',
           content: "Lebowski ipsum yeah? What do you think happens when you get rad? You turn in your library card? Get a new driver's license? Stop being awesome? Dolor sit amet, consectetur adipiscing elit praesent ac magna justo pellentesque ac lectus. You don't go out and make a living dressed like that in the middle of a weekday. Quis elit blandit fringilla a ut turpis praesent felis ligula, malesuada suscipit malesuada."
         }
       ];
 
     // Promise-based API
     return {
-      loadAll : function() {
+      loadAllUsers : function() {
         // Simulate async nature of real remote calls
         return $q.when(users);
       }

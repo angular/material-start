@@ -1,7 +1,11 @@
+[ng-cloak] {
+  display: none;
+}
+
 html, body {
   font-family: 'Roboto', sans-serif;
-  font-size:14px;
-  height:100%;
+  font-size: 14px;
+  height: 100%;
   margin: 0px;
   padding: 0px;
 }
@@ -28,14 +32,14 @@ md-list .md-button {
   text-align: left;
   width: 100%;
 }
-  md-list .md-button.selected {
-    color: #03a9f4;
-  }
 
-  md-sidenav  md-list {
-    padding: 0px 0px 8px 0px;
-  }
+md-list .md-button.selected {
+  color: #03a9f4;
+}
 
+md-sidenav md-list {
+  padding: 0px 0px 8px 0px;
+}
 
 /* Primary content area */
 
@@ -43,7 +47,7 @@ md-list .md-button {
   overflow: hidden;
 }
 
-#content  {
+#content {
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 5px;
@@ -65,21 +69,21 @@ md-list .md-button {
 }
 
 #content .md-button.share > md-icon {
-  fill:black;
-  width:36px;
-  height:36px;
+  fill: black;
+  width: 36px;
+  height: 36px;
 }
 
 md-button.menuBtn > md-icon {
-  fill:white;
-  width:24px;
-  height:24px;
+  fill: white;
+  width: 24px;
+  height: 24px;
 }
 
 #content .md-button.share:active > md-icon {
   background-color: #dadada;
   border-radius: 75%;
-  padding:4px;
+  padding: 4px;
   transition: all 100ms ease-out 30ms;
 }
 
@@ -112,19 +116,18 @@ md-toolbar h1 {
   overflow: hidden;
   margin: 0px;
   vertical-align: middle;
-  zoom:0.70;
+  zoom: 0.70;
   transform: translateZ(0);
   -webkit-transform: scale(0.70);
-  -moz-transform:scale(0.70);
+  -moz-transform: scale(0.70);
 }
 
-
-md-bottom-sheet  md-icon {
-  margin-right:20px;
+md-bottom-sheet md-icon {
+  margin-right: 20px;
 }
 
 span.name {
   font-weight: bold;
-  font-size:1.1em;
-  padding-left:5px;
+  font-size: 1.1em;
+  padding-left: 5px;
 }

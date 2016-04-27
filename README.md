@@ -70,36 +70,104 @@ Each tutorial presents the resulting changes for that stage. It is recommended, 
 <br/>
 - - -
 
+Let's just review our initial setup used in `tutorial_0.html`:
+
+
+```html
+  <head>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <link rel="stylesheet" href="./assets/app.css"/>
+  </head>
+
+  <body ng-cloak>
+    <!--
+        No content yet!
+    -->
+    <script src="./jspm_packages/system.js" type="text/javascript"></script>
+    <script src="config.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      System
+          .import('boot')
+          .catch( console.error.bind(console) ); // make sure any errors print to console
+    </script>
+
+  </body>
+```
+
+With `boot.js`:
+
+```js
+import angular from 'angular';
+import App from './src/App';
+
+/**
+ * Manually bootstrap the application when AngularJS and
+ * the application classes have been loaded.
+ */
+angular
+  .element( document )
+  .ready( function() {
+    angular
+      .module( App.name)
+      .run(()=>{
+        // Use main 'App' module and log startup status
+        console.log(`Running the ${App.name} ES6 Material-Start Tutorial`);
+      });
+
+    let body = document.getElementsByTagName("body")[0];
+    angular.bootstrap( body, [ App.name ]);
+  });
+```
+
+and with `src/App.js`
+
+```js
+// Load libraries
+import angular from 'angular'
+
+export default angular.module( "starter-app", [ ] )
+
+```
+
+
+<br/>
+- - -
+
 ### Step #1:
 
-<span style="font-size:10px;">@see [tutorial_1.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_1.html#L26-L34)<span>
+<span style="font-size:10px;">@see [tutorial_1.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_1.html)<span>
 
-Here you modified the shell application [available in `tutorial_0.html`] to use Angular-Material.
+Here you modified the application [available in `tutorial_0.html`] to use Angular-Material.
 
-* Use **jspm** to install angular-material with `jspm install angular-material`
-* In the HTML, load the CSS and JS modules:
+* In the HTML, load the Angular Material CSS stylesheet.
+* Load the Angular Material JS library and its dependent libraries
 * Configure the app dependency on 'ngMaterial'
 
 ```html
   <head>
-    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+   <link rel="stylesheet" href="./jspm_packages/github/angular/bower-material@master/angular-material.css"/>
   </head>
-
-  <body>
-
-    <script src="./bower_components/angular-animate/angular-animate.js"></script>
-    <script src="./bower_components/angular-aria/angular-aria.js"></script>
-    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
-
-	<script>
-		angular.module('starterApp', ['ngMaterial']);
-	</script>
-  </body>
 ```
+
+> Note the NPM and JSPM configurations already installed the Angular Material libraries. Re-installs are easy done using `jspm install angular-material@master`.
+
+```js
+// Load libraries
+import angular from 'angular'
+
+import 'angular-animate';
+import 'angular-aria';
+import 'angular-material';
+
+export default angular.module( "starter-app", [ 'ngMaterial' ] )
+```
+
+<br/>
+- - -
 
 ### Step #2:
 
-<span style="font-size:10px;">@see [tutorial_2.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_2.html#L30-L39)<span>
+<span style="font-size:10px;">@see [tutorial_2.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_2.html)<span>
 
 Here you used the wireframe planning and layout to identify the components and attributes needed.
 
@@ -131,9 +199,12 @@ Here you used the wireframe planning and layout to identify the components and a
   </body>
 ```
 
+<br/>
+- - -
+
 ### Step #3:
 
-<span style="font-size:10px;">@see [tutorial_3.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_3.html#L43-L72)<span>
+<span style="font-size:10px;">@see [tutorial_3.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_3.html)<span>
 
 
 Here you will use hard-coded elements to confirm rendering and layout of the container child elements and Angular Material components.
@@ -182,32 +253,36 @@ Here you will use hard-coded elements to confirm rendering and layout of the con
   </body>
 ```
 
+<br/>
+- - -
+
 ### Step #4:
 
-<span style="font-size:10px;">@see [tutorial_4.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_4.html#L85-L91)<span>
+<span style="font-size:10px;">@see [tutorial_4.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_4.html)<span>
 
 Here you integrate your custom, application logic.
 
-* Define a Angular module for your custom code
-* Define your data services, models, and controllers
-* Load your custom code
-* Register your Angular module for runtime DI
+* Import and add the `/src/users/Users.js` module as a dependency
+* This defines your data services, models, and controllers
 
-```html
-<script src="./src/users/Users.js"></script>
-<script src="./src/users/UsersListController.js"></script>
-<script src="./src/users/UsersDataservice.js"></script>
+```js
+// Load libraries
+import angular from 'angular'
+import Users from 'src/users/Users'
 
-<script type="text/javascript">
+import 'angular-animate';
+import 'angular-aria';
+import 'angular-material';
 
-  angular.module('starterApp', ['ngMaterial', 'users']);
-
-</script>
+export default angular.module( "starter-app", [ 'ngMaterial', Users.name ] )
 ```
+
+<br/>
+- - -
 
 ### Step #5:
 
-<span style="font-size:10px;">@see [tutorial_5.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_5.html#L52-L71)<span>
+<span style="font-size:10px;">@see [tutorial_5.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_5.html)<span>
 
 Here you will replace the hardcoded HTML with dynamic markup using Angular directives (eg ng-repeat) and `{{ }}` interpolation markup.
 
@@ -257,9 +332,12 @@ Here you will replace the hardcoded HTML with dynamic markup using Angular direc
  </script>
 ```
 
+<br/>
+- - -
+
 ### Step #6:
 
-<span style="font-size:10px;">@see [tutorial_6.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_6.html#L51)<span>
+<span style="font-size:10px;">@see [tutorial_6.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_6.html)<span>
 
 Here you will add responsive breakpoints so the application layout will adapt to different device display sizes.
 
@@ -314,10 +392,12 @@ Register the **share** icons displayed in the User Detail view bottomsheet:
 </script>
 ```
 
+<br/>
+- - -
 
 ### Step #7:
 
-<span style="font-size:10px;">@see [tutorial_7.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_7.html#L63-L68)<span>
+<span style="font-size:10px;">@see [tutorial_7.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_7.html)<span>
 
 Here you will configure a different, darker theme to be used.
 
@@ -338,9 +418,12 @@ Here you will configure a different, darker theme to be used.
 </script>
 ```
 
+<br/>
+- - -
+
 ### Step #8:
 
-<span style="font-size:10px;">@see [tutorial_8.html](https://github.com/angular/material-start/blob/es5-tutorial/app/tutorial_8.html#L19)<span>
+<span style="font-size:10px;">@see [tutorial_8.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_8.html)<span>
 
 Here you will fix any ARIA warnings that Angular Material may display in the Dev console.
 
