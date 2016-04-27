@@ -56,20 +56,20 @@ Each tutorial presents the resulting changes for that stage. It is recommended, 
 
 Here will modified the shell application [available in `tutorial_0.html`] to use Angular-Material.
 
-* Use Bower to install angular-material with `bower install angular-material -D`
+* Use NPM to install angular-material with `npm install`
 * In the HTML, load the CSS and JS modules:
 * Configure the app dependency on 'ngMaterial'
 
 ```html
   <head>
-    <link href="./bower_components/angular-material/angular-material.css" rel="stylesheet" />
+    <link href="../node_modules/angular-material/angular-material.css" rel="stylesheet" />
   </head>
 
   <body>
-    <script src="./bower_components/angular/angular.js" type="text/javascript" ></script>
-    <script src="./bower_components/angular-animate/angular-animate.js" type="text/javascript" ></script>
-    <script src="./bower_components/angular-aria/angular-aria.js" type="text/javascript" ></script>
-    <script src="./bower_components/angular-material/angular-material.js" type="text/javascript" ></script>
+    <script src="../node_modules/angular/angular.js" type="text/javascript" ></script>
+    <script src="../node_modules/angular-animate/angular-animate.js" type="text/javascript" ></script>
+    <script src="../node_modules/angular-aria/angular-aria.js" type="text/javascript" ></script>
+    <script src="../node_modules/angular-material/angular-material.js" type="text/javascript" ></script>
 
 	<script>
 		// Include the dependency upon ngMaterial - important !!
