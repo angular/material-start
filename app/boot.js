@@ -1,5 +1,5 @@
 import angular from 'angular';
-import App from './src/App';
+import App from './src/app';
 
 /**
  * Manually bootstrap the application when AngularJS and
