@@ -87,7 +87,7 @@ Let's just review our initial setup used in `tutorial_0.html`:
     <script src="config.js" type="text/javascript"></script>
     <script type="text/javascript">
       System
-          .import('boot')
+          .import('boot_ngOnly')
           .catch( console.error.bind(console) ); // make sure any errors print to console
     </script>
 
@@ -98,7 +98,6 @@ With `boot.js`:
 
 ```js
 import angular from 'angular';
-import App from './src/App';
 
 /**
  * Manually bootstrap the application when AngularJS and
@@ -108,25 +107,15 @@ angular
   .element( document )
   .ready( function() {
     angular
-      .module( App.name)
+      .module( 'starter-app', [ ] )
       .run(()=>{
         // Use main 'App' module and log startup status
-        console.log(`Running the ${App.name} ES6 Material-Start Tutorial`);
+        console.log(`Running the 'starter-app' ES6 Material-Start Tutorial`);
       });
 
     let body = document.getElementsByTagName("body")[0];
-    angular.bootstrap( body, [ App.name ]);
+    angular.bootstrap( body, [ 'starter-app' ]);
   });
-```
-
-and with `src/App.js`
-
-```js
-// Load libraries
-import angular from 'angular'
-
-export default angular.module( "starter-app", [ ] )
-
 ```
 
 
@@ -159,7 +148,11 @@ import 'angular-animate';
 import 'angular-aria';
 import 'angular-material';
 
-export default angular.module( "starter-app", [ 'ngMaterial' ] )
+angular
+	.module( 'starter-app', [ 'ngMaterial' ] )
+	.run(() => {
+	 //....
+	});
 ```
 
 <br/>
@@ -171,25 +164,27 @@ export default angular.module( "starter-app", [ 'ngMaterial' ] )
 
 Here you used the wireframe planning and layout to identify the components and attributes needed.
 
-* Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers
+* Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers <br/>
 > Note: that the md-sidenav is the container the Users **master** list view, and the md-content is the container for the User **detail** view.
 * Add the **layout** and **flex** attributes to configure the container layouts and sizing aspects.
 * Use `md-locked-open` to lock the sidenav open on the left
-* Use the `md-whiteframe-z2` to add a shadow the the sidenav
+* Use the `md-whiteframe-2dp` to add a shadow the the sidenav
 
 ```html
-  <body ng-app="starterApp" layout="column">
+  <body layout="column">
 
 	<!-- Container #1 (see wireframe) -->
     <md-toolbar layout="row" >
-      <h1>Angular Material - Starter App</h1>
+      <div class="md-toolbar-tools">
+        <h1>Angular Material - Starter App</h1>
+      </div>
     </md-toolbar>
 
 	<!-- Container #2 -->
     <div flex layout="row">
 
 		<!-- Container #3 -->
-        <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2"></md-sidenav>
+        <md-sidenav md-is-locked-open="true" class="md-whiteframe-2dp"></md-sidenav>
 
 		<!-- Container #4 -->
         <md-content flex id="content"></md-content>
@@ -209,16 +204,10 @@ Here you used the wireframe planning and layout to identify the components and a
 
 Here you will use hard-coded elements to confirm rendering and layout of the container child elements and Angular Material components.
 
-* Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers
-> Note: that the md-sidenav is the container for the **master** Users List view, and the md-content is the container for the **detail** User Detail view.
-* Add the **layout** and **flex** attributes to configure the container layouts and sizing aspects.
-* Use `md-locked-open` to lock the sidenav open on the left
-* Use the `md-whiteframe-z2` to add a shadow the the sidenav
-
 ```html
-  <body ng-app="starterApp" layout="column">
+  <body layout="column">
 
-	<md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
+	<md-sidenav md-is-locked-open="true" class="md-whiteframe-2dp">
 	  <md-list>
 
 		<!-- List item #1 -->
@@ -267,14 +256,16 @@ Here you integrate your custom, application logic.
 
 ```js
 // Load libraries
-import angular from 'angular'
-import Users from 'src/users/Users'
+import angular from 'angular';
 
 import 'angular-animate';
 import 'angular-aria';
 import 'angular-material';
 
-export default angular.module( "starter-app", [ 'ngMaterial', Users.name ] )
+import App from '../App';
+
+
+export default angular.module( "starter-app", [ 'ngMaterial', App.name ] )
 ```
 
 <br/>
@@ -294,14 +285,14 @@ Here you will replace the hardcoded HTML with dynamic markup using Angular direc
  <!-- Wireframe Container #2 -->
  <div flex layout="row">
  	<!-- Wireframe Container #3 -->
-	<md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
+	<md-sidenav md-is-locked-open="true" class="md-whiteframe-2dp">
 	  <md-list>
-		<md-item ng-repeat="it in ul.users">
+		<md-list-item ng-repeat="it in ul.users">
 			<md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
 			  <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
 			  {{it.name}}
 			</md-button>
-		</md-item>
+		</md-list-item>
 	  </md-list>
 	</md-sidenav>
 
@@ -316,20 +307,24 @@ Here you will replace the hardcoded HTML with dynamic markup using Angular direc
 	  </md-button>
 	</md-content>
  </div>
+```
 
+in `src/App.js`
 
- <script type="text/javascript">
-  angular
-	  .module('starterApp', ['ngMaterial', 'users'])
-	  .config(function( $mdIconProvider ){
+```js
+// Load libraries
+import angular from 'angular'
+import Users from 'src/users/Users'
 
-		  // Register the user `avatar` icons
-		  $mdIconProvider
-				  .defaultIconSet("./assets/svg/avatars.svg", 128)
-				  .icon("menu", "./assets/svg/menu.svg", 24)
-				  .icon("share", "./assets/svg/share.svg", 24);
-	  });
- </script>
+export default angular
+  .module( "UsersApp", [ 'ngMaterial', Users.name ] )
+  .config(function ($mdIconProvider) {
+    // Register the user `avatar` icons
+    $mdIconProvider
+      .defaultIconSet("./assets/svg/avatars.svg", 128)
+      .icon("menu", "./assets/svg/menu.svg", 24)
+      .icon("share", "./assets/svg/share.svg", 24);
+  });
 ```
 
 <br/>
@@ -370,26 +365,26 @@ Here you will add responsive breakpoints so the application layout will adapt to
 </body>
 ```
 
-Register the **share** icons displayed in the User Detail view bottomsheet:
+in `src/App.js` register the **share** icons displayed in the User Detail view bottomsheet:
 
-```html
-<script type="text/javascript">
+```js
+// Load libraries
+import angular from 'angular'
+import Users from 'src/users/Users'
 
-  angular
-	  .module('starterApp', ['ngMaterial', 'users'])
-	  .config(function($mdIconProvider){
+export default angular
+  .module( "UsersApp", [ 'ngMaterial', Users.name ] )
+  .config(function ($mdIconProvider) {
 
-		  $mdIconProvider
-			  .defaultIconSet("./assets/svg/avatars.svg", 128)
-			  .icon("menu"       , "./assets/svg/menu.svg"        , 24)
-			  .icon("share"      , "./assets/svg/share.svg"       , 24)
-			  .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
-			  .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
-			  .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
-			  .icon("phone"      , "./assets/svg/phone.svg"       , 512);
-	  });
-
-</script>
+    $mdIconProvider
+      .defaultIconSet("./assets/svg/avatars.svg", 128)
+      .icon("menu", "./assets/svg/menu.svg", 24)
+      .icon("share", "./assets/svg/share.svg", 24)
+      .icon("google_plus", "./assets/svg/google_plus.svg", 512)
+      .icon("hangouts", "./assets/svg/hangouts.svg", 512)
+      .icon("twitter", "./assets/svg/twitter.svg", 512)
+      .icon("phone", "./assets/svg/phone.svg", 512);
+  });
 ```
 
 <br/>
@@ -403,19 +398,28 @@ Here you will configure a different, darker theme to be used.
 
 * Use `$mdThemingProvider` to configure a different theme using primary colors from the **brown** color palette and accent colors from the **red** color palette.
 
-```html
-<script type="text/javascript">
+```js
+// Load libraries
+import angular from 'angular'
+import Users from 'src/users/Users'
 
-  angular
-	  .module('starterApp', ['ngMaterial', 'users'])
-	  .config(function($mdThemingProvider, $mdIconProvider){
+export default angular
+  .module( "UsersApp", [ 'ngMaterial', Users.name ] )
+  .config(function ($mdIconProvider, $mdThemingProvider) {
 
-		  $mdThemingProvider.theme('default')
-			  .primaryPalette('brown')
-			  .accentPalette('red');
-	  });
+    $mdIconProvider
+      .defaultIconSet("./assets/svg/avatars.svg", 128)
+      .icon("menu", "./assets/svg/menu.svg", 24)
+      .icon("share", "./assets/svg/share.svg", 24)
+      .icon("google_plus", "./assets/svg/google_plus.svg", 512)
+      .icon("hangouts", "./assets/svg/hangouts.svg", 512)
+      .icon("twitter", "./assets/svg/twitter.svg", 512)
+      .icon("phone", "./assets/svg/phone.svg", 512);
 
-</script>
+    $mdThemingProvider.theme('default')
+      .primaryPalette('brown')
+      .accentPalette('red');
+  });
 ```
 
 <br/>
