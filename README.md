@@ -618,7 +618,7 @@ export default angular
 
 <span style="font-size:10px;">@see [tutorial_10.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_10.html)<span>
 
-As mentioned above, first use `git checkout tutorial_10`.
+As mentioned above, first use `git checkout tutorial_9`.
 Here you will refactor your directives and controllers to use the Angular 1.5 Component API.
 
 * combine the directives and controllers logic to create component classes **UsersList** and **UserDetails**
