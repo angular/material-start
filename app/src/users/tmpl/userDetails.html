@@ -1,0 +1,10 @@
+
+  <md-icon md-svg-icon="{{$ctrl.selected.avatar}}" class="avatar"></md-icon>
+  <h2>{{$ctrl.selected.name}}</h2>
+  <p>{{$ctrl.selected.content}}</p>
+
+  <md-button class="share" md-no-ink ng-click="$ctrl.share()"
+             aria-label="Share with {{ $ctrl.selected.name }}">
+    <md-icon md-svg-icon="share"></md-icon>
+  </md-button>
+</md-content>
