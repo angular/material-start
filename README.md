@@ -65,13 +65,25 @@ You will notice html Tutorials #0 thru #8: these will be used to guide you throu
 
 Each tutorial presents the resulting changes for that stage. It is recommended, however, that you start with the preceding tutorial and manually make the changes requested. The effort you invest to implement these changes will highlight specific concepts at each Tutorial stage.
 
-> At each tutorial stage, you should use a web-server to view the that tutorial page. Open the dev console to see any warnings and browser the elements.
+> At each tutorial stage, you should use a web-server to view the that tutorial page. Open the dev console to see any warnings and browser the elements. You should also use `git checkout tutorial_<x>` to checkout that tutorial to easily work on the steps shown below. To work on:
+
+*  Tutorial #1 : `git checkout tutorial_0`
+*  Tutorial #2 : `git checkout tutorial_1`
+*  Tutorial #3 : `git checkout tutorial_2`
+*  Tutorial #4 : `git checkout tutorial_3`
+*  Tutorial #5 : `git checkout tutorial_4`
+*  Tutorial #6 : `git checkout tutorial_5`
+*  Tutorial #7 : `git checkout tutorial_6`
+*  Tutorial #8 : `git checkout tutorial_7`
+*  Tutorial #9 : `git checkout tutorial_8`
+*  Tutorial #10 : `git checkout tutorial_9`
+
+
 
 <br/>
 - - -
 
-Let's just review our initial setup used in `tutorial_0.html`:
-
+Now let's review our initial setup that is used in `tutorial_0.html`:
 
 ```html
   <head>
@@ -126,7 +138,7 @@ angular
 
 <span style="font-size:10px;">@see [tutorial_1.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_1.html)<span>
 
-Here you modified the application [available in `tutorial_0.html`] to use Angular-Material.
+As mentioned above, first use `git checkout tutorial_0`. Here you modified the application [available in `tutorial_0.html`] to use Angular-Material.
 
 * In the HTML, load the Angular Material CSS stylesheet.
 * Load the Angular Material JS library and its dependent libraries
@@ -162,7 +174,7 @@ angular
 
 <span style="font-size:10px;">@see [tutorial_2.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_2.html)<span>
 
-Here you used the wireframe planning and layout to identify the components and attributes needed.
+As mentioned above, first use `git checkout tutorial_1`. Here you used the wireframe planning and layout to identify the components and attributes needed.
 
 * Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers <br/>
 > Note: that the md-sidenav is the container the Users **master** list view, and the md-content is the container for the User **detail** view.
@@ -201,8 +213,7 @@ Here you used the wireframe planning and layout to identify the components and a
 
 <span style="font-size:10px;">@see [tutorial_3.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_3.html)<span>
 
-
-Here you will use hard-coded elements to confirm rendering and layout of the container child elements and Angular Material components.
+As mentioned above, first use `git checkout tutorial_2`. Here you will use hard-coded elements to confirm rendering and layout of the container child elements and Angular Material components.
 
 ```html
   <body layout="column">
@@ -249,7 +260,7 @@ Here you will use hard-coded elements to confirm rendering and layout of the con
 
 <span style="font-size:10px;">@see [tutorial_4.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_4.html)<span>
 
-Here you integrate your custom, application logic.
+As mentioned above, first use `git checkout tutorial_3`. Here you integrate your custom, application logic.
 
 * Import and add the `/src/App.js` module as a dependency
 * `App.js` internally loads the Users module
@@ -292,6 +303,7 @@ export default angular
 
 <span style="font-size:10px;">@see [tutorial_5.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_5.html)<span>
 
+As mentioned above, first use `git checkout tutorial_4`.
 Here you will replace the hardcoded HTML with dynamic markup using Angular directives (eg ng-repeat) and `{{ }}` interpolation markup.
 
 * Use dynamic HTML that will be compiled and rendered by Angular
@@ -351,6 +363,7 @@ export default angular
 
 <span style="font-size:10px;">@see [tutorial_6.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_6.html)<span>
 
+As mentioned above, first use `git checkout tutorial_5`.
 Here you will add responsive breakpoints so the application layout will adapt to different device display sizes.
 
 * Lock the Users list open if device display is wider than > 600px; hide otherwise.
@@ -411,6 +424,7 @@ export default angular
 
 <span style="font-size:10px;">@see [tutorial_7.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_7.html)<span>
 
+As mentioned above, first use `git checkout tutorial_6`.
 Here you will configure a different, darker theme to be used.
 
 * Use `$mdThemingProvider` to configure a different theme using primary colors from the **brown** color palette and accent colors from the **red** color palette.
@@ -446,6 +460,7 @@ export default angular
 
 <span style="font-size:10px;">@see [tutorial_8.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_8.html)<span>
 
+As mentioned above, first use `git checkout tutorial_7`.
 Here you will fix any ARIA warnings that Angular Material may display in the Dev console.
 
 * Insert `aria-label` attributes for mdButton components that do not have labels.
@@ -472,8 +487,191 @@ Here you will fix any ARIA warnings that Angular Material may display in the Dev
 </body>
 ```
 
+<br/>
+- - -
+
+### Step #9:
+
+<span style="font-size:10px;">@see [tutorial_9.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_9.html)<span>
+
+As mentioned above, first use `git checkout tutorial_8`.
+Here you will refactor your HTML and code to create `<users-list>` and `<user-details>` components.
+
+* creates templates based on HTML in tutorial_9.html
+* define your directives UsersListDirective and UserDetailsDirective
+* create your directive controllers
+* update the Users module to register the new directives
+
+`/src/users/tmpl/userDetails.html`:
+
+```html
+<md-icon md-svg-icon="{{$ctrl.selected.avatar}}" class="avatar"></md-icon>
+<h2>{{$ctrl.selected.name}}</h2>
+<p>{{$ctrl.selected.content}}</p>
+
+<md-button class="share" md-no-ink ng-click="$ctrl.share()"
+           aria-label="Share with {{ $ctrl.selected.name }}">
+  <md-icon md-svg-icon="share"></md-icon>
+</md-button>
+```
+
+`/src/users/tmpl/usersList.html`:
+
+
+```html
+<md-list>
+  <md-list-item ng-repeat="u in $ctrl.users">
+    <md-button ng-click="$ctrl.showDetails({user:u})" ng-class="{'selected' : u === $ctrl.selected }">
+      <md-icon md-svg-icon="{{u.avatar}}" class="avatar"></md-icon>
+      {{u.name}}
+    </md-button>
+  </md-list-item>
+</md-list>
+```
+
+`tutorial_9.html`:
+
+```html
+<md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" ng-click="ul.toggleList()" class="md-whiteframe-4dp" >
+  <!-- Custom UsersList component -->
+  <users-list
+	  users="ul.users"
+	  selected="ul.selected"
+	  on-selected="ul.selectUser(user)">
+  </users-list>
+</md-sidenav>
+
+<md-content flex id="content">
+  <!-- Custom UserDetails component -->
+  <user-details
+	  selected="ul.selected" >
+  </user-details>
+</md-content>
+```
+
+Now create your directives.
+
+`/src/users/directives/UsersListDirective.js`:
+
+```js
+import UsersListController from './../controllers/UsersListController'
+
+// Directive definition of the the UsersListDirective.
+class UsersListDirective {
+  constructor() {
+    angular.extend(this, {
+      restrict         : 'E',
+      scope            : {  users: '=', selected : '=', showDetails : '&onSelected' },
+      templateUrl      : 'src/users/tmpl/usersList.html',
+      bindToController : true,
+      controllerAs     : '$ctrl',
+      controller       : ['$scope', '$log', UsersListController]
+    });
+
+  }
+}
+export default UsersListDirective;
+```
+
+`/src/users/directives/UserDetailsDirective.js`:
+
+```js
+import UserDetailsController from './../controllers/UserDetailsController'
+
+// Directive definition of the the UserDetailsDirective.
+class UserDetailsDirective {
+  constructor() {
+    angular.extend(this, {
+      restrict         : 'E',
+      scope            : {  selected: '='  },
+      templateUrl      : 'src/users/tmpl/userDetails.html',
+      bindToController : true,
+      controllerAs     : '$ctrl',
+      controller       : ["$scope", '$mdBottomSheet', '$log', UserDetailsController]
+    });
+  }
+}
+export default UserDetailsDirective;
+```
+
+Then update the `src/users/Users.js` modules registrations:
+
+```js
+import UsersService from 'users/UsersDataservice'
+import UsersController from 'users/controllers/UsersController'
+import UsersListDirective from 'users/directives/UsersListDirective'
+import UserDetailsDirective from 'users/directives/UserDetailsDirective'
+
+export default angular
+    .module( "users", [ 'ngMaterial' ] )
+    .service("usersService"             , UsersService )
+    .controller("UsersController"       , UsersController )
+    .directive("usersList"              , () => new UsersListDirective() )
+    .directive("userDetails"            , () => new UserDetailsDirective() );
+```
+
+
+<br/>
+- - -
+
+### Step #10:
+
+<span style="font-size:10px;">@see [tutorial_10.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_10.html)<span>
+
+As mentioned above, first use `git checkout tutorial_10`.
+Here you will refactor your directives and controllers to use the Angular 1.5 Component API.
+
+* combine the directives and controllers logic to create component classes **UsersList** and **UserDetails**
+* Use the **bindings** key and *1-way* data-binding
+* update the Users module to register the new components
+
+in `src/users/UserDetails.js`
+
+```js
+class UserDetailsController  {
+  // previous code here...
+}
+
+export default {
+  name : 'userDetails',
+  config : {
+    bindings         : {  selected: '<'  },
+    templateUrl      : 'src/users/tmpl/userDetails.html',
+    controller       : [ '$mdBottomSheet', '$log', UserDetailsController]
+  }
+};
+```
+
+in `src/users/UsersList.js`
+
+```js
+export default {
+  name : 'usersList',
+  config : {
+    bindings         : {  users: '<', selected : '=', showDetails : '&onSelected' },
+    templateUrl      : 'src/users/tmpl/usersList.html'
+  }
+};
+```
+
+in `src/users/Users.js`
+
+```js
+import UsersService from 'src/users/services/UsersDataservice'
+import UsersController from 'src/users/controllers/UsersController'
+import UsersList from 'src/users/UsersList'
+import UserDetails from 'src/users/UserDetails'
+
+export default angular
+    .module( "users", [ 'ngMaterial' ] )
+    .service("usersService"             , UsersService )
+    .controller("UsersController"       , UsersController )
+    .component( UsersList.name          , UsersList.config )
+    .component( UserDetails.name        , UserDetails.config );
+```
+
 ## Summary
 
-With only eight (8) Tutorial Steps and a few minutes of work, we have quickly created a functional Angular Material application that is beautiful, responsive, theme'ed, accessible, and easily maintained.
+With only ten (10) Tutorial Steps and a few minutes of work, we have quickly created a functional Angular Material application that is beautiful, responsive, theme'ed, accessible, component-based, and easily maintained.
 
 
