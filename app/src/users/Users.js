@@ -6,6 +6,6 @@ import UsersService from 'users/UsersDataservice'
 // Define the Angular 'users' module
 
 export default angular
-    .module( "users", ['ngMaterial'] )
+    .module( "users", [ ] )
     .service("usersService"       , UsersService )
     .controller("UsersController" , UsersController );

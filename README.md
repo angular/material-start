@@ -251,8 +251,9 @@ Here you will use hard-coded elements to confirm rendering and layout of the con
 
 Here you integrate your custom, application logic.
 
-* Import and add the `/src/users/Users.js` module as a dependency
-* This defines your data services, models, and controllers
+* Import and add the `/src/App.js` module as a dependency
+* `App.js` internally loads the Users module
+* `Users.js` defines your data services, models, and controllers
 
 ```js
 // Load libraries
@@ -268,6 +269,22 @@ import App from '../App';
 export default angular.module( "starter-app", [ 'ngMaterial', App.name ] )
 ```
 
+in `Users.js` 
+
+```js
+// Load the custom app ES6 modules
+
+import UsersController from 'users/UsersController'
+import UsersService from 'users/UsersDataservice'
+
+// Define the Angular 'users' module
+
+export default angular
+    .module( "users", [] )
+    .service("usersService"       , UsersService )
+    .controller("UsersController" , UsersController );
+
+```
 <br/>
 - - -
 

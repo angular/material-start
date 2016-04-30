@@ -14,9 +14,9 @@ export default angular
       .icon('menu' ,URL_ICON_MENU, 24)
       .icon('share',URL_ICON_SHARE, 24);
 
-    // $mdThemingProvider
-    //   .theme('default')
-    //   .primaryPalette('brown');
+    $mdThemingProvider
+      .theme('default')
+      .primaryPalette('brown');
 
   });
 
