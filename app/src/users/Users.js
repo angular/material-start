@@ -1,10 +1,10 @@
 // Load the custom app ES6 modules
 
-import UsersService from 'users/UsersDataservice'
-import UsersController from 'users/controllers/UsersController'
+import UsersService from 'src/users/services/UsersDataservice'
+import UsersController from 'src/users/controllers/UsersController'
 
-import UsersListDirective from 'users/directives/UsersListDirective'
-import UserDetailsDirective from 'users/directives/UserDetailsDirective'
+import UsersList from 'src/users/UsersList'
+import UserDetails from 'src/users/UserDetails'
 
 
 // Define the Angular 'users' module
@@ -13,5 +13,5 @@ export default angular
     .module( "users", [ 'ngMaterial' ] )
     .service("usersService"             , UsersService )
     .controller("UsersController"       , UsersController )
-    .directive("usersList"              , () => new UsersListDirective() )
-    .directive("userDetails"            , () => new UserDetailsDirective() );
+    .component( UsersList.name          , UsersList.config )
+    .component( UserDetails.name        , UserDetails.config );

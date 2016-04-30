@@ -3,7 +3,7 @@ class UserDetailsController  {
    * @constructor
    * @param {!angular.Scope} $scope
    */
-  constructor($scope, $mdBottomSheet, $log) {
+  constructor($mdBottomSheet, $log) {
     this.$mdBottomSheet = $mdBottomSheet;
     this.$log = $log;
    }
@@ -43,5 +43,13 @@ class UserDetailsController  {
   }
 
 }
-export default UserDetailsController;
+
+export default {
+  name : 'userDetails',
+  config : {
+    bindings         : {  selected: '<'  },
+    templateUrl      : 'src/users/tmpl/userDetails.html',
+    controller       : [ '$mdBottomSheet', '$log', UserDetailsController]
+  }
+};
 
