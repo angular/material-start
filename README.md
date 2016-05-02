@@ -338,7 +338,7 @@ and the standard Angular `{{ }}` interpolation markup.
 
 ### Step #5: Use the BottomSheet 
 
-In this step, you will use a dynamic, mbBottomSheet component at the bottom of the user details
+In this step, you will use a dynamic, mdBottomSheet component at the bottom of the user details
 area. This contact sheet will be used to display user contact options available for each user.
 
 *  create a "Share" button in the upper right of the user details view
