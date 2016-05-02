@@ -291,7 +291,7 @@ and the standard Angular `{{ }}` interpolation markup.
 
 ### Step #5: Use the BottomSheet 
 
-In this step, you will use a dynamic, mbBottomSheet component at the bottom of the user details area. This contact sheet will be used to display user contact options available for each user.
+In this step, you will use a dynamic, mdBottomSheet component at the bottom of the user details area. This contact sheet will be used to display user contact options available for each user.
 
 *  create a "Share" button in the upper right of the user details view
 *  create a [User Contact](https://github.com/angular/material-start/blob/es5-tutorial/app/src/users/view/contactSheet.html) view and controller to show in the bottom sheet
