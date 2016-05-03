@@ -1,0 +1,9 @@
+<!-- NOTE: @see ngClick for how to pass data selection to outside expression -->
+<md-list>
+  <md-list-item ng-repeat="user in $ctrl.users">
+    <md-button ng-click="$ctrl.showDetails({user:user})" ng-class="{'selected' : user === $ctrl.selected }">
+      <md-icon md-svg-icon="{{user.avatar}}" class="avatar"></md-icon>
+      {{user.name}}
+    </md-button>
+  </md-list-item>
+</md-list>

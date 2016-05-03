@@ -2,11 +2,13 @@
 
 This branch contains the tutorial steps and processes used to implement the start-app shown below:
 
-![material-starter-ux2](https://cloud.githubusercontent.com/assets/210413/6448551/70864488-c0e0-11e4-8767-c4e1e4c2f343.png)
+![material-starter-ux2](https://cloud.githubusercontent.com/assets/6004537/14996543/b588eb46-1137-11e6-803c-ce23996c9742.png)
 
-Above is a snaphot of the Starter-App with a **Master-Detail** layout: showing a list of users (left) and a user detail view (right). 
+Above is a snaphot of the Starter-App with a **Master-Detail** layout: showing a list of users (left) and a user detail
+view (right).
 
-Also shown is the user experience that will be displayed for smaller device sizes. The responsive layout reveals the **menu** button that can be used to hide the user list. And the **share** button can be used to show the Share bottom sheet view.
+Also shown is the user experience that will be displayed for smaller device sizes. The responsive layout reveals the **menu** button that can be used to hide the user list. And the **share** button can be used to show the Share bottom
+sheet view.
 
 This Starter app demonstrates how:
 
@@ -18,10 +20,10 @@ This Starter app demonstrates how:
 *  Theming can be altered/configured using `$mdThemingProvider`
 
 
-This sample application is purposed as both a learning tool and a skeleton application for a typical [AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
-projects.
+This sample application is purposed as both a learning tool and a skeleton application for a typical
+[AngularJS Material](http://angularjs.org/) web app: comprised of a Side navigation area and a content area. You can
+use it to quickly bootstrap your angular webapp projects and dev environment for these projects.
 
-<br/>
 - - -
 
 #### "How to build an App"
@@ -29,64 +31,81 @@ projects.
 Here are some generalized steps that may be used to conceptualize the application implementation process:
 
 1. Plan your layout and the components you want to use
+
 2. Use hard-coded HTML and mock content to make sure the components appear as desired
+
 3. Wire components to your application logic
-> Use the seamless integration possible with Angular directives and controllers<br/>
-> This integration assumes that you have unit tested your app logic
+
+   > Use the seamless integration possible with Angular directives and controllers<br/>
+   > This integration assumes that you have unit tested your app logic
+
 4. Add Responsive breakpoints
+
 5. Add Theming support
+
 6. Confirm ARIA compliance
-7. Write e2e Tests 
-> It is important to validate your app logic with Angular Material UI components.
 
-<br/>
-###### Wirefame 
+7. Write e2e Tests
 
-The illustration below shows how we planned the layout and identified the primary components that will be used in the Starter ap:
+   > It is important to validate your app logic with Angular Material UI components.
+
+###### Wirefame
+
+The illustration below shows how we planned the layout and identified the primary components that will be used in the Starter app:
 
 <br/>
 ![plancomponents2](https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png)
 
-> Note: that container #2 (above) is a simple `<div>` container and not an Angular Material component.
+> **Note:** The container #2 (above) is a simple `<div>` container and not an Angular Material component.
 
-<br/>
 - - -
 
 ##### ES6 Tutorials
 
-These tutorial use jspm.io: package manager for SystemJS which is built on top of the dynamic ES6 module loader. This allows developers to load any module format (ES6, CommonJS, AMD, and globals).
+These tutorial use jspm.io: package manager for SystemJS which is built on top of the dynamic ES6 module loader. This
+allows developers to load any module format (ES6, CommonJS, AMD, and globals).
 
 These tutorials assume that you have already cloned the repository and executed the following commands:
 
+* `git checkout es6-tutorial`
 * `npm install jspm -g`
 * `jspm update`
 
-You will notice html Tutorials #0 thru #8: these will be used to guide you through the development process. By following these tutorials stages, you will be very quickly introduced to the powerful features of Angular Material.
+You will notice two directories within this tutorial:
 
-Each tutorial presents the resulting changes for that stage. It is recommended, however, that you start with the preceding tutorial and manually make the changes requested. The effort you invest to implement these changes will highlight specific concepts at each Tutorial stage.
+ 1. `app` - This is where all of your application files will be created and edited.
+ 2. `steps` - This folder contains sub-folders, one for each step.
 
-> At each tutorial stage, you should use a web-server to view the that tutorial page. Open the dev console to see any warnings and browser the elements. You should also use `git checkout tutorial_<x>` to checkout that tutorial to easily work on the steps shown below. To work on:
+> **Note:** Each step folder presents the final _changes_ for that stage. So if you open `steps/step-3`, you will see
+  which files changed and what their code **should** look like at the end of Step #3 (or the beginning of Step #4).
 
-*  Tutorial #1 : `git checkout tutorial_0`
-*  Tutorial #2 : `git checkout tutorial_1`
-*  Tutorial #3 : `git checkout tutorial_2`
-*  Tutorial #4 : `git checkout tutorial_3`
-*  Tutorial #5 : `git checkout tutorial_4`
-*  Tutorial #6 : `git checkout tutorial_5`
-*  Tutorial #7 : `git checkout tutorial_6`
-*  Tutorial #8 : `git checkout tutorial_7`
-*  Tutorial #9 : `git checkout tutorial_8`
-*  Tutorial #10 : `git checkout tutorial_9`
+These folders and files will be used to guide you through the development process. By following these tutorial steps,
+you will be very quickly introduced to the powerful features of Angular Material.
 
+We encourage you to walk through each step yourself and build the application from the ground up. However, if you get
+stuck or want to start from a clean slate, you can copy the `steps/step-#/app` folder and paste it on top of your main
+`app` folder.
 
+> **Note:** You should use a web-server (like live-server) to view your app at each step. Open the dev console to see
+  any warnings and browse the elements.
 
-<br/>
+> **Note:** In some of the Steps in this README, we have abbreviated some of the HTML or JavaScript in order to show
+  what is being added or changed, so you may not be able copy/paste every example into your code. If you wish to do this,
+  you should copy/paste the actual files in the `steps` directory.
+
 - - -
 
-Now let's review our initial setup that is used in `tutorial_0.html`:
+Now let's review our initial setup:
 
+`app/index.html`
 ```html
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <title>Angular Material - Starter App</title>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
     <link rel="stylesheet" href="./assets/app.css"/>
   </head>
@@ -99,15 +118,14 @@ Now let's review our initial setup that is used in `tutorial_0.html`:
     <script src="config.js" type="text/javascript"></script>
     <script type="text/javascript">
       System
-          .import('boot_ngOnly')
+          .import('src/boot/boot')
           .catch( console.error.bind(console) ); // make sure any errors print to console
     </script>
 
   </body>
 ```
 
-With `boot.js`:
-
+`app/src/boot/boot.js`
 ```js
 import angular from 'angular';
 
@@ -119,39 +137,45 @@ angular
   .element( document )
   .ready( function() {
     angular
-      .module( 'starter-app', [ ] )
+      .module( 'jspm-bootstrap', [ ] )
       .run(()=>{
-        // Use main 'App' module and log startup status
-        console.log(`Running the 'starter-app' ES6 Material-Start Tutorial`);
+        console.log(`Running the 'jspm-bootstrap' module for ES6 Material-Start Tutorial`);
       });
 
     let body = document.getElementsByTagName("body")[0];
-    angular.bootstrap( body, [ 'starter-app' ]);
+    angular.bootstrap( body, [ 'jspm-bootstrap' ]);
   });
 ```
 
-
-<br/>
 - - -
 
 ### Step #1:
 
-<span style="font-size:10px;">@see [tutorial_1.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_1.html)<span>
+Here you will modify the application to use Angular-Material.
 
-As mentioned above, first use `git checkout tutorial_0`. Here you modified the application [available in `tutorial_0.html`] to use Angular-Material.
-
-* In the HTML, load the Angular Material CSS stylesheet.
+* In the HTML, load the Angular Material CSS stylesheet and appropriate `<meta>`/`<title>` tags
 * Load the Angular Material JS library and its dependent libraries
 * Configure the app dependency on 'ngMaterial'
 
+`app/index.html`
 ```html
   <head>
-   <link rel="stylesheet" href="./jspm_packages/github/angular/bower-material@master/angular-material.css"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <title>Angular Material - Starter App</title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <link rel="stylesheet" href="./jspm_packages/github/angular/bower-material@master/angular-material.css"/>
+    <link rel="stylesheet" href="./assets/app.css"/>
   </head>
 ```
 
-> Note the NPM and JSPM configurations already installed the Angular Material libraries. Re-installs are easy done using `jspm install angular-material@master`.
+> **Note:** The NPM and JSPM configurations already installed the Angular Material libraries. Re-installs are easily
+  done using `jspm install angular-material@master`.
 
+`app/src/App.js`
 ```js
 // Load libraries
 import angular from 'angular'
@@ -160,111 +184,207 @@ import 'angular-animate';
 import 'angular-aria';
 import 'angular-material';
 
-angular
-	.module( 'starter-app', [ 'ngMaterial' ] )
-	.run(() => {
-	 //....
-	});
+export default angular.module( 'starter-app', [ 'ngMaterial' ] )
+  .run(() => {
+    console.log(`Starting the 'starter-app' module`);
+  });
 ```
 
-<br/>
+`app/src/boot/boot.js`
+```js
+import angular from 'angular';
+
+import App from 'src/app';
+
+/**
+ * Manually bootstrap the application when AngularJS and
+ * the application classes have been loaded.
+ */
+angular
+  .element( document )
+  .ready( function() {
+    angular
+      .module( 'jspm-bootstrap', [ App.name ] )
+      .run(()=>{
+        console.log(`Running the 'jspm-bootstrap' module for ES6 Material-Start Tutorial`);
+      });
+
+    let body = document.getElementsByTagName("body")[0];
+    angular.bootstrap( body, [ 'jspm-bootstrap' ]);
+  });
+```
 - - -
 
 ### Step #2:
 
-<span style="font-size:10px;">@see [tutorial_2.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_2.html)<span>
+Here we will use the wireframe planning and layout to identify the components and attributes needed.
 
-As mentioned above, first use `git checkout tutorial_1`. Here you used the wireframe planning and layout to identify the components and attributes needed.
+* Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers
 
-* Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers <br/>
-> Note: that the md-sidenav is the container the Users **master** list view, and the md-content is the container for the User **detail** view.
-* Add the **layout** and **flex** attributes to configure the container layouts and sizing aspects.
-* Use `md-locked-open` to lock the sidenav open on the left
-* Use the `md-whiteframe-2dp` to add a shadow the the sidenav
+> **Note:** The `md-sidenav` is the container for the Users **master** list view, and the `md-content` is the container
+for the User **detail** view.
 
+* Add the **layout** and **flex** attributes to configure the container layouts and sizing aspects
+* Use `md-is-locked-open` to lock the sidenav open on the left
+* Use the `md-whiteframe-4dp` class to add a shadow the the sidenav
+
+`app/index.html`
 ```html
   <body layout="column">
 
-	<!-- Container #1 (see wireframe) -->
-    <md-toolbar layout="row" >
-      <div class="md-toolbar-tools">
-        <h1>Angular Material - Starter App</h1>
-      </div>
+    <!-- Container #1 (see wireframe) -->
+    <md-toolbar layout="row" class="md-toolbar-tools">
+      <h1>Angular Material - Starter App</h1>
     </md-toolbar>
 
-	<!-- Container #2 -->
+    <!-- Container #2 -->
     <div flex layout="row">
 
-		<!-- Container #3 -->
-        <md-sidenav md-is-locked-open="true" class="md-whiteframe-2dp"></md-sidenav>
+      <!-- Container #3 -->
+      <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
+        Sidenav
+      </md-sidenav>
 
-		<!-- Container #4 -->
-        <md-content flex id="content"></md-content>
+      <!-- Container #4 -->
+      <md-content flex id="content">
+        Content
+      </md-content>
 
     </div>
-	
+
   </body>
 ```
 
-<br/>
 - - -
 
 ### Step #3:
 
-<span style="font-size:10px;">@see [tutorial_3.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_3.html)<span>
+Here you will use hard-coded elements to confirm rendering and layout of the container child elements and Angular Material
+components.
 
-As mentioned above, first use `git checkout tutorial_2`. Here you will use hard-coded elements to confirm rendering and layout of the container child elements and Angular Material components.
-
+`app/index.html`
 ```html
-  <body layout="column">
+<body layout="column">
 
-	<md-sidenav md-is-locked-open="true" class="md-whiteframe-2dp">
-	  <md-list>
+  <!-- Container #1 (see wireframe) -->
+  <md-toolbar layout="row" class="md-toolbar-tools">
+    <h1>Angular Material - Starter App</h1>
+  </md-toolbar>
 
-		<!-- List item #1 -->
-		<md-item >
-			<md-button>
-			  <md-icon md-svg-src="./assets/svg/avatar-1.svg" class="avatar"></md-icon>
-			  Lia Luogo
-			</md-button>
-		</md-item>
+  <!-- Container #2 -->
+  <div flex layout="row">
 
-		<!-- List item #2 -->
-		<md-item >
-			<md-button>
-			 <md-icon md-svg-src="./assets/svg/avatar-4.svg" class="avatar"></md-icon>
-			  Lawrence Ray
-			</md-button>
-		</md-item>
+    <!-- Container #3 -->
+    <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
+      <md-list>
+        <!-- List item #1 -->
+        <md-list-item>
+          <md-button>
+            <md-icon md-svg-src="./assets/svg/avatar-1.svg" class="avatar"></md-icon>
+            Lia Luogo
+          </md-button>
+        </md-list-item>
 
-	  </md-list>
-	</md-sidenav>
+        <!-- List item #2 -->
+        <md-list-item>
+          <md-button>
+            <md-icon md-svg-src="./assets/svg/avatar-4.svg" class="avatar"></md-icon>
+            Lawrence Ray
+          </md-button>
+        </md-list-item>
 
-	<md-content flex id="content">
-	  <!-- User details sample -->
+      </md-list>
+    </md-sidenav>
 
-	  <md-icon md-svg-src="./assets/svg/avatar-1.svg" class="avatar"></md-icon>
-	  <h2>Lia Luogo</h2>
-	  <p>
-		I love cheese...
-	  </p>
-	</md-content>
+    <!-- Container #4 -->
+    <md-content flex id="content">
+      <!-- User details sample -->
 
-  </body>
+      <md-icon md-svg-src="./assets/svg/avatar-1.svg" class="avatar"></md-icon>
+      <h2>Lia Luogo</h2>
+      <p>
+        I love cheese...
+      </p>
+    </md-content>
+
+  </div>
+</body>
 ```
 
-<br/>
 - - -
 
 ### Step #4:
 
-<span style="font-size:10px;">@see [tutorial_4.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_4.html)<span>
+Here you integrate your custom, application logic.
 
-As mentioned above, first use `git checkout tutorial_3`. Here you integrate your custom, application logic.
-
-* Import and add the `/src/App.js` module as a dependency
 * `App.js` internally loads the Users module
 * `Users.js` defines your data services, models, and controllers
+
+`app/src/App.js`
+```js
+// Load libraries
+import angular from 'angular';
+
+import 'angular-animate';
+import 'angular-aria';
+import 'angular-material';
+
+import Users from 'lib/users/Users'
+
+export default angular.module( "starter-app", [ 'ngMaterial', Users.name ] )
+  .run(() => {
+    // ...
+  });
+```
+
+- - -
+
+### Step #5:
+
+Here you will replace the hardcoded HTML with dynamic markup using Angular directives (eg `ng-repeat`) and `{{ }}` interpolation markup to utilize the User functionality we just imported in Step #4.
+
+* Add the `ng-controller` tag to the `<body>` element
+* Use dynamic HTML that will be compiled and rendered by Angular
+* Register a custom icon set of 'user' avatars for the user list
+* Register **menu** and **share** icon urls for the md-buttons
+
+`app/index.html`
+```html
+<body ng-cloak layout="column" ng-controller="UsersController as ul">
+
+  <!-- Toolbar goes in here -->
+
+  <!-- Container #2 -->
+  <div flex layout="row">
+
+    <!-- Container #3 -->
+    <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
+      <md-list>
+        <md-list-item ng-repeat="it in ul.users">
+          <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
+            <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
+            {{it.name}}
+          </md-button>
+        </md-list-item>
+      </md-list>
+    </md-sidenav>
+
+    <!-- Container #4 -->
+    <md-content flex id="content">
+      <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
+      <h2>{{ul.selected.name}}</h2>
+      <p>{{ul.selected.content}}</p>
+
+      <md-button class="md-fab md-fab-bottom-right">
+        <md-icon md-svg-icon="share" ></md-icon>
+      </md-button>
+    </md-content>
+
+  </div>
+</body>
+```
+
+in `src/App.js`
 
 ```js
 // Load libraries
@@ -274,79 +394,10 @@ import 'angular-animate';
 import 'angular-aria';
 import 'angular-material';
 
-import App from '../App';
-
-
-export default angular.module( "starter-app", [ 'ngMaterial', App.name ] )
-```
-
-in `Users.js` 
-
-```js
-// Load the custom app ES6 modules
-
-import UsersController from 'users/UsersController'
-import UsersService from 'users/UsersDataservice'
-
-// Define the Angular 'users' module
+import Users from 'lib/users/Users';
 
 export default angular
-    .module( "users", [] )
-    .service("usersService"       , UsersService )
-    .controller("UsersController" , UsersController );
-
-```
-<br/>
-- - -
-
-### Step #5:
-
-<span style="font-size:10px;">@see [tutorial_5.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_5.html)<span>
-
-As mentioned above, first use `git checkout tutorial_4`.
-Here you will replace the hardcoded HTML with dynamic markup using Angular directives (eg ng-repeat) and `{{ }}` interpolation markup.
-
-* Use dynamic HTML that will be compiled and rendered by Angular
-* Register a custom icon set of 'user' avatars for the user list
-* Register **menu** and **share** icon urls for the md-buttons
-
-```html
- <!-- Wireframe Container #2 -->
- <div flex layout="row">
- 	<!-- Wireframe Container #3 -->
-	<md-sidenav md-is-locked-open="true" class="md-whiteframe-2dp">
-	  <md-list>
-		<md-list-item ng-repeat="it in ul.users">
-			<md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
-			  <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
-			  {{it.name}}
-			</md-button>
-		</md-list-item>
-	  </md-list>
-	</md-sidenav>
-
-	<!-- Wireframe Container #4 -->
-	<md-content flex id="content">
-	  <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
-	  <h2>{{ul.selected.name}}</h2>
-	  <p>{{ul.selected.content}}</p>
-
-	  <md-button class="action" md-no-ink>
-		<md-icon md-svg-icon="share" ></md-icon>
-	  </md-button>
-	</md-content>
- </div>
-```
-
-in `src/App.js`
-
-```js
-// Load libraries
-import angular from 'angular'
-import Users from 'src/users/Users'
-
-export default angular
-  .module( "UsersApp", [ 'ngMaterial', Users.name ] )
+  .module( "starter-app", [ 'ngMaterial', Users.name ] )
   .config(function ($mdIconProvider) {
     // Register the user `avatar` icons
     $mdIconProvider
@@ -356,21 +407,19 @@ export default angular
   });
 ```
 
-<br/>
 - - -
 
 ### Step #6:
 
-<span style="font-size:10px;">@see [tutorial_6.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_6.html)<span>
-
-As mentioned above, first use `git checkout tutorial_5`.
 Here you will add responsive breakpoints so the application layout will adapt to different device display sizes.
 
-* Lock the Users list open if device display is wider than > 600px; hide otherwise.
-* Hide the Toolbar menu icon button if the Users list is open.
-* Add `click` support for the **menu** and **share** buttons.
-* Register icons for bottomsheet
+* Lock the Users list open if device display is wider than > 600px; hide otherwise
+* Hide the Toolbar menu icon button if the Users list is open
+* Add `md-component-id="left"` to the sidenav so we can toggle it open/closed
+* Add `click` support for the **menu** and **share** buttons
+* Register icons for bottom sheet
 
+`app/index.html`
 ```html
 <body>
 	<!-- Wireframe Container #1 -->
@@ -382,70 +431,81 @@ Here you will add responsive breakpoints so the application layout will adapt to
 	<div flex layout="row">
 
 	 <!-- Wireframe Container #3 -->
-	 <md-sidenav md-is-locked-open="$media('gt-sm')"
-				 md-component-id="left">
+	 <md-sidenav md-is-locked-open="$mdMedia('gt-sm')"
+				 md-component-id="left" ng-click="ul.toggleList()">
 	 </md-sidenav>
 
 	 <!-- Wireframe Container #4 -->
 	 <md-content flex id="content">
-	  <md-button class="share" md-no-ink ng-click="ul.share($event)"></md-button>
+	   <md-button md-no-ink ng-click="ul.share($event)">
+	     <md-icon md-svg-icon="menu"></md-icon>
+	   </md-button>
 	 </md-content>
 
 	</div>
 </body>
 ```
 
-in `src/App.js` register the **share** icons displayed in the User Detail view bottomsheet:
+In `App.js` register the **share** icons displayed in the User Detail view's bottomsheet:
 
+`app/src/App.js`
 ```js
 // Load libraries
-import angular from 'angular'
-import Users from 'src/users/Users'
+import angular from 'angular';
+
+import 'angular-animate';
+import 'angular-aria';
+import 'angular-material';
+
+import Users from 'src/users/Users';
 
 export default angular
-  .module( "UsersApp", [ 'ngMaterial', Users.name ] )
+  .module( "starter-app", [ 'ngMaterial', Users.name ] )
   .config(function ($mdIconProvider) {
 
     $mdIconProvider
       .defaultIconSet("./assets/svg/avatars.svg", 128)
       .icon("menu", "./assets/svg/menu.svg", 24)
       .icon("share", "./assets/svg/share.svg", 24)
-      .icon("google_plus", "./assets/svg/google_plus.svg", 512)
-      .icon("hangouts", "./assets/svg/hangouts.svg", 512)
-      .icon("twitter", "./assets/svg/twitter.svg", 512)
-      .icon("phone", "./assets/svg/phone.svg", 512);
+      .icon("google_plus", "./assets/svg/google_plus.svg", 24)
+      .icon("hangouts", "./assets/svg/hangouts.svg", 24)
+      .icon("twitter", "./assets/svg/twitter.svg", 24)
+      .icon("phone", "./assets/svg/phone.svg", 24);
   });
 ```
 
-<br/>
 - - -
 
 ### Step #7:
 
-<span style="font-size:10px;">@see [tutorial_7.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_7.html)<span>
-
-As mentioned above, first use `git checkout tutorial_6`.
 Here you will configure a different, darker theme to be used.
 
-* Use `$mdThemingProvider` to configure a different theme using primary colors from the **brown** color palette and accent colors from the **red** color palette.
+* Use `$mdThemingProvider` to configure a different theme using primary colors from the **brown** color palette and
+  accent colors from the **red** color palette.
 
+`app/src/App.js`
 ```js
 // Load libraries
-import angular from 'angular'
-import Users from 'src/users/Users'
+import angular from 'angular';
+
+import 'angular-animate';
+import 'angular-aria';
+import 'angular-material';
+
+import Users from 'src/users/Users';
 
 export default angular
-  .module( "UsersApp", [ 'ngMaterial', Users.name ] )
+  .module( "starter-app", [ 'ngMaterial', Users.name ] )
   .config(function ($mdIconProvider, $mdThemingProvider) {
 
     $mdIconProvider
       .defaultIconSet("./assets/svg/avatars.svg", 128)
       .icon("menu", "./assets/svg/menu.svg", 24)
       .icon("share", "./assets/svg/share.svg", 24)
-      .icon("google_plus", "./assets/svg/google_plus.svg", 512)
-      .icon("hangouts", "./assets/svg/hangouts.svg", 512)
-      .icon("twitter", "./assets/svg/twitter.svg", 512)
-      .icon("phone", "./assets/svg/phone.svg", 512);
+      .icon("google_plus", "./assets/svg/google_plus.svg", 24)
+      .icon("hangouts", "./assets/svg/hangouts.svg", 24)
+      .icon("twitter", "./assets/svg/twitter.svg", 24)
+      .icon("phone", "./assets/svg/phone.svg", 24);
 
     $mdThemingProvider.theme('default')
       .primaryPalette('brown')
@@ -453,180 +513,146 @@ export default angular
   });
 ```
 
-<br/>
 - - -
 
 ### Step #8:
 
-<span style="font-size:10px;">@see [tutorial_8.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_8.html)<span>
-
-As mentioned above, first use `git checkout tutorial_7`.
 Here you will fix any ARIA warnings that Angular Material may display in the Dev console.
 
-* Insert `aria-label` attributes for mdButton components that do not have labels.
+* Insert `aria-label` attributes for `<md-button>` components that do not have labels.
 
+`app/index.html`
 ```html
 <body>
-	<!-- Wireframe Container #1 -->
-    <md-toolbar layout="row">
-      <md-button class="menu" aria-label="Show User List"></md-button>
-    </md-toolbar>
 
-	<!-- Wireframe Container #2 -->
-	<div flex layout="row">
+  <!-- Wireframe Container #1 -->
+  <md-toolbar layout="row">
+    <md-button ... aria-label="Show User List"></md-button>
+  </md-toolbar>
 
-	 <!-- Wireframe Container #3 -->
-	 <md-sidenav>...</md-sidenav>
+  <!-- Wireframe Container #2 -->
+  <div flex layout="row">
 
-	 <!-- Wireframe Container #4 -->
-	 <md-content flex id="content">
-	  <md-button class="share" aria-label="Share"></md-button>
-	 </md-content>
+    <!-- Wireframe Container #3 -->
+    <md-sidenav>...</md-sidenav>
 
-	</div>
+    <!-- Wireframe Container #4 -->
+    <md-content flex id="content">
+      <md-button ... aria-label="Share"></md-button>
+    </md-content>
+
+  </div>
 </body>
 ```
 
-<br/>
 - - -
 
 ### Step #9:
 
-<span style="font-size:10px;">@see [tutorial_9.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_9.html)<span>
+Here you will refactor your HTML and code to create the `<users-list>` and `<user-details>` components.
 
-As mentioned above, first use `git checkout tutorial_8`.
-Here you will refactor your HTML and code to create `<users-list>` and `<user-details>` components.
+* creates templates based on HTML in `index.html`
+* define your UsersList and UserDetails directives
+* create your directive controllers and extract logic from the `lib/users/controllers/UsersController.js`
+* update your `App.js` module to register the new directives
 
-* creates templates based on HTML in tutorial_9.html
-* define your directives UsersListDirective and UserDetailsDirective
-* create your directive controllers
-* update the Users module to register the new directives
+For this app, we recommend the following layout for your files:
 
-`/src/users/tmpl/userDetails.html`:
+  - src
+    - users
+      - details
+        - UserDetails.html
+        - UserDetails.js <-- This is our directive file
+        - UserDetailsController.js
+      - list
+        - UsersList.html
+        - UsersList.js <-- This is our directive file
+        - UsersListController.js
 
-```html
-<md-icon md-svg-icon="{{$ctrl.selected.avatar}}" class="avatar"></md-icon>
-<h2>{{$ctrl.selected.name}}</h2>
-<p>{{$ctrl.selected.content}}</p>
+In lieu of copy/pasting all of the files, we have shown just the `App.js` and `index.html` files below. If you wish
+to see how we have separated the directive, controller and HTML files; please see the files located in `steps/step-9/app`.
 
-<md-button class="share" md-no-ink ng-click="$ctrl.share()"
-           aria-label="Share with {{ $ctrl.selected.name }}">
-  <md-icon md-svg-icon="share"></md-icon>
-</md-button>
-```
+> **Note:** In order to stay with the ES6 paradigm of classes, the `UsersList` and `UserDetails` have been written as
+  full classes rather than plain functions. This means that we must first instantiate the class before we pass it to
+  Angular's `.directive()` method as you can see below. We'll change this in Step #10 below to export a simple config
+  object that is more consistent with the `.component()` API.
 
-`/src/users/tmpl/usersList.html`:
-
-
-```html
-<md-list>
-  <md-list-item ng-repeat="u in $ctrl.users">
-    <md-button ng-click="$ctrl.showDetails({user:u})" ng-class="{'selected' : u === $ctrl.selected }">
-      <md-icon md-svg-icon="{{u.avatar}}" class="avatar"></md-icon>
-      {{u.name}}
-    </md-button>
-  </md-list-item>
-</md-list>
-```
-
-`tutorial_9.html`:
-
-```html
-<md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" ng-click="ul.toggleList()" class="md-whiteframe-4dp" >
-  <!-- Custom UsersList component -->
-  <users-list
-	  users="ul.users"
-	  selected="ul.selected"
-	  on-selected="ul.selectUser(user)">
-  </users-list>
-</md-sidenav>
-
-<md-content flex id="content">
-  <!-- Custom UserDetails component -->
-  <user-details
-	  selected="ul.selected" >
-  </user-details>
-</md-content>
-```
-
-Now create your directives.
-
-`/src/users/directives/UsersListDirective.js`:
-
+`app/src/App.js`
 ```js
-import UsersListController from './../controllers/UsersListController'
+// Load libraries
+import angular from 'angular';
 
-// Directive definition of the the UsersListDirective.
-class UsersListDirective {
-  constructor() {
-    angular.extend(this, {
-      restrict         : 'E',
-      scope            : {  users: '=', selected : '=', showDetails : '&onSelected' },
-      templateUrl      : 'src/users/tmpl/usersList.html',
-      bindToController : true,
-      controllerAs     : '$ctrl',
-      controller       : ['$scope', '$log', UsersListController]
-    });
+import 'angular-animate';
+import 'angular-aria';
+import 'angular-material';
 
-  }
-}
-export default UsersListDirective;
-```
+import Users from 'src/users/Users';
 
-`/src/users/directives/UserDetailsDirective.js`:
-
-```js
-import UserDetailsController from './../controllers/UserDetailsController'
-
-// Directive definition of the the UserDetailsDirective.
-class UserDetailsDirective {
-  constructor() {
-    angular.extend(this, {
-      restrict         : 'E',
-      scope            : {  selected: '='  },
-      templateUrl      : 'src/users/tmpl/userDetails.html',
-      bindToController : true,
-      controllerAs     : '$ctrl',
-      controller       : ["$scope", '$mdBottomSheet', '$log', UserDetailsController]
-    });
-  }
-}
-export default UserDetailsDirective;
-```
-
-Then update the `src/users/Users.js` modules registrations:
-
-```js
-import UsersService from 'users/UsersDataservice'
-import UsersController from 'users/controllers/UsersController'
-import UsersListDirective from 'users/directives/UsersListDirective'
-import UserDetailsDirective from 'users/directives/UserDetailsDirective'
+import UsersList from 'src/users/list/UsersList';
+import UserDetails from 'src/users/details/UserDetails';
 
 export default angular
-    .module( "users", [ 'ngMaterial' ] )
-    .service("usersService"             , UsersService )
-    .controller("UsersController"       , UsersController )
-    .directive("usersList"              , () => new UsersListDirective() )
-    .directive("userDetails"            , () => new UserDetailsDirective() );
+  .module( "starter-app", [ 'ngMaterial', Users.name ] )
+
+  .directive("usersList", () => new UsersList)
+  .directive("userDetails", () => new UserDetails)
+
+  .config(function ($mdIconProvider, $mdThemingProvider) {
+
+    $mdIconProvider
+      .defaultIconSet("./assets/svg/avatars.svg", 128)
+      .icon("menu", "./assets/svg/menu.svg", 24)
+      .icon("share", "./assets/svg/share.svg", 24)
+      .icon("google_plus", "./assets/svg/google_plus.svg", 24)
+      .icon("hangouts", "./assets/svg/hangouts.svg", 24)
+      .icon("twitter", "./assets/svg/twitter.svg", 24)
+      .icon("phone", "./assets/svg/phone.svg", 24);
+
+    $mdThemingProvider.theme('default')
+      .primaryPalette('brown')
+      .accentPalette('red');
+  });
 ```
 
+`app/index.html`
+```html
+<!-- Container #2 -->
+<div flex layout="row">
 
-<br/>
+  <!-- Container #3 -->
+  <md-sidenav ...>
+    <!-- Custom UsersList component -->
+    <users-list
+        users="ul.users"
+        selected="ul.selected"
+        on-selected="ul.selectUser(user)">
+    </users-list>
+  </md-sidenav>
+
+  <!-- Container #4 -->
+  <md-content ...>
+    <!-- Custom UserDetails component -->
+    <user-details
+        selected="ul.selected" >
+    </user-details>
+  </md-content>
+
+</div>
+```
 - - -
 
 ### Step #10:
 
-<span style="font-size:10px;">@see [tutorial_10.html](https://github.com/angular/material-start/blob/es6-tutorial/app/tutorial_10.html)<span>
-
-As mentioned above, first use `git checkout tutorial_9`.
 Here you will refactor your directives and controllers to use the Angular 1.5 Component API.
 
-* combine the directives and controllers logic to create component classes **UsersList** and **UserDetails**
-* Use the **bindings** key and *1-way* data-binding
-* update the Users module to register the new components
+* combine the directives and controllers logic into the **UsersList** and **UserDetails** classes
+* Use the **bindings** keyword and *1-way* data-binding
+* update the App module to register the new components
 
-in `src/users/UserDetails.js`
+> **Note:** If you want to copy/paste the code from the `step-10` directory, you will also need to delete the
+  `app/src/users/list/UsersListController.js` as it is not used.
 
+`app/src/users/details/UserDetails.js`
 ```js
 class UserDetailsController  {
   // previous code here...
@@ -636,42 +662,61 @@ export default {
   name : 'userDetails',
   config : {
     bindings         : {  selected: '<'  },
-    templateUrl      : 'src/users/tmpl/userDetails.html',
+    templateUrl      : 'src/users/details/UserDetails.html',
     controller       : [ '$mdBottomSheet', '$log', UserDetailsController]
   }
 };
 ```
 
-in `src/users/UsersList.js`
-
+`app/src/users/list/UsersList.js`
 ```js
 export default {
   name : 'usersList',
   config : {
-    bindings         : {  users: '<', selected : '=', showDetails : '&onSelected' },
-    templateUrl      : 'src/users/tmpl/usersList.html'
+    bindings         : {  users: '<', selected : '<', showDetails : '&onSelected' },
+    templateUrl      : 'src/users/list/UsersList.html'
   }
 };
 ```
 
-in `src/users/Users.js`
-
+`app/src/App.js`
 ```js
-import UsersService from 'src/users/services/UsersDataservice'
-import UsersController from 'src/users/controllers/UsersController'
-import UsersList from 'src/users/UsersList'
-import UserDetails from 'src/users/UserDetails'
+// Load libraries
+import angular from 'angular';
+
+import 'angular-animate';
+import 'angular-aria';
+import 'angular-material';
+
+import Users from 'src/users/Users';
+
+import UsersList from 'src/users/list/UsersList';
+import UserDetails from 'src/users/details/UserDetails';
 
 export default angular
-    .module( "users", [ 'ngMaterial' ] )
-    .service("usersService"             , UsersService )
-    .controller("UsersController"       , UsersController )
-    .component( UsersList.name          , UsersList.config )
-    .component( UserDetails.name        , UserDetails.config );
+  .module( "starter-app", [ 'ngMaterial', Users.name ] )
+
+  .component( UsersList.name, UsersList.config )
+  .component( UserDetails.name, UserDetails.config )
+
+  .config(function ($mdIconProvider, $mdThemingProvider) {
+
+    $mdIconProvider
+      .defaultIconSet("./assets/svg/avatars.svg", 128)
+      .icon("menu", "./assets/svg/menu.svg", 24)
+      .icon("share", "./assets/svg/share.svg", 24)
+      .icon("google_plus", "./assets/svg/google_plus.svg", 24)
+      .icon("hangouts", "./assets/svg/hangouts.svg", 24)
+      .icon("twitter", "./assets/svg/twitter.svg", 24)
+      .icon("phone", "./assets/svg/phone.svg", 24);
+
+    $mdThemingProvider.theme('default')
+      .primaryPalette('brown')
+      .accentPalette('red');
+  });
 ```
 
 ## Summary
 
-With only ten (10) Tutorial Steps and a few minutes of work, we have quickly created a functional Angular Material application that is beautiful, responsive, theme'ed, accessible, component-based, and easily maintained.
-
-
+With only ten (10) Tutorial Steps and a few minutes of work, we have quickly created a functional Angular Material
+application that is beautiful, responsive, theme'ed, accessible, component-based, and easily maintained.
