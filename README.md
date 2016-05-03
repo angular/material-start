@@ -175,7 +175,7 @@ Here you will modify the application to use Angular-Material.
 > **Note:** The NPM and JSPM configurations already installed the Angular Material libraries. Re-installs are easily
   done using `jspm install angular-material@master`.
 
-`app/src/App.js`
+`app/src/app.js`
 ```js
 // Load libraries
 import angular from 'angular'
@@ -317,10 +317,10 @@ components.
 
 Here you integrate your custom, application logic.
 
-* `App.js` internally loads the Users module
+* `app.js` internally loads the Users module
 * `Users.js` defines your data services, models, and controllers
 
-`app/src/App.js`
+`app/src/app.js`
 ```js
 // Load libraries
 import angular from 'angular';
@@ -352,7 +352,14 @@ Here you will replace the hardcoded HTML with dynamic markup using Angular direc
 ```html
 <body ng-cloak layout="column" ng-controller="UsersController as ul">
 
-  <!-- Toolbar goes in here -->
+  
+  <!-- Container #1 (see wireframe) -->
+  <md-toolbar layout="row" class="md-toolbar-tools">
+    <md-button class="menu md-icon-button">
+      <md-icon md-svg-icon="menu" ></md-icon>
+    </md-button>
+    <h1>Angular Material - Starter App</h1>
+  </md-toolbar>
 
   <!-- Container #2 -->
   <div flex layout="row">
@@ -384,7 +391,7 @@ Here you will replace the hardcoded HTML with dynamic markup using Angular direc
 </body>
 ```
 
-in `src/App.js`
+in `src/app.js`
 
 ```js
 // Load libraries
@@ -413,7 +420,7 @@ export default angular
 
 Here you will add responsive breakpoints so the application layout will adapt to different device display sizes.
 
-* Lock the Users list open if device display is wider than > 600px; hide otherwise
+* Lock the Users list open if device display is wider than > 960px; hide otherwise
 * Hide the Toolbar menu icon button if the Users list is open
 * Add `md-component-id="left"` to the sidenav so we can toggle it open/closed
 * Add `click` support for the **menu** and **share** buttons
@@ -437,18 +444,18 @@ Here you will add responsive breakpoints so the application layout will adapt to
 
 	 <!-- Wireframe Container #4 -->
 	 <md-content flex id="content">
-	   <md-button md-no-ink ng-click="ul.share($event)">
-	     <md-icon md-svg-icon="menu"></md-icon>
-	   </md-button>
+     <md-button class="md-fab md-fab-bottom-right" ng-click="ul.share($event)">
+       <md-icon md-svg-icon="share" ></md-icon>
+     </md-button>
 	 </md-content>
 
 	</div>
 </body>
 ```
 
-In `App.js` register the **share** icons displayed in the User Detail view's bottomsheet:
+In `app.js` register the **share** icons displayed in the User Detail view's bottomsheet:
 
-`app/src/App.js`
+`app/src/app.js`
 ```js
 // Load libraries
 import angular from 'angular';
@@ -483,7 +490,7 @@ Here you will configure a different, darker theme to be used.
 * Use `$mdThemingProvider` to configure a different theme using primary colors from the **brown** color palette and
   accent colors from the **red** color palette.
 
-`app/src/App.js`
+`app/src/app.js`
 ```js
 // Load libraries
 import angular from 'angular';
@@ -554,7 +561,7 @@ Here you will refactor your HTML and code to create the `<users-list>` and `<use
 * creates templates based on HTML in `index.html`
 * define your UsersList and UserDetails directives
 * create your directive controllers and extract logic from the `lib/users/controllers/UsersController.js`
-* update your `App.js` module to register the new directives
+* update your `app.js` module to register the new directives
 
 For this app, we recommend the following layout for your files:
 
@@ -569,7 +576,7 @@ For this app, we recommend the following layout for your files:
         - UsersList.js <-- This is our directive file
         - UsersListController.js
 
-In lieu of copy/pasting all of the files, we have shown just the `App.js` and `index.html` files below. If you wish
+In lieu of copy/pasting all of the files, we have shown just the `app.js` and `index.html` files below. If you wish
 to see how we have separated the directive, controller and HTML files; please see the files located in `steps/step-9/app`.
 
 > **Note:** In order to stay with the ES6 paradigm of classes, the `UsersList` and `UserDetails` have been written as
@@ -577,7 +584,7 @@ to see how we have separated the directive, controller and HTML files; please se
   Angular's `.directive()` method as you can see below. We'll change this in Step #10 below to export a simple config
   object that is more consistent with the `.component()` API.
 
-`app/src/App.js`
+`app/src/app.js`
 ```js
 // Load libraries
 import angular from 'angular';
@@ -679,7 +686,7 @@ export default {
 };
 ```
 
-`app/src/App.js`
+`app/src/app.js`
 ```js
 // Load libraries
 import angular from 'angular';
