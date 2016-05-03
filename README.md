@@ -428,28 +428,46 @@ Here you will add responsive breakpoints so the application layout will adapt to
 
 `app/index.html`
 ```html
-<body>
-	<!-- Wireframe Container #1 -->
-    <md-toolbar layout="row">
-      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()"></md-button>
-    </md-toolbar>
+<body ng-cloak layout="column" ng-controller="UsersController as ul">
 
-	<!-- Wireframe Container #2 -->
-	<div flex layout="row">
+<!-- Container #1 (see wireframe) -->
+<md-toolbar layout="row" class="md-toolbar-tools">
+  <md-button class="menu md-icon-button" hide-gt-sm ng-click="ul.toggleList()">
+    <md-icon md-svg-icon="menu" ></md-icon>
+  </md-button>
+  <h1>Angular Material - Starter App</h1>
+</md-toolbar>
 
-	 <!-- Wireframe Container #3 -->
-	 <md-sidenav md-is-locked-open="$mdMedia('gt-sm')"
-				 md-component-id="left" ng-click="ul.toggleList()">
-	 </md-sidenav>
+<!-- Container #2 -->
+<div flex layout="row">
 
-	 <!-- Wireframe Container #4 -->
-	 <md-content flex id="content">
-     <md-button class="md-fab md-fab-bottom-right" ng-click="ul.share($event)">
-       <md-icon md-svg-icon="share" ></md-icon>
-     </md-button>
-	 </md-content>
+  <!-- Container #3 -->
+  <md-sidenav class="md-whiteframe-4dp" md-is-locked-open="$mdMedia('gt-sm')"
+              md-component-id="left" ng-click="ul.toggleList()">
+    <md-list>
+      <md-list-item ng-repeat="it in ul.users">
+        <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
+          <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
+          {{it.name}}
+        </md-button>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
 
-	</div>
+  <!-- Container #4 -->
+  <md-content flex id="content">
+    <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
+    <h2>{{ul.selected.name}}</h2>
+    <p>{{ul.selected.content}}</p>
+
+    <md-button class="md-fab md-fab-bottom-right" ng-click="ul.share($event)">
+      <md-icon md-svg-icon="share" ></md-icon>
+    </md-button>
+  </md-content>
+
+</div>
+
+<!-- additional script tags here -->
 </body>
 ```
 
