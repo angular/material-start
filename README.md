@@ -517,7 +517,7 @@ import 'angular-animate';
 import 'angular-aria';
 import 'angular-material';
 
-import Users from 'src/users/Users';
+import Users from 'lib/users/Users';
 
 export default angular
   .module( "starter-app", [ 'ngMaterial', Users.name ] )
