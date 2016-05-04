@@ -68,8 +68,8 @@ allows developers to load any module format (ES6, CommonJS, AMD, and globals).
 These tutorials assume that you have already cloned the repository and executed the following commands:
 
 * `git checkout es6-tutorial`
-* `npm install jspm -g`
-* `jspm update`
+* `npm install`
+* `npm run jspm:update`
 
 You will notice two directories within this tutorial:
 
