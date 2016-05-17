@@ -1,8 +1,8 @@
 {
   "name": "material-start",
   "private": true,
-  "version": "0.0.1",
-  "description": "A starter project for AngularJS Material",
+  "version": "0.0.2",
+  "description": "A ES6 Starter project (Solutions) for AngularJS Material",
   "repository": "https://github.com/angular/material-start",
   "licenses": [
     {
@@ -16,14 +16,14 @@
       "lib": "app/src"
     },
     "dependencies": {
-      "angular": "github:angular/bower-angular@^1.5.5",
-      "angular-animate": "github:angular/bower-angular-animate@^1.5.5",
-      "angular-aria": "github:angular/bower-angular-aria@^1.5.5",
+      "angular": "github:angular/bower-angular@1.5.5",
+      "angular-animate": "github:angular/bower-angular-animate@1.5.5",
+      "angular-aria": "github:angular/bower-angular-aria@1.5.5",
+      "angular-messages": "github:angular/bower-angular-messages@1.5.5",
       "angular-material": "github:angular/bower-material@master",
-      "angular-messages": "github:angular/bower-angular-messages@^1.5.5",
-      "css": "github:systemjs/plugin-css@^0.1.19",
+      "css": "github:systemjs/plugin-css@^0.1.20",
       "json": "github:systemjs/plugin-json@^0.1.0",
-      "text": "github:systemjs/plugin-text@^0.0.2"
+      "text": "github:systemjs/plugin-text@^0.0.4"
     },
     "devDependencies": {
       "traceur": "github:jmcriffey/bower-traceur@0.0.92",
@@ -31,14 +31,9 @@
     }
   },
   "devDependencies": {
-    "karma": "~0.10",
-    "protractor": "^1.1.1",
-    "http-server": "^0.6.1",
-    "shelljs": "^0.2.6",
-    "karma-junit-reporter": "^0.2.2"
+    "live-server": "^0.6.4"
   },
   "scripts": {
     "prestart": "npm update; jspm update"
-
   }
 }
