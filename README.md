@@ -36,7 +36,7 @@ Since web application uses **jspm** with Angular-Material:
 
 * In the HTML, we only load the **System loader** and the configuration module
 > Notice no stylesheets are loaded here... they are injected later upon demand
-* Configure the system loader to laod the app/boot module.
+* Configure the system loader to load the app/boot module.
 
 ```html
    <head>
