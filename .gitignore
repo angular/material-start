@@ -1,8 +1,9 @@
-logs/*
 node_modules/
-bower_components/
-app/jspm_packages
-tmp
+typings/
+dist/
+logs/
+tmp/
+typings.json
 .DS_Store
 .idea
 !.gitkeep
