@@ -43,9 +43,12 @@ instructions that clearly demonstrate how the Starter application can be created
 Developers should checkout the following repository branches for:
 
 * Branch [**master**](https://github.com/angular/material-start): contains the finished, ES5, material-starter application.
-* Branch [**Starter - ES5 Tutorials**](https://github.com/angular/material-start/tree/es5-tutorial):
-contains the ES5 tutorials with development Lession #1 - #7.
 * Branch [**Starter - ES6** ](https://github.com/angular/material-start/tree/es6): same completed application as shown in the **[master](https://github.com/angular/material-start)** branch, but implemented with ES6 and JSPM (instead of the ES5 in master).
+* Branch [**Starter - ES5 Tutorials**](https://github.com/angular/material-start/tree/es5-tutorial):
+contains the ES5 tutorials with exercises/steps
+* Branch [**Starter - ES6 Tutorials**](https://github.com/angular/material-start/tree/es6-tutorial):
+contains the ES6 tutorials with exercises/steps
+
 
 > The **README** for the ES6 branch will provide some details showing how easy, <u>more simplifed</u>,
 and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x. As time permits, we will expand on that information.<br/><br/> 
