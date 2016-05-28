@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="MaterialStart">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,12 +12,13 @@
   </head>
 
   <body ng-cloak>
-    <!-- No content yet! -->
+    <ms-app></ms-app>
+
     <script src="../node_modules/systemjs/dist/system.js" type="text/javascript"></script>
     <script src="config.js" type="text/javascript"></script>
     <script type="text/javascript">
       System
-          .import('App.js')
+          .import('Boot.js')
           .catch( console.error.bind(console) ); // make sure any errors print to console
     </script>
   </body>

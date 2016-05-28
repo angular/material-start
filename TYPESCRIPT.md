@@ -13,7 +13,7 @@ application's dependencies:
 
 Additionally, you will want to install the Typings Definition Files that we will be using:
 
-    typings install dt~angular dt~angular-animate dt~angular-material --global --save
+    typings install dt~angular dt~angular-animate dt~angular-material dt~angular-route --global --save
     
 Now, open a terminal and run your Typescript compiler with the `-w` flag to watch for changes, and
 open a separate terminal to run your live-server to actually serve the page:
