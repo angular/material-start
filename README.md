@@ -318,7 +318,7 @@ components.
 Here you integrate your custom, application logic.
 
 * `app.js` internally loads the Users module
-* `Users.js` defines your data services, models, and controllers
+* `Users.ts` defines your data services, models, and controllers
 
 `app/src/app.js`
 ```js
@@ -578,7 +578,7 @@ Here you will refactor your HTML and code to create the `<users-list>` and `<use
 
 * creates templates based on HTML in `index.html`
 * define your UsersList and UserDetails directives
-* create your directive controllers and extract logic from the `lib/users/controllers/UsersController.js`
+* create your directive controllers and extract logic from the `lib/users/controllers/UsersController.ts`
 * update your `app.js` module to register the new directives
 
 For this app, we recommend the following layout for your files:

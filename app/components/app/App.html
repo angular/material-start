@@ -1,0 +1,43 @@
+<div layout="column" flex>
+
+  <!-- Container #1 (see wireframe) -->
+  <md-toolbar layout="row" class="md-toolbar-tools">
+    <md-button class="menu md-icon-button" hide-gt-sm ng-click="$ctrl.toggleUsersList()"
+               aria-label="Show User List">
+      <md-icon md-svg-icon="menu"></md-icon>
+    </md-button>
+    <h1>Angular Material - Starter App</h1>
+  </md-toolbar>
+
+  <!-- Container #2 -->
+  <div flex layout="row">
+
+    <!-- Container #3 -->
+    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-4dp"
+                md-component-id="left" ng-click="$ctrl.toggleUsersList()">
+      <md-list>
+        <md-list-item ng-repeat="user in $ctrl.users">
+          <md-button ng-click="$ctrl.selectUser(user)">
+            <md-icon md-svg-src="{{user.avatar}}" class="avatar"></md-icon>
+            {{user.name}}
+          </md-button>
+        </md-list-item>
+      </md-list>
+    </md-sidenav>
+
+    <!-- Container #4 -->
+    <md-content flex id="content">
+      <!-- User details sample -->
+
+      <md-icon md-svg-src="{{$ctrl.selected.avatar}}" class="avatar"></md-icon>
+      <h2>{{$ctrl.selected.name}}</h2>
+      <p>{{$ctrl.selected.content}}</p>
+
+      <md-button class="md-fab md-fab-bottom-right" ng-click="$ctrl.share($event)" aria-label="Share">
+        <md-icon md-svg-icon="share" ></md-icon>
+      </md-button>
+    </md-content>
+
+  </div>
+
+</div>
