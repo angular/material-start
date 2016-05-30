@@ -14,28 +14,15 @@
 
     <!-- Container #3 -->
     <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-4dp"
-                md-component-id="left" ng-click="$ctrl.toggleUsersList()">
-      <md-list>
-        <md-list-item ng-repeat="user in $ctrl.users">
-          <md-button ng-click="$ctrl.selectUser(user)">
-            <md-icon md-svg-src="{{user.avatar}}" class="avatar"></md-icon>
-            {{user.name}}
-          </md-button>
-        </md-list-item>
-      </md-list>
+                md-component-id="left">
+      <ms-users-list users="$ctrl.users" selected="$ctrl.selected"
+                     on-selected="$ctrl.selectUser(user)">
+      </ms-users-list>
     </md-sidenav>
 
     <!-- Container #4 -->
     <md-content flex id="content">
-      <!-- User details sample -->
-
-      <md-icon md-svg-src="{{$ctrl.selected.avatar}}" class="avatar"></md-icon>
-      <h2>{{$ctrl.selected.name}}</h2>
-      <p>{{$ctrl.selected.content}}</p>
-
-      <md-button class="md-fab md-fab-bottom-right" ng-click="$ctrl.share($event)" aria-label="Share">
-        <md-icon md-svg-icon="share" ></md-icon>
-      </md-button>
+      <ms-user-details selected="$ctrl.selected" on-share="$ctrl.share($event)"></ms-user-details>
     </md-content>
 
   </div>

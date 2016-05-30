@@ -1,14 +1,15 @@
+import {IUser} from "../Users";
+
 /**
- * Users data Service
+ * Users Data Service
  * 
- * Uses embedded, hard-coded data model; acts asynchronously to simulate
- * remote data service call(s).
+ * Uses embedded, hard-coded data model; acts asynchronously to simulate remote data service call(s).
  *
  * @returns {{loadAll: Function}}
  * @constructor
  * @ngInject
  */
-export class UsersService {
+export class UsersDataService {
   static users = [
     {
       name: 'Lia Lugo',
@@ -44,17 +45,20 @@ export class UsersService {
   
   private $q:ng.IQService;
 
-  constructor($q) {
+  constructor($q:ng.IQService) {
     this.$q = $q;
 
     return this;
   }
-  
+
+  /**
+   * Returns a promise which asynchronously loads the list of users.
+   * 
+   * @returns {IPromise<{name: string, avatar: string, content: string}[]>}
+   */
   loadAllUsers() {
     // Simulate async nature of real remote calls
-    return this.$q.when(UsersService.users);
+    return this.$q.when(UsersDataService.users);
   }
 }
-
-export default UsersService;
 

@@ -10,7 +10,10 @@ import 'angular-mocks';
 import 'angular-route';
 import 'angular-sanitize';
 
-import {App} from "./components/app/App";
+import {App} from "./components/App/App";
+import {UsersList} from "./components/UsersList/UsersList";
+import {UserDetails} from "./components/UserDetails/UserDetails";
+
 import {Users} from 'lib/users/Users';
 
 module MaterialStart {
@@ -35,5 +38,8 @@ module MaterialStart {
     })
 
     // Register all of our components
-    .component(App.componentName, App.componentConfig);
+    .component(App.componentName, App.componentConfig)
+    .component(UsersList.componentName, UsersList.componentConfig)
+    .component(UserDetails.componentName, UserDetails.componentConfig)
+  ;
 }
