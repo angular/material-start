@@ -51,7 +51,7 @@ contains the ES6 tutorials with exercises/steps
 
 
 > The **README** for the ES6 branch will provide some details showing how easy, <u>more simplifed</u>,
-and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x. As time permits, we will expand on that information.<br/><br/> 
+and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x. As time permits, we will expand on that information.<br/><br/>
 
 ## Getting Started
 
@@ -110,11 +110,6 @@ app/                    --> all of the source files for the application
   src/           		--> all app specific modules
      users/             --> package for user features
   index.html            --> app layout file (the main html template file of the app)
-test/
-  karma.conf.js         --> Karma-Jasmine config file (for unit tests)
-  protractor-conf.js    --> Protractor config file (for e2e tests)
-  unit/					--> Karma-Jasmine unit tests
-  e2e/ 			        --> end-to-end tests
 ```
 
 
@@ -144,11 +139,6 @@ Open browser to url `http://localhost:8080/app/`
 Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
 configure your server to serve the files under the `app/` directory.
 
-### Run UnitTests
-
-Simply open a Terminal window and run `npm run tests` to start all your Karma unit tests.
-
-
 ## Updating Angular
 
 Previously we recommended that you merge in changes to angular-seed into your own fork of the
@@ -173,8 +163,5 @@ For more information on Angular Material, check out https://material.angularjs.o
 [bower]: http://bower.io
 [npm]: https://www.npmjs.org/
 [node]: http://nodejs.org
-[protractor]: https://github.com/angular/protractor
-[jasmine]: http://jasmine.github.io
-[karma]: http://karma-runner.github.io
 [travis]: https://travis-ci.org/
 [http-server]: https://github.com/nodeapps/http-server
