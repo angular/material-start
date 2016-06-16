@@ -36,7 +36,10 @@ angular
     let body = document.getElementsByTagName("body")[0];
     let app  = angular
           .module( appName, [ material, main ] )
-          .config( ['$provide', LogDecorator] );
+          .config( ['$provide', LogDecorator] )
+      .config( ['$sceProvider', $sceProvider => {
+          $sceProvider.enabled(true);
+      }]);
 
     angular.bootstrap( body, [ app.name ], { strictDi: false })
 
