@@ -1,21 +1,21 @@
-import {IUser} from "../../lib/users/Users";
-import {UsersDataService} from "../../lib/users/services/UsersDataService";
-import {UsersContactService} from "../../lib/users/services/UsersContactService";
+import {IUser} from "../../lib/users/users";
+import {UsersDataService} from "../../lib/users/services/users_data.service";
+import {UsersContactService} from "../../lib/users/services/users_contact.service";
 
 /**
  * @ngInject
  */
-export class App {
-  // Define our App component's name
+export class AppComponent {
+  // Define our AppComponent's name
   static componentName:string = "msApp";
 
-  // Define our App component's component config
+  // Define our AppComponent's config
   static componentConfig:ng.IComponentOptions = {
     bindings: {},
-    controller: App,
-    templateUrl: 'components/app/App.html'
+    controller: AppComponent,
+    templateUrl: 'components/app/app.component.html'
   };
-  
+
   // Define our injectables
   private $mdSidenav:angular.material.ISidenavService;
   private UsersDataService:UsersDataService;
@@ -39,7 +39,7 @@ export class App {
       this.selected = users[0];
     });
   }
-  
+
   /**
    * Hide or Show the 'left' sideNav area.
    */
@@ -61,7 +61,7 @@ export class App {
   }
 
   /**
-   * Ask the UsersDataService to share with this user.
+   * Ask the UsersContactService to share with this user.
    *
    * @param $event The MouseEvent that fired this action.
    */

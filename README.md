@@ -318,7 +318,7 @@ components.
 Here you integrate your custom, application logic.
 
 * `app.js` internally loads the Users module
-* `Users.ts` defines your data services, models, and controllers
+* `users.ts` defines your data services, models, and controllers
 
 `app/src/app.js`
 ```js

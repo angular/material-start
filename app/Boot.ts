@@ -6,15 +6,13 @@ import 'angular-animate';
 import 'angular-aria';
 import 'angular-material';
 import 'angular-messages';
-import 'angular-mocks';
-import 'angular-route';
 import 'angular-sanitize';
 
-import {App} from "./components/App/App";
-import {UsersList} from "./components/UsersList/UsersList";
-import {UserDetails} from "./components/UserDetails/UserDetails";
+import {AppComponent} from "./components/app/app.component";
+import {UsersListComponent} from "./components/users_list/users_list.component";
+import {UserDetailsComponent} from "components/user_details/user_details.component";
 
-import {Users} from 'lib/users/Users';
+import {Users} from 'lib/users/users';
 
 module MaterialStart {
   "use strict";
@@ -38,8 +36,8 @@ module MaterialStart {
     })
 
     // Register all of our components
-    .component(App.componentName, App.componentConfig)
-    .component(UsersList.componentName, UsersList.componentConfig)
-    .component(UserDetails.componentName, UserDetails.componentConfig)
+    .component(AppComponent.componentName, AppComponent.componentConfig)
+    .component(UsersListComponent.componentName, UsersListComponent.componentConfig)
+    .component(UserDetailsComponent.componentName, UserDetailsComponent.componentConfig)
   ;
 }

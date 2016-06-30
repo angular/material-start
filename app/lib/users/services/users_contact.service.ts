@@ -1,4 +1,4 @@
-import {IUser} from "../Users";
+import {IUser} from "../users";
 
 /**
  * Users Contact Service
@@ -23,20 +23,20 @@ export class UsersContactService {
     this.$mdDialog = $mdDialog;
     this.$mdBottomSheet = $mdBottomSheet;
   }
-    
+
   /**
    * Presents the user with a UI to share with the selected user.
-   * 
+   *
    * The current implementation uses a $mdBottomSheet to accomplish this.
    */
   share($event:MouseEvent, selectedUser:IUser) {
     var self = this;
     var config:angular.material.IBottomSheetOptions = {
       parent: angular.element(document.getElementById('content')),
-      templateUrl: 'lib/users/view/contactSheet.html',
+      templateUrl: 'lib/users/view/user_contact_sheet.html',
       controller: UserSheetController,
       controllerAs: "$ctrl",
-      bindToController : true,
+      bindToController: true,
       targetEvent: $event
     };
 
@@ -60,12 +60,12 @@ export class UsersContactService {
     function UserSheetController() {
       this.user = selectedUser;
       this.items = [
-        { name: 'Phone'       , icon: 'phone'       , icon_url: 'assets/svg/phone.svg'},
-        { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'assets/svg/twitter.svg'},
-        { name: 'Google+'     , icon: 'google_plus' , icon_url: 'assets/svg/google_plus.svg'},
-        { name: 'Hangout'     , icon: 'hangouts'    , icon_url: 'assets/svg/hangouts.svg'}
+        {name: 'Phone', icon: 'phone', icon_url: 'assets/svg/phone.svg'},
+        {name: 'Twitter', icon: 'twitter', icon_url: 'assets/svg/twitter.svg'},
+        {name: 'Google+', icon: 'google_plus', icon_url: 'assets/svg/google_plus.svg'},
+        {name: 'Hangout', icon: 'hangouts', icon_url: 'assets/svg/hangouts.svg'}
       ];
-      this.performAction = function(action) {
+      this.performAction = function (action) {
         self.$mdBottomSheet.hide(action);
       };
     }

@@ -14,8 +14,6 @@
     "angular-aria": "^1.5.5",
     "angular-material": "^1.0.8",
     "angular-messages": "^1.5.5",
-    "angular-mocks": "^1.5.5",
-    "angular-route": "^1.5.5",
     "angular-sanitize": "^1.5.5",
     "systemjs": "^0.19.28"
   }
