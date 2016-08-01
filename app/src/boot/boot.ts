@@ -1,4 +1,4 @@
-/// <reference path="../typings/index.d.ts" />
+/// <reference path="../../../typings/index.d.ts" />
 
 // Import our Angular dependencies
 import * as angular from 'angular';
@@ -8,11 +8,11 @@ import 'angular-material';
 import 'angular-messages';
 import 'angular-sanitize';
 
-import {AppComponent} from "./components/app/app.component";
-import {UsersListComponent} from "./components/users_list/users_list.component";
-import {UserDetailsComponent} from "components/user_details/user_details.component";
+import {AppComponent} from "../components/start-app/start-app.component";
+import {UsersListComponent} from "../users/components/users-list/users-list.component";
+import {UserDetailsComponent} from "../users/components/user-details/user-details.component";
 
-import {Users} from 'lib/users/users';
+import {Users} from '../users/users';
 
 module MaterialStart {
   "use strict";

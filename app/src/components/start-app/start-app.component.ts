@@ -1,6 +1,5 @@
-import {IUser} from "../../lib/users/users";
-import {UsersDataService} from "../../lib/users/services/users_data.service";
-import {UsersContactService} from "../../lib/users/services/users_contact.service";
+import {User} from "../../users/users";
+import {UsersDataService} from "../../users/services/users-data.service";
 
 /**
  * @ngInject
@@ -13,28 +12,25 @@ export class AppComponent {
   static componentConfig:ng.IComponentOptions = {
     bindings: {},
     controller: AppComponent,
-    templateUrl: 'components/app/app.component.html'
+    templateUrl: 'src/components/start-app/start-app.component.html'
   };
 
   // Define our injectables
   private $mdSidenav:angular.material.ISidenavService;
   private UsersDataService:UsersDataService;
-  private UsersContactService:UsersContactService;
 
   // Define our own variables
-  private users:IUser[];
-  private selected:IUser;
+  private users:User[];
+  private selected:User;
 
   // Define our constructor and inject the necessary services
-  constructor($mdSidenav:angular.material.ISidenavService, UsersDataService:UsersDataService,
-              UsersContactService:UsersContactService) {
+  constructor($mdSidenav:angular.material.ISidenavService, UsersDataService:UsersDataService) {
     // Store all of our injectables
     this.$mdSidenav = $mdSidenav;
     this.UsersDataService = UsersDataService;
-    this.UsersContactService = UsersContactService;
 
     // Load our users and store them to a variable
-    UsersDataService.loadAllUsers().then((users:IUser[]) => {
+    UsersDataService.loadAllUsers().then((users:User[]) => {
       this.users = users;
       this.selected = users[0];
     });
@@ -52,20 +48,11 @@ export class AppComponent {
    *
    * @param user The user to be selected.
    */
-  selectUser(user:number|IUser) {
+  selectUser(user:number|User) {
     // Set our selected user
-    this.selected = angular.isNumber(user) ? this.users[<number> user] : <IUser> user;
+    this.selected = angular.isNumber(user) ? this.users[<number> user] : <User> user;
 
     // If the users list/sidenav is open; we want to make sure to close it
     this.$mdSidenav('left').close();
-  }
-
-  /**
-   * Ask the UsersContactService to share with this user.
-   *
-   * @param $event The MouseEvent that fired this action.
-   */
-  share($event:MouseEvent) {
-    this.UsersContactService.share($event, this.selected);
   }
 }

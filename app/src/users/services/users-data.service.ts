@@ -1,4 +1,4 @@
-import {IUser} from "../users";
+import {User} from "../users";
 
 /**
  * Users Data Service

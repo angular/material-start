@@ -13,6 +13,14 @@ export class UsersListComponent {
       selectUser: '&onSelected'
     },
     controller: UsersListComponent,
-    templateUrl: 'components/users_list/users_list.component.html'
+    template: `
+      <md-list>
+        <md-list-item ng-repeat="user in $ctrl.users">
+          <md-button ng-click="$ctrl.selectUser({user:user})" ng-class="{'selected' : user === $ctrl.selected}">
+            <md-icon md-svg-src="{{user.avatar}}" class="avatar"></md-icon>
+            {{user.name}}
+          </md-button>
+        </md-list-item>
+      </md-list>`
   };
 }

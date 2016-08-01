@@ -1,15 +1,27 @@
-import {IUser} from "../users";
+import {User} from "../../users";
 
 /**
- * Users Contact Service
+ * User Details Component
  *
  * Contains functionality related to contacting (or sharing with) users.
  *
- * @returns {{share: Function}}
  * @constructor
  * @ngInject
  */
-export class UsersContactService {
+export class UserDetailsComponent {
+  // Define our user-details component's name
+  static componentName:string = "msUserDetails";
+
+  // Define our user-details component's component config
+  static componentConfig:ng.IComponentOptions = {
+    bindings: {
+      selected: '<'
+    },
+    controller: UserDetailsComponent,
+    templateUrl: 'src/users/components/user-details/user-details.component.html'
+  };
+
+  private selected:User;
 
   private $sce:ng.ISCEService;
   private $mdSidenav:angular.material.ISidenavService;
@@ -29,11 +41,11 @@ export class UsersContactService {
    *
    * The current implementation uses a $mdBottomSheet to accomplish this.
    */
-  share($event:MouseEvent, selectedUser:IUser) {
+  share($event:MouseEvent) {
     var self = this;
     var config:angular.material.IBottomSheetOptions = {
       parent: angular.element(document.getElementById('content')),
-      templateUrl: 'lib/users/view/user_contact_sheet.html',
+      templateUrl: 'src/users/components/user-details/user-contact-sheet.html',
       controller: UserSheetController,
       controllerAs: "$ctrl",
       bindToController: true,
@@ -42,7 +54,7 @@ export class UsersContactService {
 
     this.$mdBottomSheet.show(config).then((clickedItem) => {
       // Use a fancy TypeScript template string with interpolation
-      var html = `<p>You contacted ${selectedUser.name} via ${clickedItem.name}!</p>`;
+      var html = `<p>You contacted ${self.selected.name} via ${clickedItem.name}!</p>`;
 
       // Setup our Alert dialog config object
       var alert = this.$mdDialog.alert()
@@ -58,7 +70,7 @@ export class UsersContactService {
      * Bottom Sheet controller for the Avatar Actions
      */
     function UserSheetController() {
-      this.user = selectedUser;
+      this.user = self.selected;
       this.items = [
         {name: 'Phone', icon: 'phone', icon_url: 'assets/svg/phone.svg'},
         {name: 'Twitter', icon: 'twitter', icon_url: 'assets/svg/twitter.svg'},
