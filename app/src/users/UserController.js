@@ -9,7 +9,6 @@
 
   /**
    * Main Controller for the Angular Material Starter App
-   * @param $scope
    * @param $mdSidenav
    * @param avatarsService
    * @constructor
@@ -48,7 +47,7 @@
      * @param menuId
      */
     function selectUser ( user ) {
-      self.selected = angular.isNumber(user) ? $scope.users[user] : user;
+      self.selected = angular.isNumber(user) ? self.users[user] : user;
     }
 
     /**
