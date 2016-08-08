@@ -6,5 +6,5 @@ import UsersDataService from 'src/users/services/UsersDataService';
 
 export default angular
   .module("users", ['ngMaterial'])
-   
+
   .service("UsersDataService", UsersDataService);

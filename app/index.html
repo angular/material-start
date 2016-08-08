@@ -16,7 +16,8 @@
 
   <!-- Container #1 (see wireframe) -->
   <md-toolbar layout="row" class="md-toolbar-tools">
-    <md-button class="menu md-icon-button" hide-gt-sm ng-click="app.toggleList()">
+    <md-button class="menu md-icon-button" hide-gt-sm ng-click="app.toggleList()"
+               aria-label="Show User List">
       <md-icon md-svg-icon="menu"></md-icon>
     </md-button>
     <h1>Angular Material - Starter App</h1>
@@ -44,7 +45,7 @@
       <h2>{{app.selected.name}}</h2>
       <p>{{app.selected.content}}</p>
 
-      <md-button class="md-fab md-fab-bottom-right" ng-click="app.share($event)">
+      <md-button class="md-fab md-fab-bottom-right" ng-click="app.share($event)" aria-label="Share">
         <md-icon md-svg-icon="share"></md-icon>
       </md-button>
     </md-content>
