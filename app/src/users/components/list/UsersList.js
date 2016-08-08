@@ -1,18 +1,10 @@
-import UsersListController from './UsersListController'
+// Notice that we do not have a controller since this component does not
+// have any specialized logic.
 
-// Directive definition of the the UsersListDirective.
-class UsersListDirective {
-  constructor() {
-    angular.extend(this, {
-      restrict         : 'E',
-      scope            : {  users: '=', selected : '=', showDetails : '&onSelected' },
-      templateUrl      : 'src/users/components/list/UsersList.html',
-      bindToController : true,
-      controllerAs     : '$ctrl',
-      controller       : ['$scope', UsersListController]
-    });
-
+export default {
+  name : 'usersList',
+  config : {
+    bindings         : {  users: '<', selected : '<', showDetails : '&onSelected' },
+    templateUrl      : 'src/users/components/list/UsersList.html'
   }
-}
-
-export default UsersListDirective;
+};

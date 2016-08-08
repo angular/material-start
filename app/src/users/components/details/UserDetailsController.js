@@ -1,4 +1,5 @@
 class UserDetailsController  {
+
   /**
    * Constructor
    *
@@ -46,3 +47,4 @@ class UserDetailsController  {
 
 }
 export default UserDetailsController;
+

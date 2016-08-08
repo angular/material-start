@@ -42,4 +42,3 @@ function AppController(UsersDataService, $mdSidenav) {
 }
 
 export default [ 'UsersDataService', '$mdSidenav', AppController ];
-
