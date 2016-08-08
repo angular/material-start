@@ -12,10 +12,13 @@
   <link rel="stylesheet" href="./assets/app.css"/>
 </head>
 
-<body ng-cloak layout="column">
+<body ng-cloak layout="column" ng-controller="AppController as app">
 
   <!-- Container #1 (see wireframe) -->
   <md-toolbar layout="row" class="md-toolbar-tools">
+    <md-button class="menu md-icon-button">
+      <md-icon md-svg-icon="menu"></md-icon>
+    </md-button>
     <h1>Angular Material - Starter App</h1>
   </md-toolbar>
 
@@ -25,34 +28,24 @@
     <!-- Container #3 -->
     <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
       <md-list>
-        <!-- List item #1 -->
-        <md-list-item>
-          <md-button>
-            <md-icon md-svg-src="./assets/svg/avatar-1.svg" class="avatar"></md-icon>
-            Lia Luogo
+        <md-list-item ng-repeat="user in app.users">
+          <md-button ng-click="app.selectUser(user)" ng-class="{'selected' : user === app.selected }">
+            <md-icon md-svg-icon="{{user.avatar}}" class="avatar"></md-icon>
+            {{user.name}}
           </md-button>
         </md-list-item>
-
-        <!-- List item #2 -->
-        <md-list-item>
-          <md-button>
-            <md-icon md-svg-src="./assets/svg/avatar-4.svg" class="avatar"></md-icon>
-            Lawrence Ray
-          </md-button>
-        </md-list-item>
-
       </md-list>
     </md-sidenav>
 
     <!-- Container #4 -->
     <md-content flex id="content">
-      <!-- User details sample -->
+      <md-icon md-svg-icon="{{app.selected.avatar}}" class="avatar"></md-icon>
+      <h2>{{app.selected.name}}</h2>
+      <p>{{app.selected.content}}</p>
 
-      <md-icon md-svg-src="./assets/svg/avatar-1.svg" class="avatar"></md-icon>
-      <h2>Lia Luogo</h2>
-      <p>
-        I love cheese...
-      </p>
+      <md-button class="md-fab md-fab-bottom-right">
+        <md-icon md-svg-icon="share"></md-icon>
+      </md-button>
     </md-content>
 
   </div>
