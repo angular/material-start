@@ -10,7 +10,7 @@ import UserDetails from 'src/users/components/details/UserDetails';
 export default angular
   .module("users", ['ngMaterial'])
 
-  .directive("usersList", () => new UsersList)
-  .directive("userDetails", () => new UserDetails)
+  .component(UsersList.name, UsersList.config)
+  .component(UserDetails.name, UserDetails.config)
 
   .service("UsersDataService", UsersDataService);
