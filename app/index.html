@@ -16,7 +16,7 @@
 
   <!-- Container #1 (see wireframe) -->
   <md-toolbar layout="row" class="md-toolbar-tools">
-    <md-button class="menu md-icon-button">
+    <md-button class="menu md-icon-button" hide-gt-sm ng-click="app.toggleList()">
       <md-icon md-svg-icon="menu"></md-icon>
     </md-button>
     <h1>Angular Material - Starter App</h1>
@@ -26,7 +26,8 @@
   <div flex layout="row">
 
     <!-- Container #3 -->
-    <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
+    <md-sidenav class="md-whiteframe-4dp" md-is-locked-open="$mdMedia('gt-sm')"
+                md-component-id="left" ng-click="app.toggleList()">
       <md-list>
         <md-list-item ng-repeat="user in app.users">
           <md-button ng-click="app.selectUser(user)" ng-class="{'selected' : user === app.selected }">
@@ -43,7 +44,7 @@
       <h2>{{app.selected.name}}</h2>
       <p>{{app.selected.content}}</p>
 
-      <md-button class="md-fab md-fab-bottom-right">
+      <md-button class="md-fab md-fab-bottom-right" ng-click="app.share($event)">
         <md-icon md-svg-icon="share"></md-icon>
       </md-button>
     </md-content>
