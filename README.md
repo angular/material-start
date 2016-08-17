@@ -1,76 +1,121 @@
-# Angular Material-Start (ES6 Tutorials)
+# Angular Material-Start (ES6)
 
-This branch contains the same tutorial application created in master and the es5 branch... but this branch implements the application using JSPM and ES6. 
+This branch contains the final/complete version (i.e. `step-10-finished`) of the
+[Material Start ES6 Tutorial](https://github.com/angular/material-start/tree/es6-tutorial) branch
+in this repository.
 
-![material-starter-ux2](https://cloud.githubusercontent.com/assets/210413/6448551/70864488-c0e0-11e4-8767-c4e1e4c2f343.png)
+This project uses the latest master branch of Angular Material to build the application outlined
+below.
 
-Above is a snaphot of the Starter-App with a **Master-Detail** layout: showing a list of users (left) and a user detail view (right). 
+![material-starter-ux2](https://cloud.githubusercontent.com/assets/6004537/14996543/b588eb46-1137-11e6-803c-ce23996c9742.png)
 
-> There are no tutorial steps in this branch. <br/> Rather the finished application is published here for comparison and learning purposes. 
+Above is a snaphot of the Starter-App with a **Master-Detail** layout: showing a list of users
+(left) and a user detail view (right).
 
-This sample application is purposed as both a learning tool and a skeleton application for a typical [AngularJS Material](http://angularjs.org/) ES6 web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.
+Also shown is the user experience that will be displayed for smaller device sizes. The responsive
+layout reveals the **menu** button that can be used to hide the user list. And the **share** button
+can be used to show the Share bottom sheet view.
 
-### Wirefame 
+This Starter app demonstrates how:
 
-The illustration below shows how we planned the layout and identified the primary components that will be used in the Starter ap:
+*  Angular Material `layout` and `flex` options can easily configure HTML containers
+*  Angular Material components `<md-toolbar>`, `<md-sidenav>`, and `<md-icon>` can quickly provide
+   a base application structure
+*  Custom controllers can be used and show `<md-bottomsheet>` with HTML templates
+*  Custom controller can easily, and programmatically open/close the SideNav component
+*  Responsive breakpoints and `$mdMedia` are used
+*  Theming can be altered/configured using `$mdThemingProvider`
+
+
+This sample application is purposed as both a learning tool and a skeleton application for a typical
+[AngularJS Material](http://angularjs.org/) web app, comprised of a side navigation area and a
+content area. You can use it to quickly bootstrap your angular webapp projects and dev environment
+for these projects.
+
+- - -
+
+#### "How to build an App"
+
+Here are some generalized steps that may be used to conceptualize the application implementation
+process:
+
+1. Plan your layout and the components you want to use
+
+2. Use hard-coded HTML and mock content to make sure the components appear as desired
+
+3. Wire components to your application logic
+
+   > Use the seamless integration possible with Angular directives and controllers.<br/>
+   > This integration assumes that you have unit tested your application logic.
+
+4. Add Responsive breakpoints
+
+5. Add Theming support
+
+6. Confirm ARIA compliance
+
+7. Write End-to-end (e2e) Tests
+
+   > It is important to validate your application logic with Angular Material UI components.
+
+###### Wirefame
+
+The illustration below shows how we planned the layout and identified the primary components that
+will be used in the Starter app:
 
 <br/>
 ![plancomponents2](https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png)
 
-> Note: that container #2 (above) is a simple `<div>` container and not an Angular Material component.
+> **Note:** The container #2 (above) is a simple `<div>` container and not an Angular Material
+  component.
 
-<br/>
 - - -
 
-### ES6 with JSPM
+##### Getting Started
 
-These application use jspm.io: package manager for SystemJS which is built on top of the dynamic ES6 module loader. This allows developers to load any module format (ES6, CommonJS, AMD, and globals).
+This project uses [jspm.io](http://jspm.io), a package manager for SystemJS which is built on top
+of the dynamic ES6 module loader. This allows developers to load any module format (ES6, CommonJS,
+AMD, and globals).
 
-After you have cloned the repository, you should execute the following commands:
+###### Prerequisites
 
-* `npm install jspm -g`
-* `jspm install`
+This project assumes that you have NodeJS and any relevant development tools (like XCode) already
+installed.
+ 
+###### Getting Started
 
+Clone this repository and execute the following commands in a terminal:
 
-Since web application uses **jspm** with Angular-Material:
+* `git checkout es6`
+* `npm install jspm live-server -g`
+* `jspm update`
+* `live-server --open=app`
 
-* In the HTML, we only load the **System loader** and the configuration module
-> Notice no stylesheets are loaded here... they are injected later upon demand
-* Configure the system loader to laod the app/boot module.
+> **Note:** You should use a web-server (like live-server above) to view your app in the browser. Open
+  the dev console to see any warnings and browse the elements.
 
-```html
-   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+###### Layout
 
-    <title>Angular Material - Starter App ES6</title>
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+You will notice a few files/directories within this project:
 
-    <style type="text/css">
-        /**
-         * Hide when Angular is not yet loaded and initialized
-         */
-        [ng-cloak] {
-            display: none;
-        }
-    </style>
-  </head>
+ 1. `app/src` - This is where all of your application files are stored.
+ 2. `app/assets` - This folder contains some tutorial-provided images and icons which are used by
+    the application.
+ 3. `index.html` - The entry point to your application. This uses System.js to load the
+    `app/src/boot/boot.js` bootstrap file which in turn loads the `app/src/app.js` file that imports
+     all of your dependencies and declares them as Angular modules, and configures the icons and
+     theming for the application.
 
-  <body ng-cloak layout="column">
+#### Troubleshooting
 
-    <div ng-include="'src/users/view/browseUsers.html'"
-         layout="column" flex tabIndex="-1" role="main" >
-    </div>
+If you have issues getting the application to run or work as expected:
 
-    <script src="./jspm_packages/system.js" type="text/javascript"></script>
-    <script src="./config.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        System
-            .import('app/boot')
-            .catch( console.error.bind(console) ); // make sure any errors print to console
-    </script>
-
-  </body>
-```
+1. Make sure you have installed JSPM and run the `jspm update` command.
+2. Reach out on our [Forum](https://groups.google.com/forum/#!forum/ngmaterial) to see if any other
+   developers have had the same issue.
+3. This project is based against the `master` branch of Angular Material, so it is always showing
+   the latest and greatest. You may want to update the `package.json` to use Version 1.1.0 or
+   another stable release to make sure it isn't because of something we changed recently.
+4. Search for the issue here on [GitHub](https://github.com/angular/material-start/issues?q=is%3Aissue+is%3Aopen).
+5. If you don't see an existing issue, please open a new one with the relevant information and the
+   details of the problem you are facing.
