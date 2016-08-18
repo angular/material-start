@@ -1,9 +1,9 @@
 System.config({
-  // Tell System to use .js if we don't provide an extension
-  defaultJSExtensions: true,
+  transpiler: 'typescript',
+  defaultJSExtensions: false,
 
   // Set the Base URL that files will be loaded from to /dist (instead of /app)
-  baseURL: '/dist',
+  baseURL: '/app/src',
 
   // Tell it how to find our Angular dependencies
   map: {

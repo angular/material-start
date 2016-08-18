@@ -1,5 +1,5 @@
-import {User} from "../../users/users";
-import {UsersDataService} from "../../users/services/users-data.service";
+import {User} from "../../users/users.ts";
+import {UsersDataService} from "../../users/services/users-data.service.ts";
 
 /**
  * @ngInject

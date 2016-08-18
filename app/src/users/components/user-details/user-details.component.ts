@@ -1,4 +1,4 @@
-import {User} from "../../users";
+import {User} from "../../users.ts";
 
 /**
  * User Details Component
