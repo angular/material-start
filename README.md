@@ -71,16 +71,17 @@ will be used in the Starter app:
 
 - - -
 
-##### Getting Started
-
-This project uses [jspm.io](http://jspm.io), a package manager for SystemJS which is built on top
-of the dynamic ES6 module loader. This allows developers to load any module format (ES6, CommonJS,
-AMD, and globals).
-
 ###### Prerequisites
 
 This project assumes that you have NodeJS and any relevant development tools (like XCode) already
 installed.
+
+We use NPM for dependency management, and SystemJS (built on top of the dynamic ES6 module loader)
+to dynamically load our modules. This allows developers to load any module format (ES6, CommonJS,
+AMD, and globals).
+
+SystemJS is also used to transpile the Typescript into plain Javascript in the browser rather than
+having to download and configure a separate compiler.
  
 ###### Getting Started
 
@@ -90,8 +91,8 @@ Clone this repository and execute the following commands in a terminal:
 * `npm install`
 * `live-server --open=app`
 
-> **Note:** You should use a web-server (like live-server above) to view your app in the browser. Open
-  the dev console to see any warnings and browse the elements.
+> **Note:** You should use a web-server (like live-server above) to view your app in the browser.
+  Open the dev console to see any warnings and browse the elements.
 
 ###### Layout
 
