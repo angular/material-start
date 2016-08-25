@@ -16,7 +16,7 @@
     "angular-animate": "^1.5.5",
     "angular-aria": "^1.5.5",
     "angular-messages": "^1.5.5",
-    "angular-material": "git+ssh://git@github.com/angular/bower-material.git#master"
+    "angular-material": "^1.1.0"
   },
   "scripts": {
     "postinstall": "bower update",
