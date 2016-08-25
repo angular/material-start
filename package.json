@@ -21,7 +21,7 @@
     "angular-animate": "^1.5.5",
     "angular-aria": "^1.5.5",
     "angular-messages": "^1.5.5",
-    "angular-material": "git+https://github.com/angular/bower-material.git#master"
+    "angular-material": "^1.1.0"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.9",
