@@ -291,7 +291,7 @@ and the standard Angular `{{ }}` interpolation markup.
 
 ### Step #5: Use the BottomSheet 
 
-In this step, you will use a dynamic, mbBottomSheet component at the bottom of the user details area. This contact sheet will be used to display user contact options available for each user.
+In this step, you will use a dynamic, mdBottomSheet component at the bottom of the user details area. This contact sheet will be used to display user contact options available for each user.
 
 *  create a "Share" button in the upper right of the user details view
 *  create a [User Contact](https://github.com/angular/material-start/blob/es5-tutorial/app/src/users/view/contactSheet.html) view and controller to show in the bottom sheet
@@ -372,7 +372,7 @@ function share(selectedUser) {
 
 ### Step #6: Adaptive Layouts
 
-The Angular Material Layout API uses **flexbox** to enable your DOM containers and elements to fluidly respond to height and width changes in the browser viewport. The Layout API also uses media queries to define specific browser width ranges that can trigger yoru application to **adapt** to the new viewport size. These *ranges* are known as breakpoints and are defined here:  
+The Angular Material Layout API uses **flexbox** to enable your DOM containers and elements to fluidly respond to height and width changes in the browser viewport. The Layout API also uses media queries to define specific browser width ranges that can trigger your application to **adapt** to the new viewport size. These *ranges* are known as breakpoints and are defined here:  
 
 ![breakpointranges](https://cloud.githubusercontent.com/assets/210413/12618815/2ea8743c-c4db-11e5-817f-0bdd20a6406c.png)
 
@@ -436,7 +436,7 @@ Register the **menu** icons displayed in the Toolbar:
 </script>
 ```
 
-Using the Layout API and out **breakpoint aliases** along with component services
+Using the Layout API and **breakpoint aliases** along with component services
 
 *  `hide-gt-sm` and `$mdMedia('gt-sm')`
 *  `$mdSidenav` and `$mdMedia`
