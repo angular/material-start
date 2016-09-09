@@ -5,12 +5,12 @@
     </md-subheader>
 
     <md-list>
-      <md-item ng-repeat="item in vm.items">
-        <md-button ng-click="vm.performAction(item)">
+      <md-list-item ng-repeat="item in vm.items">
+        <md-button ng-click="vm.contactUser(item)">
             <md-icon md-svg-icon="{{ item.icon_url }}"></md-icon>
             {{item.name}}
         </md-button>
-      </md-item>
+      </md-list-item>
     </md-list>
 
 </md-bottom-sheet>

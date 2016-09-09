@@ -3,25 +3,24 @@
   angular
        .module('users')
        .controller('UserController', [
-          'userService', '$mdSidenav', '$mdBottomSheet', '$log',
+          'userService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log',
           UserController
        ]);
 
   /**
    * Main Controller for the Angular Material Starter App
-   * @param $scope
    * @param $mdSidenav
    * @param avatarsService
    * @constructor
    */
-  function UserController( userService, $mdSidenav, $mdBottomSheet, $log ) {
+  function UserController( userService, $mdSidenav, $mdBottomSheet, $timeout, $log ) {
     var self = this;
 
     self.selected     = null;
     self.users        = [ ];
     self.selectUser   = selectUser;
     self.toggleList   = toggleUsersList;
-    self.share        = share;
+    self.makeContact  = makeContact;
 
     // Load all registered users
 
@@ -48,39 +47,38 @@
      * @param menuId
      */
     function selectUser ( user ) {
-      self.selected = angular.isNumber(user) ? $scope.users[user] : user;
-      self.toggleList();
+      self.selected = angular.isNumber(user) ? self.users[user] : user;
     }
 
     /**
-     * Show the bottom sheet
+     * Show the Contact view in the bottom sheet
      */
-    function share($event) {
-        var user = self.selected;
+    function makeContact(selectedUser) {
 
         $mdBottomSheet.show({
-          parent: angular.element(document.getElementById('content')),
-          templateUrl: '/src/users/view/contactSheet.html',
-          controller: [ '$mdBottomSheet', UserSheetController],
-          controllerAs: "vm",
-          bindToController : true,
-          targetEvent: $event
+          controllerAs  : "vm",
+          templateUrl   : './src/users/view/contactSheet.html',
+          controller    : [ '$mdBottomSheet', ContactSheetController],
+          parent        : angular.element(document.getElementById('content'))
         }).then(function(clickedItem) {
           $log.debug( clickedItem.name + ' clicked!');
         });
 
         /**
-         * Bottom Sheet controller for the Avatar Actions
+         * User ContactSheet controller
          */
-        function UserSheetController( $mdBottomSheet ) {
-          this.user = user;
+        function ContactSheetController( $mdBottomSheet ) {
+          this.user = selectedUser;
           this.items = [
             { name: 'Phone'       , icon: 'phone'       , icon_url: 'assets/svg/phone.svg'},
             { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'assets/svg/twitter.svg'},
             { name: 'Google+'     , icon: 'google_plus' , icon_url: 'assets/svg/google_plus.svg'},
             { name: 'Hangout'     , icon: 'hangouts'    , icon_url: 'assets/svg/hangouts.svg'}
           ];
-          this.performAction = function(action) {
+          this.contactUser = function(action) {
+            // The actually contact process has not been implemented...
+            // so just hide the bottomSheet
+
             $mdBottomSheet.hide(action);
           };
         }
