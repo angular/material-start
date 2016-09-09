@@ -30,65 +30,48 @@ This Starter app demonstrates how:
 *  Theming can be altered/configured using `$mdThemingProvider`
 *  ARIA features are supported by Angular Material and warnings can be used to improve accessibility.
 
-### ES5 & ES6 Tutorials
+### ES5 & ES5 Tutorials
 
-The repository contains both ES5 and ES6 versions of the application. Traditional development with
-ES5 standards and solutions are presented here by default. Tutorials are included: step-by-step
-instructions that clearly demonstrate how the Starter application can be created in minutes.
+This repository contains two ES5 branches:
+
+ - `es5-tutorials` - Step-by-step instructions that clearly demonstrate how the Starter application
+ can be created in minutes.
+ - `es5` (this branch) - The final ES5 version which you complete in the last step of the tutorials
+ above.
 
 ![Wireframe](https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png)
 
-> These tutorials have been presented live, on-stage at **ng-conf 2015, Utah**.
-
-Developers should checkout the following repository branches for:
-
-* Branch [**Starter - ES5**](https://github.com/angular/material-start): contains the finished ES5 application in `master`.
-* Branch [**Starter - ES6** ](https://github.com/angular/material-start/tree/es6): contains the finished ES6 application using JSPM.
-* Branch [**Starter - ES5 Tutorials**](https://github.com/angular/material-start/tree/es5-tutorial):
-contains the ES5 tutorials with exercises/steps
-* Branch [**Starter - ES6 Tutorials**](https://github.com/angular/material-start/tree/es6-tutorial):
-contains the ES6 tutorials with exercises/steps
-
-
-> The **README** for the ES6 branch will provide some details showing how easy, <u>more simplifed</u>,
-and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x. As time permits, we will expand on that information.<br/><br/>
+> These ES5 tutorials were presented live, on-stage at **ng-conf 2015, Utah**.
 
 ## Getting Started
 
 #### Prerequisites
 
 You will need **git** to clone the material-start repository. You can get git from
-[http://git-scm.com/](http://git-scm.com/).
+[http://git-scm.com/][git].
 
-We also use a number of node.js tools to initialize and test material-start. You must have node.js and
-its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
+We also use a number of node.js tools to initialize and test material-start. You must have node.js
+and its package manager (npm) installed. You can get them from
+[http://nodejs.org/][node].
 
-#### Clone material-start
+#### Clone Material-Start
 
-To get you started you can simply clone `master` branch from the
-[Material-Start](https://github.com/angular/material-start) repository and install the dependencies:
+To get you started, first, clone the [Material-Start](https://github.com/angular/material-start)
+repository using [git][git]:
 
-> NOTE: The `master` branch contains the traditional, ES5 implementation familiar to Angular developers.
+    git clone https://github.com/angular/material-start
+    cd material-start
+    
+Next, checkout the `es5` or `es5-tutorial` branches.
 
-Clone the material-start repository using [git][git]:
-
-```
-git clone https://github.com/angular/material-start.git
-cd material-start
-```
-
-If you just want to start a new project without the material-start commit history then you can do:
-
-```bash
-git clone --depth=1 https://github.com/angular/material-start.git <your-project-name>
-```
-
-The `depth=1` tells git to only pull down one commit worth of historical data.
+    git checkout es5
+    
+> **Note:** The `master` branch contains the es6 version of this project.
 
 #### Install Dependencies
 
-We have two kinds of dependencies in this project: tools and AngularJS framework code.  The tools help
-us manage and test the application.
+We have two kinds of dependencies in this project: tools and AngularJS framework code.  The tools
+help us manage and test the application.
 
 * We get the tools we depend upon via `npm`, the [node package manager][npm].
 * We also get the AngularJS and Angular Material library code via `npm`
@@ -97,9 +80,9 @@ us manage and test the application.
 npm install
 ```
 
-You should find that you have one new folder in your project.
+You should find that you have one new folder in your project:
 
-* `node_modules` - contains the npm packages for the tools we need
+ - `node_modules` - contains the npm packages for the tools we need
 
 
 ## Directory Layout
@@ -107,7 +90,7 @@ You should find that you have one new folder in your project.
 ```
 app/                    --> all of the source files for the application
   assets/app.css        --> default stylesheet
-  src/           		--> all app specific modules
+  src/                  --> all app specific modules
      users/             --> package for user features
   index.html            --> app layout file (the main html template file of the app)
 ```
@@ -115,16 +98,27 @@ app/                    --> all of the source files for the application
 
 ## Serving the Application Files
 
-While AngularJS is client-side-only technology and it's possible to create AngularJS webapps that
-don't require a backend server at all, we recommend serving the project files using a local
-web server during development to avoid issues with security restrictions (sandbox) in browsers. The
+While AngularJS is client-side-only technology and it is possible to create AngularJS web apps that
+don't require a backend server at all, we recommend serving the project files using a local web
+server during development to avoid issues with security restrictions (sandbox) in browsers. The
 sandbox implementation varies between browsers, but quite often prevents things like cookies, xhr,
-etc to function properly when an html page is opened via `file://` scheme instead of `http://`.
+etc to function properly when an html page is opened via the `file://` scheme instead of `http://`.
 
 ### Running the App during Development
 
-The angular-seed project comes pre-configured with a local development web server. It is a node.js
-tool called [http-server][http-server].  You can install http-server globally:
+The angular-material project comes pre-configured with a local development web server. It is a
+node.js tool called [live-server][live-server].
+
+You can run the following command to start the server:
+
+```
+ node ./node_modules/live-server/live-server.js . --open=app
+```
+
+This should open your browser to [http://localhost:8080/app/](http://localhost:8080/app/) so you
+can view the Material-Start app.
+
+You can install also live-server globally to make life easier and for use with other applications:
 
 ```
 npm install -g live-server
@@ -132,11 +126,12 @@ npm install -g live-server
 
 Then you can start your own development web server to serve static files from a folder by running:
 
->Run `live-server` in a Terminal window</br>
-Open browser to url `http://localhost:8080/app/`
+```
+cd my-project
+live-server .
+```
 
-
-Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
+Finally, you can choose to configure your a different webserver, such as apache or nginx. Just
 configure your server to serve the files under the `app/` directory.
 
 ## Updating Angular
@@ -157,6 +152,7 @@ This will find the latest versions that match the version ranges specified in th
 ## Contact
 
 For more information on AngularJS please check out http://angularjs.org/
+
 For more information on Angular Material, check out https://material.angularjs.org/
 
 [git]: http://git-scm.com/
@@ -164,4 +160,4 @@ For more information on Angular Material, check out https://material.angularjs.o
 [npm]: https://www.npmjs.org/
 [node]: http://nodejs.org
 [travis]: https://travis-ci.org/
-[http-server]: https://github.com/nodeapps/http-server
+[live-server]: https://www.npmjs.com/package/live-server
