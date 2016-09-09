@@ -4,9 +4,12 @@ This branch contains the tutorial steps and processes used to implement the star
 
 ![material-starter-ux2](https://cloud.githubusercontent.com/assets/210413/6448551/70864488-c0e0-11e4-8767-c4e1e4c2f343.png)
 
-Above is a snaphot of the Starter-App with a **Master-Detail** layout: showing a list of users (left) and a user detail view (right). 
+Above is a snapshot of the Starter-App with a **Master-Detail** layout: showing a list of users
+(left) and a user detail view (right).
 
-Also shown is the user experience that will be displayed for smaller device sizes. The responsive layout reveals the **menu** button that can be used to hide the user list and a **share** button that can be used to show the Share bottom sheet view.
+Also shown is the user experience that will be displayed for smaller device sizes. The responsive
+layout reveals the **menu** button that can be used to hide the user list and a **share** button
+that can be used to show the Share bottom sheet view.
 
 This Starter app demonstrates how:
 
@@ -18,15 +21,18 @@ This Starter app demonstrates how:
 *  Theming can be altered/configured using `$mdThemingProvider`
 
 
-This sample application is purposed as both a learning tool and a skeleton application for a typical [AngularJS Material](http://material.angularjs.org/) web app: comprised of a Side navigation area and a content area. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
-projects.
+This sample application is purposed as both a learning tool and a skeleton application for a typical
+[AngularJS Material](http://material.angularjs.org/) web app: comprised of a Side navigation area
+and a content area. You can use it to quickly bootstrap your angular webapp projects and dev
+environment for these projects.
 
 <br/>
 - - -
 
 #### "How to build an App"
 
-Here are some generalized steps that may be used to conceptualize the application implementation process:
+Here are some generalized steps that may be used to conceptualize the application implementation
+process:
 
 1. Plan your layout and the components you want to use; preferrably with a site UX design document.
 2. Use hard-coded HTML and mock content to make sure the components render as desired
@@ -39,15 +45,41 @@ Here are some generalized steps that may be used to conceptualize the applicatio
 7. Write e2e Tests 
 > It is important to validate your app logic with Angular Material UI components.
 
-##### ES5 Tutorials
+##### Prerequisites
 
-These tutorials assume that you have already cloned the repository and executed the `npm install` command.
+These tutorials assume that you have already cloned the repository, checked out this branch, and
+executed the `npm install` command.
 
-You will notice html Tutorials #0 thru #8: these will be used to guide you through the development process. By following these tutorials stages, you will be very quickly introduced to the powerful features of Angular Material.
+```
+git clone https://github.com/angular/material-start
+cd material-start
+git checkout es5-tutorial
+npm install
+```
 
-Each tutorial presents the resulting changes for that stage. It is recommended, however, that you start with the preceding tutorial and manually make the changes requested. The effort you invest to implement these changes will highlight specific concepts at each Tutorial stage.
+It is also recommended that you install [live-server](https://www.npmjs.com/package/live-server) to
+view your application after each step of the tutorial.
 
-> At each tutorial stage, you should use a web-server to view the that tutorial page. Open the dev console to see any warnings and browser the elements. Or just open the JSBin Demo link to see the lession application running live online.
+```
+npm install -g live-server
+live-server --open=app
+```
+
+##### ES5 & ES5 Tutorials
+
+This repository contains two ES5 branches:
+
+- `es5-tutorial` (this branch) - Step-by-step instructions that clearly demonstrate how the Starter
+  application can be created in minutes.
+- `es5` - The final ES5 version which you complete in the last step of the tutorials above.
+
+In this branch (es5-tutorial), you will notice html Tutorials #0 through #8: these will be used to
+guide you through the development process. By following these tutorials stages, you will be very
+quickly introduced to the powerful features of Angular Material.
+
+Each tutorial presents the resulting changes for that stage. It is recommended, however, that you
+start with the preceding tutorial and manually make the changes requested. The effort you invest to
+implement these changes will highlight specific concepts at each Tutorial stage.
 
 <br/>
 - - -
@@ -92,7 +124,8 @@ Here will modified the shell application [available in `tutorial_0.html`] to use
 <br/>
 ###### Wirefame 
 
-The illustration below shows how we planned the layout and identified the primary components that will be used in the Starter application:
+The illustration below shows how we planned the layout and identified the primary components that
+will be used in the Starter application:
 
 <br/>
 ![plancomponents2](https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png)
@@ -103,7 +136,9 @@ The illustration below shows how we planned the layout and identified the primar
 - - -
 
 
-* Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers. [The `md-sidenav` is the container for the Users list view and the `md-content` is the container for the selected User **details** view.
+* Add the `<md-toolbar>`, `<md-sidenav>`, `<md-content>` containers. [The `md-sidenav` is the
+  container for the Users list view and the `md-content` is the container for the selected User
+  **details** view.
 * Add the **layout** and **flex** attributes to configure the container layouts and sizing aspects.
 * Use `md-locked-open` to lock the sidenav open on the left
 * Use the `md-whiteframe-z2` to add a shadow the the sidenav
@@ -130,7 +165,9 @@ The illustration below shows how we planned the layout and identified the primar
   </body>
 ```
 
-Here you used the wireframe planning and layout to identify the components and attributes needed. Then use the Angular Material Layout api to layout your containers and responsively adjust their sizes.
+Here you used the wireframe planning and layout to identify the components and attributes needed.
+Then use the Angular Material Layout API to layout your containers and responsively adjust their
+sizes.
 
 <br/>
 - - -
@@ -147,13 +184,15 @@ Here you used the wireframe planning and layout to identify the components and a
 
 ### Step #3: Hard-Coded HTML
 
-Here you will use hard-coded elements and Angular Material UI componetns to render and layout each container's children elements.
+Here you will use hard-coded elements and Angular Material UI components to render and layout each
+container's children elements.
 
 * Show a list of Users in the `md-sideNav` container
   *  Use the `md-list`, `md-button`, and `md-icon` components with mock data
 * Show mock user details in the `md-content` container
 
-> Note: that the md-sidenav is the container for the **master** Users List view, and the md-content is the container for the **detail** User Detail view.
+> Note: that the md-sidenav is the container for the **master** Users List view, and the md-content
+  is the container for the **detail** User Detail view.
 
 
 
@@ -223,7 +262,7 @@ Then you integrate your custom, application logic.
 
 ```html
 <script src="./src/users/Users.js"></script>
-<script src="./src/users/UsersListController.js"></script>
+<script src="./src/users/UserController_4.js"></script>
 <script src="./src/users/UsersDataservice.js"></script>
 
 <script type="text/javascript">
@@ -236,10 +275,17 @@ Then you integrate your custom, application logic.
 Now replace the hardcoded HTML with dynamic markup using Angular directives (eg ng-repeat) 
 and the standard Angular `{{ }}` interpolation markup.
 
-* Use dynamic HTML that will be compiled and rendered by Angular
+* Attach the UserController to the `body` using `ng-controller`.
+* Use dynamic HTML that will be compiled and rendered by Angular.
 * Register a set of custom avatar icons; since each 'user' references an avatar ID.
 
 ```html
+<body ng-app="starterApp" layout="column" ng-controller="UserController as ul">
+
+  <md-toolbar layout="row">
+    <h3>Angular Material - Starter App</h3>
+  </md-toolbar>
+
  <!-- Wireframe Container #2 -->
  <div flex layout="row">
  	<!-- Wireframe Container #3 -->
@@ -274,6 +320,7 @@ and the standard Angular `{{ }}` interpolation markup.
 				  .defaultIconSet("./assets/svg/avatars.svg", 128);
 	  });
  </script>
+</body>
 ```
 
 
@@ -291,10 +338,12 @@ and the standard Angular `{{ }}` interpolation markup.
 
 ### Step #5: Use the BottomSheet 
 
-In this step, you will use a dynamic, mbBottomSheet component at the bottom of the user details area. This contact sheet will be used to display user contact options available for each user.
+In this step, you will use a dynamic, mbBottomSheet component at the bottom of the user details
+area. This contact sheet will be used to display user contact options available for each user.
 
 *  create a "Share" button in the upper right of the user details view
-*  create a [User Contact](https://github.com/angular/material-start/blob/es5-tutorial/app/src/users/view/contactSheet.html) view and controller to show in the bottom sheet
+*  create a [User Contact](https://github.com/angular/material-start/blob/es5-tutorial/app/src/users/view/contactSheet.html)
+   view and controller to show in the bottom sheet
 *  programmatically configure and load the bottomsheet using the $mdBottomSheet service
 *  register icons that will be used inside the user ContactSheet
 
@@ -331,26 +380,26 @@ Add the `makeContact()` function to the controller:
  */
 function share(selectedUser) {
 
-	$mdBottomSheet.show({
-	  controllerAs     : "vm",
-	  controller       : [ '$mdBottomSheet', ContactSheetController],
-	  templateUrl      : './src/users/view/contactSheet.html',
-	  parent           : angular.element(document.getElementById('content'))
-	});
+  $mdBottomSheet.show({
+    controllerAs     : "vm",
+    controller       : [ '$mdBottomSheet', ContactSheetController],
+    templateUrl      : './src/users/view/contactSheet.html',
+    parent           : angular.element(document.getElementById('content'))
+  });
 
-	 function ContactSheetController( $mdBottomSheet ) {
-	   this.user = selectedUser;
-	   this.items = [
-		 { name: 'Phone'       , icon: 'phone'       , icon_url: 'assets/svg/phone.svg'},
-		 { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'assets/svg/twitter.svg'},
-		 { name: 'Google+'     , icon: 'google_plus' , icon_url: 'assets/svg/google_plus.svg'},
-		 { name: 'Hangout'     , icon: 'hangouts'    , icon_url: 'assets/svg/hangouts.svg'}
+  function ContactSheetController( $mdBottomSheet ) {
+    this.user = selectedUser;
+    this.items = [
+      { name: 'Phone'       , icon: 'phone'       , icon_url: 'assets/svg/phone.svg'},
+      { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'assets/svg/twitter.svg'},
+      { name: 'Google+'     , icon: 'google_plus' , icon_url: 'assets/svg/google_plus.svg'},
+      { name: 'Hangout'     , icon: 'hangouts'    , icon_url: 'assets/svg/hangouts.svg'}
 	   ];
 	   this.contactUser = function(action) {
-		 // The actually contact process has not been implemented...
-		 // so just hide the bottomSheet
+		   // The actually contact process has not been implemented...
+		   // so just hide the bottomSheet
 
-		 $mdBottomSheet.hide(action);
+       $mdBottomSheet.hide(action);
 	   };
 	 }
 }
@@ -372,19 +421,25 @@ function share(selectedUser) {
 
 ### Step #6: Adaptive Layouts
 
-The Angular Material Layout API uses **flexbox** to enable your DOM containers and elements to fluidly respond to height and width changes in the browser viewport. The Layout API also uses media queries to define specific browser width ranges that can trigger yoru application to **adapt** to the new viewport size. These *ranges* are known as breakpoints and are defined here:  
+The Angular Material Layout API uses **flexbox** to enable your DOM containers and elements to
+fluidly respond to height and width changes in the browser viewport. The Layout API also uses media
+queries to define specific browser width ranges that can trigger yoru application to **adapt** to
+the new viewport size. These *ranges* are known as breakpoints and are defined here:
 
 ![breakpointranges](https://cloud.githubusercontent.com/assets/210413/12618815/2ea8743c-c4db-11e5-817f-0bdd20a6406c.png)
 
-But using media queries and breakpoints is too low-level for Angular Material developers. Hence the use of the 
+But using media queries and breakpoints is too low-level for Angular Material developers. Hence the
+use of the following aliases.
 
 ![breakpoint-aliases](https://cloud.githubusercontent.com/assets/210413/12618729/cbeb4b9e-c4da-11e5-84a7-8fab43f20d4b.png)
 
-Simply append the alias to the desired Layout API to trigger that directive to work only when the breakpoint range is active. 
+Simply append the alias to the desired Layout API to trigger that directive to work only when the
+breakpoint range is active.
 
 ![layout_api_with_aliases](https://cloud.githubusercontent.com/assets/210413/12619004/de4f031a-c4db-11e5-85f5-5c426f4045e3.png)
 
-In this lesson, you will add adaptive breakpoints so the application layout will adapt to different device display sizes.
+In this lesson, you will add adaptive breakpoints so the application layout will adapt to different
+device display sizes.
 
 * Add a Menu button in the Toolbar
 * Lock the Users list open if device display is wider than > 600px; hide otherwise.
@@ -396,12 +451,12 @@ In this lesson, you will add adaptive breakpoints so the application layout will
 
 ```html
 <body>
-	<!-- Wireframe Container #1 -->
-    <md-toolbar layout="row">
-	<md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" >
-        	<md-icon md-svg-icon="menu" ></md-icon>
-    	</md-button>
-    </md-toolbar>
+  <!-- Wireframe Container #1 -->
+  <md-toolbar layout="row">
+	  <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" >
+      <md-icon md-svg-icon="menu" ></md-icon>
+    </md-button>
+  </md-toolbar>
 
 	<!-- Wireframe Container #2 -->
 	<div flex layout="row">
@@ -414,7 +469,7 @@ In this lesson, you will add adaptive breakpoints so the application layout will
 
 	 <!-- Wireframe Container #4 -->
 	 <md-content flex id="content">
-	  <md-button class="share" md-no-ink ng-click="ul.share(ul.selected)"></md-button>
+	   <md-button class="share" md-no-ink ng-click="ul.share(ul.selected)"></md-button>
 	 </md-content>
 
 	</div>
@@ -425,7 +480,6 @@ Register the **menu** icons displayed in the Toolbar:
 
 ```html
 <script type="text/javascript">
-
 
   angular
 	  .module('starterApp', ['ngMaterial', 'users'])
@@ -441,7 +495,8 @@ Using the Layout API and out **breakpoint aliases** along with component service
 *  `hide-gt-sm` and `$mdMedia('gt-sm')`
 *  `$mdSidenav` and `$mdMedia`
 
-we have quickly created an application that not only responds to size changes but also adapts to breakpoint triggers.
+We have quickly created an application that not only responds to size changes but also adapts to
+breakpoint triggers.
 
 ```js
 function UserController( userService, $mdBottomSheet, $mdSidenav ) {
@@ -480,7 +535,8 @@ function UserController( userService, $mdBottomSheet, $mdSidenav ) {
 
 Here you will configure to use a different, darker theme.
 
-* Use `$mdThemingProvider` to configure a different theme using primary colors from the **brown** color palette and accent colors from the **red** color palette.
+* Use `$mdThemingProvider` to configure a different theme using primary colors from the **brown**
+color palette and accent colors from the **red** color palette.
 
 
 ```html
@@ -540,8 +596,8 @@ Finally let's will fix any ARIA warnings that Angular Material may display in th
 
 ## Summary
 
-With only seven (7) Tutorial Steps and a few minutes of work, we have quickly created a functional Angular Material application that is beautiful, responsive, theme'ed, accessible, and easily maintained. 
+With only seven (7) Tutorial Steps and a few minutes of work, we have quickly created a functional
+Angular Material application that is beautiful, responsive, theme'ed, accessible, and easily
+maintained.
 
 Imagine doing this without Angular Material!
-
-
