@@ -109,7 +109,7 @@ We encourage you to walk through each step yourself and build the application fr
 However, if you get stuck or want to start from a clean slate, each step has an associated Git tag 
 that you can checkout to reset your code to match the start of the associated step in the tutorial.
 
-For instance, to start on Step 3, run `git checkout step-3`. Also note that `step-1` is the same as
+For instance, to start on Step 3, run `git checkout tags/step-3`. Also note that `step-1` is the same as
 the `es6-tutorial` branch.
 
 > **Note:** In some of the Steps in this README, we have abbreviated some of the HTML or JavaScript
