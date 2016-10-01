@@ -18,7 +18,7 @@ System.config({
     "angular-material": "github:angular/bower-material@master",
     "angular-messages": "github:angular/bower-angular-messages@1.5.8",
     "angular-mocks": "github:angular/bower-angular-mocks@1.5.8",
-    "css": "github:systemjs/plugin-css@0.1.29",
+    "css": "github:systemjs/plugin-css@0.1.30",
     "json": "github:systemjs/plugin-json@0.1.2",
     "text": "github:systemjs/plugin-text@0.0.4",
     "traceur": "github:jmcriffey/bower-traceur@0.0.92",
@@ -37,7 +37,7 @@ System.config({
       "angular-animate": "github:angular/bower-angular-animate@1.5.8",
       "angular-aria": "github:angular/bower-angular-aria@1.5.8",
       "angular-messages": "github:angular/bower-angular-messages@1.5.8",
-      "css": "github:systemjs/plugin-css@0.1.29"
+      "css": "github:systemjs/plugin-css@0.1.30"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
