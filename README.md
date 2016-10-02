@@ -78,12 +78,10 @@ This tutorial assumes that you have already cloned the repository and executed t
 commands:
 
 * `git checkout es6-tutorial`
-* `npm install jspm live-server -g`
-* `jspm update`
-* `live-server --open=app`
+* `npm install`
+* `npm run serve`
 
-> **Note:** You should use a web-server (like live-server above) to view your app at each step. Open
-  the dev console to see any warnings and browse the elements.
+> **Note:** Open the dev console to see any warnings and browse the elements.
 
 ###### Tutorial Layout
 
