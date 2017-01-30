@@ -1,5 +1,5 @@
 /**
- * Main App Controller for the Angular Material Starter App
+ * Main App Controller for the AngularJS Material Starter App
  * @param UsersDataService
  * @param $mdSidenav
  * @constructor
