@@ -21,15 +21,18 @@
       "text": "github:systemjs/plugin-text@^0.0.4"
     },
     "devDependencies": {
-      "-a": "npm:babel-core@^5.8.24",
-      "-a-runtime": "npm:babel-runtime@^5.8.24",
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4",
       "traceur": "github:jmcriffey/bower-traceur@0.0.92",
       "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.92"
     }
   },
   "devDependencies": {
     "jspm": "^0.16.46",
-    "live-server": "^0.9.2"
+    "live-server": "^0.9.2",
+    "babel-core": "^5.8.24",
+    "babel-runtime": "^5.8.24"
   },
   "scripts": {
     "postinstall": "jspm install",
