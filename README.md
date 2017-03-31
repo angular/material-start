@@ -86,7 +86,7 @@ The illustration below shows how we planned the layout and identified the primar
 will be used in the Starter app:
 
 <br/>
-![plancomponents2](https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png)
+<img src="https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png">
 
 > **Note:** The container #2 (above) is a simple `<div>` container and not an Angular Material
   component.
