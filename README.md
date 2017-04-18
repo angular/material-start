@@ -1,4 +1,4 @@
-# Angular Material-Start (ES6)
+# AngularJS Material-Start (ES6)
 
 This branch contains the final/complete version (i.e. `step-10-finished`) of the
 [Material Start ES6 Tutorial](https://github.com/angular/material-start/tree/es6-tutorial) branch
