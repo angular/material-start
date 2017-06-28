@@ -277,7 +277,7 @@ Here we will use the wireframe planning and layout to identify the components an
   
 * Add the **layout** and **flex** attributes to configure the container layouts and sizing aspects
 * Use `md-is-locked-open` to lock the sidenav open on the left
-* Use the `md-whiteframe-4dp` class to add a shadow the the sidenav
+* Use the `md-whiteframe-4dp` class to add a shadow to the sidenav
 
 `app/index.html`
 ```html
