@@ -1,15 +1,15 @@
-# Angular Material-Start (Typescript)
+# AngularJS Material-Start (Typescript)
 
 This branch contains the final/complete version (i.e. `step-10-finished`) of the
 [Material Start ES6 Tutorial](https://github.com/angular/material-start/tree/es6-tutorial) branch
 but written in Typescript instead of ES6.
 
-This project uses the latest master branch of Angular Material to build the application outlined
+This project uses the latest master branch of AngularJS Material to build the application outlined
 below.
 
 ![material-starter-ux2](https://cloud.githubusercontent.com/assets/6004537/14996543/b588eb46-1137-11e6-803c-ce23996c9742.png)
 
-Above is a snaphot of the Starter-App with a **Master-Detail** layout: showing a list of users
+Above is a screenshot of the Starter-App with a **Master-Detail** layout: showing a list of users
 (left) and a user detail view (right).
 
 Also shown is the user experience that will be displayed for smaller device sizes. The responsive
@@ -18,8 +18,8 @@ can be used to show the Share bottom sheet view.
 
 This Starter app demonstrates how:
 
-*  Angular Material `layout` and `flex` options can easily configure HTML containers
-*  Angular Material components `<md-toolbar>`, `<md-sidenav>`, and `<md-icon>` can quickly provide
+*  AngularJS Material `layout` and `flex` options can easily configure HTML containers
+*  AngularJS Material components `<md-toolbar>`, `<md-sidenav>`, and `<md-icon>` can quickly provide
    a base application structure
 *  Custom components can be used and show `<md-bottomsheet>` and a `<md-dialog>` with HTML templates
 *  Custom component can easily, and programmatically open/close the SideNav component
@@ -28,8 +28,8 @@ This Starter app demonstrates how:
 
 
 This sample application is purposed as both a learning tool and a skeleton application for a typical
-[AngularJS Material](http://angularjs.org/) web app, comprised of a side navigation area and a
-content area. You can use it to quickly bootstrap your angular webapp projects and dev environment
+[AngularJS Material](https://material.angularjs.org) web app, comprised of a side navigation area and a
+content area. You can use it to quickly bootstrap your AngularJS webapp projects and dev environment
 for these projects.
 
 - - -
@@ -45,7 +45,7 @@ process:
 
 3. Wire components to your application logic
 
-   > Use the seamless integration possible with Angular directives and controllers.<br/>
+   > Use the seamless integration possible with AngularJS directives and controllers.<br/>
    > This integration assumes that you have unit tested your application logic.
 
 4. Add Responsive breakpoints
@@ -56,7 +56,7 @@ process:
 
 7. Write End-to-end (e2e) Tests
 
-   > It is important to validate your application logic with Angular Material UI components.
+   > It is important to validate your application logic with AngularJS Material UI components.
 
 ###### Wirefame
 
@@ -65,7 +65,7 @@ will be used in the Starter app:
 
 ![plancomponents2](https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png)
 
-> **Note:** The container #2 (above) is a simple `<div>` container and not an Angular Material
+> **Note:** The container #2 (above) is a simple `<div>` container and not an AngularJS Material
   component.
 
 - - -
@@ -88,7 +88,7 @@ Clone this repository and execute the following commands in a terminal:
 
 * `git checkout typescript`
 * `npm install`
-* `live-server --open=app`
+* `npm start`
 
 > **Note:** You should use a web-server (like live-server above) to view your app in the browser.
   Open the dev console to see any warnings and browse the elements.
@@ -102,7 +102,7 @@ You will notice a few files/directories within this project:
     the application.
  3. `index.html` - The entry point to your application. This uses System.js to load the
     `app/src/boot/boot.ts` bootstrap file which imports all of your dependencies and declares them
-    as Angular modules. It also configures the icons and theming for the application.
+    as AngularJS modules. It also configures the icons and theming for the application.
 
 #### Notes
 
@@ -119,7 +119,7 @@ Below are a few important notes about this project.
   
 * The types provided by the `typings` tool (part of npm's `postinstall` script) are outdated and use
   references to interfaces beginning with 'I' which is not in-line with Angular 2 standards. These
-  typings are provided by the community and not Angular Material.
+  typings are provided by the community and not AngularJS Material.
   
   Additionally, as of this writing, the typings were based off of 1.1.0-RC5 instead of the final
   1.1.0 which was recently released so there may be some discrepancies in the type generations.
@@ -131,7 +131,7 @@ If you have issues getting the application to run or work as expected:
 1. Make sure you have installed NPM and run the `npm install` command (and there were no errors).
 2. Reach out on our [Forum](https://groups.google.com/forum/#!forum/ngmaterial) to see if any other
    developers have had the same issue.
-3. This project is based against the v1.1.0 release of Angular Material, so there may be a newer
+3. This project is based against the v1.1.0 release of AngularJS Material, so there may be a newer
    version available which fixes the issue you are seeing. Just update the `package.json` to specify
    the version you wish to use.
 4. Search for the issue here on [GitHub](https://github.com/angular/material-start/issues?q=is%3Aissue+is%3Aopen).
