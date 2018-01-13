@@ -8,3 +8,4 @@ typings.json
 .DS_Store
 .idea
 !.gitkeep
+package-lock.json
