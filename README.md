@@ -1,4 +1,4 @@
-# Angular Material-Start (ES6)
+# AngularJS Material-Start (ES6)
 
 This branch contains the final/complete version (i.e. `step-10-finished`) of the
 [Material Start ES6 Tutorial](https://github.com/angular/material-start/tree/es6-tutorial) branch
@@ -26,7 +26,7 @@ There are many additional branches in this repository that you may find useful:
 
 #### Purpose
 
-This project uses the latest master branch of Angular Material to build the application outlined
+This project uses the latest master branch of AngularJS Material to build the application outlined
 below.
 
 ![material-starter-ux2](https://cloud.githubusercontent.com/assets/6004537/14996543/b588eb46-1137-11e6-803c-ce23996c9742.png)
@@ -40,8 +40,8 @@ can be used to show the Share bottom sheet view.
 
 This Starter app demonstrates how:
 
-*  Angular Material `layout` and `flex` options can easily configure HTML containers
-*  Angular Material components `<md-toolbar>`, `<md-sidenav>`, and `<md-icon>` can quickly provide
+*  AngularJS Material `layout` and `flex` options can easily configure HTML containers
+*  AngularJS Material components `<md-toolbar>`, `<md-sidenav>`, and `<md-icon>` can quickly provide
    a base application structure
 *  Custom controllers can be used and show `<md-bottomsheet>` with HTML templates
 *  Custom controller can easily, and programmatically open/close the SideNav component
@@ -67,7 +67,7 @@ process:
 
 3. Wire components to your application logic
 
-   > Use the seamless integration possible with Angular directives and controllers.<br/>
+   > Use the seamless integration possible with AngularJS directives and controllers.<br/>
    > This integration assumes that you have unit tested your application logic.
 
 4. Add Responsive breakpoints
@@ -78,7 +78,7 @@ process:
 
 7. Write End-to-end (e2e) Tests
 
-   > It is important to validate your application logic with Angular Material UI components.
+   > It is important to validate your application logic with AngularJS Material UI components.
 
 ###### Wirefame
 
@@ -88,7 +88,7 @@ will be used in the Starter app:
 <br/>
 <img src="https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png">
 
-> **Note:** The container #2 (above) is a simple `<div>` container and not an Angular Material
+> **Note:** The container #2 (above) is a simple `<div>` container and not an AngularJS Material
   component.
 
 - - -
@@ -123,7 +123,7 @@ You will notice a few files/directories within this project:
     the application.
  3. `index.html` - The entry point to your application. This uses System.js to load the
     `app/src/boot/boot.js` bootstrap file which in turn loads the `app/src/app.js` file that imports
-     all of your dependencies and declares them as Angular modules, and configures the icons and
+     all of your dependencies and declares them as AngularJS modules, and configures the icons and
      theming for the application.
 
 #### Troubleshooting
@@ -133,7 +133,7 @@ If you have issues getting the application to run or work as expected:
 1. Make sure you have installed JSPM and run the `jspm update` command.
 2. Reach out on our [Forum](https://groups.google.com/forum/#!forum/ngmaterial) to see if any other
    developers have had the same issue.
-3. This project is based against the `master` branch of Angular Material, so it is always showing
+3. This project is based against the `master` branch of AngularJS Material, so it is always showing
    the latest and greatest. You may want to update the `package.json` to use Version 1.1.0 or
    another stable release to make sure it isn't because of something we changed recently.
 4. Search for the issue here on [GitHub](https://github.com/angular/material-start/issues?q=is%3Aissue+is%3Aopen).
