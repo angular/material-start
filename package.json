@@ -20,6 +20,7 @@
     "typings": "^1.3.2"
   },
   "scripts": {
-    "postinstall": "typings install dt~jquery dt~angular dt~angular-animate dt~angular-material --global --save"
+    "postinstall": "typings install dt~angular dt~angular-animate dt~angular-material --save && typings install dt~jquery --global --save",
+    "start": "live-server --open=app"
   }
 }
