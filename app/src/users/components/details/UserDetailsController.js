@@ -26,7 +26,7 @@ class UserDetailsController  {
       bindToController : true
     }).then((clickedItem) => {
       this.$log.debug( clickedItem.name + ' clicked!');
-    });
+    }).catch(angular.noop);
 
     /**
      * Bottom Sheet controller for the Avatar Actions
