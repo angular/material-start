@@ -1,3 +1,4 @@
+import * as angular from 'angular';
 import {User} from "../../users/users.ts";
 import {UsersDataService} from "../../users/services/users-data.service.ts";
 

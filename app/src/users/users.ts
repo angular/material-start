@@ -1,3 +1,5 @@
+import * as angular from 'angular';
+
 // Load the TypeScript UsersService
 import {UsersDataService} from './services/users-data.service.ts';
 

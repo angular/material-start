@@ -1,4 +1,5 @@
 import {User} from "../../users.ts";
+import angular = require('angular');
 
 /**
  * User Details Component
@@ -64,7 +65,7 @@ export class UserDetailsComponent {
 
       // Show the alert
       this.$mdDialog.show(alert);
-    });
+    }).catch(() => console.log(`BottomSheet dismissed.`));
 
     /**
      * Bottom Sheet controller for the Avatar Actions
