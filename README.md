@@ -1,8 +1,11 @@
 # AngularJS Material-Start (ES6)
+[![Gitter](https://badges.gitter.im/angular/material2.svg)](https://gitter.im/angular/material?utm_source=badge&utm_medium=badge)
 
 This branch contains the final/complete version (i.e. `step-10-finished`) of the
 [Material Start ES6 Tutorial](https://github.com/angular/material-start/tree/es6-tutorial) branch
-in this repository.
+in this repository. 
+
+You can see the [Live Demo here](https://angularjs-material-start.firebaseapp.com/).
 
 There are many additional branches in this repository that you may find useful:
 
