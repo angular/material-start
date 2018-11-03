@@ -8,3 +8,7 @@ typings.json
 .DS_Store
 .idea
 !.gitkeep
+app/src/**/*.js*
+firebase.json
+.firebaserc
+.firebase/
