@@ -4,7 +4,7 @@ This branch contains the tutorial steps and processes used to implement the star
 
 ![material-starter-ux2](https://cloud.githubusercontent.com/assets/6004537/14996543/b588eb46-1137-11e6-803c-ce23996c9742.png)
 
-Above is a snaphot of the Starter-App with a **Master-Detail** layout: showing a list of users
+Above is a snapshot of the Starter-App with a **Master-Detail** layout: showing a list of users
 (left) and a user detail view (right).
 
 Also shown is the user experience that will be displayed for smaller device sizes. The responsive
@@ -40,7 +40,7 @@ process:
 
 3. Wire components to your application logic
 
-   > Use the seamless integration possible with Angular directives and controllers.<br/>
+   > Use the seamless integration possible with AngularJS directives and controllers.<br/>
    > This integration assumes that you have unit tested your application logic.
 
 4. Add Responsive breakpoints
@@ -51,7 +51,7 @@ process:
 
 7. Write End-to-end (e2e) Tests
 
-   > It is important to validate your application logic with Angular Material UI components.
+   > It is important to validate your application logic with AngularJS Material UI components.
 
 ###### Wirefame
 
@@ -61,7 +61,7 @@ will be used in the Starter app:
 <br/>
 ![plancomponents2](https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png)
 
-> **Note:** The container #2 (above) is a simple `<div>` container and not an Angular Material
+> **Note:** The container #2 (above) is a simple `<div>` container and not an AngularJS Material
   component.
 
 - - -
@@ -102,7 +102,7 @@ You will notice a few files/directories within this tutorial:
   more discrete components.
 
 These folders and files will be used to guide you through the development process. By following
-these tutorial steps, you will be very quickly introduced to the powerful features of Angular
+these tutorial steps, you will be very quickly introduced to the powerful features of AngularJS
 Material.
 
 We encourage you to walk through each step yourself and build the application from the ground up.
@@ -142,7 +142,7 @@ Now let's review our initial setup:
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-    <title>Angular Material - Starter App</title>
+    <title>AngularJS Material - Starter App</title>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
     <link rel="stylesheet" href="./assets/app.css"/>
   </head>
@@ -194,10 +194,10 @@ turn imports all of our other files and loads them dynamically.
 
 ### Step #1:
 
-Here you will modify the application to use Angular-Material.
+Here you will modify the application to use AngularJS Material.
 
-* In the HTML, load the Angular Material CSS stylesheet and appropriate `<meta>`/`<title>` tags
-* Load the Angular Material JS library and its dependent libraries
+* In the HTML, load the AngularJS Material CSS stylesheet and appropriate `<meta>`/`<title>` tags
+* Load the AngularJS Material JS library and its dependent libraries
 * Configure the app dependency on 'ngMaterial'
 
 `app/index.html`
@@ -208,14 +208,14 @@ Here you will modify the application to use Angular-Material.
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-    <title>Angular Material - Starter App</title>
+    <title>AngularJS Material - Starter App</title>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
     <link rel="stylesheet" href="./jspm_packages/github/angular/bower-material@master/angular-material.css"/>
     <link rel="stylesheet" href="./assets/app.css"/>
   </head>
 ```
 
-> **Note:** The NPM and JSPM configurations already installed the Angular Material libraries.
+> **Note:** The NPM and JSPM configurations already installed the AngularJS Material libraries.
   Re-installs are easily done using `jspm install angular-material@master`.
 
 > **Note:** Note that we have manually included the Material CSS. This is because JSPM does not
@@ -277,7 +277,7 @@ Here we will use the wireframe planning and layout to identify the components an
   
 * Add the **layout** and **flex** attributes to configure the container layouts and sizing aspects
 * Use `md-is-locked-open` to lock the sidenav open on the left
-* Use the `md-whiteframe-4dp` class to add a shadow the the sidenav
+* Use the `md-whiteframe-4dp` class to add a shadow the sidenav
 
 `app/index.html`
 ```html
@@ -285,7 +285,7 @@ Here we will use the wireframe planning and layout to identify the components an
 
     <!-- Container #1 (see wireframe) -->
     <md-toolbar layout="row" class="md-toolbar-tools">
-      <h1>Angular Material - Starter App</h1>
+      <h1>AngularJS Material - Starter App</h1>
     </md-toolbar>
 
     <!-- Container #2 -->
@@ -311,7 +311,7 @@ Here we will use the wireframe planning and layout to identify the components an
 ### Step #3:
 
 Here you will use hard-coded elements to confirm rendering and layout of the container child
-elements and Angular Material components.
+elements and AngularJS Material components.
 
 `app/index.html`
 ```html
@@ -319,7 +319,7 @@ elements and Angular Material components.
 
   <!-- Container #1 (see wireframe) -->
   <md-toolbar layout="row" class="md-toolbar-tools">
-    <h1>Angular Material - Starter App</h1>
+    <h1>AngularJS Material - Starter App</h1>
   </md-toolbar>
 
   <!-- Container #2 -->
@@ -396,12 +396,12 @@ export default angular.module( "starter-app", [ 'ngMaterial', Users.name ] )
 
 ### Step #5:
 
-Here you will replace the hardcoded HTML with dynamic markup using Angular directives
+Here you will replace the hardcoded HTML with dynamic markup using AngularJS directives
 (eg `ng-repeat`) and `{{ }}` interpolation markup to utilize the User and App functionality we just
 imported in Step #4.
 
 * Add the `ng-controller` tag to the `<body>` element
-* Use dynamic HTML that will be compiled and rendered by Angular
+* Use dynamic HTML that will be compiled and rendered by AngularJS
 * Register a custom icon set of 'user' avatars for the user list
 * Register **menu** and **share** icon urls for the md-buttons
 
@@ -415,7 +415,7 @@ imported in Step #4.
     <md-button class="menu md-icon-button">
       <md-icon md-svg-icon="menu"></md-icon>
     </md-button>
-    <h1>Angular Material - Starter App</h1>
+    <h1>AngularJS Material - Starter App</h1>
   </md-toolbar>
 
   <!-- Container #2 -->
@@ -494,7 +494,7 @@ display sizes.
   <md-button class="menu md-icon-button" hide-gt-sm ng-click="app.toggleList()">
     <md-icon md-svg-icon="menu" ></md-icon>
   </md-button>
-  <h1>Angular Material - Starter App</h1>
+  <h1>AngularJS Material - Starter App</h1>
 </md-toolbar>
 
 <!-- Container #2 -->
@@ -603,7 +603,7 @@ export default angular
 
 ### Step #8:
 
-Here you will fix any ARIA warnings that Angular Material may display in the Dev console.
+Here you will fix any ARIA warnings that AngularJS Material may display in the Dev console.
 
 * Insert `aria-label` attributes for `<md-button>` components that do not have labels.
 
@@ -631,10 +631,10 @@ Here you will fix any ARIA warnings that Angular Material may display in the Dev
 </body>
 ```
 
-Congratulations! You now have a fully functional Angular Material application!
+Congratulations! You now have a fully functional AngularJS Material application!
 
-In the next two steps, we'll refactor our code into separate Angular 1.4-style components, and then
-once again refactor using the new Angular 1.5 `component()` API.
+In the next two steps, we'll refactor our code into separate AngularJS 1.4-style components, and then
+once again refactor using the new AngularJS 1.5 `component()` API.
 
 - - -
 
@@ -664,10 +664,10 @@ that we took to extract the components:
 1. Create the proper file/folder structure recommended above
 2. Create templates based on your HTML in `index.html`
 3. Define your UsersList and UserDetails directives following the
-   [Angular 1 Style Guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md)
+   [AngularJS 1 Style Guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md)
   
    > **Note:** Contrary to the style guide, we set `controllerAs: '$ctrl'` to better align with the
-    upcoming Angular 2 naming conventions.
+    upcoming Angular naming conventions.
   
 4. Create your directive controllers and extract the "share" logic from `src/AppController.js` into
   the `UserDetailsController.js`
@@ -678,7 +678,7 @@ that we took to extract the components:
 
 > **Note:** In order to stay with the ES6 paradigm of classes, the `UsersList` and `UserDetails`
   have been written as full classes rather than plain functions. This means that we must first
-  instantiate the class before we pass it to Angular's `.directive()` method as you can see below.
+  instantiate the class before we pass it to AngularJS's `.directive()` method as you can see below.
   We'll change this in Step #10 below to export a simple config object that is more consistent with
   the `.component()` API.
 
@@ -691,7 +691,7 @@ import UsersDataService from 'src/users/services/UsersDataService';
 import UsersList from 'src/users/components/list/UsersList';
 import UserDetails from 'src/users/components/details/UserDetails';
 
-// Define the Angular 'users' module
+// Define the AngularJS 'users' module
 
 export default angular
   .module("users", ['ngMaterial'])
@@ -731,7 +731,7 @@ export default angular
 
 ### Step #10:
 
-Here you will refactor your directives and controllers to use the Angular 1.5 Component API.
+Here you will refactor your directives and controllers to use the AngularJS 1.5 Component API.
 
 * combine the directives and controllers logic into the **UsersList** and **UserDetails** classes
 * use the **bindings** keyword and *1-way* data-binding
@@ -776,7 +776,7 @@ import UsersService from 'src/users/services/UsersDataService';
 import UsersList from 'src/users/components/list/UsersList';
 import UserDetails from 'src/users/components/details/UserDetails';
 
-// Define the Angular 'users' module
+// Define the AngularJS 'users' module
 
 export default angular
   .module("users", ['ngMaterial'])
@@ -790,5 +790,5 @@ export default angular
 ## Summary
 
 With only ten (10) Tutorial Steps and a few minutes of work, we have quickly created a functional
-Angular Material application that is beautiful, responsive, theme'ed, accessible, component-based,
+AngularJS Material application that is beautiful, responsive, theme'ed, accessible, component-based,
 and easily maintained.
