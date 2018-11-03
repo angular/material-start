@@ -26,11 +26,12 @@
     }
   },
   "devDependencies": {
-    "jspm": "^0.16.46",
-    "live-server": "^0.9.2"
+    "jspm": "^0.16.53",
+    "live-server": "^1.2.0"
   },
   "scripts": {
     "postinstall": "jspm install",
-    "serve": "live-server ./app"
+    "serve": "live-server ./app",
+    "start": "npm run serve"
   }
 }

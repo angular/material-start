@@ -31,7 +31,7 @@ below.
 
 ![material-starter-ux2](https://cloud.githubusercontent.com/assets/6004537/14996543/b588eb46-1137-11e6-803c-ce23996c9742.png)
 
-Above is a snaphot of the Starter-App with a **Master-Detail** layout: showing a list of users
+Above is a snapshot of the Starter-App with a **Master-Detail** layout: showing a list of users
 (left) and a user detail view (right).
 
 Also shown is the user experience that will be displayed for smaller device sizes. The responsive
@@ -80,7 +80,7 @@ process:
 
    > It is important to validate your application logic with AngularJS Material UI components.
 
-###### Wirefame
+###### Wireframe
 
 The illustration below shows how we planned the layout and identified the primary components that
 will be used in the Starter app:
