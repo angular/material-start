@@ -1,8 +1,12 @@
 # AngularJS Material-Start (Typescript)
+[![Gitter](https://badges.gitter.im/angular/material2.svg)](https://gitter.im/angular/material?utm_source=badge&utm_medium=badge)
 
 This branch contains the final/complete version (i.e. `step-10-finished`) of the
 [Material Start ES6 Tutorial](https://github.com/angular/material-start/tree/es6-tutorial) branch
 but written in Typescript instead of ES6.
+in this repository. 
+
+You can see the [Live Demo here](https://angularjs-material-start.firebaseapp.com/).
 
 This project uses the latest master branch of AngularJS Material to build the application outlined
 below.
@@ -58,7 +62,7 @@ process:
 
    > It is important to validate your application logic with AngularJS Material UI components.
 
-###### Wirefame
+###### Wireframe
 
 The illustration below shows how we planned the layout and identified the primary components that
 will be used in the Starter app:
@@ -90,8 +94,7 @@ Clone this repository and execute the following commands in a terminal:
 * `npm install`
 * `npm start`
 
-> **Note:** You should use a web-server (like live-server above) to view your app in the browser.
-  Open the dev console to see any warnings and browse the elements.
+> **Note:** Open the dev console to see any warnings and browse the elements.
 
 ###### Layout
 
@@ -117,12 +120,9 @@ Below are a few important notes about this project.
 * The UsersList component inlines the HTML template to show an alternative to the `templateUrl` for
   simple components.
   
-* The types provided by the `typings` tool (part of npm's `postinstall` script) are outdated and use
-  references to interfaces beginning with 'I' which is not in-line with Angular 2 standards. These
+* The types provided by @types packages are outdated and use
+  references to interfaces beginning with 'I' which is not in-line with Angular standards. These
   typings are provided by the community and not AngularJS Material.
-  
-  Additionally, as of this writing, the typings were based off of 1.1.0-RC5 instead of the final
-  1.1.0 which was recently released so there may be some discrepancies in the type generations.
 
 #### Troubleshooting
 
@@ -131,9 +131,8 @@ If you have issues getting the application to run or work as expected:
 1. Make sure you have installed NPM and run the `npm install` command (and there were no errors).
 2. Reach out on our [Forum](https://groups.google.com/forum/#!forum/ngmaterial) to see if any other
    developers have had the same issue.
-3. This project is based against the v1.1.0 release of AngularJS Material, so there may be a newer
-   version available which fixes the issue you are seeing. Just update the `package.json` to specify
-   the version you wish to use.
+3. This project is based against the `master` branch of AngularJS Material, so there may be a newer
+   version available which fixes the issue you are seeing.
 4. Search for the issue here on [GitHub](https://github.com/angular/material-start/issues?q=is%3Aissue+is%3Aopen).
 5. If you don't see an existing issue, please open a new one with the relevant information and the
    details of the problem you are facing.
