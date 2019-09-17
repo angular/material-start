@@ -5,7 +5,7 @@ This branch contains the final/complete version (i.e. `step-10-finished`) of the
 [Material Start ES6 Tutorial](https://github.com/angular/material-start/tree/es6-tutorial) branch
 but written in Typescript instead of ES6.
 
-You can see the [Live Demo here](https://angularjs-material-start.firebaseapp.com/).
+You can see the [Live Demo here](https://angularjs-material-start.web.app).
 
 This project uses the latest master branch of AngularJS Material to build the application outlined
 below.
@@ -135,3 +135,7 @@ If you have issues getting the application to run or work as expected:
 4. Search for the issue here on [GitHub](https://github.com/angular/material-start/issues?q=is%3Aissue+is%3Aopen).
 5. If you don't see an existing issue, please open a new one with the relevant information and the
    details of the problem you are facing.
+
+Note that the `npm run build` command is expected to fail. The project is configured to use
+SystemJS to build the TypeScript in the browser. The format required for supporting this in SystemJS
+is not compatible with the normal TypeScript compiler (`tsc`).
