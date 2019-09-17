@@ -49,8 +49,7 @@ export class UserDetailsComponent {
       templateUrl: 'src/users/components/user-details/user-contact-sheet.html',
       controller: UserSheetController,
       controllerAs: "$ctrl",
-      bindToController: true,
-      targetEvent: $event
+      bindToController: true
     };
 
     this.$mdBottomSheet.show(config).then((clickedItem) => {

@@ -2,7 +2,7 @@
   "name": "material-start",
   "private": true,
   "version": "1.0.1",
-  "description": "A Typescript project for AngularJS Material Start",
+  "description": "A TypeScript project for AngularJS Material Start",
   "repository": "https://github.com/angular/material-start",
   "license": "MIT",
   "devDependencies": {
@@ -19,7 +19,7 @@
     "angular-material": "github:angular/bower-material",
     "angular-messages": "^1.7.8",
     "angular-sanitize": "^1.7.8",
-    "systemjs": "^0.19.45",
+    "systemjs": "^0.19.47",
     "typescript": "^3.6.3"
   },
   "scripts": {

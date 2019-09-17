@@ -1,5 +1,3 @@
-/// <reference path="../../../typings/index.d.ts" />
-
 // Import our Angular dependencies
 import * as angular from 'angular';
 import 'angular-animate';
