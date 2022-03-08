@@ -9,10 +9,10 @@
     "live-server": "^1.2.1"
   },
   "dependencies": {
-    "@types/angular": "^1.8.1",
-    "@types/angular-material": "^1.1.72",
-    "@types/angular-animate": "^1.5.10",
-    "@types/jquery": "^3.5.5",
+    "@types/angular": "^1.8.4",
+    "@types/angular-material": "^1.1.73",
+    "@types/angular-animate": "^1.5.11",
+    "@types/jquery": "^3.5.14",
     "angular": "^1.8.2",
     "angular-animate": "^1.8.2",
     "angular-aria": "^1.8.2",
@@ -20,10 +20,9 @@
     "angular-messages": "^1.8.2",
     "angular-sanitize": "^1.8.2",
     "systemjs": "^0.19.47",
-    "typescript": "^3.6.3"
+    "typescript": "^3.9.10"
   },
   "scripts": {
-    "start": "live-server --open=app",
-    "build": "tsc"
+    "start": "live-server --open=app"
   }
 }
